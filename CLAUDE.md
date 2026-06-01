@@ -50,3 +50,26 @@ be reviewed by a parent/teacher before going live.
 - Keep components small; keep content separate from UI; keep the quiz engine
   data-driven (it already renders any question type from a `type` + payload).
 - Don't add a framework. Don't reach for a hosted service. Plain Express + pg.
+
+---
+
+## Content pipeline (all grades)
+The full syllabus is built from per-subject JSON files under `content/` — NOT
+hand-coded into the app. Flow:
+1. `node scripts/scaffold.mjs` reads `data/pdf/grade-XX/*.pdf`, classifies each
+   file (subject / track / shared) and writes empty content shells + `manifest.csv`.
+2. Claude Code fills each shell from its PDF, one book per session. Recipe:
+   **INGESTION.md** (read it before transcribing). Books are scanned images, so
+   they must be read visually in Claude Code on the local machine.
+3. `npm run db:seed` loads all content into Postgres (idempotent).
+
+Tracks: `tasheel` (Hanafi), `tasheel-shafii` (separate Shafi'i Fiqh), `shared`
+(duas, sunnats, etc.). DB grade ids are namespaced: Shafi'i becomes `shafii-g2`.
+
+Teachers add their own questions via the app:
+- single: `POST /api/questions` (choose `status: 'active'` or `'draft'`)
+- bulk:   `POST /api/questions/import` with a JSON array (paste a whole worksheet)
+
+### Don't try to transcribe many books in the web chat
+It can't see local files and long single passes truncate. One book per Claude Code
+session, mark uncertain pages `needsReview`, seed, repeat.

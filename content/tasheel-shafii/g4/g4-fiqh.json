@@ -1,0 +1,15 @@
+{
+  "track": "tasheel-shafii",
+  "gradeId": "g4",
+  "subjectId": "g4-fiqh",
+  "subjectName": "Fiqh",
+  "tagline": "",
+  "sources": [
+    {
+      "pdf": "grade-shafiee-fiqh/fiqh-shafiee-grade-4.pdf",
+      "note": ""
+    }
+  ],
+  "status": "needs_content",
+  "lessons": []
+}

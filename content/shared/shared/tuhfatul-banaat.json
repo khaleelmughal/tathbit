@@ -1,0 +1,19 @@
+{
+  "track": "shared",
+  "gradeId": "shared",
+  "subjectId": "tuhfatul-banaat",
+  "subjectName": "Tuhfatul Banaat",
+  "tagline": "",
+  "sources": [
+    {
+      "pdf": "grade-06/tuhfatul_banaat.pdf",
+      "note": ""
+    },
+    {
+      "pdf": "grade-07/tuhfatul_banaat-1.pdf",
+      "note": ""
+    }
+  ],
+  "status": "needs_content",
+  "lessons": []
+}

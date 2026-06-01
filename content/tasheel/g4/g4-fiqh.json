@@ -1,0 +1,15 @@
+{
+  "track": "tasheel",
+  "gradeId": "g4",
+  "subjectId": "g4-fiqh",
+  "subjectName": "Fiqh",
+  "tagline": "",
+  "sources": [
+    {
+      "pdf": "grade-04/fiqh-4.pdf",
+      "note": ""
+    }
+  ],
+  "status": "needs_content",
+  "lessons": []
+}

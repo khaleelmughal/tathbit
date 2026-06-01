@@ -1,0 +1,393 @@
+{
+  "track": "tasheel",
+  "gradeId": "g5",
+  "subjectId": "g5-aqaaid",
+  "subjectName": "Aqaa-id",
+  "tagline": "Beliefs — who Allah is and what we believe",
+  "sources": [
+    {
+      "pdf": "grade-05/aqaaid-5.pdf",
+      "note": "Tas-heelul Aqaa-id 5"
+    }
+  ],
+  "status": "in_progress",
+  "lessons": [
+    {
+      "id": "g5-aqaaid-l1",
+      "n": 1,
+      "title": "Qualities of Allah",
+      "pages": "4-7",
+      "summary": "Allah is One. We must believe in His existence together with all His perfect qualities as taught by the Qur'an and Hadeeth. His greatest quality is Rahmah (Mercy) — He is more merciful to us than a mother is to her child. Allah's qualities are perfect and never change, unlike our human qualities of hearing, seeing and speaking which keep changing as we grow.",
+      "keyTerms": [
+        {
+          "term": "Qadeem",
+          "meaning": "Eternal — He has no beginning or end"
+        },
+        {
+          "term": "Qaadir",
+          "meaning": "All Powerful — no one can challenge His power"
+        },
+        {
+          "term": "Samee'",
+          "meaning": "All Hearing — no word or whisper is hidden from Him"
+        },
+        {
+          "term": "Hayy",
+          "meaning": "Ever Living — He neither sleeps nor will ever cease to exist"
+        },
+        {
+          "term": "Mutakallim",
+          "meaning": "One who speaks — His spoken word is the Qur'an"
+        },
+        {
+          "term": "Khaaliq",
+          "meaning": "The Creator — He created the heavens, the earth and all they contain"
+        }
+      ],
+      "points": [
+        "The Qur'an says: “Say, He is Allah, the One. The Eternal and Independent. He does not give birth, nor was He born, and there is nothing that could be compared to Him.” (Surah 112)",
+        "Allah's most outstanding quality is Rahmah — Mercy.",
+        "Allah's qualities are perfect and never change, nor does He lose any of them."
+      ],
+      "story": {
+        "title": "The Excursion",
+        "text": "On an excursion, two girls kept apart from the group because they felt they were better than the others, and would not remove an obstacle from the path. The muallimah reminded them that Allah does not love those who are haughty — we should always be considerate of others and never walk with pride."
+      },
+      "questions": [
+        {
+          "id": "aq-l1-q1",
+          "type": "match",
+          "difficulty": "easy",
+          "prompt": "Match each quality of Allah with its meaning.",
+          "pairs": [
+            {
+              "left": "Qadeem",
+              "right": "Eternal"
+            },
+            {
+              "left": "Qaadir",
+              "right": "All Powerful"
+            },
+            {
+              "left": "Hayy",
+              "right": "Ever Living"
+            },
+            {
+              "left": "Mutakallim",
+              "right": "One who speaks"
+            },
+            {
+              "left": "Khaaliq",
+              "right": "Creator"
+            }
+          ],
+          "explanation": "These are six of the perfect qualities of Allah taught in this lesson."
+        },
+        {
+          "id": "aq-l1-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What does the quality “Qadeem” mean?",
+          "options": [
+            "Eternal",
+            "All Powerful",
+            "The Creator",
+            "Ever Living"
+          ],
+          "correctAnswer": "Eternal",
+          "explanation": "Qadeem means Eternal — Allah has no beginning and no end."
+        },
+        {
+          "id": "aq-l1-q3",
+          "type": "multiple-choice",
+          "difficulty": "medium",
+          "prompt": "The spoken word of Allah is the ______.",
+          "options": [
+            "Qur'an",
+            "Hadeeth",
+            "Dua",
+            "Adhaan"
+          ],
+          "correctAnswer": "Qur'an",
+          "explanation": "Allah is Mutakallim — One who speaks — and His spoken word is the Qur'an."
+        },
+        {
+          "id": "aq-l1-q4",
+          "type": "true-false",
+          "difficulty": "medium",
+          "prompt": "Allah's qualities change and grow just like ours.",
+          "correctAnswer": false,
+          "explanation": "Allah's qualities are perfect and never change. Only human qualities change as we grow."
+        },
+        {
+          "id": "aq-l1-q5",
+          "type": "fill-blank",
+          "difficulty": "easy",
+          "prompt": "Allah is Qadeem, which means He has no beginning or ______.",
+          "correctAnswer": "end",
+          "explanation": "Qadeem = Eternal: no beginning or end."
+        },
+        {
+          "id": "aq-l1-q6",
+          "type": "short-answer",
+          "difficulty": "hard",
+          "prompt": "Why do we say that Allah is ONE?",
+          "acceptedAnswers": [
+            "he has no partner",
+            "nothing is comparable to him",
+            "he is unique",
+            "there is no one like him",
+            "he is the only god"
+          ],
+          "explanation": "Allah is unique — nothing can be compared to Him and He has no partner (Surah Ikhlaas)."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "What does Qadeem mean?",
+          "back": "Eternal. Allah has no beginning or end."
+        },
+        {
+          "front": "What does Qaadir mean?",
+          "back": "All Powerful. No one can challenge His power."
+        },
+        {
+          "front": "What does Hayy mean?",
+          "back": "Ever Living. He neither sleeps nor ceases to exist."
+        },
+        {
+          "front": "What is Allah's most outstanding quality?",
+          "back": "Rahmah — Mercy. He is more merciful than a mother to her child."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "g5-aqaaid-l2",
+      "n": 2,
+      "title": "Angels",
+      "pages": "8-11",
+      "summary": "Angels are created from noor (light). There are countless angels who carry out duties placed on them by Allah. They are sinless and never disobey Allah, they are neither male nor female, and they have no physical needs or wants.",
+      "keyTerms": [
+        {
+          "term": "Kiraaman Kaatibeen",
+          "meaning": "The two angels with every person — one records good deeds, the other bad"
+        },
+        {
+          "term": "Munkar & Nakeer",
+          "meaning": "The two angels who question people in the grave"
+        },
+        {
+          "term": "Mulhim",
+          "meaning": "The angel who accompanies every Mu'min and encourages good deeds"
+        },
+        {
+          "term": "Noor",
+          "meaning": "Light — angels are created from it"
+        }
+      ],
+      "points": [
+        "Allah says: “They (the Angels) do not disobey Allah in what He has commanded them and always do whatever they are commanded.” (66:6)",
+        "Some angels help the Muslims; some seek forgiveness for people; some remove souls at death; some protect from calamities; some bring revelation.",
+        "Angels carry the Throne of Allah and constantly praise Him; some say “Aameen” to our duas; bad and offensive smells are disliked by angels just as by people."
+      ],
+      "story": null,
+      "questions": [
+        {
+          "id": "aq-l2-q1",
+          "type": "fill-blank",
+          "difficulty": "easy",
+          "prompt": "Angels are created from ______.",
+          "correctAnswer": "noor",
+          "acceptedAnswers": [
+            "noor",
+            "light",
+            "nur"
+          ],
+          "explanation": "Angels are created from noor (light)."
+        },
+        {
+          "id": "aq-l2-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Which two angels question a person in the grave?",
+          "options": [
+            "Munkar and Nakeer",
+            "Jibreel and Mikaeel",
+            "Mulhim and Israafeel",
+            "Ridwaan and Maalik"
+          ],
+          "correctAnswer": "Munkar and Nakeer",
+          "explanation": "Munkar and Nakeer question people in the grave after they are buried."
+        },
+        {
+          "id": "aq-l2-q3",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "Who is Mulhim?",
+          "acceptedAnswers": [
+            "an angel who accompanies every mumin",
+            "encourages good deeds",
+            "an angel who encourages a believer to do good",
+            "accompanies every believer"
+          ],
+          "explanation": "Mulhim accompanies every Mu'min (believer) and encourages him to do good deeds."
+        },
+        {
+          "id": "aq-l2-q4",
+          "type": "true-false",
+          "difficulty": "medium",
+          "prompt": "Angels are either male or female.",
+          "correctAnswer": false,
+          "explanation": "Angels are neither male nor female, and have no physical needs or wants."
+        },
+        {
+          "id": "aq-l2-q5",
+          "type": "fill-blank",
+          "difficulty": "medium",
+          "prompt": "The two angels who record our good and bad deeds are called ______.",
+          "correctAnswer": "Kiraaman Kaatibeen",
+          "acceptedAnswers": [
+            "kiraaman kaatibeen",
+            "kiraman katibeen",
+            "kiraaman katibeen"
+          ],
+          "explanation": "Every human has two angels — Kiraaman Kaatibeen — who record our deeds."
+        },
+        {
+          "id": "aq-l2-q6",
+          "type": "multiple-choice",
+          "difficulty": "hard",
+          "prompt": "What is disliked by the angels?",
+          "options": [
+            "Bad and offensive smells",
+            "The sound of dua",
+            "Reciting the Qur'an",
+            "Giving charity"
+          ],
+          "correctAnswer": "Bad and offensive smells",
+          "explanation": "Bad and offensive smells are disliked by the angels just as they are disliked by people."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "What are angels created from?",
+          "back": "Noor — light."
+        },
+        {
+          "front": "Name the two angels who question us in the grave.",
+          "back": "Munkar and Nakeer."
+        },
+        {
+          "front": "Who are Kiraaman Kaatibeen?",
+          "back": "The two angels who record our good and bad deeds."
+        },
+        {
+          "front": "Who is Mulhim?",
+          "back": "The angel who accompanies every believer and encourages good deeds."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "g5-aqaaid-l3",
+      "n": 3,
+      "title": "The Qur'aan",
+      "pages": "12-15",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    },
+    {
+      "id": "g5-aqaaid-l4",
+      "n": 4,
+      "title": "Nabee Muhammad ﷺ",
+      "pages": "16-19",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    },
+    {
+      "id": "g5-aqaaid-l5",
+      "n": 5,
+      "title": "Signs of Qiyaamah",
+      "pages": "20-23",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    },
+    {
+      "id": "g5-aqaaid-l6",
+      "n": 6,
+      "title": "The Hereafter",
+      "pages": "24-27",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    },
+    {
+      "id": "g5-aqaaid-l7",
+      "n": 7,
+      "title": "Jannah and Jahannam",
+      "pages": "28-31",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    },
+    {
+      "id": "g5-aqaaid-l8",
+      "n": 8,
+      "title": "Al-Maani",
+      "pages": "32-33",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    },
+    {
+      "id": "g5-aqaaid-l9",
+      "n": 9,
+      "title": "Al-Hadee",
+      "pages": "34-36",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    }
+  ]
+}

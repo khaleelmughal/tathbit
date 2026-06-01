@@ -1,0 +1,43 @@
+{
+  "track": "shared",
+  "gradeId": "shared",
+  "subjectId": "essential-duas",
+  "subjectName": "Essential Duas",
+  "tagline": "",
+  "sources": [
+    {
+      "pdf": "grade-01/essential_duas_for_muslims_gr_1-7.pdf",
+      "note": ""
+    },
+    {
+      "pdf": "grade-02/essential_duas_for_muslims_gr_1-7.pdf",
+      "note": ""
+    },
+    {
+      "pdf": "grade-03/essential_duas_for_muslims_gr_1-7.pdf",
+      "note": ""
+    },
+    {
+      "pdf": "grade-04/essential_duas_for_muslims_gr_1-7.pdf",
+      "note": ""
+    },
+    {
+      "pdf": "grade-05/essential_duas_for_muslims_gr_1-7.pdf",
+      "note": ""
+    },
+    {
+      "pdf": "grade-06/essential_duas_for_muslims_gr_1-7.pdf",
+      "note": ""
+    },
+    {
+      "pdf": "grade-07/essential_duas_for_muslims_gr_1-7.pdf",
+      "note": ""
+    },
+    {
+      "pdf": "grade-07/essential_duas_part_2.pdf",
+      "note": ""
+    }
+  ],
+  "status": "needs_content",
+  "lessons": []
+}

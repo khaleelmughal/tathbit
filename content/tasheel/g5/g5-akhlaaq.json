@@ -1,0 +1,243 @@
+{
+  "track": "tasheel",
+  "gradeId": "g5",
+  "subjectId": "g5-akhlaaq",
+  "subjectName": "Akhlaaq",
+  "tagline": "Good character and beautiful manners",
+  "sources": [
+    {
+      "pdf": "grade-05/akhlaaq-5.pdf",
+      "note": "Tas-heelul Akhlaaq 5"
+    }
+  ],
+  "status": "in_progress",
+  "lessons": [
+    {
+      "id": "g5-akhlaaq-l1",
+      "n": 1,
+      "title": "Walking",
+      "pages": "6-8",
+      "summary": "Islam is a complete way of life — it teaches us not only about prayer and cleanliness, but also about our conduct and manners, including how we walk. The golden rule in all our dealings is to be humble. We walk in a moderate manner: not too fast and not too slow, and never like a proud person.",
+      "keyTerms": [
+        {
+          "term": "Moderate",
+          "meaning": "A middle way — not too fast, not too slow"
+        },
+        {
+          "term": "Humility",
+          "meaning": "Being humble and not proud"
+        }
+      ],
+      "points": [
+        "The Qur'an states: “And be moderate in the way you walk.”",
+        "Rasoolullah ﷺ always walked briskly, as if descending from a high place.",
+        "Walk upright (not chest-out, not back bent), do not drag your feet, and cast your gaze slightly down while staying aware of your surroundings.",
+        "Remove obstacles from the road, do not become an obstacle, and be mindful of cars and other pedestrians."
+      ],
+      "story": {
+        "title": "Walking with humility",
+        "text": "A true Muslim does not walk ahead of friends to show off his position, and is always considerate of others on the path."
+      },
+      "questions": [
+        {
+          "id": "ak-l1-q1",
+          "type": "multiple-choice",
+          "difficulty": "medium",
+          "prompt": "Which of these is the best example of walking with humility?",
+          "options": [
+            "Walking proudly with your chest out",
+            "Walking so slowly that people are delayed",
+            "Walking moderately and being aware of your surroundings",
+            "Looking into people's homes while walking"
+          ],
+          "correctAnswer": "Walking moderately and being aware of your surroundings",
+          "explanation": "We walk at a moderate pace, humbly, while staying mindful of others."
+        },
+        {
+          "id": "ak-l1-q2",
+          "type": "fill-blank",
+          "difficulty": "easy",
+          "prompt": "The Qur'an says: “And be ______ in the way you walk.”",
+          "correctAnswer": "moderate",
+          "explanation": "Moderate means a middle way — not too fast and not too slow."
+        },
+        {
+          "id": "ak-l1-q3",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "A Muslim should walk proudly with his chest pushed out.",
+          "correctAnswer": false,
+          "explanation": "We should walk upright but humbly, never like a proud person."
+        },
+        {
+          "id": "ak-l1-q4",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "How did Rasoolullah ﷺ walk?",
+          "acceptedAnswers": [
+            "briskly",
+            "fast as if descending from a high place",
+            "briskly as if coming down from a height",
+            "quickly"
+          ],
+          "explanation": "Rasoolullah ﷺ walked briskly, as if descending from a high place."
+        },
+        {
+          "id": "ak-l1-q5",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "What should you do if you see an obstacle on the road?",
+          "acceptedAnswers": [
+            "remove it",
+            "remove the obstacle",
+            "take it away",
+            "move it"
+          ],
+          "explanation": "We should remove any obstacle that could cause harm or an accident."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "What does the Qur'an say about walking?",
+          "back": "“And be moderate in the way you walk.”"
+        },
+        {
+          "front": "How did Rasoolullah ﷺ walk?",
+          "back": "Briskly, as if descending from a high place."
+        },
+        {
+          "front": "What is the golden rule in all our dealings?",
+          "back": "To be humble."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "g5-akhlaaq-l2",
+      "n": 2,
+      "title": "Talking",
+      "pages": "10-12",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    },
+    {
+      "id": "g5-akhlaaq-l3",
+      "n": 3,
+      "title": "Joking",
+      "pages": "14-15",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    },
+    {
+      "id": "g5-akhlaaq-l4",
+      "n": 4,
+      "title": "Neighbours",
+      "pages": "16-18",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    },
+    {
+      "id": "g5-akhlaaq-l5",
+      "n": 5,
+      "title": "Self Respect",
+      "pages": "20-23",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    },
+    {
+      "id": "g5-akhlaaq-l6",
+      "n": 6,
+      "title": "Hosts",
+      "pages": "24-25",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    },
+    {
+      "id": "g5-akhlaaq-l7",
+      "n": 7,
+      "title": "Sharing",
+      "pages": "26-29",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    },
+    {
+      "id": "g5-akhlaaq-l8",
+      "n": 8,
+      "title": "Table Manners",
+      "pages": "30-33",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    },
+    {
+      "id": "g5-akhlaaq-l9",
+      "n": 9,
+      "title": "Friday Salaah",
+      "pages": "34-35",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    },
+    {
+      "id": "g5-akhlaaq-l10",
+      "n": 10,
+      "title": "Duty of one Muslim to Another",
+      "pages": "36-37",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    }
+  ]
+}

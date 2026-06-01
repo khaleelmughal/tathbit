@@ -1,0 +1,15 @@
+{
+  "track": "tasheel",
+  "gradeId": "g8",
+  "subjectId": "g8-duroosul-quraan",
+  "subjectName": "Duroosul Qur'aan",
+  "tagline": "",
+  "sources": [
+    {
+      "pdf": "grade-08/08-tas-heelduroosilquraan.pdf",
+      "note": ""
+    }
+  ],
+  "status": "needs_content",
+  "lessons": []
+}

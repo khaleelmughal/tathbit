@@ -1,0 +1,15 @@
+{
+  "track": "tasheel",
+  "gradeId": "g11-12",
+  "subjectId": "g11-12-aqaaid",
+  "subjectName": "Aqaa-id",
+  "tagline": "",
+  "sources": [
+    {
+      "pdf": "grade-11-and-12/aqaaid-1112.pdf",
+      "note": ""
+    }
+  ],
+  "status": "needs_content",
+  "lessons": []
+}

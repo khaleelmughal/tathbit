@@ -1,0 +1,15 @@
+{
+  "track": "tasheel",
+  "gradeId": "g1",
+  "subjectId": "g1-islamic-history",
+  "subjectName": "Tareekh (Islamic History)",
+  "tagline": "",
+  "sources": [
+    {
+      "pdf": "grade-01/islamic-history-1-a4.pdf",
+      "note": ""
+    }
+  ],
+  "status": "needs_content",
+  "lessons": []
+}

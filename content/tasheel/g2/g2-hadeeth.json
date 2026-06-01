@@ -1,0 +1,15 @@
+{
+  "track": "tasheel",
+  "gradeId": "g2",
+  "subjectId": "g2-hadeeth",
+  "subjectName": "Hadeeth",
+  "tagline": "",
+  "sources": [
+    {
+      "pdf": "grade-02/hadeeth-2.pdf",
+      "note": ""
+    }
+  ],
+  "status": "needs_content",
+  "lessons": []
+}

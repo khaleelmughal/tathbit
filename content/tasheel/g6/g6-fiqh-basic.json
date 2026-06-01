@@ -1,0 +1,15 @@
+{
+  "track": "tasheel",
+  "gradeId": "g6",
+  "subjectId": "g6-fiqh-basic",
+  "subjectName": "Fiqh",
+  "tagline": "",
+  "sources": [
+    {
+      "pdf": "grade-06/basic_fiqh.pdf",
+      "note": "basic"
+    }
+  ],
+  "status": "needs_content",
+  "lessons": []
+}

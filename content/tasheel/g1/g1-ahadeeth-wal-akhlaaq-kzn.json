@@ -1,0 +1,35 @@
+{
+  "track": "tasheel",
+  "gradeId": "g1",
+  "subjectId": "g1-ahadeeth-wal-akhlaaq-kzn",
+  "subjectName": "Ahaadeeth wal Akhlaaq",
+  "tagline": "",
+  "sources": [
+    {
+      "pdf": "grade-02/ahaadeeth_wal_akhlaaaq_gr_1-7-2.pdf",
+      "note": "kzn"
+    },
+    {
+      "pdf": "grade-03/ahaadeeth_wal_akhlaaaq_gr_1-7-3.pdf",
+      "note": "kzn"
+    },
+    {
+      "pdf": "grade-04/ahaadeeth_wal_akhlaaaq_gr_1-7.pdf",
+      "note": "kzn"
+    },
+    {
+      "pdf": "grade-05/ahaadeeth_wal_akhlaaaq_gr_1-7-1.pdf",
+      "note": "kzn"
+    },
+    {
+      "pdf": "grade-06/ahaadeeth_wal_akhlaaaq_gr_1-7-4.pdf",
+      "note": "kzn"
+    },
+    {
+      "pdf": "grade-07/ahaadeeth_wal_akhlaaaq_gr_1-7-5.pdf",
+      "note": "kzn"
+    }
+  ],
+  "status": "needs_content",
+  "lessons": []
+}

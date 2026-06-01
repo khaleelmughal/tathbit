@@ -1,0 +1,39 @@
+{
+  "track": "shared",
+  "gradeId": "shared",
+  "subjectId": "duas",
+  "subjectName": "Duas",
+  "tagline": "",
+  "sources": [
+    {
+      "pdf": "grade-01/duas.pdf",
+      "note": ""
+    },
+    {
+      "pdf": "grade-02/duas.pdf",
+      "note": ""
+    },
+    {
+      "pdf": "grade-03/duas.pdf",
+      "note": ""
+    },
+    {
+      "pdf": "grade-04/duas.pdf",
+      "note": ""
+    },
+    {
+      "pdf": "grade-05/duas.pdf",
+      "note": ""
+    },
+    {
+      "pdf": "grade-06/duas.pdf",
+      "note": ""
+    },
+    {
+      "pdf": "grade-07/duas.pdf",
+      "note": ""
+    }
+  ],
+  "status": "needs_content",
+  "lessons": []
+}

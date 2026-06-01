@@ -1,0 +1,19 @@
+{
+  "track": "tasheel",
+  "gradeId": "g7",
+  "subjectId": "g7-fiqh-basic",
+  "subjectName": "Fiqh",
+  "tagline": "",
+  "sources": [
+    {
+      "pdf": "grade-07/basic_fiqh-1.pdf",
+      "note": "basic"
+    },
+    {
+      "pdf": "grade-07/basic_fiqh_3.pdf",
+      "note": "basic"
+    }
+  ],
+  "status": "needs_content",
+  "lessons": []
+}

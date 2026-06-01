@@ -41,3 +41,24 @@ questionRoutes.patch("/:id/status", requireRole("teacher", "admin"), async (req,
     [status === "draft" ? "draft" : "active", req.params.id]);
   res.json(row);
 });
+
+// Bulk import — teacher pastes many questions at once (their own worksheet).
+// Accepts either a JSON array of question objects, or rows already parsed
+// client-side. Each item: { subjectId, lessonId?, type, prompt, payload, explanation?, difficulty?, status? }
+questionRoutes.post("/import", requireRole("teacher", "admin"), async (req, res) => {
+  const items = Array.isArray(req.body) ? req.body : req.body?.items;
+  if (!Array.isArray(items) || !items.length) return res.status(400).json({ error: "Provide a non-empty array of questions" });
+  const created: any[] = [];
+  for (const it of items) {
+    if (!it.type || !it.prompt) continue; // skip malformed rows
+    const [row] = await q(
+      `INSERT INTO questions (grade_id, subject_id, lesson_id, type, prompt, payload, explanation, difficulty, status, created_by)
+       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10) RETURNING id`,
+      [it.gradeId || null, it.subjectId || null, it.lessonId || null, it.type, it.prompt,
+       it.payload || {}, it.explanation || null, it.difficulty || "medium",
+       it.status === "active" ? "active" : "draft", (req as any).user.id]
+    );
+    created.push(row.id);
+  }
+  res.status(201).json({ imported: created.length });
+});

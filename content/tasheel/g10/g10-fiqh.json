@@ -1,0 +1,15 @@
+{
+  "track": "tasheel",
+  "gradeId": "g10",
+  "subjectId": "g10-fiqh",
+  "subjectName": "Fiqh",
+  "tagline": "",
+  "sources": [
+    {
+      "pdf": "grade-10/fiqh-10.pdf",
+      "note": ""
+    }
+  ],
+  "status": "needs_content",
+  "lessons": []
+}

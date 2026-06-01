@@ -1,0 +1,27 @@
+{
+  "track": "tasheel",
+  "gradeId": "g2",
+  "subjectId": "g2-unclassified",
+  "subjectName": "Unclassified — needs manual check",
+  "tagline": "",
+  "sources": [
+    {
+      "pdf": "grade-02/quraan-part-1.pdf",
+      "note": ""
+    },
+    {
+      "pdf": "grade-02/towards-raeding-the-quraan-part-2.pdf",
+      "note": ""
+    },
+    {
+      "pdf": "grade-02/yassarnal_quraan_pt_1.pdf",
+      "note": ""
+    },
+    {
+      "pdf": "grade-02/yassarnal_quraan_pt_2.pdf",
+      "note": ""
+    }
+  ],
+  "status": "needs_content",
+  "lessons": []
+}

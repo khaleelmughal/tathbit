@@ -1,0 +1,15 @@
+{
+  "track": "tasheel",
+  "gradeId": "g6",
+  "subjectId": "g6-aqaaid-basic",
+  "subjectName": "Aqaa-id",
+  "tagline": "",
+  "sources": [
+    {
+      "pdf": "grade-06/basic_aqaaid.pdf",
+      "note": "basic"
+    }
+  ],
+  "status": "needs_content",
+  "lessons": []
+}

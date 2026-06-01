@@ -1,0 +1,15 @@
+{
+  "track": "tasheel",
+  "gradeId": "g4",
+  "subjectId": "g4-akhlaaq",
+  "subjectName": "Akhlaaq",
+  "tagline": "",
+  "sources": [
+    {
+      "pdf": "grade-04/akhlaaq-4-1.pdf",
+      "note": ""
+    }
+  ],
+  "status": "needs_content",
+  "lessons": []
+}

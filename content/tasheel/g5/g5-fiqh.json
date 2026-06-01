@@ -1,0 +1,325 @@
+{
+  "track": "tasheel",
+  "gradeId": "g5",
+  "subjectId": "g5-fiqh",
+  "subjectName": "Fiqh",
+  "tagline": "How we practise — purity, wudhu & salaah",
+  "sources": [
+    {
+      "pdf": "grade-05/fiqh-5.pdf",
+      "note": "Tas-heelul Fiqh 5"
+    }
+  ],
+  "status": "in_progress",
+  "lessons": [
+    {
+      "id": "g5-fiqh-l1",
+      "n": 1,
+      "title": "Najaasah (Impurity)",
+      "pages": "4-7",
+      "summary": "Najaasah means impurity. There are two types of najaasah: Najaasah Haqeeqi (real, visible impurity) and Najaasah Hukmee (technical impurity). Najaasah Haqeeqi is further divided into Ghaleezah (heavy) and Khafeefah (light).",
+      "keyTerms": [
+        {
+          "term": "Najaasah Haqeeqi",
+          "meaning": "Real, visible impurity"
+        },
+        {
+          "term": "Najaasah Hukmee",
+          "meaning": "Technical impurity (a state, e.g. after sleep, needing wudhu/ghusl)"
+        },
+        {
+          "term": "Ghaleezah",
+          "meaning": "Heavy impurity — e.g. urine, pus, human blood, dog's saliva, any part of a pig"
+        },
+        {
+          "term": "Khafeefah",
+          "meaning": "Light impurity — e.g. urine of halaal animals, droppings of haraam birds"
+        }
+      ],
+      "points": [
+        "Najaasah is divided into two types: Najaasah Haqeeqi and Najaasah Hukmee.",
+        "Najaasah Haqeeqi is divided into Ghaleezah (heavy) and Khafeefah (light).",
+        "Examples of Ghaleezah: urine, pus, the blood of human beings, the saliva of dogs, and every part of a pig.",
+        "Examples of Khafeefah: the urine of halaal animals, and the droppings of all haraam birds."
+      ],
+      "story": null,
+      "questions": [
+        {
+          "id": "fq-l1-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What are the two types of Najaasah?",
+          "options": [
+            "Najaasah Haqeeqi and Najaasah Hukmee",
+            "Wudhu and Ghusl",
+            "Halaal and Haraam",
+            "Sunnah and Nafl"
+          ],
+          "correctAnswer": "Najaasah Haqeeqi and Najaasah Hukmee",
+          "explanation": "Najaasah is divided into Haqeeqi (real) and Hukmee (technical)."
+        },
+        {
+          "id": "fq-l1-q2",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "Name the two types of Najaasah.",
+          "acceptedAnswers": [
+            "najaasah haqeeqi and najaasah hukmee",
+            "najasa haqiqi and najasa hukmi",
+            "haqeeqi and hukmee",
+            "haqiqi and hukmi"
+          ],
+          "explanation": "The two types are Najaasah Haqeeqi and Najaasah Hukmee."
+        },
+        {
+          "id": "fq-l1-q3",
+          "type": "multiple-choice",
+          "difficulty": "medium",
+          "prompt": "Najaasah Haqeeqi is divided into which two kinds?",
+          "options": [
+            "Ghaleezah and Khafeefah",
+            "Fardh and Sunnah",
+            "Big and Small",
+            "Wet and Dry"
+          ],
+          "correctAnswer": "Ghaleezah and Khafeefah",
+          "explanation": "Najaasah Haqeeqi is divided into Ghaleezah (heavy) and Khafeefah (light)."
+        },
+        {
+          "id": "fq-l1-q4",
+          "type": "true-false",
+          "difficulty": "medium",
+          "prompt": "The urine of halaal animals is an example of Khafeefah (light) najaasah.",
+          "correctAnswer": true,
+          "explanation": "Yes — urine of halaal animals and droppings of haraam birds are Khafeefah."
+        },
+        {
+          "id": "fq-l1-q5",
+          "type": "multiple-choice",
+          "difficulty": "hard",
+          "prompt": "Which of these is an example of Ghaleezah (heavy) najaasah?",
+          "options": [
+            "The saliva of dogs",
+            "The droppings of haraam birds",
+            "The urine of halaal animals",
+            "Clean rain water"
+          ],
+          "correctAnswer": "The saliva of dogs",
+          "explanation": "Ghaleezah includes urine, pus, human blood, the saliva of dogs, and every part of a pig."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "What are the two types of Najaasah?",
+          "back": "Najaasah Haqeeqi (real) and Najaasah Hukmee (technical)."
+        },
+        {
+          "front": "Najaasah Haqeeqi is divided into…",
+          "back": "Ghaleezah (heavy) and Khafeefah (light)."
+        },
+        {
+          "front": "Give one example of Ghaleezah.",
+          "back": "Urine, pus, human blood, dog's saliva, or any part of a pig."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "g5-fiqh-l2",
+      "n": 2,
+      "title": "Najaasah Hukmee",
+      "pages": "8-9",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    },
+    {
+      "id": "g5-fiqh-l3",
+      "n": 3,
+      "title": "Water",
+      "pages": "10-11",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    },
+    {
+      "id": "g5-fiqh-l4",
+      "n": 4,
+      "title": "The rules for water",
+      "pages": "12-15",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    },
+    {
+      "id": "g5-fiqh-l5",
+      "n": 5,
+      "title": "Istinjaa",
+      "pages": "16-17",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    },
+    {
+      "id": "g5-fiqh-l6",
+      "n": 6,
+      "title": "Miswaak",
+      "pages": "18-19",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    },
+    {
+      "id": "g5-fiqh-l7",
+      "n": 7,
+      "title": "Virtues of Wudhu",
+      "pages": "20-21",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    },
+    {
+      "id": "g5-fiqh-l8",
+      "n": 8,
+      "title": "How to make Wudhu",
+      "pages": "22-25",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    },
+    {
+      "id": "g5-fiqh-l9",
+      "n": 9,
+      "title": "Mustahab acts of Wudhu",
+      "pages": "26-29",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    },
+    {
+      "id": "g5-fiqh-l10",
+      "n": 10,
+      "title": "Makrooh acts of Wudhu",
+      "pages": "30-31",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    },
+    {
+      "id": "g5-fiqh-l11",
+      "n": 11,
+      "title": "Actions that break Wudhu",
+      "pages": "32-33",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    },
+    {
+      "id": "g5-fiqh-l14",
+      "n": 14,
+      "title": "Ghusl",
+      "pages": "38-43",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    },
+    {
+      "id": "g5-fiqh-l18",
+      "n": 18,
+      "title": "Tayammum",
+      "pages": "48-49",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    },
+    {
+      "id": "g5-fiqh-l22",
+      "n": 22,
+      "title": "Waajib actions of Salaah",
+      "pages": "58-61",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    },
+    {
+      "id": "g5-fiqh-l28",
+      "n": 28,
+      "title": "How to read Salaah",
+      "pages": "76-81",
+      "summary": "",
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [],
+      "flashcards": [],
+      "needsContent": true,
+      "needsReview": false
+    }
+  ]
+}

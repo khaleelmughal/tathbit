@@ -1,0 +1,15 @@
+{
+  "track": "tasheel",
+  "gradeId": "g10",
+  "subjectId": "g10-aqaaid",
+  "subjectName": "Aqaa-id",
+  "tagline": "",
+  "sources": [
+    {
+      "pdf": "grade-10/aqaaid-10.pdf",
+      "note": ""
+    }
+  ],
+  "status": "needs_content",
+  "lessons": []
+}

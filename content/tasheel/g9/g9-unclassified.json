@@ -1,0 +1,15 @@
+{
+  "track": "tasheel",
+  "gradeId": "g9",
+  "subjectId": "g9-unclassified",
+  "subjectName": "Unclassified — needs manual check",
+  "tagline": "",
+  "sources": [
+    {
+      "pdf": "grade-09/doc-20241022-wa0018.pdf",
+      "note": ""
+    }
+  ],
+  "status": "needs_content",
+  "lessons": []
+}

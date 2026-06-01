@@ -1,0 +1,19 @@
+{
+  "track": "tasheel",
+  "gradeId": "g11-12",
+  "subjectId": "g11-12-fiqh",
+  "subjectName": "Fiqh",
+  "tagline": "",
+  "sources": [
+    {
+      "pdf": "grade-11-and-12/fiqh-11.pdf",
+      "note": ""
+    },
+    {
+      "pdf": "grade-11-and-12/fiqh1228129.pdf",
+      "note": ""
+    }
+  ],
+  "status": "needs_content",
+  "lessons": []
+}

@@ -1,0 +1,15 @@
+{
+  "track": "tasheel",
+  "gradeId": "g8",
+  "subjectId": "g8-unclassified",
+  "subjectName": "Unclassified — needs manual check",
+  "tagline": "",
+  "sources": [
+    {
+      "pdf": "grade-08/taarekh-8.pdf",
+      "note": ""
+    }
+  ],
+  "status": "needs_content",
+  "lessons": []
+}

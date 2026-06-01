@@ -1,0 +1,15 @@
+{
+  "track": "tasheel",
+  "gradeId": "g8",
+  "subjectId": "g8-aqaaid",
+  "subjectName": "Aqaa-id",
+  "tagline": "",
+  "sources": [
+    {
+      "pdf": "grade-08/aqaaid-8.pdf",
+      "note": ""
+    }
+  ],
+  "status": "needs_content",
+  "lessons": []
+}
