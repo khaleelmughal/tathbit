@@ -1,0 +1,15 @@
+# Local PostgreSQL only. No third-party services — just Postgres in a container.
+# Start with: docker compose up -d   (or run your own local Postgres and skip this)
+services:
+  db:
+    image: postgres:16
+    container_name: madrasah_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: madrasah
+      POSTGRES_PASSWORD: madrasah
+      POSTGRES_DB: madrasah
+    ports: ["5432:5432"]
+    volumes: ["madrasah_pgdata:/var/lib/postgresql/data"]
+volumes:
+  madrasah_pgdata:

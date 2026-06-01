@@ -1,0 +1,1073 @@
+{
+  "id": "tasheel",
+  "name": "Tas-heel Series",
+  "publisher": "Jamiatul Ulama Taalimi Board (South Africa)",
+  "grades": [
+    {
+      "id": "g5",
+      "name": "Grade 5",
+      "subjects": [
+        {
+          "id": "aqaaid",
+          "name": "Aqaa-id",
+          "tagline": "Beliefs — who Allah is and what we believe",
+          "source": "Tas-heelul Aqaa-id 5",
+          "lessons": [
+            {
+              "id": "aq-l1",
+              "n": 1,
+              "title": "Qualities of Allah",
+              "pages": "4-7",
+              "summary": "Allah is One. We must believe in His existence together with all His perfect qualities as taught by the Qur'an and Hadeeth. His greatest quality is Rahmah (Mercy) — He is more merciful to us than a mother is to her child. Allah's qualities are perfect and never change, unlike our human qualities of hearing, seeing and speaking which keep changing as we grow.",
+              "keyTerms": [
+                {
+                  "term": "Qadeem",
+                  "meaning": "Eternal — He has no beginning or end"
+                },
+                {
+                  "term": "Qaadir",
+                  "meaning": "All Powerful — no one can challenge His power"
+                },
+                {
+                  "term": "Samee'",
+                  "meaning": "All Hearing — no word or whisper is hidden from Him"
+                },
+                {
+                  "term": "Hayy",
+                  "meaning": "Ever Living — He neither sleeps nor will ever cease to exist"
+                },
+                {
+                  "term": "Mutakallim",
+                  "meaning": "One who speaks — His spoken word is the Qur'an"
+                },
+                {
+                  "term": "Khaaliq",
+                  "meaning": "The Creator — He created the heavens, the earth and all they contain"
+                }
+              ],
+              "points": [
+                "The Qur'an says: “Say, He is Allah, the One. The Eternal and Independent. He does not give birth, nor was He born, and there is nothing that could be compared to Him.” (Surah 112)",
+                "Allah's most outstanding quality is Rahmah — Mercy.",
+                "Allah's qualities are perfect and never change, nor does He lose any of them."
+              ],
+              "story": {
+                "title": "The Excursion",
+                "text": "On an excursion, two girls kept apart from the group because they felt they were better than the others, and would not remove an obstacle from the path. The muallimah reminded them that Allah does not love those who are haughty — we should always be considerate of others and never walk with pride."
+              },
+              "questions": [
+                {
+                  "id": "aq-l1-q1",
+                  "type": "match",
+                  "difficulty": "easy",
+                  "prompt": "Match each quality of Allah with its meaning.",
+                  "pairs": [
+                    {
+                      "left": "Qadeem",
+                      "right": "Eternal"
+                    },
+                    {
+                      "left": "Qaadir",
+                      "right": "All Powerful"
+                    },
+                    {
+                      "left": "Hayy",
+                      "right": "Ever Living"
+                    },
+                    {
+                      "left": "Mutakallim",
+                      "right": "One who speaks"
+                    },
+                    {
+                      "left": "Khaaliq",
+                      "right": "Creator"
+                    }
+                  ],
+                  "explanation": "These are six of the perfect qualities of Allah taught in this lesson."
+                },
+                {
+                  "id": "aq-l1-q2",
+                  "type": "multiple-choice",
+                  "difficulty": "easy",
+                  "prompt": "What does the quality “Qadeem” mean?",
+                  "options": [
+                    "Eternal",
+                    "All Powerful",
+                    "The Creator",
+                    "Ever Living"
+                  ],
+                  "correctAnswer": "Eternal",
+                  "explanation": "Qadeem means Eternal — Allah has no beginning and no end."
+                },
+                {
+                  "id": "aq-l1-q3",
+                  "type": "multiple-choice",
+                  "difficulty": "medium",
+                  "prompt": "The spoken word of Allah is the ______.",
+                  "options": [
+                    "Qur'an",
+                    "Hadeeth",
+                    "Dua",
+                    "Adhaan"
+                  ],
+                  "correctAnswer": "Qur'an",
+                  "explanation": "Allah is Mutakallim — One who speaks — and His spoken word is the Qur'an."
+                },
+                {
+                  "id": "aq-l1-q4",
+                  "type": "true-false",
+                  "difficulty": "medium",
+                  "prompt": "Allah's qualities change and grow just like ours.",
+                  "correctAnswer": false,
+                  "explanation": "Allah's qualities are perfect and never change. Only human qualities change as we grow."
+                },
+                {
+                  "id": "aq-l1-q5",
+                  "type": "fill-blank",
+                  "difficulty": "easy",
+                  "prompt": "Allah is Qadeem, which means He has no beginning or ______.",
+                  "correctAnswer": "end",
+                  "explanation": "Qadeem = Eternal: no beginning or end."
+                },
+                {
+                  "id": "aq-l1-q6",
+                  "type": "short-answer",
+                  "difficulty": "hard",
+                  "prompt": "Why do we say that Allah is ONE?",
+                  "acceptedAnswers": [
+                    "he has no partner",
+                    "nothing is comparable to him",
+                    "he is unique",
+                    "there is no one like him",
+                    "he is the only god"
+                  ],
+                  "explanation": "Allah is unique — nothing can be compared to Him and He has no partner (Surah Ikhlaas)."
+                }
+              ],
+              "flashcards": [
+                {
+                  "front": "What does Qadeem mean?",
+                  "back": "Eternal. Allah has no beginning or end."
+                },
+                {
+                  "front": "What does Qaadir mean?",
+                  "back": "All Powerful. No one can challenge His power."
+                },
+                {
+                  "front": "What does Hayy mean?",
+                  "back": "Ever Living. He neither sleeps nor ceases to exist."
+                },
+                {
+                  "front": "What is Allah's most outstanding quality?",
+                  "back": "Rahmah — Mercy. He is more merciful than a mother to her child."
+                }
+              ]
+            },
+            {
+              "id": "aq-l2",
+              "n": 2,
+              "title": "Angels",
+              "pages": "8-11",
+              "summary": "Angels are created from noor (light). There are countless angels who carry out duties placed on them by Allah. They are sinless and never disobey Allah, they are neither male nor female, and they have no physical needs or wants.",
+              "keyTerms": [
+                {
+                  "term": "Kiraaman Kaatibeen",
+                  "meaning": "The two angels with every person — one records good deeds, the other bad"
+                },
+                {
+                  "term": "Munkar & Nakeer",
+                  "meaning": "The two angels who question people in the grave"
+                },
+                {
+                  "term": "Mulhim",
+                  "meaning": "The angel who accompanies every Mu'min and encourages good deeds"
+                },
+                {
+                  "term": "Noor",
+                  "meaning": "Light — angels are created from it"
+                }
+              ],
+              "points": [
+                "Allah says: “They (the Angels) do not disobey Allah in what He has commanded them and always do whatever they are commanded.” (66:6)",
+                "Some angels help the Muslims; some seek forgiveness for people; some remove souls at death; some protect from calamities; some bring revelation.",
+                "Angels carry the Throne of Allah and constantly praise Him; some say “Aameen” to our duas; bad and offensive smells are disliked by angels just as by people."
+              ],
+              "questions": [
+                {
+                  "id": "aq-l2-q1",
+                  "type": "fill-blank",
+                  "difficulty": "easy",
+                  "prompt": "Angels are created from ______.",
+                  "correctAnswer": "noor",
+                  "acceptedAnswers": [
+                    "noor",
+                    "light",
+                    "nur"
+                  ],
+                  "explanation": "Angels are created from noor (light)."
+                },
+                {
+                  "id": "aq-l2-q2",
+                  "type": "multiple-choice",
+                  "difficulty": "easy",
+                  "prompt": "Which two angels question a person in the grave?",
+                  "options": [
+                    "Munkar and Nakeer",
+                    "Jibreel and Mikaeel",
+                    "Mulhim and Israafeel",
+                    "Ridwaan and Maalik"
+                  ],
+                  "correctAnswer": "Munkar and Nakeer",
+                  "explanation": "Munkar and Nakeer question people in the grave after they are buried."
+                },
+                {
+                  "id": "aq-l2-q3",
+                  "type": "short-answer",
+                  "difficulty": "medium",
+                  "prompt": "Who is Mulhim?",
+                  "acceptedAnswers": [
+                    "an angel who accompanies every mumin",
+                    "encourages good deeds",
+                    "an angel who encourages a believer to do good",
+                    "accompanies every believer"
+                  ],
+                  "explanation": "Mulhim accompanies every Mu'min (believer) and encourages him to do good deeds."
+                },
+                {
+                  "id": "aq-l2-q4",
+                  "type": "true-false",
+                  "difficulty": "medium",
+                  "prompt": "Angels are either male or female.",
+                  "correctAnswer": false,
+                  "explanation": "Angels are neither male nor female, and have no physical needs or wants."
+                },
+                {
+                  "id": "aq-l2-q5",
+                  "type": "fill-blank",
+                  "difficulty": "medium",
+                  "prompt": "The two angels who record our good and bad deeds are called ______.",
+                  "correctAnswer": "Kiraaman Kaatibeen",
+                  "acceptedAnswers": [
+                    "kiraaman kaatibeen",
+                    "kiraman katibeen",
+                    "kiraaman katibeen"
+                  ],
+                  "explanation": "Every human has two angels — Kiraaman Kaatibeen — who record our deeds."
+                },
+                {
+                  "id": "aq-l2-q6",
+                  "type": "multiple-choice",
+                  "difficulty": "hard",
+                  "prompt": "What is disliked by the angels?",
+                  "options": [
+                    "Bad and offensive smells",
+                    "The sound of dua",
+                    "Reciting the Qur'an",
+                    "Giving charity"
+                  ],
+                  "correctAnswer": "Bad and offensive smells",
+                  "explanation": "Bad and offensive smells are disliked by the angels just as they are disliked by people."
+                }
+              ],
+              "flashcards": [
+                {
+                  "front": "What are angels created from?",
+                  "back": "Noor — light."
+                },
+                {
+                  "front": "Name the two angels who question us in the grave.",
+                  "back": "Munkar and Nakeer."
+                },
+                {
+                  "front": "Who are Kiraaman Kaatibeen?",
+                  "back": "The two angels who record our good and bad deeds."
+                },
+                {
+                  "front": "Who is Mulhim?",
+                  "back": "The angel who accompanies every believer and encourages good deeds."
+                }
+              ]
+            },
+            {
+              "id": "aq-l3",
+              "n": 3,
+              "title": "The Qur'aan",
+              "pages": "12-15",
+              "needsContent": true
+            },
+            {
+              "id": "aq-l4",
+              "n": 4,
+              "title": "Nabee Muhammad ﷺ",
+              "pages": "16-19",
+              "needsContent": true
+            },
+            {
+              "id": "aq-l5",
+              "n": 5,
+              "title": "Signs of Qiyaamah",
+              "pages": "20-23",
+              "needsContent": true
+            },
+            {
+              "id": "aq-l6",
+              "n": 6,
+              "title": "The Hereafter",
+              "pages": "24-27",
+              "needsContent": true
+            },
+            {
+              "id": "aq-l7",
+              "n": 7,
+              "title": "Jannah and Jahannam",
+              "pages": "28-31",
+              "needsContent": true
+            },
+            {
+              "id": "aq-l8",
+              "n": 8,
+              "title": "Al-Maani",
+              "pages": "32-33",
+              "needsContent": true
+            },
+            {
+              "id": "aq-l9",
+              "n": 9,
+              "title": "Al-Hadee",
+              "pages": "34-36",
+              "needsContent": true
+            }
+          ]
+        },
+        {
+          "id": "akhlaaq",
+          "name": "Akhlaaq",
+          "tagline": "Good character and beautiful manners",
+          "source": "Tas-heelul Akhlaaq 5",
+          "lessons": [
+            {
+              "id": "ak-l1",
+              "n": 1,
+              "title": "Walking",
+              "pages": "6-8",
+              "summary": "Islam is a complete way of life — it teaches us not only about prayer and cleanliness, but also about our conduct and manners, including how we walk. The golden rule in all our dealings is to be humble. We walk in a moderate manner: not too fast and not too slow, and never like a proud person.",
+              "keyTerms": [
+                {
+                  "term": "Moderate",
+                  "meaning": "A middle way — not too fast, not too slow"
+                },
+                {
+                  "term": "Humility",
+                  "meaning": "Being humble and not proud"
+                }
+              ],
+              "points": [
+                "The Qur'an states: “And be moderate in the way you walk.”",
+                "Rasoolullah ﷺ always walked briskly, as if descending from a high place.",
+                "Walk upright (not chest-out, not back bent), do not drag your feet, and cast your gaze slightly down while staying aware of your surroundings.",
+                "Remove obstacles from the road, do not become an obstacle, and be mindful of cars and other pedestrians."
+              ],
+              "story": {
+                "title": "Walking with humility",
+                "text": "A true Muslim does not walk ahead of friends to show off his position, and is always considerate of others on the path."
+              },
+              "questions": [
+                {
+                  "id": "ak-l1-q1",
+                  "type": "multiple-choice",
+                  "difficulty": "medium",
+                  "prompt": "Which of these is the best example of walking with humility?",
+                  "options": [
+                    "Walking proudly with your chest out",
+                    "Walking so slowly that people are delayed",
+                    "Walking moderately and being aware of your surroundings",
+                    "Looking into people's homes while walking"
+                  ],
+                  "correctAnswer": "Walking moderately and being aware of your surroundings",
+                  "explanation": "We walk at a moderate pace, humbly, while staying mindful of others."
+                },
+                {
+                  "id": "ak-l1-q2",
+                  "type": "fill-blank",
+                  "difficulty": "easy",
+                  "prompt": "The Qur'an says: “And be ______ in the way you walk.”",
+                  "correctAnswer": "moderate",
+                  "explanation": "Moderate means a middle way — not too fast and not too slow."
+                },
+                {
+                  "id": "ak-l1-q3",
+                  "type": "true-false",
+                  "difficulty": "easy",
+                  "prompt": "A Muslim should walk proudly with his chest pushed out.",
+                  "correctAnswer": false,
+                  "explanation": "We should walk upright but humbly, never like a proud person."
+                },
+                {
+                  "id": "ak-l1-q4",
+                  "type": "short-answer",
+                  "difficulty": "medium",
+                  "prompt": "How did Rasoolullah ﷺ walk?",
+                  "acceptedAnswers": [
+                    "briskly",
+                    "fast as if descending from a high place",
+                    "briskly as if coming down from a height",
+                    "quickly"
+                  ],
+                  "explanation": "Rasoolullah ﷺ walked briskly, as if descending from a high place."
+                },
+                {
+                  "id": "ak-l1-q5",
+                  "type": "short-answer",
+                  "difficulty": "medium",
+                  "prompt": "What should you do if you see an obstacle on the road?",
+                  "acceptedAnswers": [
+                    "remove it",
+                    "remove the obstacle",
+                    "take it away",
+                    "move it"
+                  ],
+                  "explanation": "We should remove any obstacle that could cause harm or an accident."
+                }
+              ],
+              "flashcards": [
+                {
+                  "front": "What does the Qur'an say about walking?",
+                  "back": "“And be moderate in the way you walk.”"
+                },
+                {
+                  "front": "How did Rasoolullah ﷺ walk?",
+                  "back": "Briskly, as if descending from a high place."
+                },
+                {
+                  "front": "What is the golden rule in all our dealings?",
+                  "back": "To be humble."
+                }
+              ]
+            },
+            {
+              "id": "ak-l2",
+              "n": 2,
+              "title": "Talking",
+              "pages": "10-12",
+              "needsContent": true
+            },
+            {
+              "id": "ak-l3",
+              "n": 3,
+              "title": "Joking",
+              "pages": "14-15",
+              "needsContent": true
+            },
+            {
+              "id": "ak-l4",
+              "n": 4,
+              "title": "Neighbours",
+              "pages": "16-18",
+              "needsContent": true
+            },
+            {
+              "id": "ak-l5",
+              "n": 5,
+              "title": "Self Respect",
+              "pages": "20-23",
+              "needsContent": true
+            },
+            {
+              "id": "ak-l6",
+              "n": 6,
+              "title": "Hosts",
+              "pages": "24-25",
+              "needsContent": true
+            },
+            {
+              "id": "ak-l7",
+              "n": 7,
+              "title": "Sharing",
+              "pages": "26-29",
+              "needsContent": true
+            },
+            {
+              "id": "ak-l8",
+              "n": 8,
+              "title": "Table Manners",
+              "pages": "30-33",
+              "needsContent": true
+            },
+            {
+              "id": "ak-l9",
+              "n": 9,
+              "title": "Friday Salaah",
+              "pages": "34-35",
+              "needsContent": true
+            },
+            {
+              "id": "ak-l10",
+              "n": 10,
+              "title": "Duty of one Muslim to Another",
+              "pages": "36-37",
+              "needsContent": true
+            }
+          ]
+        },
+        {
+          "id": "fiqh",
+          "name": "Fiqh",
+          "tagline": "How we practise — purity, wudhu & salaah",
+          "source": "Tas-heelul Fiqh 5",
+          "lessons": [
+            {
+              "id": "fq-l1",
+              "n": 1,
+              "title": "Najaasah (Impurity)",
+              "pages": "4-7",
+              "summary": "Najaasah means impurity. There are two types of najaasah: Najaasah Haqeeqi (real, visible impurity) and Najaasah Hukmee (technical impurity). Najaasah Haqeeqi is further divided into Ghaleezah (heavy) and Khafeefah (light).",
+              "keyTerms": [
+                {
+                  "term": "Najaasah Haqeeqi",
+                  "meaning": "Real, visible impurity"
+                },
+                {
+                  "term": "Najaasah Hukmee",
+                  "meaning": "Technical impurity (a state, e.g. after sleep, needing wudhu/ghusl)"
+                },
+                {
+                  "term": "Ghaleezah",
+                  "meaning": "Heavy impurity — e.g. urine, pus, human blood, dog's saliva, any part of a pig"
+                },
+                {
+                  "term": "Khafeefah",
+                  "meaning": "Light impurity — e.g. urine of halaal animals, droppings of haraam birds"
+                }
+              ],
+              "points": [
+                "Najaasah is divided into two types: Najaasah Haqeeqi and Najaasah Hukmee.",
+                "Najaasah Haqeeqi is divided into Ghaleezah (heavy) and Khafeefah (light).",
+                "Examples of Ghaleezah: urine, pus, the blood of human beings, the saliva of dogs, and every part of a pig.",
+                "Examples of Khafeefah: the urine of halaal animals, and the droppings of all haraam birds."
+              ],
+              "questions": [
+                {
+                  "id": "fq-l1-q1",
+                  "type": "multiple-choice",
+                  "difficulty": "easy",
+                  "prompt": "What are the two types of Najaasah?",
+                  "options": [
+                    "Najaasah Haqeeqi and Najaasah Hukmee",
+                    "Wudhu and Ghusl",
+                    "Halaal and Haraam",
+                    "Sunnah and Nafl"
+                  ],
+                  "correctAnswer": "Najaasah Haqeeqi and Najaasah Hukmee",
+                  "explanation": "Najaasah is divided into Haqeeqi (real) and Hukmee (technical)."
+                },
+                {
+                  "id": "fq-l1-q2",
+                  "type": "short-answer",
+                  "difficulty": "medium",
+                  "prompt": "Name the two types of Najaasah.",
+                  "acceptedAnswers": [
+                    "najaasah haqeeqi and najaasah hukmee",
+                    "najasa haqiqi and najasa hukmi",
+                    "haqeeqi and hukmee",
+                    "haqiqi and hukmi"
+                  ],
+                  "explanation": "The two types are Najaasah Haqeeqi and Najaasah Hukmee."
+                },
+                {
+                  "id": "fq-l1-q3",
+                  "type": "multiple-choice",
+                  "difficulty": "medium",
+                  "prompt": "Najaasah Haqeeqi is divided into which two kinds?",
+                  "options": [
+                    "Ghaleezah and Khafeefah",
+                    "Fardh and Sunnah",
+                    "Big and Small",
+                    "Wet and Dry"
+                  ],
+                  "correctAnswer": "Ghaleezah and Khafeefah",
+                  "explanation": "Najaasah Haqeeqi is divided into Ghaleezah (heavy) and Khafeefah (light)."
+                },
+                {
+                  "id": "fq-l1-q4",
+                  "type": "true-false",
+                  "difficulty": "medium",
+                  "prompt": "The urine of halaal animals is an example of Khafeefah (light) najaasah.",
+                  "correctAnswer": true,
+                  "explanation": "Yes — urine of halaal animals and droppings of haraam birds are Khafeefah."
+                },
+                {
+                  "id": "fq-l1-q5",
+                  "type": "multiple-choice",
+                  "difficulty": "hard",
+                  "prompt": "Which of these is an example of Ghaleezah (heavy) najaasah?",
+                  "options": [
+                    "The saliva of dogs",
+                    "The droppings of haraam birds",
+                    "The urine of halaal animals",
+                    "Clean rain water"
+                  ],
+                  "correctAnswer": "The saliva of dogs",
+                  "explanation": "Ghaleezah includes urine, pus, human blood, the saliva of dogs, and every part of a pig."
+                }
+              ],
+              "flashcards": [
+                {
+                  "front": "What are the two types of Najaasah?",
+                  "back": "Najaasah Haqeeqi (real) and Najaasah Hukmee (technical)."
+                },
+                {
+                  "front": "Najaasah Haqeeqi is divided into…",
+                  "back": "Ghaleezah (heavy) and Khafeefah (light)."
+                },
+                {
+                  "front": "Give one example of Ghaleezah.",
+                  "back": "Urine, pus, human blood, dog's saliva, or any part of a pig."
+                }
+              ]
+            },
+            {
+              "id": "fq-l2",
+              "n": 2,
+              "title": "Najaasah Hukmee",
+              "pages": "8-9",
+              "needsContent": true
+            },
+            {
+              "id": "fq-l3",
+              "n": 3,
+              "title": "Water",
+              "pages": "10-11",
+              "needsContent": true
+            },
+            {
+              "id": "fq-l4",
+              "n": 4,
+              "title": "The rules for water",
+              "pages": "12-15",
+              "needsContent": true
+            },
+            {
+              "id": "fq-l5",
+              "n": 5,
+              "title": "Istinjaa",
+              "pages": "16-17",
+              "needsContent": true
+            },
+            {
+              "id": "fq-l6",
+              "n": 6,
+              "title": "Miswaak",
+              "pages": "18-19",
+              "needsContent": true
+            },
+            {
+              "id": "fq-l7",
+              "n": 7,
+              "title": "Virtues of Wudhu",
+              "pages": "20-21",
+              "needsContent": true
+            },
+            {
+              "id": "fq-l8",
+              "n": 8,
+              "title": "How to make Wudhu",
+              "pages": "22-25",
+              "needsContent": true
+            },
+            {
+              "id": "fq-l9",
+              "n": 9,
+              "title": "Mustahab acts of Wudhu",
+              "pages": "26-29",
+              "needsContent": true
+            },
+            {
+              "id": "fq-l10",
+              "n": 10,
+              "title": "Makrooh acts of Wudhu",
+              "pages": "30-31",
+              "needsContent": true
+            },
+            {
+              "id": "fq-l11",
+              "n": 11,
+              "title": "Actions that break Wudhu",
+              "pages": "32-33",
+              "needsContent": true
+            },
+            {
+              "id": "fq-l14",
+              "n": 14,
+              "title": "Ghusl",
+              "pages": "38-43",
+              "needsContent": true
+            },
+            {
+              "id": "fq-l18",
+              "n": 18,
+              "title": "Tayammum",
+              "pages": "48-49",
+              "needsContent": true
+            },
+            {
+              "id": "fq-l22",
+              "n": 22,
+              "title": "Waajib actions of Salaah",
+              "pages": "58-61",
+              "needsContent": true
+            },
+            {
+              "id": "fq-l28",
+              "n": 28,
+              "title": "How to read Salaah",
+              "pages": "76-81",
+              "needsContent": true
+            }
+          ]
+        },
+        {
+          "id": "hadeeth",
+          "name": "Hadeeth",
+          "tagline": "The words and guidance of Rasoolullah ﷺ",
+          "source": "Tas-heelul Ahaadeeth 5",
+          "lessons": [
+            {
+              "id": "hd-l1",
+              "n": 1,
+              "title": "Frightening another Muslim",
+              "pages": "4",
+              "summary": "Rasoolullah ﷺ said: “It is not permissible for a Muslim to frighten another Muslim.” Sometimes we joke with friends by scaring them — shouting in the dark, suddenly jumping at them, or falsely telling them they are in trouble. This is not allowed, because fear causes shock, pain and worry, and we must never harm a fellow Muslim, even as a joke.",
+              "keyTerms": [
+                {
+                  "term": "Permissible",
+                  "meaning": "Allowed in Islam"
+                },
+                {
+                  "term": "Harm",
+                  "meaning": "To cause hurt, pain or worry to someone"
+                }
+              ],
+              "points": [
+                "The hadeeth: “It is not permissible for a Muslim to frighten another Muslim.”",
+                "We should not scare our friends even as a joke — e.g. shouting in the dark or suddenly pouncing on them.",
+                "Fear creates shock, pain and worry, so we never joke in a way that harms a Muslim brother or sister."
+              ],
+              "questions": [
+                {
+                  "id": "hd-l1-q1",
+                  "type": "true-false",
+                  "difficulty": "easy",
+                  "prompt": "It is fine to scare your friend in the dark as a joke.",
+                  "correctAnswer": false,
+                  "explanation": "Rasoolullah ﷺ said it is not permissible to frighten another Muslim, even jokingly."
+                },
+                {
+                  "id": "hd-l1-q2",
+                  "type": "fill-blank",
+                  "difficulty": "easy",
+                  "prompt": "It is not permissible for a Muslim to ______ another Muslim.",
+                  "correctAnswer": "frighten",
+                  "acceptedAnswers": [
+                    "frighten",
+                    "scare"
+                  ],
+                  "explanation": "The hadeeth forbids frightening (scaring) another Muslim."
+                },
+                {
+                  "id": "hd-l1-q3",
+                  "type": "multiple-choice",
+                  "difficulty": "medium",
+                  "prompt": "Why should we not frighten others, even as a joke?",
+                  "options": [
+                    "Because it causes shock, pain and worry",
+                    "Because it is tiring",
+                    "Because it wastes time",
+                    "Because it is expensive"
+                  ],
+                  "correctAnswer": "Because it causes shock, pain and worry",
+                  "explanation": "Fear creates shock, pain and worry — so we never harm a fellow Muslim, even jokingly."
+                }
+              ],
+              "flashcards": [
+                {
+                  "front": "Complete the hadeeth: “It is not permissible for a Muslim to ____ another Muslim.”",
+                  "back": "…to frighten another Muslim."
+                },
+                {
+                  "front": "Why is frightening others not allowed?",
+                  "back": "It causes shock, pain and worry — harming a fellow Muslim, even as a joke."
+                }
+              ]
+            },
+            {
+              "id": "hd-l2",
+              "n": 2,
+              "title": "Salaah",
+              "pages": "5",
+              "needsContent": true
+            },
+            {
+              "id": "hd-l3",
+              "n": 3,
+              "title": "Breaking Ties",
+              "pages": "6",
+              "needsContent": true
+            },
+            {
+              "id": "hd-l4",
+              "n": 4,
+              "title": "Beginning with the Right Side",
+              "pages": "7",
+              "needsContent": true
+            },
+            {
+              "id": "hd-l5",
+              "n": 5,
+              "title": "Wudhu",
+              "pages": "8",
+              "needsContent": true
+            },
+            {
+              "id": "hd-l6",
+              "n": 6,
+              "title": "Fulfilling One's Promise",
+              "pages": "9",
+              "needsContent": true
+            },
+            {
+              "id": "hd-l7",
+              "n": 7,
+              "title": "Ghibah (Backbiting)",
+              "pages": "10",
+              "needsContent": true
+            },
+            {
+              "id": "hd-l8",
+              "n": 8,
+              "title": "Safeguarding the Tongue",
+              "pages": "11",
+              "needsContent": true
+            },
+            {
+              "id": "hd-l9",
+              "n": 9,
+              "title": "Kindness towards Others",
+              "pages": "12",
+              "needsContent": true
+            },
+            {
+              "id": "hd-l10",
+              "n": 10,
+              "title": "Anger",
+              "pages": "13",
+              "needsContent": true
+            }
+          ]
+        },
+        {
+          "id": "tareekh",
+          "name": "Tareekh (Seerah)",
+          "tagline": "The blessed life of Rasoolullah ﷺ",
+          "source": "Tas-heel Islamic History 5",
+          "lessons": [
+            {
+              "id": "tr-l2",
+              "n": 2,
+              "title": "The Birth of Rasoolullah ﷺ",
+              "pages": "12-15",
+              "summary": "Rasoolullah ﷺ was born in the “Year of the Elephants”. In that year, Abrahaa-bin-Saba, the governor of Yemen, came with an army of “The Men of Elephants” to destroy the Kaabah. Allah sent flights of birds which rained down stones and destroyed the army — mentioned in Surah Feel (The Elephants). His father Abdullah had passed away at Yathrib (Madeenah) before his birth.",
+              "keyTerms": [
+                {
+                  "term": "Year of the Elephants",
+                  "meaning": "The year Rasoolullah ﷺ was born"
+                },
+                {
+                  "term": "Abrahaa",
+                  "meaning": "The governor of Yemen who tried to destroy the Kaabah"
+                },
+                {
+                  "term": "Zam Zam",
+                  "meaning": "The blessed spring near the hills of Safa and Marwah"
+                },
+                {
+                  "term": "Surah Feel",
+                  "meaning": "The chapter of the Qur'an about the Elephants"
+                }
+              ],
+              "points": [
+                "Rasoolullah ﷺ was born in the Year of the Elephants.",
+                "Abrahaa came with an army of elephants to destroy the Kaabah; Allah sent birds that rained stones and destroyed them (Surah Feel).",
+                "Sayyidah Haajirah رضي الله عنه, mother of Sayyidina Ismaaeel عليه السلام, found Zam Zam between the hills of Safa and Marwah and built walls around it.",
+                "His father Abdullah passed away at Yathrib (Madeenah) before his birth."
+              ],
+              "questions": [
+                {
+                  "id": "tr-l2-q1",
+                  "type": "multiple-choice",
+                  "difficulty": "easy",
+                  "prompt": "In which year was Rasoolullah ﷺ born?",
+                  "options": [
+                    "The Year of the Elephants",
+                    "The Year of the Hijrah",
+                    "The Year of Sorrow",
+                    "The Year of Victory"
+                  ],
+                  "correctAnswer": "The Year of the Elephants",
+                  "explanation": "He ﷺ was born in the Year of the Elephants — when Abrahaa's army was destroyed."
+                },
+                {
+                  "id": "tr-l2-q2",
+                  "type": "short-answer",
+                  "difficulty": "medium",
+                  "prompt": "Who came with an army of elephants to destroy the Kaabah?",
+                  "acceptedAnswers": [
+                    "abrahaa",
+                    "abraha",
+                    "abrahaa-bin-saba",
+                    "abrahaa bin saba"
+                  ],
+                  "explanation": "Abrahaa-bin-Saba, the governor of Yemen, tried to destroy the Kaabah."
+                },
+                {
+                  "id": "tr-l2-q3",
+                  "type": "multiple-choice",
+                  "difficulty": "medium",
+                  "prompt": "How did Allah destroy Abrahaa's army?",
+                  "options": [
+                    "He sent flights of birds which rained down stones",
+                    "He sent a great flood",
+                    "He sent a strong wind",
+                    "He sent an earthquake"
+                  ],
+                  "correctAnswer": "He sent flights of birds which rained down stones",
+                  "explanation": "Allah sent birds that pelted the army with stones — told in Surah Feel."
+                },
+                {
+                  "id": "tr-l2-q4",
+                  "type": "short-answer",
+                  "difficulty": "medium",
+                  "prompt": "Which two hills are close to the well of Zam Zam?",
+                  "acceptedAnswers": [
+                    "safa and marwah",
+                    "safa and marwa",
+                    "saffa and marwah",
+                    "marwah and safa"
+                  ],
+                  "explanation": "Safa and Marwah are the two hills, now part of the noble sanctuary."
+                },
+                {
+                  "id": "tr-l2-q5",
+                  "type": "fill-blank",
+                  "difficulty": "hard",
+                  "prompt": "The Qur'an mentions the elephants in Surah ______.",
+                  "correctAnswer": "Feel",
+                  "acceptedAnswers": [
+                    "feel",
+                    "fil",
+                    "al-feel",
+                    "al feel"
+                  ],
+                  "explanation": "Surah Feel (The Elephants) tells of Abrahaa's army."
+                },
+                {
+                  "id": "tr-l2-q6",
+                  "type": "short-answer",
+                  "difficulty": "hard",
+                  "prompt": "Where did Abdullah, the father of Rasoolullah ﷺ, pass away?",
+                  "acceptedAnswers": [
+                    "yathrib",
+                    "madeenah",
+                    "madinah",
+                    "yathrib madeenah",
+                    "yathrib (madeenah)"
+                  ],
+                  "explanation": "He passed away at Yathrib, which is Madeenah."
+                }
+              ],
+              "flashcards": [
+                {
+                  "front": "In which year was Rasoolullah ﷺ born?",
+                  "back": "The Year of the Elephants."
+                },
+                {
+                  "front": "Who tried to destroy the Kaabah with elephants?",
+                  "back": "Abrahaa-bin-Saba, the governor of Yemen."
+                },
+                {
+                  "front": "How did Allah save the Kaabah?",
+                  "back": "He sent birds that rained stones on the army (Surah Feel)."
+                },
+                {
+                  "front": "Which two hills are near Zam Zam?",
+                  "back": "Safa and Marwah."
+                }
+              ]
+            },
+            {
+              "id": "tr-l1",
+              "n": 1,
+              "title": "The Pre-Islaamic Age",
+              "pages": "8-11",
+              "needsContent": true
+            },
+            {
+              "id": "tr-l3",
+              "n": 3,
+              "title": "Childhood",
+              "pages": "16-19",
+              "needsContent": true
+            },
+            {
+              "id": "tr-l4",
+              "n": 4,
+              "title": "First Journey to Syria",
+              "pages": "20-21",
+              "needsContent": true
+            },
+            {
+              "id": "tr-l5",
+              "n": 5,
+              "title": "Youth",
+              "pages": "22-23",
+              "needsContent": true
+            },
+            {
+              "id": "tr-l6",
+              "n": 6,
+              "title": "Building of the Kaabah",
+              "pages": "24-27",
+              "needsContent": true
+            },
+            {
+              "id": "tr-l8",
+              "n": 8,
+              "title": "Marriage",
+              "pages": "32-35",
+              "needsContent": true
+            },
+            {
+              "id": "tr-l10",
+              "n": 10,
+              "title": "Prophethood",
+              "pages": "38-41",
+              "needsContent": true
+            },
+            {
+              "id": "tr-l18",
+              "n": 18,
+              "title": "Meraj",
+              "pages": "70-73",
+              "needsContent": true
+            },
+            {
+              "id": "tr-l21",
+              "n": 21,
+              "title": "Hijrah to Madeenah",
+              "pages": "82-88",
+              "needsContent": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
