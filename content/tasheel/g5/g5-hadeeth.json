@@ -3,110 +3,239 @@
   "gradeId": "g5",
   "subjectId": "g5-hadeeth",
   "subjectName": "Hadeeth",
-  "tagline": "The words and guidance of Rasoolullah ﷺ",
-  "sources": [
-    {
-      "pdf": "grade-05/hadeeth-5.pdf",
-      "note": "Tas-heelul Ahaadeeth 5"
-    }
-  ],
-  "status": "in_progress",
+  "tagline": "Tas-heelul Ahaadeeth — Ahaadeeth made easy (Level 5)",
+  "sourceBook": {
+    "title": "Tas-heelul Ahaadeeth Level 5",
+    "publisher": "Jamiatul Ulama (KZN) Ta'limi Board / JUT Publishing",
+    "pdfName": "hadeeth51.pdf",
+    "pageRange": "4-13",
+    "structureNote": "10 ahaadeeth, one per page, each with Arabic text, source, translation and explanation. Plus an introduction. Quizzed by selection (no Arabic typing)."
+  },
+  "contentModel": "Each hadeeth has arabic, transliteration, translation, source and explanation. Quizzed by selection + flashcards.",
+  "reviewNote": "Islamic content must be reviewed by a parent/teacher before use. In particular, verify the Arabic text and diacritics (tashkeel) against the book; ahaadeeth flagged needsReview have longer Arabic.",
+  "status": "complete",
   "lessons": [
     {
-      "id": "g5-hadeeth-l1",
-      "n": 1,
-      "title": "Frightening another Muslim",
-      "pages": "4",
-      "summary": "Rasoolullah ﷺ said: “It is not permissible for a Muslim to frighten another Muslim.” Sometimes we joke with friends by scaring them — shouting in the dark, suddenly jumping at them, or falsely telling them they are in trouble. This is not allowed, because fear causes shock, pain and worry, and we must never harm a fellow Muslim, even as a joke.",
+      "id": "g5-hadeeth-l0",
+      "n": 0,
+      "title": "Introduction to Hadeeth",
+      "pages": "intro",
+      "arabic": null,
+      "transliteration": null,
+      "translation": null,
+      "source": null,
+      "summary": "A Hadeeth is the words and actions of Rasoolullah ﷺ. Allah ordered us to obey Nabee ﷺ, so we must know the Ahaadeeth. Memorising them is a great virtue and earns reward (thawaab).",
       "keyTerms": [
         {
-          "term": "Permissible",
-          "meaning": "Allowed in Islam"
+          "term": "Hadeeth (plural: Ahaadeeth)",
+          "meaning": "The words and actions of Rasoolullah ﷺ."
         },
         {
-          "term": "Harm",
-          "meaning": "To cause hurt, pain or worry to someone"
+          "term": "Thawaab",
+          "meaning": "Reward from Allah."
         }
       ],
       "points": [
-        "The hadeeth: “It is not permissible for a Muslim to frighten another Muslim.”",
-        "We should not scare our friends even as a joke — e.g. shouting in the dark or suddenly pouncing on them.",
-        "Fear creates shock, pain and worry, so we never joke in a way that harms a Muslim brother or sister."
+        "Allah revealed the Qur'aan to Nabee Muhammad ﷺ and instructed him to explain it; his words and actions are called Ahaadeeth.",
+        "Allah has ordered us to obey Rasoolullah ﷺ, so we must know the Ahaadeeth and act upon them.",
+        "Famous works of Ahaadeeth include those of Bukhaaree, Muslim and Tirmizee.",
+        "Nabee ﷺ encouraged memorising Ahaadeeth; there is great virtue and reward in it.",
+        "The primary purpose of teaching Ahaadeeth (classes one to seven) is: to memorise the Ahaadeeth, to encourage practice, and to develop a desire to earn reward (thawaab)."
       ],
       "story": null,
       "questions": [
         {
-          "id": "hd-l1-q1",
+          "id": "hd-l0-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What is a Hadeeth?",
+          "options": [
+            "The words and actions of Rasoolullah ﷺ",
+            "A chapter of the Qur'aan",
+            "A type of salaah",
+            "A daily dua"
+          ],
+          "correctAnswer": "The words and actions of Rasoolullah ﷺ",
+          "explanation": "Ahaadeeth are the words and actions of Nabee ﷺ."
+        },
+        {
+          "id": "hd-l0-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Which of these is a famous book of Ahaadeeth?",
+          "options": [
+            "Bukhaaree",
+            "Surah Kahf",
+            "Kalimah Tayyibah",
+            "Tahajjud"
+          ],
+          "correctAnswer": "Bukhaaree",
+          "explanation": "Bukhaaree, Muslim and Tirmizee are famous works of Ahaadeeth."
+        },
+        {
+          "id": "hd-l0-q3",
           "type": "true-false",
           "difficulty": "easy",
-          "prompt": "It is fine to scare your friend in the dark as a joke.",
-          "correctAnswer": false,
-          "explanation": "Rasoolullah ﷺ said it is not permissible to frighten another Muslim, even jokingly."
-        },
-        {
-          "id": "hd-l1-q2",
-          "type": "fill-blank",
-          "difficulty": "easy",
-          "prompt": "It is not permissible for a Muslim to ______ another Muslim.",
-          "correctAnswer": "frighten",
-          "acceptedAnswers": [
-            "frighten",
-            "scare"
-          ],
-          "explanation": "The hadeeth forbids frightening (scaring) another Muslim."
-        },
-        {
-          "id": "hd-l1-q3",
-          "type": "multiple-choice",
-          "difficulty": "medium",
-          "prompt": "Why should we not frighten others, even as a joke?",
-          "options": [
-            "Because it causes shock, pain and worry",
-            "Because it is tiring",
-            "Because it wastes time",
-            "Because it is expensive"
-          ],
-          "correctAnswer": "Because it causes shock, pain and worry",
-          "explanation": "Fear creates shock, pain and worry — so we never harm a fellow Muslim, even jokingly."
+          "prompt": "There is great reward in memorising the Ahaadeeth of Nabee ﷺ.",
+          "correctAnswer": true,
+          "explanation": "Yes — Nabee ﷺ encouraged memorising Ahaadeeth and there is great virtue (thawaab) in it."
         }
       ],
       "flashcards": [
         {
-          "front": "Complete the hadeeth: \"It is not permissible for a Muslim to ____ another Muslim.\"",
-          "back": "…to frighten another Muslim."
+          "id": "hd-l0-f1",
+          "front": "What is a Hadeeth?",
+          "back": "The words and actions of Rasoolullah ﷺ."
         },
         {
-          "front": "Why is frightening others not allowed?",
-          "back": "It causes shock, pain and worry — harming a fellow Muslim, even as a joke."
+          "id": "hd-l0-f2",
+          "front": "Name three famous books of Ahaadeeth.",
+          "back": "Bukhaaree, Muslim, and Tirmizee."
         },
         {
-          "front": "What does 'permissible' mean?",
-          "back": "Allowed in Islam."
-        },
-        {
-          "front": "Give an example of frightening someone inappropriately.",
-          "back": "Shouting in the dark, suddenly jumping at them, or falsely telling them they're in trouble."
-        },
-        {
-          "front": "Should we scare friends even as a joke?",
-          "back": "No, because we must never harm a fellow Muslim, even jokingly."
+          "id": "hd-l0-f3",
+          "front": "What is the reward for good deeds called?",
+          "back": "Thawaab."
         }
       ],
       "needsContent": false,
       "needsReview": false
     },
     {
+      "id": "g5-hadeeth-l1",
+      "n": 1,
+      "title": "Frightening Another Muslim",
+      "pages": "4",
+      "arabic": "لَا يَحِلُّ لِمُؤْمِنٍ أَنْ يُرَوِّعَ مُسْلِمًا",
+      "transliteration": "Laa yahillu li mu'minin an yurawwiʻa musliman",
+      "translation": "It is not permissible for a Muslim to frighten another Muslim.",
+      "source": "Hadeeth",
+      "summary": "We sometimes scare our friends for fun — shouting in the dark, pouncing, or saying they are in trouble. But fear causes shock, pain and worry, so we must not frighten a fellow Muslim, even as a joke.",
+      "keyTerms": [],
+      "points": [
+        "It is not permissible to cause difficulty to our friends, even jokingly.",
+        "Frightening others (shouting in the dark, pouncing, locking them in, falsely saying they are in trouble) creates shock, pain and worry.",
+        "We do not joke in a way that will harm our fellow Muslim brother or sister."
+      ],
+      "story": null,
+      "questions": [
+        {
+          "id": "hd-l1-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What does this hadeeth teach?",
+          "options": [
+            "It is not permissible to frighten another Muslim",
+            "It is fine to scare friends for fun",
+            "We should shout in the dark",
+            "Joking is forbidden completely"
+          ],
+          "correctAnswer": "It is not permissible to frighten another Muslim",
+          "explanation": "Even as a joke, frightening a fellow Muslim causes shock and worry and is not allowed."
+        },
+        {
+          "id": "hd-l1-q2",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "It is okay to scare your friend as a joke by telling them they are in trouble.",
+          "correctAnswer": false,
+          "explanation": "No — it is not permissible to frighten a Muslim, even jokingly."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "hd-l1-f1",
+          "front": "Hadeeth 1 — Frightening another Muslim?",
+          "back": "“It is not permissible for a Muslim to frighten another Muslim.”"
+        },
+        {
+          "id": "hd-l1-f2",
+          "front": "Why must we not frighten others, even jokingly?",
+          "back": "Fear creates shock, pain and worry — we must not harm a fellow Muslim."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": true
+    },
+    {
       "id": "g5-hadeeth-l2",
       "n": 2,
       "title": "Salaah",
       "pages": "5",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
+      "arabic": "اَلصَّلَاةُ عِمَادُ الدِّيْنِ",
+      "transliteration": "As-salaatu ʻimaadud-deen",
+      "translation": "Salaah is the pillar of the deen.",
+      "source": "Kanzul Ummaal",
+      "summary": "Islam is built on five pillars. After Imaan, the most important is Salaah. Salaah is like a pillar a building rests on — if it is weak or destroyed, the whole building crumbles.",
+      "keyTerms": [
+        {
+          "term": "Imaan",
+          "meaning": "Faith / belief."
+        }
+      ],
+      "points": [
+        "Islam is built on five pillars: Imaan, Salaah, Zakah, Fasting and Haj.",
+        "The most important pillar after Imaan is Salaah.",
+        "One who performs Salaah safeguards his Deen; one who does not read Salaah destroys his Deen.",
+        "Salaah is like a pillar a building rests on — if it is destroyed, the whole building crumbles."
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "questions": [
+        {
+          "id": "hd-l2-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What does this hadeeth call Salaah?",
+          "options": [
+            "The pillar of the deen",
+            "The roof of the deen",
+            "The door of the deen",
+            "The key to wealth"
+          ],
+          "correctAnswer": "The pillar of the deen",
+          "explanation": "“Salaah is the pillar of the deen” — the whole deen rests on it."
+        },
+        {
+          "id": "hd-l2-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What is the most important pillar of Islam after Imaan?",
+          "options": [
+            "Salaah",
+            "Zakah",
+            "Fasting",
+            "Haj"
+          ],
+          "correctAnswer": "Salaah",
+          "explanation": "After Imaan, Salaah is the most important of the five pillars."
+        },
+        {
+          "id": "hd-l2-q3",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Islam is built on five pillars.",
+          "correctAnswer": true,
+          "explanation": "Yes — Imaan, Salaah, Zakah, Fasting and Haj."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "hd-l2-f1",
+          "front": "Hadeeth 2 — Salaah?",
+          "back": "“Salaah is the pillar of the deen.” (As-salaatu ʻimaadud-deen)"
+        },
+        {
+          "id": "hd-l2-f2",
+          "front": "What are the five pillars of Islam?",
+          "back": "Imaan, Salaah, Zakah, Fasting and Haj."
+        },
+        {
+          "id": "hd-l2-f3",
+          "front": "Why is Salaah compared to a pillar?",
+          "back": "Like a pillar a building rests on — if it falls, the whole building crumbles."
+        }
+      ],
+      "needsContent": false,
       "needsReview": false
     },
     {
@@ -114,97 +243,510 @@
       "n": 3,
       "title": "Breaking Ties",
       "pages": "6",
-      "summary": "",
+      "arabic": "لَا يَدْخُلُ الْجَنَّةَ قَاطِعٌ",
+      "transliteration": "Laa yadkhulul-jannata qaatiʻ",
+      "translation": "One who breaks ties will not enter Jannah.",
+      "source": "Bukhaaree",
+      "summary": "A Muslim may not stop talking to a fellow Muslim for more than three days. The better person is the one who is first to say “I am sorry” and make peace. We build ties even if others try to cut them.",
       "keyTerms": [],
-      "points": [],
+      "points": [
+        "It is not permissible for a Muslim to stop talking to a fellow Muslim for more than three days.",
+        "The better person is always the one who is first to say “I am sorry” and makes peace.",
+        "As Muslims we are all one family; a good Muslim builds ties even when others try to cut them."
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "questions": [
+        {
+          "id": "hd-l3-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "How many days may a Muslim stop talking to a fellow Muslim?",
+          "options": [
+            "Not more than three days",
+            "Up to a week",
+            "Up to a month",
+            "As long as he likes"
+          ],
+          "correctAnswer": "Not more than three days",
+          "explanation": "A Muslim may not break ties / stop talking for more than three days."
+        },
+        {
+          "id": "hd-l3-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Who is the better person in an argument?",
+          "options": [
+            "The one who says 'I am sorry' first",
+            "The one who stays angry longest",
+            "The one who wins",
+            "The one who walks away forever"
+          ],
+          "correctAnswer": "The one who says 'I am sorry' first",
+          "explanation": "The better person is the first to apologise and make peace."
+        },
+        {
+          "id": "hd-l3-q3",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "A good Muslim builds ties even if others try to cut ties with him.",
+          "correctAnswer": true,
+          "explanation": "Yes — we always try to build and keep good ties."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "hd-l3-f1",
+          "front": "Hadeeth 3 — Breaking ties?",
+          "back": "“One who breaks ties will not enter Jannah.” (Bukhaaree)"
+        },
+        {
+          "id": "hd-l3-f2",
+          "front": "How long may you stay not talking to a fellow Muslim?",
+          "back": "Not more than three days."
+        },
+        {
+          "id": "hd-l3-f3",
+          "front": "Who is the better person after an argument?",
+          "back": "The one who is first to say 'I am sorry' and make peace."
+        }
+      ],
+      "needsContent": false,
       "needsReview": false
     },
     {
       "id": "g5-hadeeth-l4",
       "n": 4,
-      "title": "Beginning with the Right Side",
+      "title": "Beginning With The Right Side",
       "pages": "7",
-      "summary": "",
+      "arabic": "إِذَا انْتَعَلَ أَحَدُكُمْ فَلْيَبْدَأْ بِالْيُمْنَى وَإِذَا نَزَعَ فَلْيَبْدَأْ بِالشِّمَالِ",
+      "transliteration": "Izaa-ntaʻala ahadukum falyabda' bil-yumnaa, wa izaa nazaʻa falyabda' bish-shimaal",
+      "translation": "When one of you puts on shoes, he should begin with the right; and when he removes his shoes, he should begin by removing the left shoe first.",
+      "source": "Bukhaaree",
+      "summary": "Nabee ﷺ loved using the right hand for good things — wudhu, dressing, eating, combing hair. We put on shoes and clothes from the right side, and take them off from the left, as a sign of showing appreciation to Allah.",
       "keyTerms": [],
-      "points": [],
+      "points": [
+        "Nabee ﷺ loved using the right hand in all good activities: wudhu, dressing, putting on shoes, combing hair.",
+        "We put on shoes and clothes beginning with the right; we remove them beginning with the left.",
+        "The Qur'aan refers to the people of Jannah as the 'companions of the right'.",
+        "Food, clothing and shoes are a blessing from Allah, so we begin with the right to show appreciation."
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
-      "needsReview": false
+      "questions": [
+        {
+          "id": "hd-l4-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "When putting on shoes, which side do we begin with?",
+          "options": [
+            "The right",
+            "The left",
+            "Either",
+            "Both at once"
+          ],
+          "correctAnswer": "The right",
+          "explanation": "We begin with the right when putting on, and the left when removing."
+        },
+        {
+          "id": "hd-l4-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "When removing shoes, which do we remove first?",
+          "options": [
+            "The left",
+            "The right",
+            "Either",
+            "Both at once"
+          ],
+          "correctAnswer": "The left",
+          "explanation": "We remove the left shoe first when taking shoes off."
+        },
+        {
+          "id": "hd-l4-q3",
+          "type": "match",
+          "difficulty": "medium",
+          "prompt": "Match the action to the correct side:",
+          "pairs": [
+            {
+              "left": "Putting on shoes",
+              "right": "Right first"
+            },
+            {
+              "left": "Removing shoes",
+              "right": "Left first"
+            },
+            {
+              "left": "Eating",
+              "right": "Right hand"
+            },
+            {
+              "left": "Making wudhu",
+              "right": "Right first"
+            }
+          ],
+          "explanation": "Right for putting on and good actions; left first only when removing."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "hd-l4-f1",
+          "front": "Hadeeth 4 — Beginning with the right?",
+          "back": "Put on shoes beginning with the right; remove them beginning with the left."
+        },
+        {
+          "id": "hd-l4-f2",
+          "front": "What did Nabee ﷺ love to use for good actions?",
+          "back": "The right hand/side — in wudhu, dressing, eating and combing hair."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": true
     },
     {
       "id": "g5-hadeeth-l5",
       "n": 5,
       "title": "Wudhu",
       "pages": "8",
-      "summary": "",
+      "arabic": "مَنْ تَوَضَّأَ فَأَحْسَنَ الْوُضُوْءَ خَرَجَتْ خَطَايَاهُ مِنْ جَسَدِهِ حَتَّى تَخْرُجَ مِنْ تَحْتِ أَظْفَارِهِ",
+      "transliteration": "Man tawadda'a fa-ahsanal-wudoo-a kharajat khataayaahu min jasadihi hattaa takhruja min tahti azfaarih",
+      "translation": "He who makes Wudhu and does it perfectly, his sins leave his body, even from beneath his nails.",
+      "source": "Muslim",
+      "summary": "Wudhu cleanses the body and also cleanses sins. As we wash each part, the sins committed with that part fall away with the water — until we are totally purified, even from beneath the nails.",
       "keyTerms": [],
-      "points": [],
+      "points": [
+        "Wudhu cleanses the body and also cleanses sins.",
+        "As we wash the face, the sins of the eyes fall off; the hands, the sins of the hands; the feet, the sins of the feet.",
+        "By the time we complete wudhu we are totally purified of sin.",
+        "The words “even from beneath his nails” show how clean and pure we become."
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
-      "needsReview": false
+      "questions": [
+        {
+          "id": "hd-l5-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "According to this hadeeth, what happens when we make wudhu perfectly?",
+          "options": [
+            "Our sins leave our body, even from beneath the nails",
+            "We become wealthy",
+            "We never feel tired",
+            "Our wudhu lasts all day"
+          ],
+          "correctAnswer": "Our sins leave our body, even from beneath the nails",
+          "explanation": "Doing wudhu perfectly causes sins to fall away, even from beneath the nails."
+        },
+        {
+          "id": "hd-l5-q2",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Wudhu cleanses both our body and our sins.",
+          "correctAnswer": true,
+          "explanation": "Yes — wudhu is a means of cleansing the body and washing away sins."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "hd-l5-f1",
+          "front": "Hadeeth 5 — Wudhu?",
+          "back": "He who makes wudhu perfectly, his sins leave his body, even from beneath his nails. (Muslim)"
+        },
+        {
+          "id": "hd-l5-f2",
+          "front": "What do the words 'even from beneath his nails' show?",
+          "back": "How completely clean and pure of sin we become through wudhu."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": true
     },
     {
       "id": "g5-hadeeth-l6",
       "n": 6,
       "title": "Fulfilling One's Promise",
       "pages": "9",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
+      "arabic": "لَا دِينَ لِمَنْ لَا عَهْدَ لَهُ",
+      "transliteration": "Laa deena liman laa ʻahda lah",
+      "translation": "A person who does not keep his promise has no religion.",
+      "source": "Mishkaatt",
+      "summary": "Islam teaches us to be honest, truthful and trustworthy — the signs of strong Imaan. Breaking a promise on purpose shows very weak Imaan. A hypocrite lies, breaks promises and is not trustworthy.",
+      "keyTerms": [
+        {
+          "term": "Hypocrite (Munaafiq)",
+          "meaning": "One who speaks lies, breaks promises and is not trustworthy."
+        }
+      ],
+      "points": [
+        "Islam teaches us to be honest, truthful and trustworthy — the most important signs of Imaan.",
+        "If a person intentionally breaks his promise or cheats others, his Imaan is very weak.",
+        "A hypocrite is one who speaks lies, breaks his promise and is not trustworthy.",
+        "A Muslim keeps his promise, knowing that Allah is witness to what he says."
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "questions": [
+        {
+          "id": "hd-l6-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What does this hadeeth say about one who does not keep his promise?",
+          "options": [
+            "He has no religion",
+            "He is very wealthy",
+            "He is forgiven automatically",
+            "He is the best Muslim"
+          ],
+          "correctAnswer": "He has no religion",
+          "explanation": "“A person who does not keep his promise has no religion.”"
+        },
+        {
+          "id": "hd-l6-q2",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Keeping promises and being trustworthy are signs of strong Imaan.",
+          "correctAnswer": true,
+          "explanation": "Yes — honesty, truthfulness and trustworthiness are signs of Imaan."
+        },
+        {
+          "id": "hd-l6-q3",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "A person who lies, breaks promises and is not trustworthy is called a...",
+          "options": [
+            "hypocrite",
+            "scholar",
+            "traveller",
+            "host"
+          ],
+          "correctAnswer": "hypocrite",
+          "explanation": "A hypocrite (munaafiq) lies, breaks promises and is not trustworthy."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "hd-l6-f1",
+          "front": "Hadeeth 6 — Keeping promises?",
+          "back": "“A person who does not keep his promise has no religion.” (Mishkaat)"
+        },
+        {
+          "id": "hd-l6-f2",
+          "front": "What are the signs of strong Imaan?",
+          "back": "Being honest, truthful and trustworthy."
+        }
+      ],
+      "needsContent": false,
       "needsReview": false
     },
     {
       "id": "g5-hadeeth-l7",
       "n": 7,
-      "title": "Ghibah (Backbiting)",
+      "title": "Ghibah — Backbiting",
       "pages": "10",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
+      "arabic": "إِيَّاكُمْ وَالْغِيْبَةَ",
+      "transliteration": "Iyyaakum wal-gheebah",
+      "translation": "Save yourself from Gheebah (backbiting).",
+      "source": "Kanzul Ummaal",
+      "summary": "Backbiting means speaking bad about a person in his absence, even if it is true. The Qur'aan says it is like eating the flesh of your brother. On Qiyaamah our good deeds go to the person we backbit. We must not backbite, and must stop others who do.",
+      "keyTerms": [
+        {
+          "term": "Gheebah",
+          "meaning": "Backbiting — speaking bad about someone in their absence, even if true."
+        }
+      ],
+      "points": [
+        "Backbiting means to speak bad about a person in his absence, even if what you say is true.",
+        "The Qur'aan says backbiting is like eating the flesh of your brother.",
+        "On the Day of Qiyaamah our good deeds are given to the person we backbit, and his bad deeds come to us.",
+        "We must not backbite, and we must stop others who backbite in our presence."
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "questions": [
+        {
+          "id": "hd-l7-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What is Gheebah?",
+          "options": [
+            "Speaking bad about someone in their absence",
+            "Praising someone",
+            "Speaking to someone's face",
+            "Making dua for someone"
+          ],
+          "correctAnswer": "Speaking bad about someone in their absence",
+          "explanation": "Gheebah (backbiting) is speaking bad about a person in his absence, even if true."
+        },
+        {
+          "id": "hd-l7-q2",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Backbiting is fine as long as what you are saying is true.",
+          "correctAnswer": false,
+          "explanation": "No — backbiting is wrong even when it is true; that is exactly what gheebah means."
+        },
+        {
+          "id": "hd-l7-q3",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "The Qur'aan compares backbiting to...",
+          "options": [
+            "eating the flesh of your brother",
+            "climbing a mountain",
+            "building a house",
+            "planting a tree"
+          ],
+          "correctAnswer": "eating the flesh of your brother",
+          "explanation": "The Qur'aan says backbiting is like eating the flesh of your dead brother."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "hd-l7-f1",
+          "front": "Hadeeth 7 — Gheebah?",
+          "back": "“Save yourself from Gheebah (backbiting).” (Kanzul Ummaal)"
+        },
+        {
+          "id": "hd-l7-f2",
+          "front": "What is backbiting (gheebah)?",
+          "back": "Speaking bad about a person in his absence — even if it is true."
+        },
+        {
+          "id": "hd-l7-f3",
+          "front": "What does the Qur'aan compare backbiting to?",
+          "back": "Eating the flesh of your brother."
+        }
+      ],
+      "needsContent": false,
       "needsReview": false
     },
     {
       "id": "g5-hadeeth-l8",
       "n": 8,
-      "title": "Safeguarding the Tongue",
+      "title": "Safeguarding The Tongue",
       "pages": "11",
-      "summary": "",
+      "arabic": "إِحْفَظْ لِسَانَكَ",
+      "transliteration": "Ihfaz lisaanak",
+      "translation": "Safeguard your tongue.",
+      "source": "Kanzul Ummaal",
+      "summary": "We must think before we speak, because words are like arrows — once shot, they cannot be taken back. Bad use of the tongue (speaking badly, swearing, lies) is a great cause of going into the fire. Better to say good, or stay silent.",
       "keyTerms": [],
-      "points": [],
+      "points": [
+        "Think before you speak — words are like arrows; once shot they cannot be taken back.",
+        "Do not say anything today that may cause you to regret tomorrow.",
+        "Bad use of the tongue includes speaking badly about people, swearing, being rude, disrespectful and lying.",
+        "Improper use of the tongue is one of the greatest causes of people going into the fire.",
+        "It is better to say a good thing than to keep silent, and better to keep silent than to say something bad."
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "questions": [
+        {
+          "id": "hd-l8-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Why must we think before we speak?",
+          "options": [
+            "Words are like arrows that cannot be taken back",
+            "Words cost money",
+            "Talking is forbidden",
+            "Nobody listens anyway"
+          ],
+          "correctAnswer": "Words are like arrows that cannot be taken back",
+          "explanation": "Once words leave the mouth, like a shot arrow, they cannot be taken back."
+        },
+        {
+          "id": "hd-l8-q2",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "It is better to keep silent than to say something bad.",
+          "correctAnswer": true,
+          "explanation": "Yes — better to say good than be silent, and better to be silent than to say something bad."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "hd-l8-f1",
+          "front": "Hadeeth 8 — The tongue?",
+          "back": "“Safeguard your tongue.” (Ihfaz lisaanak)"
+        },
+        {
+          "id": "hd-l8-f2",
+          "front": "Words are like...?",
+          "back": "Arrows — once shot, they cannot be taken back."
+        }
+      ],
+      "needsContent": false,
       "needsReview": false
     },
     {
       "id": "g5-hadeeth-l9",
       "n": 9,
-      "title": "Kindness towards Others",
+      "title": "Kindness Towards Others",
       "pages": "12",
-      "summary": "",
+      "arabic": "أَطْعِمُوا الْجَائِعَ وَعُودُوا الْمَرِيْضَ",
+      "transliteration": "Atʻimul-jaa-iʻa wa ʻoodul-mareed",
+      "translation": "Feed the hungry and visit the sick.",
+      "source": "Aboo Dawood",
+      "summary": "The believers in their love and mercy are like one body — when one limb hurts, the whole body feels it. So it is our duty to feed the hungry and comfort the sick. One who visits the sick has 70,000 angels making dua for him.",
       "keyTerms": [],
-      "points": [],
+      "points": [
+        "The believers in their love, mercy and affection are like one body; when one limb is in pain the whole body reacts with sleeplessness and fever.",
+        "It is our duty to feed the hungry and comfort the sick.",
+        "One who fulfils the needs of the orphan or the widow is like one in the path of Allah.",
+        "Seventy thousand angels make dua for one who visits the sick."
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "questions": [
+        {
+          "id": "hd-l9-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What does this hadeeth tell us to do?",
+          "options": [
+            "Feed the hungry and visit the sick",
+            "Stay at home always",
+            "Only help our own family",
+            "Collect wealth"
+          ],
+          "correctAnswer": "Feed the hungry and visit the sick",
+          "explanation": "“Feed the hungry and visit the sick.”"
+        },
+        {
+          "id": "hd-l9-q2",
+          "type": "multiple-choice",
+          "difficulty": "medium",
+          "prompt": "How many angels make dua for one who visits the sick?",
+          "options": [
+            "Seventy thousand",
+            "Seven",
+            "Seventy",
+            "Seven hundred"
+          ],
+          "correctAnswer": "Seventy thousand",
+          "explanation": "Seventy thousand angels make dua for the one who visits the sick."
+        },
+        {
+          "id": "hd-l9-q3",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "The believers are like one body in their love and mercy for one another.",
+          "correctAnswer": true,
+          "explanation": "Yes — when one limb hurts, the whole body reacts. So we care for one another."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "hd-l9-f1",
+          "front": "Hadeeth 9 — Kindness to others?",
+          "back": "“Feed the hungry and visit the sick.” (Aboo Dawood)"
+        },
+        {
+          "id": "hd-l9-f2",
+          "front": "How many angels make dua for one who visits the sick?",
+          "back": "Seventy thousand."
+        },
+        {
+          "id": "hd-l9-f3",
+          "front": "The believers are compared to...?",
+          "back": "One body — when one limb hurts, the whole body feels it."
+        }
+      ],
+      "needsContent": false,
       "needsReview": false
     },
     {
@@ -212,13 +754,135 @@
       "n": 10,
       "title": "Anger",
       "pages": "13",
-      "summary": "",
+      "arabic": "إِذَا غَضِبَ أَحَدُكُمْ فَلْيَسْكُتْ",
+      "transliteration": "Izaa ghadiba ahadukum falyaskut",
+      "translation": "When you become angry, keep silent.",
+      "source": "Bukhaaree",
+      "summary": "When a person is angry he loses control and may say or do unfair things. Shaytaan uses anger to cause hatred and make people fight. So when we become angry we must keep silent and not let Shaytaan control us.",
+      "keyTerms": [],
+      "points": [
+        "When a person becomes angry he loses control and may say or do things that are incorrect or unfair.",
+        "Shaytaan encourages an angry person to say things that cause hatred and make people fight.",
+        "When a person becomes angry he must keep silent and not allow Shaytaan to control him."
+      ],
+      "story": null,
+      "questions": [
+        {
+          "id": "hd-l10-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What should you do when you become angry?",
+          "options": [
+            "Keep silent",
+            "Shout louder",
+            "Say whatever you feel",
+            "Break something"
+          ],
+          "correctAnswer": "Keep silent",
+          "explanation": "“When you become angry, keep silent.”"
+        },
+        {
+          "id": "hd-l10-q2",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Shaytaan uses anger to make people fight and cause hatred.",
+          "correctAnswer": true,
+          "explanation": "Yes — which is why we keep silent when angry, so Shaytaan cannot control us."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "hd-l10-f1",
+          "front": "Hadeeth 10 — Anger?",
+          "back": "“When you become angry, keep silent.” (Bukhaaree)"
+        },
+        {
+          "id": "hd-l10-f2",
+          "front": "Why keep silent when angry?",
+          "back": "An angry person loses control; staying silent stops Shaytaan from controlling us."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "g5-hadeeth-review",
+      "n": 11,
+      "title": "Hadeeth revision — match & recall",
+      "pages": "4-13",
+      "arabic": null,
+      "transliteration": null,
+      "translation": null,
+      "source": null,
+      "summary": "Match each hadeeth to its meaning and recall all ten.",
       "keyTerms": [],
       "points": [],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "questions": [
+        {
+          "id": "hd-rev-q1",
+          "type": "match",
+          "difficulty": "medium",
+          "prompt": "Match each hadeeth to its meaning (1):",
+          "pairs": [
+            {
+              "left": "Salaah",
+              "right": "The pillar of the deen"
+            },
+            {
+              "left": "Wudhu",
+              "right": "Sins leave the body, even beneath the nails"
+            },
+            {
+              "left": "Breaking ties",
+              "right": "One who breaks ties will not enter Jannah"
+            },
+            {
+              "left": "Anger",
+              "right": "When angry, keep silent"
+            }
+          ],
+          "explanation": "These are four of the ten ahaadeeth of Grade 5."
+        },
+        {
+          "id": "hd-rev-q2",
+          "type": "match",
+          "difficulty": "medium",
+          "prompt": "Match each hadeeth to its meaning (2):",
+          "pairs": [
+            {
+              "left": "Gheebah",
+              "right": "Save yourself from backbiting"
+            },
+            {
+              "left": "The tongue",
+              "right": "Safeguard your tongue"
+            },
+            {
+              "left": "Keeping promises",
+              "right": "One who breaks his promise has no religion"
+            },
+            {
+              "left": "Kindness to others",
+              "right": "Feed the hungry and visit the sick"
+            }
+          ],
+          "explanation": "These are four more of the ten ahaadeeth of Grade 5."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "hd-rev-f1",
+          "front": "Which hadeeth is about the five pillars?",
+          "back": "Hadeeth 2: 'Salaah is the pillar of the deen.'"
+        },
+        {
+          "id": "hd-rev-f2",
+          "front": "Which two ahaadeeth are about the tongue/speech?",
+          "back": "Hadeeth 7 (Gheebah — backbiting) and Hadeeth 8 (Safeguard your tongue)."
+        }
+      ],
+      "needsContent": false,
       "needsReview": false
     }
   ]

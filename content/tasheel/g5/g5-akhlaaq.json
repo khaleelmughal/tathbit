@@ -3,123 +3,258 @@
   "gradeId": "g5",
   "subjectId": "g5-akhlaaq",
   "subjectName": "Akhlaaq",
-  "tagline": "Good character and beautiful manners",
-  "sources": [
-    {
-      "pdf": "grade-05/akhlaaq-5.pdf",
-      "note": "Tas-heelul Akhlaaq 5"
-    }
-  ],
-  "status": "in_progress",
+  "tagline": "Akhlaaq wal Aadaab — Akhlaaq and aadaab made easy (Level 5)",
+  "sourceBook": {
+    "title": "Tas-heelul Aadaab wal Akhlaaq Level 5",
+    "publisher": "Jamiatul Ulama (KZN) Ta'limi Board / JUT Publishing",
+    "pdfName": "akhlaaq5.pdf",
+    "pageRange": "5-37",
+    "structureNote": "This book has 10 lessons, each followed by a story/companion section. It has NO formal test pages, so revision activities are generated from lesson content (scenario MCQ, true/false, comprehension, match) per the project's Akhlaaq guidance."
+  },
+  "reviewNote": "Islamic content must be reviewed by a parent/teacher before use.",
+  "status": "complete",
   "lessons": [
+    {
+      "id": "g5-akhlaaq-l0",
+      "n": 0,
+      "title": "Introduction to Akhlaaq",
+      "lessonNumber": null,
+      "pages": "5",
+      "summary": "Akhlaaq means good character and manners. Allah sent Nabee Muhammad ﷺ to perfect good character. Good manners come from the Qur'aan and Sunnah, are for everybody, and do not change with time.",
+      "keyTerms": [
+        {
+          "term": "Akhlaaq",
+          "meaning": "Good character and manners."
+        },
+        {
+          "term": "Aadaab",
+          "meaning": "Good manners and etiquette."
+        }
+      ],
+      "points": [
+        "Allah created man in the best of forms and sent Nabee Muhammad ﷺ to perfect the character of mankind.",
+        "A person with good Akhlaaq is clean, respectful, honest and caring; loved by Allah and liked by people.",
+        "Nabee ﷺ said: “I have been sent to perfect good character.”",
+        "Muslim manners come from the teachings of Allah and His Nabee ﷺ, and are based on the Qur'aan.",
+        "Muslim manners do not change with time nor go out of fashion. They are for everybody — rich, poor, male, female, young and old.",
+        "A Muslim's good conduct must first touch those nearest to him: his family and neighbours."
+      ],
+      "story": null,
+      "questions": [
+        {
+          "id": "ak-l0-q1",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "What is Akhlaaq?",
+          "acceptedAnswers": [
+            "good character and manners",
+            "good character",
+            "good manners",
+            "good character and good manners"
+          ],
+          "explanation": "Akhlaaq means good character and good manners."
+        },
+        {
+          "id": "ak-l0-q2",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "Who had the best character of all?",
+          "acceptedAnswers": [
+            "nabee muhammad",
+            "rasoolullah",
+            "nabee muhammad saw",
+            "the prophet muhammad",
+            "muhammad saw"
+          ],
+          "explanation": "Nabee Muhammad ﷺ had the best character; he was sent to perfect good character."
+        },
+        {
+          "id": "ak-l0-q3",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Muslim manners change with time and go out of fashion.",
+          "correctAnswer": false,
+          "explanation": "Muslim manners do NOT change with time nor go out of fashion — they are for everybody, always."
+        },
+        {
+          "id": "ak-l0-q4",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Whose conduct should a Muslim's good manners touch first?",
+          "options": [
+            "His family and neighbours",
+            "Strangers in another city",
+            "Only his teachers",
+            "Famous people"
+          ],
+          "correctAnswer": "His family and neighbours",
+          "explanation": "A Muslim's good conduct must first touch those nearest to him — family and neighbours."
+        },
+        {
+          "id": "ak-l0-q5",
+          "type": "multiple-choice",
+          "difficulty": "medium",
+          "prompt": "Why is good character important?",
+          "options": [
+            "A good-charactered person is loved by Allah and liked by people, and Nabee ﷺ was sent to perfect it",
+            "It makes a person wealthy",
+            "It is only important for adults",
+            "It changes with fashion"
+          ],
+          "correctAnswer": "A good-charactered person is loved by Allah and liked by people, and Nabee ﷺ was sent to perfect it",
+          "explanation": "Good Akhlaaq earns Allah's love and people's trust; Nabee ﷺ was sent to perfect good character."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "ak-l0-f1",
+          "front": "What is Akhlaaq?",
+          "back": "Good character and good manners."
+        },
+        {
+          "id": "ak-l0-f2",
+          "front": "What did Nabee ﷺ say he was sent to do?",
+          "back": "“I have been sent to perfect good character.”"
+        },
+        {
+          "id": "ak-l0-f3",
+          "front": "Do Muslim manners change with time?",
+          "back": "No — they never change or go out of fashion. They are for everybody."
+        },
+        {
+          "id": "ak-l0-f4",
+          "front": "Whose good conduct should we show first?",
+          "back": "To those nearest to us — our family and neighbours."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": false
+    },
     {
       "id": "g5-akhlaaq-l1",
       "n": 1,
       "title": "Walking",
+      "lessonNumber": 1,
       "pages": "6-8",
-      "summary": "Islam is a complete way of life — it teaches us not only about prayer and cleanliness, but also about our conduct and manners, including how we walk. The golden rule in all our dealings is to be humble. We walk in a moderate manner: not too fast and not too slow, and never like a proud person.",
+      "summary": "The Qur'aan says: “And be moderate in the way you walk.” We walk in a moderate, humble way — not too fast, not too slow, not proudly — while being aware of our surroundings.",
       "keyTerms": [
         {
           "term": "Moderate",
-          "meaning": "A middle way — not too fast, not too slow"
+          "meaning": "In the middle — not too fast and not too slow."
         },
         {
           "term": "Humility",
-          "meaning": "Being humble and not proud"
+          "meaning": "Being humble, not proud."
         }
       ],
       "points": [
-        "The Qur'an states: “And be moderate in the way you walk.”",
-        "Rasoolullah ﷺ always walked briskly, as if descending from a high place.",
-        "Walk upright (not chest-out, not back bent), do not drag your feet, and cast your gaze slightly down while staying aware of your surroundings.",
-        "Remove obstacles from the road, do not become an obstacle, and be mindful of cars and other pedestrians."
+        "Walk at a moderate pace. Do not walk too fast as if jogging, or so slow as if you are ill.",
+        "Walk upright — not with your chest out nor with your back bent.",
+        "Do not drag your feet when walking.",
+        "Walk with the gaze cast slightly down, but be aware of your surroundings. Do not concern yourself with people's homes and their affairs.",
+        "Do not walk ahead of your friends to display your position; rather walk behind and never try to make your presence felt.",
+        "Remove any obstacle from the road or anything likely to cause an accident.",
+        "Avoid becoming an obstacle on the road; be careful of cars and mindful of other pedestrians.",
+        "Nabee ﷺ has forbidden us to walk wearing only one shoe or sandal."
       ],
       "story": {
-        "title": "Walking with humility",
-        "text": "A true Muslim does not walk ahead of friends to show off his position, and is always considerate of others on the path."
+        "title": "Walking (the way Nabee ﷺ walked)",
+        "text": "Sayyidina Aboo Hurairah رضي related that he had not seen anyone more handsome than Nabee ﷺ — his radiance was as if the sun shone in his face. He did not see anyone walk more briskly than him; it seemed as if the earth was being rolled up for him. Though Nabee ﷺ walked with his normal pace, the companions had to walk briskly to keep up with him."
       },
       "questions": [
         {
           "id": "ak-l1-q1",
           "type": "multiple-choice",
-          "difficulty": "medium",
-          "prompt": "Which of these is the best example of walking with humility?",
+          "difficulty": "easy",
+          "prompt": "Which of these is the best example of walking the way Islam teaches?",
           "options": [
+            "Walking moderately and being aware of your surroundings",
             "Walking proudly with your chest out",
             "Walking so slowly that people are delayed",
-            "Walking moderately and being aware of your surroundings",
             "Looking into people's homes while walking"
           ],
           "correctAnswer": "Walking moderately and being aware of your surroundings",
-          "explanation": "We walk at a moderate pace, humbly, while staying mindful of others."
+          "explanation": "We walk at a moderate pace, humbly, while being mindful of our surroundings."
         },
         {
           "id": "ak-l1-q2",
-          "type": "fill-blank",
+          "type": "true-false",
           "difficulty": "easy",
-          "prompt": "The Qur'an says: “And be ______ in the way you walk.”",
-          "correctAnswer": "moderate",
-          "explanation": "Moderate means a middle way — not too fast and not too slow."
+          "prompt": "A Muslim should walk proudly to show his importance.",
+          "correctAnswer": false,
+          "explanation": "No — we walk humbly, not proudly. Do not walk to display your position."
         },
         {
           "id": "ak-l1-q3",
-          "type": "true-false",
+          "type": "short-answer",
           "difficulty": "easy",
-          "prompt": "A Muslim should walk proudly with his chest pushed out.",
-          "correctAnswer": false,
-          "explanation": "We should walk upright but humbly, never like a proud person."
+          "prompt": "What does it mean to walk moderately?",
+          "acceptedAnswers": [
+            "not too fast and not too slow",
+            "not too fast or too slow",
+            "walk at a moderate pace",
+            "not fast not slow",
+            "in the middle"
+          ],
+          "explanation": "Walking moderately means not too fast (as if jogging) and not too slow (as if ill)."
         },
         {
           "id": "ak-l1-q4",
-          "type": "short-answer",
-          "difficulty": "medium",
-          "prompt": "How did Rasoolullah ﷺ walk?",
-          "acceptedAnswers": [
-            "briskly",
-            "fast as if descending from a high place",
-            "briskly as if coming down from a height",
-            "quickly"
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What should we avoid looking into when walking?",
+          "options": [
+            "People's homes and their affairs",
+            "The sky",
+            "Our own shoes",
+            "Shop windows"
           ],
-          "explanation": "Rasoolullah ﷺ walked briskly, as if descending from a high place."
+          "correctAnswer": "People's homes and their affairs",
+          "explanation": "Keep the gaze slightly down and do not concern yourself with people's homes and affairs."
         },
         {
           "id": "ak-l1-q5",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "It is fine to walk wearing only one shoe.",
+          "correctAnswer": false,
+          "explanation": "No — Nabee ﷺ forbade walking wearing only one shoe or sandal."
+        },
+        {
+          "id": "ak-l1-q6",
           "type": "short-answer",
-          "difficulty": "medium",
-          "prompt": "What should you do if you see an obstacle on the road?",
+          "difficulty": "easy",
+          "prompt": "How did Rasoolullah ﷺ walk?",
           "acceptedAnswers": [
-            "remove it",
-            "remove the obstacle",
-            "take it away",
-            "move it"
+            "briskly",
+            "he walked briskly",
+            "fast and briskly",
+            "with a brisk pace",
+            "quickly and briskly"
           ],
-          "explanation": "We should remove any obstacle that could cause harm or an accident."
+          "explanation": "Rasoolullah ﷺ walked briskly — as if the earth was being rolled up for him."
         }
       ],
       "flashcards": [
         {
-          "front": "What does the Qur'an say about walking?",
-          "back": "\"And be moderate in the way you walk.\""
+          "id": "ak-l1-f1",
+          "front": "How should a Muslim walk?",
+          "back": "Moderately and humbly — not too fast, not too slow, not proudly."
         },
         {
-          "front": "How did Rasoolullah ﷺ walk?",
-          "back": "Briskly, as if descending from a high place."
+          "id": "ak-l1-f2",
+          "front": "Where should the gaze be when walking?",
+          "back": "Cast slightly down, while staying aware of your surroundings."
         },
         {
-          "front": "What is the golden rule in all our dealings?",
-          "back": "To be humble."
+          "id": "ak-l1-f3",
+          "front": "How did Nabee ﷺ walk?",
+          "back": "Briskly, as if the earth was being rolled up for him."
         },
         {
-          "front": "What does 'moderate' mean in terms of walking?",
-          "back": "A middle way — not too fast, not too slow."
-        },
-        {
-          "front": "What should you do if you see an obstacle on the road?",
-          "back": "Remove it, and don't become an obstacle yourself."
-        },
-        {
-          "front": "How should a Muslim walk according to Islamic manners?",
-          "back": "Upright but humbly, with gaze slightly down, being mindful of surroundings."
+          "id": "ak-l1-f4",
+          "front": "What did Nabee ﷺ forbid about footwear when walking?",
+          "back": "Walking with only one shoe or sandal."
         }
       ],
       "needsContent": false,
@@ -129,126 +264,992 @@
       "id": "g5-akhlaaq-l2",
       "n": 2,
       "title": "Talking",
+      "lessonNumber": 2,
       "pages": "10-12",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
-      "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "summary": "The Qur'aan tells us to lower our voices. We speak in a moderate tone, simply and politely, with respect to elders and kindness to youngsters — because the angels record every word.",
+      "keyTerms": [
+        {
+          "term": "Backchat",
+          "meaning": "Answering back rudely to elders, teachers or parents."
+        }
+      ],
+      "points": [
+        "Do not scream or shout when you speak.",
+        "Speak simply and clearly. Repeat yourself if necessary.",
+        "Speak in a humble tone, but not so softly that people cannot hear.",
+        "Speak when it is necessary. If you have nothing to say, it is better to remain silent.",
+        "Do not speak so much that people become bored with you.",
+        "Always speak with respect, politeness and good manners.",
+        "Do not backchat to your elders, teachers and parents.",
+        "Never interrupt a conversation.",
+        "Do not get involved in fruitless and unnecessary discussion with the ignorant; rather offer salaam and depart politely."
+      ],
+      "story": {
+        "title": "Sayyidina Anas رضي (keeping a secret)",
+        "text": "Sayyidina Anas رضي was a great Sahabi, pious from childhood. Once Nabee ﷺ sent him on an errand and it took some time. When his mother asked where he had been, he said Nabee ﷺ had sent him for some work. She asked what it was, and he replied, “That is a secret.” His mother told him never to tell the secret of Nabee ﷺ to anyone. Sayyidina Anas kept it his whole life, telling his close friend Thabit only, “Had I told anyone this secret, it would have been you.”"
+      },
+      "questions": [
+        {
+          "id": "ak-l2-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "According to the Qur'aan, what is the ugliest of sounds?",
+          "options": [
+            "The braying of the donkey",
+            "The roar of a lion",
+            "Loud music",
+            "Thunder"
+          ],
+          "correctAnswer": "The braying of the donkey",
+          "explanation": "The Qur'aan says to lower the voice, for the ugliest of sounds is the braying of the donkey."
+        },
+        {
+          "id": "ak-l2-q2",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "If you have nothing useful to say, it is better to remain silent.",
+          "correctAnswer": true,
+          "explanation": "Yes — speak when it is necessary; otherwise silence is better."
+        },
+        {
+          "id": "ak-l2-q3",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "It is good manners to backchat to your parents and teachers.",
+          "correctAnswer": false,
+          "explanation": "No — we must not backchat to our elders, teachers and parents."
+        },
+        {
+          "id": "ak-l2-q4",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Why must we be careful about every word we say?",
+          "options": [
+            "The angels record every word we utter",
+            "Words cost money",
+            "People always forget words",
+            "It is not important"
+          ],
+          "correctAnswer": "The angels record every word we utter",
+          "explanation": "The angels record every word, and words are like arrows that can hurt people."
+        },
+        {
+          "id": "ak-l2-q5",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "What did Sayyidina Anas رضي refuse to reveal his whole life?",
+          "acceptedAnswers": [
+            "a secret",
+            "the secret of nabee",
+            "nabee's secret",
+            "the secret",
+            "a secret of nabee"
+          ],
+          "explanation": "He kept the secret that Nabee ﷺ had entrusted to him, never telling anyone in his lifetime."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "ak-l2-f1",
+          "front": "In what tone should we speak?",
+          "back": "A moderate, humble tone — not shouting, not too soft to hear."
+        },
+        {
+          "id": "ak-l2-f2",
+          "front": "Who records every word we say?",
+          "back": "The angels."
+        },
+        {
+          "id": "ak-l2-f3",
+          "front": "What is 'backchat' and is it allowed?",
+          "back": "Answering back rudely to elders/parents/teachers — it is not allowed."
+        },
+        {
+          "id": "ak-l2-f4",
+          "front": "What did Sayyidina Anas رضي teach us?",
+          "back": "To keep a trust/secret — he never revealed Nabee ﷺ's secret his whole life."
+        }
+      ],
+      "needsContent": false,
       "needsReview": false
     },
     {
       "id": "g5-akhlaaq-l3",
       "n": 3,
       "title": "Joking",
+      "lessonNumber": 3,
       "pages": "14-15",
-      "summary": "",
+      "summary": "Islam allows joking and laughing within limits, as long as we keep good manners. A joke must never hurt, frighten, lie, or mock — and too much laughter hardens the heart.",
       "keyTerms": [],
-      "points": [],
-      "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "points": [
+        "A joke that hurts the feelings of a person is not a joke but an insult.",
+        "A 'joke' that causes fear and worry is cruelty.",
+        "A 'joke' made up of lies and dishonesty is falsehood.",
+        "Laughing at the weakness of a person is unkind and cruel.",
+        "A joke is only acceptable if it makes a person happy and joyful.",
+        "Too much laughter and joking hardens the heart and prevents remembrance of Allah.",
+        "Joking and laughter is like salt in the food — too much of it may spoil our imaan.",
+        "Never make a joke of the commands of Allah and His Rasool ﷺ.",
+        "Never make jokes or fool around in the masjid.",
+        "Rasoolullah ﷺ's laughter was no more than a smile."
+      ],
+      "story": {
+        "title": "Rasoolullah ﷺ and the Old Woman",
+        "text": "Once an old woman asked Rasoolullah ﷺ to make dua that she enter Paradise. He said, “Old women will not enter Paradise,” and left for salaah. The old woman began to weep. When Nabee ﷺ returned, Sayyidah Aaisha رضي explained why she was crying. He smiled and told Aaisha to tell her that old women would indeed enter Paradise — but having become young again. It was a gentle, kind joke that pleased her."
+      },
+      "questions": [
+        {
+          "id": "ak-l3-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "When is a joke acceptable in Islam?",
+          "options": [
+            "When it makes a person happy and joyful",
+            "When it frightens someone",
+            "When it is made of lies",
+            "When it mocks a person's weakness"
+          ],
+          "correctAnswer": "When it makes a person happy and joyful",
+          "explanation": "A joke is only acceptable if it cheers a person; jokes that hurt, frighten, lie or mock are not allowed."
+        },
+        {
+          "id": "ak-l3-q2",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "A joke that hurts someone's feelings is really an insult, not a joke.",
+          "correctAnswer": true,
+          "explanation": "Yes — a joke that hurts feelings is not a joke but an insult."
+        },
+        {
+          "id": "ak-l3-q3",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Too much joking and laughter is good for the heart.",
+          "correctAnswer": false,
+          "explanation": "No — too much laughter hardens the heart and may spoil our imaan."
+        },
+        {
+          "id": "ak-l3-q4",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "How much did Rasoolullah ﷺ laugh?",
+          "options": [
+            "His laughter was no more than a smile",
+            "He laughed very loudly",
+            "He never smiled",
+            "He joked constantly"
+          ],
+          "correctAnswer": "His laughter was no more than a smile",
+          "explanation": "Rasoolullah ﷺ's laughter was no more than a smile."
+        },
+        {
+          "id": "ak-l3-q5",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "In the story, what did Nabee ﷺ mean when he said old women won't enter Paradise?",
+          "options": [
+            "They will enter, but young again",
+            "Old women are not allowed in",
+            "Only men enter Paradise",
+            "It was a serious warning"
+          ],
+          "correctAnswer": "They will enter, but young again",
+          "explanation": "It was a gentle joke — old women will enter Paradise after being made youthful again."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "ak-l3-f1",
+          "front": "When is a joke acceptable?",
+          "back": "Only when it makes a person happy — never if it hurts, frightens, lies or mocks."
+        },
+        {
+          "id": "ak-l3-f2",
+          "front": "What does too much laughter do?",
+          "back": "It hardens the heart and can spoil our imaan."
+        },
+        {
+          "id": "ak-l3-f3",
+          "front": "How much did Nabee ﷺ laugh?",
+          "back": "His laughter was no more than a smile."
+        }
+      ],
+      "needsContent": false,
       "needsReview": false
     },
     {
       "id": "g5-akhlaaq-l4",
       "n": 4,
       "title": "Neighbours",
+      "lessonNumber": 4,
       "pages": "16-18",
-      "summary": "",
+      "summary": "Neighbours — Muslim and non-Muslim — have great rights over us. Nabee ﷺ said a true believer does not eat his fill while his neighbour is hungry. We help, visit, comfort and never harm our neighbour.",
       "keyTerms": [],
-      "points": [],
-      "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "points": [
+        "Neighbours are of three kinds: a non-Muslim (has the right of a neighbour); a Muslim (rights of a Muslim and a neighbour); a relative (three rights: a Muslim, a relative and a neighbour).",
+        "Visit your neighbour when he is sick.",
+        "Attend his funeral.",
+        "If he asks for a loan, give if you can.",
+        "Feed him if he is hungry.",
+        "Give him clothes if he has none.",
+        "Congratulate him on happy occasions.",
+        "Comfort him in times of difficulty and hardship.",
+        "Do not spread the faults of your neighbour.",
+        "Do not disturb the peace of your neighbour.",
+        "Do not harm your neighbour in any way."
+      ],
+      "story": {
+        "title": "Concerning One's Neighbours (Sayyidina Abdullah)",
+        "text": "A sheep was slaughtered at the home of the Sahabi Sayyidina Abdullah. One of his neighbours was a Jewish family. When he returned home he asked, “Did you send some meat to the neighbours?” His family said, “But they are Jews, why send meat there?” He replied, “So what if they are Jews? They are our neighbours after all.” He did not eat the meat until some was sent to the neighbours, because Nabee ﷺ taught us to treat neighbours kindly, whether Muslim or non-Muslim."
+      },
+      "questions": [
+        {
+          "id": "ak-l4-q1",
+          "type": "multiple-choice",
+          "difficulty": "medium",
+          "prompt": "How many kinds of neighbours are mentioned, and who has the most rights?",
+          "options": [
+            "Three kinds; a relative-neighbour has the most rights",
+            "Two kinds; a non-Muslim has the most rights",
+            "Three kinds; a stranger has the most rights",
+            "One kind only"
+          ],
+          "correctAnswer": "Three kinds; a relative-neighbour has the most rights",
+          "explanation": "Three kinds: non-Muslim, Muslim, and relative. A relative who is also a neighbour has three rights."
+        },
+        {
+          "id": "ak-l4-q2",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "We only have to be kind to neighbours who are Muslims.",
+          "correctAnswer": false,
+          "explanation": "No — both Muslim and non-Muslim neighbours have rights over us."
+        },
+        {
+          "id": "ak-l4-q3",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Nabee ﷺ said a true believer is NOT one who...",
+          "options": [
+            "eats his fill while his neighbour is hungry",
+            "visits his sick neighbour",
+            "greets his neighbour",
+            "helps his neighbour"
+          ],
+          "correctAnswer": "eats his fill while his neighbour is hungry",
+          "explanation": "“He is not a true believer who eats his fill while his neighbour remains hungry by his side.”"
+        },
+        {
+          "id": "ak-l4-q4",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "In the story, what kind of family was Sayyidina Abdullah's neighbour?",
+          "acceptedAnswers": [
+            "jewish",
+            "a jewish family",
+            "jews",
+            "jewish family",
+            "non-muslim"
+          ],
+          "explanation": "His neighbour was a Jewish (non-Muslim) family — yet he still shared his meat with them."
+        },
+        {
+          "id": "ak-l4-q5",
+          "type": "match",
+          "difficulty": "medium",
+          "prompt": "Match each duty to your neighbour:",
+          "pairs": [
+            {
+              "left": "When he is sick",
+              "right": "Visit him"
+            },
+            {
+              "left": "When he is hungry",
+              "right": "Feed him"
+            },
+            {
+              "left": "On happy occasions",
+              "right": "Congratulate him"
+            },
+            {
+              "left": "In times of hardship",
+              "right": "Comfort him"
+            }
+          ],
+          "explanation": "These are some of the rights of a neighbour over us."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "ak-l4-f1",
+          "front": "What did Nabee ﷺ say about a believer and his hungry neighbour?",
+          "back": "“He is not a true believer who eats his fill while his neighbour remains hungry by his side.”"
+        },
+        {
+          "id": "ak-l4-f2",
+          "front": "Do non-Muslim neighbours have rights over us?",
+          "back": "Yes — every neighbour, Muslim or non-Muslim, has rights."
+        },
+        {
+          "id": "ak-l4-f3",
+          "front": "What are the three kinds of neighbours?",
+          "back": "A non-Muslim, a Muslim, and a relative (who has three rights)."
+        },
+        {
+          "id": "ak-l4-f4",
+          "front": "What did Sayyidina Abdullah teach about neighbours?",
+          "back": "He sent meat to his Jewish neighbours — neighbours are treated kindly whether Muslim or not."
+        }
+      ],
+      "needsContent": false,
       "needsReview": false
     },
     {
       "id": "g5-akhlaaq-l5",
       "n": 5,
       "title": "Self Respect",
+      "lessonNumber": 5,
       "pages": "20-23",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
-      "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "summary": "Allah created man in the best of forms. We respect our bodies by keeping clean and tidy, eating healthy food in moderation, exercising, and being simple and neat — not wasteful or proud.",
+      "keyTerms": [
+        {
+          "term": "Moderation",
+          "meaning": "Doing things in the right amount, not too much."
+        },
+        {
+          "term": "Itr",
+          "meaning": "Alcohol-free perfume."
+        },
+        {
+          "term": "Surma",
+          "meaning": "A natural eye powder (kohl)."
+        }
+      ],
+      "points": [
+        "Eat healthy foods.",
+        "Eat in moderation.",
+        "Exercise daily.",
+        "Use miswaak and brush your teeth regularly.",
+        "Apply oil and comb your hair regularly.",
+        "Use itr and apply surma to the eyes.",
+        "Wash hands after using the toilet, and before and after meals.",
+        "Ensure that your clothes and shoes are always clean.",
+        "Keep your surroundings — room and classroom — neat and clean.",
+        "Be simple and neat, not wasteful and proud."
+      ],
+      "story": {
+        "title": "A Beggar and Self Respect",
+        "text": "A poor beggar used to beg outside the Masjid on Fridays. Though a beggar, he listened to the khutbah. One sermon taught that dua is not accepted from those whose income is haraam. He decided to accept money only from people he knew earned halaal income. What he collected went down, but he kept to his decision. When he died, his funeral was like that of a king — many wealthy, well-known people attended his janaazah because they knew of the great sacrifice he made daily to keep to Allah's command of earning halaal."
+      },
+      "questions": [
+        {
+          "id": "ak-l5-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "How does the Qur'aan describe how Allah created man?",
+          "options": [
+            "In the best of forms",
+            "Weak and small",
+            "Like the animals",
+            "Without honour"
+          ],
+          "correctAnswer": "In the best of forms",
+          "explanation": "“Verily, We have created man in the best of forms” (95:4)."
+        },
+        {
+          "id": "ak-l5-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Which of these shows good self-respect?",
+          "options": [
+            "Being simple and neat, not wasteful and proud",
+            "Wearing dirty clothes",
+            "Eating in excess",
+            "Keeping an untidy room"
+          ],
+          "correctAnswer": "Being simple and neat, not wasteful and proud",
+          "explanation": "Self-respect means being clean, tidy, healthy and simple — not wasteful or proud."
+        },
+        {
+          "id": "ak-l5-q3",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Keeping our room and classroom neat and clean is part of self-respect.",
+          "correctAnswer": true,
+          "explanation": "Yes — keeping our surroundings neat and clean is part of looking after ourselves."
+        },
+        {
+          "id": "ak-l5-q4",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "In the story, what kind of income did the beggar decide to accept only?",
+          "acceptedAnswers": [
+            "halaal",
+            "halaal income",
+            "halal",
+            "only halaal",
+            "halaal money"
+          ],
+          "explanation": "He decided to accept only halaal income, after learning dua is not accepted from haraam earnings."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "ak-l5-f1",
+          "front": "How did Allah create man?",
+          "back": "In the best of forms (Qur'aan 95:4)."
+        },
+        {
+          "id": "ak-l5-f2",
+          "front": "Name some ways we show self-respect.",
+          "back": "Eat healthy in moderation, exercise, stay clean and tidy, keep our surroundings clean, be simple not proud."
+        },
+        {
+          "id": "ak-l5-f3",
+          "front": "What did the beggar teach us about self-respect?",
+          "back": "To earn (and accept) only halaal — he sacrificed income to keep to Allah's command."
+        }
+      ],
+      "needsContent": false,
       "needsReview": false
     },
     {
       "id": "g5-akhlaaq-l6",
       "n": 6,
       "title": "Hosts",
+      "lessonNumber": 6,
       "pages": "24-25",
-      "summary": "",
+      "summary": "A Muslim finds joy in serving guests, wanting no reward but Allah's pleasure. Nabee ﷺ said whoever believes in Allah and the Last Day must honour his guest.",
       "keyTerms": [],
-      "points": [],
-      "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "points": [
+        "Meet your guests with a smiling face.",
+        "Welcome them by coming out of your house.",
+        "Greet your visitors and ask about their wellbeing.",
+        "Express your joy at meeting them.",
+        "Make them comfortable and entertain them, even at the cost of your own comfort.",
+        "Eat with your guests and do not rise before your guests have finished eating.",
+        "Always protect the honour of your guests.",
+        "Request your guests to make duaa for you.",
+        "Always regard your guests as the blessings of Allah.",
+        "Never remind your guests of your kindness to them."
+      ],
+      "story": {
+        "title": "Hospitable Host (Sayyidina Abdullaah ibn 'Umar)",
+        "text": "Sayyidina Abdullaah ibn 'Umar loved to eat his iftaar with the poor. Whenever he broke his fast at home he never ate his fill, so that if a needy person came he could give him his iftaar meal — sometimes ending up almost fasting the whole night too. He gave sweets in charity, saying he knew Allah's words: “You shall not attain piety until you spend out of that which is beloved to you” (Aal-e-Imraan 92), and Allah knew he loved sweets."
+      },
+      "questions": [
+        {
+          "id": "ak-l6-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "How should we meet our guests?",
+          "options": [
+            "With a smiling face",
+            "With a frown",
+            "By ignoring them",
+            "By staying inside"
+          ],
+          "correctAnswer": "With a smiling face",
+          "explanation": "We meet guests with a smiling face and even come out of the house to welcome them."
+        },
+        {
+          "id": "ak-l6-q2",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "It is good manners to remind your guests how kind you were to them.",
+          "correctAnswer": false,
+          "explanation": "No — never remind your guests of your kindness to them."
+        },
+        {
+          "id": "ak-l6-q3",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What did Nabee ﷺ say about whoever believes in Allah and the Last Day?",
+          "options": [
+            "He must honour his guest",
+            "He must travel often",
+            "He need not feed guests",
+            "He should eat first"
+          ],
+          "correctAnswer": "He must honour his guest",
+          "explanation": "“Whoever believes in Allah and the Last Day must honour his guest.”"
+        },
+        {
+          "id": "ak-l6-q4",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "In the story, who did Sayyidina Abdullaah ibn 'Umar love to share his iftaar with?",
+          "acceptedAnswers": [
+            "the poor",
+            "poor people",
+            "the needy",
+            "poor",
+            "needy people"
+          ],
+          "explanation": "He loved to share his iftaar meal with the poor and needy."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "ak-l6-f1",
+          "front": "How do we welcome a guest?",
+          "back": "With a smiling face, coming out to greet them and asking about their wellbeing."
+        },
+        {
+          "id": "ak-l6-f2",
+          "front": "What did Nabee ﷺ say about honouring guests?",
+          "back": "Whoever believes in Allah and the Last Day must honour his guest."
+        },
+        {
+          "id": "ak-l6-f3",
+          "front": "Should we remind guests of our kindness?",
+          "back": "No — never remind your guests of your kindness to them."
+        }
+      ],
+      "needsContent": false,
       "needsReview": false
     },
     {
       "id": "g5-akhlaaq-l7",
       "n": 7,
       "title": "Sharing",
+      "lessonNumber": 7,
       "pages": "26-29",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
-      "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "summary": "Our possessions are a test from Allah. We share our belongings, knowledge and time with those in need — Muslim or not. Nabee ﷺ said the whole creation is Allah's family, and the most beloved are those who do good to it.",
+      "keyTerms": [
+        {
+          "term": "Barakah",
+          "meaning": "Blessing from Allah."
+        },
+        {
+          "term": "Charity (Sadaqah)",
+          "meaning": "Giving to those in need to please Allah."
+        }
+      ],
+      "points": [
+        "When we share our belongings with others, it creates love and unity.",
+        "We can share our belongings with those that are in need.",
+        "We can share our knowledge with those who need to learn.",
+        "We can share our time with those who need our help.",
+        "We share with all needy people whether they are Muslims or non-Muslims.",
+        "We receive double reward if we share with our relatives.",
+        "Allah will reward us many times for every act of charity.",
+        "Allah places barakah in the time and wealth of those who give charity.",
+        "When we give charity we do not remind people of our goodness to them.",
+        "It is better to give than to receive."
+      ],
+      "story": {
+        "title": "Feeding the Guests in Darkness",
+        "text": "A Sahabi came to Rasoolullah ﷺ complaining of hunger. Nabee ﷺ had nothing to feed him, so he asked who would host him. An Ansaari took the guest home, but his wife said they had only enough food for the children. The Ansaari told her to put the children to sleep, and when they began eating to put out the lamp — pretending to fix it — so the guest would not notice the host was not really eating. They went hungry so their guest could eat. This is the beautiful self-sacrifice (ithaar) of the Sahaba."
+      },
+      "questions": [
+        {
+          "id": "ak-l7-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What can we share with others?",
+          "options": [
+            "Our belongings, knowledge and time",
+            "Only money",
+            "Only with Muslims",
+            "Nothing, sharing is not required"
+          ],
+          "correctAnswer": "Our belongings, knowledge and time",
+          "explanation": "We can share belongings, knowledge and time with anyone in need."
+        },
+        {
+          "id": "ak-l7-q2",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "We only share with people who are Muslims.",
+          "correctAnswer": false,
+          "explanation": "No — we share with all needy people, whether Muslim or non-Muslim."
+        },
+        {
+          "id": "ak-l7-q3",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "When do we receive double reward for sharing?",
+          "options": [
+            "When we share with our relatives",
+            "When we share with strangers only",
+            "When we share in public",
+            "We never get extra reward"
+          ],
+          "correctAnswer": "When we share with our relatives",
+          "explanation": "Sharing with relatives earns a double reward."
+        },
+        {
+          "id": "ak-l7-q4",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "In the story, what did the Ansaari family do so their guest could eat?",
+          "acceptedAnswers": [
+            "went hungry",
+            "they went hungry",
+            "put out the lamp and went hungry",
+            "gave him their food",
+            "slept hungry",
+            "did not eat"
+          ],
+          "explanation": "They put their children to sleep, put out the lamp, and went hungry so the guest could eat his fill."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "ak-l7-f1",
+          "front": "What three things can we share?",
+          "back": "Our belongings, our knowledge, and our time."
+        },
+        {
+          "id": "ak-l7-f2",
+          "front": "Who do we share with?",
+          "back": "All needy people — Muslim or non-Muslim. Sharing with relatives gives double reward."
+        },
+        {
+          "id": "ak-l7-f3",
+          "front": "What did the Ansaari family do for their guest?",
+          "back": "They went hungry, in the dark, so their guest could eat — true self-sacrifice (ithaar)."
+        }
+      ],
+      "needsContent": false,
       "needsReview": false
     },
     {
       "id": "g5-akhlaaq-l8",
       "n": 8,
       "title": "Table Manners",
+      "lessonNumber": 8,
       "pages": "30-33",
-      "summary": "",
+      "summary": "Our table manners, taught by Nabee ﷺ, make us different from animals and from others. We wash our hands, say Bismillah, eat with the right hand and three fingers, eat what is in front of us, and thank Allah.",
       "keyTerms": [],
-      "points": [],
-      "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "points": [
+        "Wash your hands before eating so they are clean.",
+        "Mention the name of Allah before eating by saying “Bismillaah”.",
+        "A Muslim eats with his right hand, not his left hand.",
+        "It is Sunnah to eat with three fingers (thumb, index and middle finger).",
+        "Eat from what is directly in front of you; do not eat from the middle of the plate.",
+        "Eat while sitting; neither lie down nor stand while eating.",
+        "A Muslim does not find fault with food.",
+        "A Muslim should not blow over hot food; instead, wait until it cools.",
+        "As you finish, pick up and eat whatever has fallen from your plate.",
+        "Lick your fingers and then praise and thank Allah by saying “Alhamdulillah” after eating.",
+        "Finally, wash your hands."
+      ],
+      "story": {
+        "title": "Importance of Observing Correct Table Manners",
+        "text": "Good table manners make a Muslim different not only from animals but from others too. We do not stand and eat like animals, nor eat with the left hand. By saying Bismillah, eating with the right hand and three fingers, eating from in front of us, and thanking Allah afterwards, our manners at the meal become an act of obedience and gratitude to Allah."
+      },
+      "questions": [
+        {
+          "id": "ak-l8-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Which hand does a Muslim eat with?",
+          "options": [
+            "The right hand",
+            "The left hand",
+            "Either hand",
+            "Both hands"
+          ],
+          "correctAnswer": "The right hand",
+          "explanation": "A Muslim eats with the right hand, not the left."
+        },
+        {
+          "id": "ak-l8-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "It is Sunnah to eat with how many fingers?",
+          "options": [
+            "Three (thumb, index, middle)",
+            "Two",
+            "Five",
+            "One"
+          ],
+          "correctAnswer": "Three (thumb, index, middle)",
+          "explanation": "It is Sunnah to eat with three fingers — thumb, index and middle."
+        },
+        {
+          "id": "ak-l8-q3",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "A Muslim should blow on hot food to cool it quickly.",
+          "correctAnswer": false,
+          "explanation": "No — do not blow over hot food; wait until it cools."
+        },
+        {
+          "id": "ak-l8-q4",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "It is good manners to find fault with the food.",
+          "correctAnswer": false,
+          "explanation": "No — a Muslim does not find fault with food."
+        },
+        {
+          "id": "ak-l8-q5",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "From which part of the plate should we eat?",
+          "options": [
+            "What is directly in front of us",
+            "The middle",
+            "The far side",
+            "Anywhere"
+          ],
+          "correctAnswer": "What is directly in front of us",
+          "explanation": "Eat from what is directly in front of you, not from the middle of the plate."
+        },
+        {
+          "id": "ak-l8-q6",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "What do we say before eating?",
+          "acceptedAnswers": [
+            "bismillah",
+            "bismillaah",
+            "in the name of allah"
+          ],
+          "explanation": "We say “Bismillaah” (in the name of Allah) before eating."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "ak-l8-f1",
+          "front": "Which hand do we eat with, and how many fingers?",
+          "back": "The right hand, with three fingers (thumb, index, middle)."
+        },
+        {
+          "id": "ak-l8-f2",
+          "front": "What do we say before and after eating?",
+          "back": "“Bismillaah” before, and “Alhamdulillah” after."
+        },
+        {
+          "id": "ak-l8-f3",
+          "front": "Should we blow on hot food?",
+          "back": "No — wait for it to cool. And never find fault with food."
+        },
+        {
+          "id": "ak-l8-f4",
+          "front": "From where on the plate do we eat?",
+          "back": "From what is directly in front of us, not the middle."
+        }
+      ],
+      "needsContent": false,
       "needsReview": false
     },
     {
       "id": "g5-akhlaaq-l9",
       "n": 9,
       "title": "Friday Salaah",
+      "lessonNumber": 9,
       "pages": "34-35",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
-      "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "summary": "Friday is the Muslims' special day of Eid, when we gather for Jumu'ah Salaah. We prepare by bathing, wearing clean clothes, applying itr, going early, and listening to the khutbah attentively.",
+      "keyTerms": [
+        {
+          "term": "Jumu'ah",
+          "meaning": "The Friday congregational salaah."
+        },
+        {
+          "term": "Khutbah",
+          "meaning": "The sermon delivered before Jumu'ah salaah."
+        }
+      ],
+      "points": [
+        "It is sunnah to bath and cut your nails on a Friday.",
+        "Wear clean clothes and apply itr.",
+        "Brush your teeth before going to the masjid.",
+        "Perform wudhu at home.",
+        "Go to the masjid as early as possible.",
+        "It is advisable to read Surah Kahf on Fridays.",
+        "Make duaa and send Salawaat (Durood) upon Nabee ﷺ.",
+        "Listen to the lecture (khutbah) attentively.",
+        "Do not talk or read salaah while the Imaam is giving the khutbah.",
+        "Do not rush out of the masjid — read your sunnah salaah before leaving."
+      ],
+      "story": {
+        "title": "Salaah (Dawood and Jumu'ah)",
+        "text": "On a hot Friday mid-morning, Dawood was playing cricket with his friends at school. When it was time for Jumu'ah, he dropped the bat and ran off. His friends called, “Where are you going, the game's not over!” Dawood replied that Jumu'ah Salaah is the most important salaah of the week and must be performed in the masjid with the congregation — and he sped off to the masjid."
+      },
+      "questions": [
+        {
+          "id": "ak-l9-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What is Friday for the Muslims?",
+          "options": [
+            "A special day of Eid for Jumu'ah Salaah",
+            "An ordinary day",
+            "A day of rest with no prayer",
+            "The Christian holy day"
+          ],
+          "correctAnswer": "A special day of Eid for Jumu'ah Salaah",
+          "explanation": "Allah gave Muslims Friday as a special day of Eid to gather for Jumu'ah."
+        },
+        {
+          "id": "ak-l9-q2",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "We should talk to our friends while the Imaam is giving the khutbah.",
+          "correctAnswer": false,
+          "explanation": "No — do not talk or read salaah while the Imaam is giving the khutbah; listen attentively."
+        },
+        {
+          "id": "ak-l9-q3",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Which Surah is it advisable to read on Fridays?",
+          "options": [
+            "Surah Kahf",
+            "Surah Yaseen",
+            "Surah Mulk",
+            "Surah Rahmaan"
+          ],
+          "correctAnswer": "Surah Kahf",
+          "explanation": "It is advisable to read Surah Kahf on Fridays."
+        },
+        {
+          "id": "ak-l9-q4",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "In the story, what did Dawood do when it was time for Jumu'ah?",
+          "acceptedAnswers": [
+            "ran to the masjid",
+            "left the game and went to the masjid",
+            "stopped playing and went to salaah",
+            "went to the masjid",
+            "dropped the bat and ran to the masjid",
+            "went to jumuah"
+          ],
+          "explanation": "He dropped his cricket bat and hurried to the masjid for Jumu'ah Salaah."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "ak-l9-f1",
+          "front": "How do we prepare for Jumu'ah?",
+          "back": "Bath, cut nails, wear clean clothes, apply itr, brush teeth, make wudhu, and go early."
+        },
+        {
+          "id": "ak-l9-f2",
+          "front": "What do we do during the khutbah?",
+          "back": "Listen attentively — do not talk or read salaah while the Imaam speaks."
+        },
+        {
+          "id": "ak-l9-f3",
+          "front": "Which Surah is read on Fridays?",
+          "back": "Surah Kahf."
+        }
+      ],
+      "needsContent": false,
       "needsReview": false
     },
     {
       "id": "g5-akhlaaq-l10",
       "n": 10,
-      "title": "Duty of one Muslim to Another",
+      "title": "Duty of One Muslim to Another",
+      "lessonNumber": 10,
       "pages": "36-37",
-      "summary": "",
+      "summary": "All believers are brothers and sisters in faith. Nabee ﷺ said the believers in their love and mercy are like one body. A Muslim helps, greets, visits, and makes peace between others — and never disgraces or envies them.",
       "keyTerms": [],
-      "points": [],
-      "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "points": [
+        "A Muslim is always ready to help another Muslim.",
+        "A Muslim shares in the joy and pain of his brother or sister.",
+        "A Muslim will not refuse to talk to his fellow Muslim for more than three days.",
+        "A Muslim does not disgrace or insult his brother or sister.",
+        "A Muslim is not jealous over the good of his brother or sister.",
+        "A Muslim always hides the faults of another Muslim.",
+        "A Muslim is always the first to greet another Muslim.",
+        "It is a duty to visit a sick brother or sister and to attend his or her janazah.",
+        "A Muslim accepts the invitation of his fellow Muslim.",
+        "A Muslim makes peace between other Muslims who are fighting or arguing."
+      ],
+      "story": {
+        "title": "Love For The Sake Of Allaah",
+        "text": "Sayyidina Abu Dardah رضي related that Nabee ﷺ said: on the Day of Resurrection some people will come from their graves with shining faces, seated on pearl-studded pulpits, and people will look at them enviously. They will be neither prophets nor martyrs. A Bedouin asked who they are. Nabee ﷺ said: “They are those persons who loved each other for the sake of Allaah.”"
+      },
+      "questions": [
+        {
+          "id": "ak-l10-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "According to the Qur'aan, what are all believers to each other?",
+          "options": [
+            "Brothers and sisters",
+            "Strangers",
+            "Competitors",
+            "Neighbours only"
+          ],
+          "correctAnswer": "Brothers and sisters",
+          "explanation": "“All Believers are but brothers and sisters” (49:10)."
+        },
+        {
+          "id": "ak-l10-q2",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "A Muslim should hide the faults of another Muslim.",
+          "correctAnswer": true,
+          "explanation": "Yes — a Muslim always hides the faults of another Muslim, and does not disgrace him."
+        },
+        {
+          "id": "ak-l10-q3",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "It is fine to stay angry and not talk to a fellow Muslim for a week.",
+          "correctAnswer": false,
+          "explanation": "No — a Muslim should not refuse to talk to a fellow Muslim for more than three days."
+        },
+        {
+          "id": "ak-l10-q4",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Nabee ﷺ compared the believers in their love and mercy to...",
+          "options": [
+            "one single body",
+            "separate islands",
+            "a flock of birds",
+            "a row of trees"
+          ],
+          "correctAnswer": "one single body",
+          "explanation": "The believers are like one body — when one limb hurts, the whole body feels it."
+        },
+        {
+          "id": "ak-l10-q5",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "In the story, who will have shining faces on the Day of Resurrection (though not prophets or martyrs)?",
+          "acceptedAnswers": [
+            "those who loved each other for the sake of allah",
+            "people who loved each other for the sake of allah",
+            "those who loved for the sake of allah",
+            "people who loved for allah's sake",
+            "those who love each other for allah"
+          ],
+          "explanation": "Those who loved one another for the sake of Allah."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "ak-l10-f1",
+          "front": "What are all believers to one another?",
+          "back": "Brothers and sisters in faith (Qur'aan 49:10)."
+        },
+        {
+          "id": "ak-l10-f2",
+          "front": "Nabee ﷺ said the believers are like...?",
+          "back": "One single body — when one limb hurts, the whole body reacts."
+        },
+        {
+          "id": "ak-l10-f3",
+          "front": "How long may a Muslim stay not talking to another?",
+          "back": "Not more than three days."
+        },
+        {
+          "id": "ak-l10-f4",
+          "front": "Who will have shining faces on the Day of Resurrection?",
+          "back": "Those who loved each other for the sake of Allah."
+        }
+      ],
+      "needsContent": false,
       "needsReview": false
     }
   ]

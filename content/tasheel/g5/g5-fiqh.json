@@ -10,7 +10,7 @@
       "note": "Tas-heelul Fiqh 5"
     }
   ],
-  "status": "in_progress",
+  "status": "complete",
   "lessons": [
     {
       "id": "g5-fiqh-l1",
@@ -1896,41 +1896,1592 @@
       "n": 18,
       "title": "Tayammum",
       "pages": "48-49",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
+      "summary": "Tayammum is to purify oneself from hadathul akbar or hadathul asghar by using clean soil (sand) when one is unable to use water, or unable to find water within one Shar'ee mile (1.81 km). The Holy Qur'aan says: “…If you do not find water, then use clean soil, and wipe your faces and hands with it.”",
+      "keyTerms": [
+        {
+          "term": "Tayammum",
+          "meaning": "Purifying oneself with clean soil when water cannot be used or found"
+        },
+        {
+          "term": "Taahir",
+          "meaning": "Clean and pure"
+        },
+        {
+          "term": "Shar'ee mile",
+          "meaning": "A distance of about 1.81 km"
+        }
+      ],
+      "points": [
+        "Make Niyyah by saying: “I am performing Tayammum to obtain purity.”",
+        "Strike both palms on the soil and shake off the excess dust.",
+        "Wipe both palms over the whole face, making sure no part of the face is left out.",
+        "Strike both palms on the soil a second time, shake off the excess dust, then wipe the outer part of the arm from the fingertips up to and including the elbow.",
+        "Then wipe the inner part of the arm from the elbow down to the fingertips, including the inner thumb, leaving no part out. Repeat the same with the left arm.",
+        "Important: if any area even the width of one hair is left unwiped, the Tayammum is invalid. Make khilaal (passing fingers through) the area between all the fingers and the thumb."
+      ],
+      "questions": [
+        {
+          "id": "fq-l18-q1",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "What does Tayammum mean?",
+          "acceptedAnswers": [
+            "to purify yourself with clean soil when there is no water",
+            "using clean soil or sand instead of water",
+            "purifying with sand when water cannot be used or found",
+            "to make wudhu or ghusl with clean soil"
+          ],
+          "explanation": "Tayammum is purifying oneself with clean soil (sand) when one cannot use water or cannot find water nearby."
+        },
+        {
+          "id": "fq-l18-q2",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "What does a person do when he has no water to make wudhu and wants to read salaah?",
+          "acceptedAnswers": [
+            "he makes tayammum",
+            "make tayammum",
+            "perform tayammum with clean soil"
+          ],
+          "explanation": "When there is no water, a person makes Tayammum using clean soil so that he can read his salaah."
+        },
+        {
+          "id": "fq-l18-q3",
+          "type": "true-false",
+          "difficulty": "medium",
+          "prompt": "If even a hair's width of the face or arms is left unwiped, the Tayammum is still valid.",
+          "correctAnswer": false,
+          "explanation": "If any area even the width of one hair is left unwiped, the Tayammum is invalid."
+        },
+        {
+          "id": "fq-l18-q4",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "How many times do you strike the soil when making Tayammum?",
+          "acceptedAnswers": [
+            "twice",
+            "two times",
+            "two"
+          ],
+          "explanation": "You strike the soil twice — once for the face and once for the arms."
+        },
+        {
+          "id": "fq-l18-q5",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What is the first thing you do when making Tayammum?",
+          "options": [
+            "Make Niyyah",
+            "Wipe the face",
+            "Strike the soil",
+            "Wipe the arms"
+          ],
+          "correctAnswer": "Make Niyyah",
+          "explanation": "Tayammum begins with the Niyyah (intention) to obtain purity."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "What is Tayammum?",
+          "back": "Purifying yourself with clean soil (sand) when you cannot use or find water."
+        },
+        {
+          "front": "How many times do you strike the soil in Tayammum?",
+          "back": "Twice — once for the face and once for the arms."
+        },
+        {
+          "front": "What do you wipe in Tayammum?",
+          "back": "The whole face, then both arms up to and including the elbows."
+        },
+        {
+          "front": "What is the niyyah for Tayammum?",
+          "back": "“I am performing Tayammum to obtain purity.”"
+        }
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "wordSearch": null,
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "g5-fiqh-l19",
+      "n": 19,
+      "title": "Faraa'idh of Tayammum",
+      "pages": "50-53",
+      "summary": "Tayammum has three Faraaidh (compulsory acts). It is permitted on clean (Taahir) earthy things such as soil, stone, lime stone, clay, brick and a mud wall, and on anything that has a thick layer of dust. It is not permitted on metal, glass or wood (if there is no thick dust on them), on any foodstuff, or on anything that burns to ash, melts or rots.",
+      "keyTerms": [
+        {
+          "term": "Faraaidh",
+          "meaning": "The compulsory acts (plural of fardh)"
+        },
+        {
+          "term": "Taahir",
+          "meaning": "Clean and pure"
+        },
+        {
+          "term": "Melts",
+          "meaning": "To turn to liquid with heat (e.g. wax) — tayammum is not allowed on it"
+        },
+        {
+          "term": "Rots",
+          "meaning": "To decay or go bad — tayammum is not allowed on it"
+        }
+      ],
+      "points": [
+        "The three Faraaidh of Tayammum are: (1) to make Niyyah; (2) to strike both palms on the sand and wipe the face; (3) to strike both palms on the sand and wipe the arms, including the elbows.",
+        "Things that break Tayammum: everything that breaks wudhu; when water is found (if it was done in the absence of water); and when the illness is cured (if it was done because of an illness).",
+        "Things on which Tayammum IS permitted: Taahir (clean) soil; stone (even with no sand on it); lime stone; unbaked clay pot; mud wall; brick; clay; and anything with a thick layer of dust on it.",
+        "Things on which Tayammum is NOT permitted: metal, glass and wood (if there is no thick layer of dust on them); all kinds of foodstuff; and anything that burns to ash, melts or rots."
+      ],
+      "questions": [
+        {
+          "id": "fq-l19-q1",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "List the three Faraaidh of Tayammum.",
+          "acceptedAnswers": [
+            "niyyah, wipe the face, wipe the arms",
+            "to make niyyah, to wipe the face, to wipe the arms including the elbows",
+            "niyyah; striking the sand and wiping the face; striking the sand and wiping the arms"
+          ],
+          "explanation": "The three Faraaidh are: Niyyah; striking the sand and wiping the face; and striking the sand and wiping the arms (including the elbows)."
+        },
+        {
+          "id": "fq-l19-q2",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "Name two things that break Tayammum.",
+          "acceptedAnswers": [
+            "finding water and the curing of the illness",
+            "anything that breaks wudhu, and when water is found",
+            "when water is found and when the illness is cured"
+          ],
+          "explanation": "Tayammum is broken by anything that breaks wudhu, by finding water, and by the curing of the illness."
+        },
+        {
+          "id": "fq-l19-q3",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Anything that breaks wudhu also breaks Tayammum.",
+          "correctAnswer": true,
+          "explanation": "All the things that break wudhu also break Tayammum."
+        },
+        {
+          "id": "fq-l19-q4",
+          "type": "true-false",
+          "difficulty": "medium",
+          "prompt": "A person who is in good health and has water available may still make Tayammum.",
+          "correctAnswer": false,
+          "explanation": "Tayammum is only for when water cannot be used or found; a healthy person with water must use the water."
+        },
+        {
+          "id": "fq-l19-q5",
+          "type": "multiple-choice",
+          "difficulty": "medium",
+          "prompt": "On which of these is Tayammum permitted?",
+          "options": [
+            "A clean stone",
+            "A clean glass window with no dust",
+            "A loaf of bread",
+            "A plastic bucket with no dust"
+          ],
+          "correctAnswer": "A clean stone",
+          "explanation": "Tayammum is permitted on a clean stone (even with no sand on it). It is not permitted on food, clean glass, or plastic with no thick dust."
+        },
+        {
+          "id": "fq-l19-q6",
+          "type": "fill-blank",
+          "difficulty": "easy",
+          "prompt": "Tayammum is permitted on anything that has a thick layer of ______.",
+          "correctAnswer": "dust",
+          "acceptedAnswers": [
+            "dust"
+          ],
+          "explanation": "A thick layer of dust on a surface makes Tayammum permitted on it."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "How many Faraaidh does Tayammum have?",
+          "back": "Three."
+        },
+        {
+          "front": "Name the three Faraaidh of Tayammum.",
+          "back": "Niyyah; striking the sand and wiping the face; striking the sand and wiping the arms."
+        },
+        {
+          "front": "Can you make Tayammum on a clean stone?",
+          "back": "Yes — even if there is no sand on it."
+        },
+        {
+          "front": "Can you make Tayammum on food or on metal with no dust?",
+          "back": "No."
+        },
+        {
+          "front": "What three things break Tayammum?",
+          "back": "Anything that breaks wudhu; finding water; and the curing of the illness."
+        }
+      ],
+      "wordSearch": {
+        "title": "Tayammum — word search",
+        "instruction": "Find the words for things on which Tayammum is and is not permitted.",
+        "grid": [
+          [
+            "v",
+            "w",
+            "u",
+            "i",
+            "e",
+            "p",
+            "j",
+            "m",
+            "u",
+            "d",
+            "o",
+            "m",
+            "j",
+            "x"
+          ],
+          [
+            "f",
+            "o",
+            "o",
+            "l",
+            "s",
+            "j",
+            "j",
+            "v",
+            "y",
+            "b",
+            "c",
+            "g",
+            "l",
+            "j"
+          ],
+          [
+            "v",
+            "y",
+            "n",
+            "i",
+            "d",
+            "o",
+            "o",
+            "c",
+            "o",
+            "q",
+            "o",
+            "a",
+            "v",
+            "a"
+          ],
+          [
+            "f",
+            "n",
+            "u",
+            "m",
+            "i",
+            "c",
+            "i",
+            "c",
+            "e",
+            "f",
+            "t",
+            "n",
+            "j",
+            "o"
+          ],
+          [
+            "d",
+            "g",
+            "t",
+            "e",
+            "p",
+            "v",
+            "z",
+            "l",
+            "c",
+            "e",
+            "n",
+            "u",
+            "u",
+            "l"
+          ],
+          [
+            "e",
+            "a",
+            "m",
+            "h",
+            "t",
+            "u",
+            "j",
+            "u",
+            "m",
+            "b",
+            "s",
+            "r",
+            "l",
+            "s"
+          ],
+          [
+            "l",
+            "i",
+            "s",
+            "g",
+            "d",
+            "i",
+            "q",
+            "k",
+            "b",
+            "a",
+            "y",
+            "a",
+            "i",
+            "u"
+          ],
+          [
+            "g",
+            "a",
+            "c",
+            "o",
+            "g",
+            "j",
+            "q",
+            "o",
+            "y",
+            "q",
+            "w",
+            "e",
+            "k",
+            "z"
+          ],
+          [
+            "q",
+            "z",
+            "o",
+            "b",
+            "r",
+            "i",
+            "c",
+            "k",
+            "i",
+            "r",
+            "w",
+            "x",
+            "x",
+            "j"
+          ],
+          [
+            "u",
+            "f",
+            "g",
+            "x",
+            "v",
+            "q",
+            "j",
+            "u",
+            "q",
+            "s",
+            "n",
+            "p",
+            "b",
+            "h"
+          ],
+          [
+            "e",
+            "b",
+            "o",
+            "l",
+            "d",
+            "q",
+            "s",
+            "w",
+            "d",
+            "i",
+            "w",
+            "o",
+            "w",
+            "m"
+          ],
+          [
+            "v",
+            "k",
+            "k",
+            "l",
+            "a",
+            "f",
+            "o",
+            "o",
+            "k",
+            "x",
+            "d",
+            "u",
+            "v",
+            "v"
+          ],
+          [
+            "q",
+            "c",
+            "l",
+            "a",
+            "y",
+            "s",
+            "o",
+            "o",
+            "s",
+            "t",
+            "o",
+            "n",
+            "e",
+            "n"
+          ],
+          [
+            "t",
+            "b",
+            "l",
+            "c",
+            "k",
+            "n",
+            "s",
+            "d",
+            "l",
+            "o",
+            "s",
+            "x",
+            "l",
+            "b"
+          ]
+        ],
+        "words": [
+          "stone",
+          "brick",
+          "metal",
+          "glass",
+          "soil",
+          "lime",
+          "clay",
+          "wall",
+          "wood",
+          "food",
+          "mud",
+          "ash"
+        ]
+      },
+      "story": null,
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "g5-fiqh-l20",
+      "n": 20,
+      "title": "Masah on the khuf",
+      "pages": "54-55",
+      "summary": "The Shariah allows us to make masah (wiping) on leather socks instead of washing the feet in wudhu. Nabee ﷺ allowed a musaafir (traveller) to make masah on the khuffain for three days and three nights, and a person who is not travelling for one day and one night (Muslim). A khuf is a sock that is not transparent and does not let water seep through; it must be strong enough to walk three Shar'ee miles (5.4 km) in, and is generally made of leather. Socks of cotton or nylon are not regarded as khuffain.",
+      "keyTerms": [
+        {
+          "term": "Khuf",
+          "meaning": "A leather sock (plural: Khuffain)"
+        },
+        {
+          "term": "Masah",
+          "meaning": "To wipe over with wet hands"
+        },
+        {
+          "term": "Musaafir",
+          "meaning": "A traveller"
+        }
+      ],
+      "points": [
+        "Masah on the khuf takes the place of washing the feet in wudhu.",
+        "A traveller may make masah for three days and three nights; a non-traveller for one day and one night (Muslim).",
+        "A khuf does not let water seep through, is strong enough to walk 5.4 km in, and is generally made of leather; cotton and nylon socks are not khuffain.",
+        "Method: pass the wet fingers of the right hand over the upper surface of the khuf, starting from the toes and ending at the foreleg just above the ankle.",
+        "The masah is done once only on each sock.",
+        "It is fardh to make masah on each sock, covering the full surface area of three fingers from the toes to the foreleg."
+      ],
+      "questions": [
+        {
+          "id": "fq-l20-q1",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "What does khuf mean?",
+          "acceptedAnswers": [
+            "a leather sock",
+            "a sock that water does not seep through, made of leather",
+            "leather sock"
+          ],
+          "explanation": "A khuf is a leather sock that water does not seep through and that is strong enough to walk in."
+        },
+        {
+          "id": "fq-l20-q2",
+          "type": "fill-blank",
+          "difficulty": "easy",
+          "prompt": "A traveller may make masah on the khuffain for ______ days and three nights.",
+          "correctAnswer": "three",
+          "acceptedAnswers": [
+            "three",
+            "3"
+          ],
+          "explanation": "A traveller may make masah for three days and three nights."
+        },
+        {
+          "id": "fq-l20-q3",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Cotton and nylon socks are regarded as khuffain.",
+          "correctAnswer": false,
+          "explanation": "Only socks that do not let water through and are strong enough to walk in (usually leather) are khuffain; cotton and nylon socks are not."
+        },
+        {
+          "id": "fq-l20-q4",
+          "type": "multiple-choice",
+          "difficulty": "medium",
+          "prompt": "How long may a person who is NOT travelling make masah on the khuf?",
+          "options": [
+            "One day and one night",
+            "Three days and three nights",
+            "One week",
+            "As long as he likes"
+          ],
+          "correctAnswer": "One day and one night",
+          "explanation": "A non-traveller may make masah for one day and one night."
+        },
+        {
+          "id": "fq-l20-q5",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "In which direction do you wipe when making masah on the khuf?",
+          "acceptedAnswers": [
+            "from the toes up to the foreleg",
+            "from the toes to just above the ankle",
+            "toes to the foreleg"
+          ],
+          "explanation": "You pass wet fingers from the toes up to the foreleg, once on each sock."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "What is a khuf?",
+          "back": "A leather sock that water does not seep through, strong enough to walk in."
+        },
+        {
+          "front": "How long may a traveller make masah on the khuffain?",
+          "back": "Three days and three nights."
+        },
+        {
+          "front": "How long may a non-traveller make masah?",
+          "back": "One day and one night."
+        },
+        {
+          "front": "How do you make masah on the khuf?",
+          "back": "Pass wet fingers from the toes up to the foreleg, once on each sock."
+        }
+      ],
+      "story": null,
+      "wordSearch": null,
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "g5-fiqh-l21",
+      "n": 21,
+      "title": "Masah on wounds, bandages & plasters",
+      "pages": "56-57",
+      "summary": "When making wudhu or ghusl, if it is harmful to wash a part of the body, or it is not possible to wash it (for example because of a plaster), it is permissible to make masah over the affected area instead of washing it.",
+      "keyTerms": [
+        {
+          "term": "Masah",
+          "meaning": "To wipe over with wet hands"
+        },
+        {
+          "term": "Plaster",
+          "meaning": "A hard cast that cannot be removed"
+        },
+        {
+          "term": "Bandage",
+          "meaning": "A wrapping over a wound or sore"
+        }
+      ],
+      "points": [
+        "Masah on wounds: if pouring water over a wound, injury or sore is harmful, it is permissible to make masah over the affected part.",
+        "Masah on a bandage: if a wound or sore is bandaged and one will have difficulty opening and tying the bandage, masah is made over the bandage. If there is no such difficulty, the bandage must be removed and the part washed.",
+        "Masah on a plaster: masah is made over the plaster, since it cannot be removed.",
+        "Method: pass the wet fingers over the bandage or plaster. It is, however, necessary to wash the part of the body around the bandage or plaster."
+      ],
+      "questions": [
+        {
+          "id": "fq-l21-q1",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "When may one make masah on a bandage or plaster?",
+          "acceptedAnswers": [
+            "when washing the area is harmful or not possible",
+            "when opening and tying the bandage is difficult, or the plaster cannot be removed",
+            "when it is harmful or difficult to wash the area"
+          ],
+          "explanation": "Masah is made when washing would harm the wound, when opening and tying the bandage is difficult, or when a plaster cannot be removed."
+        },
+        {
+          "id": "fq-l21-q2",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "What must you do to the part of the body around the bandage or plaster?",
+          "acceptedAnswers": [
+            "wash it",
+            "wash the portion around it",
+            "wash around it"
+          ],
+          "explanation": "The skin around the bandage or plaster must still be washed."
+        },
+        {
+          "id": "fq-l21-q3",
+          "type": "true-false",
+          "difficulty": "medium",
+          "prompt": "A plaster should always be removed before making wudhu.",
+          "correctAnswer": false,
+          "explanation": "A plaster cannot be removed, so masah is made over it."
+        },
+        {
+          "id": "fq-l21-q4",
+          "type": "multiple-choice",
+          "difficulty": "medium",
+          "prompt": "If a bandage can be opened easily without difficulty, what should you do?",
+          "options": [
+            "Make masah over it",
+            "Remove it and wash the area",
+            "Leave it and skip wudhu",
+            "Make tayammum"
+          ],
+          "correctAnswer": "Remove it and wash the area",
+          "explanation": "If there is no difficulty in opening and tying the bandage, it must be removed and the area washed."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "When do you make masah over a bandage?",
+          "back": "When opening and tying it is difficult, or washing would harm the wound."
+        },
+        {
+          "front": "What do you do with a plaster that cannot be removed?",
+          "back": "Make masah over it."
+        },
+        {
+          "front": "What about the skin around the bandage or plaster?",
+          "back": "It must still be washed."
+        }
+      ],
+      "story": null,
+      "wordSearch": null,
+      "needsContent": false,
       "needsReview": false
     },
     {
       "id": "g5-fiqh-l22",
       "n": 22,
-      "title": "Waajib actions of Salaah",
+      "title": "The waajib actions in salaah",
       "pages": "58-61",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
+      "summary": "Certain acts are compulsory in salaah; if any are left out the salaah is not complete. These acts are either Fardh or Waajib. There are six Fardh acts and thirteen Waajib acts in salaah. If a Fardh act is left out, the salaah is not accepted and must be repeated; if a Waajib act is left out, the salaah can still be corrected.",
+      "keyTerms": [
+        {
+          "term": "Waajib",
+          "meaning": "A compulsory act; if left out the salaah can still be corrected"
+        },
+        {
+          "term": "Qiraat",
+          "meaning": "The recitation of the Qur'aan in salaah"
+        },
+        {
+          "term": "Qawmah",
+          "meaning": "To stand up straight after ruku"
+        },
+        {
+          "term": "Jalsah",
+          "meaning": "To sit between the two sajdahs"
+        },
+        {
+          "term": "Qaadah",
+          "meaning": "The sitting posture in salaah"
+        },
+        {
+          "term": "Tashahhud",
+          "meaning": "The prayer (At-tahiyyaat) read in the Qaadah"
+        },
+        {
+          "term": "Duaa-ul-Qunoot",
+          "meaning": "The duaa recited in Witr salaah"
+        }
+      ],
+      "points": [
+        "The six Fardh acts of salaah are: Takbeerut Tahreema; Qiyaam (standing); Qiraat (reciting at least three short aayahs or one long aayah); Ruku (bowing); Sajdah (two prostrations in each rakaah); and Qaadah Akheerah (sitting at the end of the last rakaah long enough to read the Tashahhud).",
+        "If a Fardh act is left out the salaah must be repeated; if a Waajib act is left out, the salaah can still be corrected.",
+        "Waajibaat (1-6): recite Surah Faatihah; recite three short verses (or one long verse) after Faatihah in every rakaat of sunnah/nafl; do the same in the first two rakaahs of fardh; perform every act calmly without haste; keep the proper sequence in qiraah, ruku and sajdah; recite softly in the fardh of Zuhr and Asr and loudly in the other fardh salaahs (including Jumu'ah, Eid, Taraaweeh and Witr in Ramadhaan).",
+        "Waajibaat (7-13): Qawmah (stand straight after ruku); Jalsah (sit between the two sajdahs); read Tashahhud in the two Qaadahs; Qaadatul ula (sit for Tashahhud after every two rakaahs in a 3 or 4 rakaah salaah); end the salaah by making salaam; recite Duaa-ul-Qunoot in Witr; and make six extra Takbeers in the two Eid salaahs."
+      ],
+      "questions": [
+        {
+          "id": "fq-l22-q1",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "How many Fardh acts and how many Waajib acts are there in salaah?",
+          "acceptedAnswers": [
+            "six fardh and thirteen waajib",
+            "6 fardh and 13 waajib",
+            "six and thirteen"
+          ],
+          "explanation": "There are six Fardh acts and thirteen Waajib acts in salaah."
+        },
+        {
+          "id": "fq-l22-q2",
+          "type": "short-answer",
+          "difficulty": "hard",
+          "prompt": "Name three of the six Fardh acts of salaah.",
+          "acceptedAnswers": [
+            "takbeerut tahreema, qiyaam, ruku",
+            "qiyaam, qiraat, sajdah",
+            "takbeerut tahreema, qiyaam, qiraat, ruku, sajdah, qaadah akheerah"
+          ],
+          "explanation": "The six Fardh are Takbeerut Tahreema, Qiyaam, Qiraat, Ruku, Sajdah and Qaadah Akheerah."
+        },
+        {
+          "id": "fq-l22-q3",
+          "type": "multiple-choice",
+          "difficulty": "medium",
+          "prompt": "What happens if a Fardh act of salaah is left out?",
+          "options": [
+            "The salaah must be repeated",
+            "The salaah is still complete",
+            "You only make Sajdah Sahw",
+            "Nothing happens"
+          ],
+          "correctAnswer": "The salaah must be repeated",
+          "explanation": "Leaving out a Fardh act means the salaah is not accepted and must be repeated."
+        },
+        {
+          "id": "fq-l22-q4",
+          "type": "true-false",
+          "difficulty": "medium",
+          "prompt": "If a Waajib act is left out, the salaah can still be corrected.",
+          "correctAnswer": true,
+          "explanation": "Unlike a Fardh, a left-out Waajib can be corrected (with Sajdah Sahw)."
+        },
+        {
+          "id": "fq-l22-q5",
+          "type": "fill-blank",
+          "difficulty": "easy",
+          "prompt": "Qawmah means to ______ up straight after ruku.",
+          "correctAnswer": "stand",
+          "acceptedAnswers": [
+            "stand"
+          ],
+          "explanation": "Qawmah is to stand up straight after coming up from ruku."
+        },
+        {
+          "id": "fq-l22-q6",
+          "type": "match",
+          "difficulty": "medium",
+          "prompt": "Match each Waajib act with its meaning.",
+          "pairs": [
+            {
+              "left": "Qawmah",
+              "right": "To stand up straight after ruku"
+            },
+            {
+              "left": "Jalsah",
+              "right": "To sit between the two sajdahs"
+            },
+            {
+              "left": "Qaadatul ula",
+              "right": "To sit for Tashahhud after every two rakaahs"
+            },
+            {
+              "left": "Tashahhud",
+              "right": "Read in the two Qaadahs"
+            },
+            {
+              "left": "Duaa-ul-Qunoot",
+              "right": "Recited in Witr salaah"
+            },
+            {
+              "left": "Six extra Takbeers",
+              "right": "Made in the two Eid salaahs"
+            }
+          ],
+          "explanation": "These are the clear Waajib acts taken from the thirteen Waajibaat of salaah."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "How many Fardh acts are there in salaah?",
+          "back": "Six."
+        },
+        {
+          "front": "How many Waajib acts are there in salaah?",
+          "back": "Thirteen."
+        },
+        {
+          "front": "What is Qawmah?",
+          "back": "Standing up straight after ruku."
+        },
+        {
+          "front": "What is Jalsah?",
+          "back": "Sitting between the two sajdahs."
+        },
+        {
+          "front": "In which salaah do you recite Duaa-ul-Qunoot?",
+          "back": "Witr salaah."
+        },
+        {
+          "front": "What happens if a Fardh of salaah is left out?",
+          "back": "The salaah is not accepted and must be repeated."
+        }
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "wordSearch": null,
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "g5-fiqh-l23",
+      "n": 23,
+      "title": "Sunan in salaah",
+      "pages": "62-65",
+      "summary": "Sunnah refers to deeds that Nabee ﷺ practised. Leaving out a Sunnah act lessens the reward and beauty of the salaah, though the salaah is still accepted. By following the Sunnah we earn the love of Allah and His Nabee ﷺ, so we should not leave out a Sunnah without a good reason. The Sunan of salaah are grouped according to Qiyaam, recital, Ruku and Sujood, and Qa'dah and Jalsah.",
+      "keyTerms": [
+        {
+          "term": "Sunnah",
+          "meaning": "A deed practised by Nabee ﷺ that we follow"
+        },
+        {
+          "term": "Thana",
+          "meaning": "The opening praise recited softly at the start of the first rakaah"
+        },
+        {
+          "term": "Ta'awwuz",
+          "meaning": "“A'oodhu billah…” — seeking protection in Allah"
+        },
+        {
+          "term": "Tasmiya",
+          "meaning": "“Bismillah…” — said at the start of every rakaah"
+        },
+        {
+          "term": "Munfarid",
+          "meaning": "A person performing salaah alone"
+        }
+      ],
+      "points": [
+        "Sunan in Qiyaam: raise both hands up to the ears when making Takbeerut Tahreema; keep the fingers open with the palms facing the Qiblah; fold the hands below the navel, placing the right wrist on the left hand.",
+        "Sunan of recital: recite the Takbeer while changing posture; recite Thana softly at the start of the first rakaah; recite Ta'awwuz at the start of the first rakaah; recite Tasmiya (Bismillah) at the start of every rakaah; recite Surah Faatiha only in the third and fourth rakaah of fardh salaah; say Aameen softly after Surah Faatiha; and recite as much Qiraah as is Sunnah for each fardh salaah.",
+        "Sunan of Ruku and Sujood: keep the back and head level in ruku; recite the Tasbeeh three times in ruku and sujood; coming up from ruku the Imaam says the Tasmee' and the Muqtadi says the Tahmeed (a Munfarid says both); when going into sajdah place the knees first, then the hands, then the nose and the forehead.",
+        "Sunan of Qa'dah and Jalsah: place the left foot flat and sit on it, keeping the right foot upright with its toes towards the Qiblah, and the hands on the thighs; raise the fore-finger while saying the Shahaadah in the Tashahhud; recite Durood Ibraaheem in the Qaadah Akheera after the Tashahhud; recite a permitted duaa after Durood; turn the face for salaam, first to the right and then to the left; and make the niyyah of greeting the angels and the other Musallis."
+      ],
+      "questions": [
+        {
+          "id": "fq-l23-q1",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "What is a Sunnah act?",
+          "acceptedAnswers": [
+            "a deed practised by nabee saw",
+            "something nabee did which we follow",
+            "a deed of nabee saw that we follow"
+          ],
+          "explanation": "A Sunnah is a deed that Nabee ﷺ practised, which we follow to earn the love of Allah and His Nabee ﷺ."
+        },
+        {
+          "id": "fq-l23-q2",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "Where do men fold their hands in Qiyaam?",
+          "acceptedAnswers": [
+            "below the navel",
+            "right wrist on the left hand below the navel",
+            "under the navel"
+          ],
+          "explanation": "Men fold the hands below the navel, placing the right wrist on the left hand."
+        },
+        {
+          "id": "fq-l23-q3",
+          "type": "true-false",
+          "difficulty": "medium",
+          "prompt": "Leaving out a Sunnah act breaks the salaah.",
+          "correctAnswer": false,
+          "explanation": "Leaving out a Sunnah lessens the reward and beauty of the salaah, but the salaah is still accepted."
+        },
+        {
+          "id": "fq-l23-q4",
+          "type": "fill-blank",
+          "difficulty": "easy",
+          "prompt": "We recite Thana ______ at the beginning of the first rakaah.",
+          "correctAnswer": "softly",
+          "acceptedAnswers": [
+            "softly",
+            "quietly"
+          ],
+          "explanation": "Thana is recited softly at the start of the first rakaah."
+        },
+        {
+          "id": "fq-l23-q5",
+          "type": "multiple-choice",
+          "difficulty": "medium",
+          "prompt": "When going into Sajdah, which part of the body touches the ground first?",
+          "options": [
+            "The forehead",
+            "The hands",
+            "The knees",
+            "The nose"
+          ],
+          "correctAnswer": "The knees",
+          "explanation": "The order is knees first, then the hands, then the nose and the forehead."
+        },
+        {
+          "id": "fq-l23-q6",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "How many times do we recite the Tasbeeh in ruku and sujood?",
+          "acceptedAnswers": [
+            "three times",
+            "at least three times",
+            "thrice",
+            "three"
+          ],
+          "explanation": "The Tasbeeh is recited at least three times in ruku and in sujood."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "What is a Sunnah act in salaah?",
+          "back": "A deed that Nabee ﷺ practised; leaving it out lessens reward but the salaah is still accepted."
+        },
+        {
+          "front": "Where do men fold their hands in Qiyaam?",
+          "back": "Below the navel, right wrist on the left hand."
+        },
+        {
+          "front": "What do you recite softly at the start of the first rakaah?",
+          "back": "Thana."
+        },
+        {
+          "front": "When going into sajdah, what goes down first?",
+          "back": "The knees, then the hands, then the nose and forehead."
+        }
+      ],
+      "story": null,
+      "wordSearch": null,
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "g5-fiqh-l24",
+      "n": 24,
+      "title": "Mustahabbaat in salaah",
+      "pages": "66-67",
+      "summary": "Certain acts are encouraged (Mustahab) in salaah. They perfect the salaah and increase its reward; if they are left out the salaah is still correct. We carry them out because they show our love for Allah and His deen. The main mustahab acts are to fix the gaze at the correct place in each posture, to recite the Tasbeeh more than three times in Ruku and Sajdah, and to cover the mouth when yawning.",
+      "keyTerms": [
+        {
+          "term": "Mustahab",
+          "meaning": "An encouraged act that increases reward; not breaking the salaah if left out"
+        },
+        {
+          "term": "Mustahabbaat",
+          "meaning": "The encouraged acts (plural of Mustahab)"
+        }
+      ],
+      "points": [
+        "It is Mustahab to fix the gaze: in Qiyaam — at the place of Sajdah; in Ruku — on the feet; in Jalsah — towards the lap; in Sajdah — towards the tip of the nose; and during Salaam — towards the shoulders.",
+        "To recite the Tasbeeh more than three times in Ruku and Sajdah.",
+        "To cover the mouth with the outer part of the right hand when yawning in the Qiyaam position, and with the outer left hand in all other postures.",
+        "Leaving out a Mustahab act does not break the salaah; the salaah is still correct."
+      ],
+      "questions": [
+        {
+          "id": "fq-l24-q1",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "Where should you keep your gaze in Qiyaam?",
+          "acceptedAnswers": [
+            "at the place of sajdah",
+            "where the forehead will rest",
+            "place of sajdah"
+          ],
+          "explanation": "In Qiyaam the gaze is kept at the place of Sajdah."
+        },
+        {
+          "id": "fq-l24-q2",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "Where should you look during Ruku?",
+          "acceptedAnswers": [
+            "on the feet",
+            "at your feet",
+            "the feet"
+          ],
+          "explanation": "In Ruku the gaze is kept on the feet."
+        },
+        {
+          "id": "fq-l24-q3",
+          "type": "multiple-choice",
+          "difficulty": "medium",
+          "prompt": "Where do you fix your gaze in Sajdah?",
+          "options": [
+            "At the place of sajdah",
+            "On the feet",
+            "Towards the tip of the nose",
+            "Towards the shoulders"
+          ],
+          "correctAnswer": "Towards the tip of the nose",
+          "explanation": "In Sajdah the gaze is towards the tip of the nose."
+        },
+        {
+          "id": "fq-l24-q4",
+          "type": "match",
+          "difficulty": "medium",
+          "prompt": "Match each posture with where the gaze should be.",
+          "pairs": [
+            {
+              "left": "Qiyaam",
+              "right": "The place of Sajdah"
+            },
+            {
+              "left": "Ruku",
+              "right": "The feet"
+            },
+            {
+              "left": "Jalsah",
+              "right": "The lap"
+            },
+            {
+              "left": "Sajdah",
+              "right": "The tip of the nose"
+            },
+            {
+              "left": "Salaam",
+              "right": "The shoulders"
+            }
+          ],
+          "explanation": "These are the mustahab gaze positions for each posture of salaah."
+        },
+        {
+          "id": "fq-l24-q5",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "If a Mustahab act is left out, the salaah is still correct.",
+          "correctAnswer": true,
+          "explanation": "Mustahab acts increase reward; leaving one out does not break the salaah."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "Where do you look in Qiyaam?",
+          "back": "At the place of sajdah."
+        },
+        {
+          "front": "Where do you look in Ruku?",
+          "back": "At your feet."
+        },
+        {
+          "front": "Where do you look in Sajdah?",
+          "back": "At the tip of your nose."
+        },
+        {
+          "front": "Where do you look during Salaam?",
+          "back": "Towards your shoulders."
+        },
+        {
+          "front": "What does Mustahab mean?",
+          "back": "An encouraged act that increases reward; leaving it out does not break the salaah."
+        }
+      ],
+      "story": null,
+      "wordSearch": null,
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "g5-fiqh-l25",
+      "n": 25,
+      "title": "Makroohaat in salaah",
+      "pages": "68-70",
+      "summary": "Certain acts are disliked (Makrooh) in salaah. They lessen the reward of the salaah and cause its blessings to be lost, so we must avoid them because they are disliked by Allah. There are sixteen well-known Makroohaat of salaah.",
+      "keyTerms": [
+        {
+          "term": "Makrooh",
+          "meaning": "A disliked act"
+        },
+        {
+          "term": "Makroohaat",
+          "meaning": "The disliked acts (plural of Makrooh)"
+        }
+      ],
+      "points": [
+        "Makroohaat of salaah include: performing salaah bare-headed; fiddling with the clothing or any part of the body; performing salaah when one has the urge to relieve oneself; cracking the fingers; placing the fingers of one hand between the fingers of the other; looking around or turning the face away from the Qiblah.",
+        "More Makroohaat: (for men) placing both arms and wrists on the ground in Sajdah; making salaah while facing another person; purposely yawning or coughing; closing the eyes; standing alone in the last row when there is space in the front row.",
+        "More Makroohaat: performing salaah in clothing that has pictures or faces on it; performing salaah in a room where pictures of living things are exposed; counting the aayahs or tasbeeh on the fingers; stretching in salaah; and doing anything contrary to the Sunnah in salaah."
+      ],
+      "questions": [
+        {
+          "id": "fq-l25-q1",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "To perform salaah bare-headed is Makrooh.",
+          "correctAnswer": true,
+          "explanation": "Performing salaah bare-headed (without a good reason) is Makrooh."
+        },
+        {
+          "id": "fq-l25-q2",
+          "type": "true-false",
+          "difficulty": "medium",
+          "prompt": "Closing the eyes in salaah is allowed and has no harm.",
+          "correctAnswer": false,
+          "explanation": "Closing the eyes in salaah is Makrooh."
+        },
+        {
+          "id": "fq-l25-q3",
+          "type": "true-false",
+          "difficulty": "medium",
+          "prompt": "It is Makrooh for a man to place both arms and wrists on the ground in Sajdah.",
+          "correctAnswer": true,
+          "explanation": "For men, placing both the arms and wrists on the ground in Sajdah is Makrooh."
+        },
+        {
+          "id": "fq-l25-q4",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "It is fine to perform salaah when you have a strong urge to relieve yourself.",
+          "correctAnswer": false,
+          "explanation": "Performing salaah while needing to relieve oneself is Makrooh; one should relieve oneself first."
+        },
+        {
+          "id": "fq-l25-q5",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Which of these is Makrooh in salaah?",
+          "options": [
+            "Standing straight after ruku",
+            "Cracking your fingers",
+            "Reciting Surah Faatihah",
+            "Making Sajdah"
+          ],
+          "correctAnswer": "Cracking your fingers",
+          "explanation": "Cracking the fingers in salaah is Makrooh."
+        },
+        {
+          "id": "fq-l25-q6",
+          "type": "match",
+          "difficulty": "hard",
+          "prompt": "Match the start of each Makrooh act with its correct ending.",
+          "pairs": [
+            {
+              "left": "To perform salaah when one has",
+              "right": "an urge to relieve oneself"
+            },
+            {
+              "left": "To look around or",
+              "right": "turn the face away from the Qiblah"
+            },
+            {
+              "left": "To make salaah while",
+              "right": "another person is facing you"
+            },
+            {
+              "left": "To stretch",
+              "right": "to remove laziness"
+            },
+            {
+              "left": "To count",
+              "right": "the aayahs and tasbeeh on the fingers"
+            },
+            {
+              "left": "To perform salaah with",
+              "right": "pictures of living things on the clothing"
+            }
+          ],
+          "explanation": "Each of these completes one of the sixteen Makroohaat of salaah."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "What does Makrooh mean?",
+          "back": "A disliked act that lessens the reward and blessings of salaah."
+        },
+        {
+          "front": "Is it Makrooh to perform salaah bare-headed?",
+          "back": "Yes."
+        },
+        {
+          "front": "Is closing the eyes in salaah Makrooh?",
+          "back": "Yes."
+        },
+        {
+          "front": "Should you perform salaah when you badly need the toilet?",
+          "back": "No — it is Makrooh; relieve yourself first."
+        }
+      ],
+      "story": null,
+      "wordSearch": null,
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "g5-fiqh-l26",
+      "n": 26,
+      "title": "Mufsidaatus salaah",
+      "pages": "71-73",
+      "summary": "Salaah is a special way of communicating with Allah and must be performed according to strict rules. Certain acts (the Mufsidaat) make the salaah null and void, and the entire salaah must then be repeated.",
+      "keyTerms": [
+        {
+          "term": "Mufsidaat",
+          "meaning": "The things that break (nullify) the salaah"
+        },
+        {
+          "term": "Aamaal Katheer",
+          "meaning": "So much action that others think one is not in salaah"
+        }
+      ],
+      "points": [
+        "Acts that break salaah include: talking, even a single word, knowingly or unknowingly; making a sound or saying “Ooh” or “Aah”; making or replying to salaam verbally or by any method while in salaah; replying to someone who sneezes, or saying “Aameen” to a duaa not connected to one's own salaah.",
+        "More Mufsidaat: saying “Innaa lillaahi wa innaa ilaihi raaji'oon” on bad news or “Alhamdulillah” on good news; correcting a person other than one's own Imaam in Qiraah; reciting the Qur'aan while looking at the text; making a mistake in recitation that completely changes the meaning; performing Aamaal Katheer (excessive action); eating or drinking knowingly or unknowingly.",
+        "More Mufsidaat: walking the distance of two rows; turning the chest away from the Qiblah; delaying in covering the satr when it becomes uncovered; laughing aloud in salaah; making Sajdah in an impure (najas) place; and standing in front of the Imaam in a fardh salaah."
+      ],
+      "questions": [
+        {
+          "id": "fq-l26-q1",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "What happens to a salaah if a Mufsid (breaking act) takes place?",
+          "acceptedAnswers": [
+            "it becomes null and void",
+            "it breaks and must be repeated",
+            "the salaah is broken and repeated"
+          ],
+          "explanation": "A Mufsid makes the salaah null and void, so the whole salaah must be repeated."
+        },
+        {
+          "id": "fq-l26-q2",
+          "type": "true-false",
+          "difficulty": "medium",
+          "prompt": "Talking even a single word in salaah, knowingly or unknowingly, breaks the salaah.",
+          "correctAnswer": true,
+          "explanation": "Even a single word, said knowingly or unknowingly, breaks the salaah."
+        },
+        {
+          "id": "fq-l26-q3",
+          "type": "fill-blank",
+          "difficulty": "easy",
+          "prompt": "Laughing ______ in salaah breaks the salaah.",
+          "correctAnswer": "aloud",
+          "acceptedAnswers": [
+            "aloud",
+            "out loud",
+            "loudly"
+          ],
+          "explanation": "Laughing aloud is one of the Mufsidaat of salaah."
+        },
+        {
+          "id": "fq-l26-q4",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Which of these breaks the salaah?",
+          "options": [
+            "Reciting the Tasbeeh",
+            "Eating or drinking",
+            "Saying Aameen softly",
+            "Making Ruku"
+          ],
+          "correctAnswer": "Eating or drinking",
+          "explanation": "Eating or drinking, knowingly or unknowingly, breaks the salaah."
+        },
+        {
+          "id": "fq-l26-q5",
+          "type": "true-false",
+          "difficulty": "medium",
+          "prompt": "It is allowed to reply to someone's salaam while you are in salaah.",
+          "correctAnswer": false,
+          "explanation": "Replying to salaam (verbally or by any method) while in salaah breaks the salaah."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "What are the Mufsidaat?",
+          "back": "The acts that make a salaah null and void."
+        },
+        {
+          "front": "Does talking in salaah break it?",
+          "back": "Yes — even one word, knowingly or unknowingly."
+        },
+        {
+          "front": "Does eating or drinking break the salaah?",
+          "back": "Yes."
+        },
+        {
+          "front": "Can you reply to salaam while in salaah?",
+          "back": "No — it breaks the salaah."
+        }
+      ],
+      "story": null,
+      "wordSearch": null,
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "g5-fiqh-l27",
+      "n": 27,
+      "title": "Practical salaah",
+      "pages": "74-75",
+      "summary": "This lesson teaches the practical method of salaah step by step: what to do before salaah, the Niyyah, Takbeerut Tahreemah, Thanaa, Ta'awwuz and Tasmiyah, the first rakaah and the Ruku.",
+      "keyTerms": [
+        {
+          "term": "Niyyah",
+          "meaning": "The intention for the salaah you wish to perform"
+        },
+        {
+          "term": "Takbeerut Tahreemah",
+          "meaning": "The opening “Allaahu Akbar” that begins the salaah"
+        },
+        {
+          "term": "Thanaa",
+          "meaning": "The opening praise recited after the Takbeer"
+        },
+        {
+          "term": "Ta'awwuz",
+          "meaning": "“A'oodhu billaahi minash shaitaanir rajeem”"
+        },
+        {
+          "term": "Tasmiyah",
+          "meaning": "“Bismillaahir Rahmaanir Raheem”"
+        }
+      ],
+      "points": [
+        "Before salaah: make sure you have wudhu and your clothes are taahir; stand respectfully on a taahir place facing the Qiblah; keep both feet straight and parallel, about four fingers apart, with the toes pointing towards the Qiblah; and be conscious that you are about to speak to Allah.",
+        "Niyyah: make the intention for the salaah you wish to perform.",
+        "Takbeerut Tahreemah: lift both hands up to the ear lobes with the palms facing the Qiblah, say “Allaahu Akbar” and fold the hands below the navel — the right palm on the back of the left hand, the right thumb and little finger gripping the left wrist. In Qiyaam the eyes are fixed on the spot where the forehead will rest in Sajdah.",
+        "Thanaa: “Subhaanakallaahumma wa bihamdika wa tabaarakasmuka wa ta'aalaa jadduka wa laa ilaaha ghairuk” — “Glory to You, O Allah, and praise to You; blessed is Your name, exalted is Your Majesty, and there is no god but You.”",
+        "Ta'awwuz and Tasmiyah: “A'oodhu billaahi minash shaitaanir rajeem” (I seek protection in Allah from Shaytaan, the rejected one) and “Bismillaahir Rahmaanir Raheem” (In the name of Allah, the Most Kind, the Most Merciful).",
+        "First rakaah: recite Surah Faatihah, then say Aameen softly; then recite “Bismillah…” and a surah of at least three short aayaat (or one long aayah), keeping the proper sequence of the Qur'aan.",
+        "Ruku: say the Takbeer while going into ruku; clasp both knees with the fingers apart; keep the arms away from the body, the back straight and the head level; the eyes fixed on the feet. Recite the tasbeeh at least three times: “Subhaana Rabbiyal Azeem” (Glory be to my Lord, the Great)."
+      ],
+      "questions": [
+        {
+          "id": "fq-l27-q1",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "What should you check before you begin salaah?",
+          "acceptedAnswers": [
+            "that you have wudhu and clean clothes on a clean place facing the qiblah",
+            "wudhu, clean clothes, clean place, facing the qiblah",
+            "have wudhu and taahir clothes facing qiblah"
+          ],
+          "explanation": "Before salaah you must have wudhu, taahir clothes, stand on a taahir place facing the Qiblah, and be conscious you are speaking to Allah."
+        },
+        {
+          "id": "fq-l27-q2",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "How far apart should the feet be in Qiyaam?",
+          "acceptedAnswers": [
+            "about four fingers apart",
+            "four fingers",
+            "four fingers apart"
+          ],
+          "explanation": "The feet are kept straight and parallel, about four fingers apart, toes towards the Qiblah."
+        },
+        {
+          "id": "fq-l27-q3",
+          "type": "fill-blank",
+          "difficulty": "easy",
+          "prompt": "In ruku we recite “Subhaana Rabbiyal ______”.",
+          "correctAnswer": "azeem",
+          "acceptedAnswers": [
+            "azeem",
+            "adheem",
+            "azeem (the great)"
+          ],
+          "explanation": "In ruku we recite “Subhaana Rabbiyal Azeem” — Glory be to my Lord, the Great."
+        },
+        {
+          "id": "fq-l27-q4",
+          "type": "multiple-choice",
+          "difficulty": "medium",
+          "prompt": "Where do the eyes look during Qiyaam?",
+          "options": [
+            "At the feet",
+            "At the place of sajdah",
+            "At the ceiling",
+            "They are closed"
+          ],
+          "correctAnswer": "At the place of sajdah",
+          "explanation": "In Qiyaam the eyes are fixed on the spot where the forehead will rest in Sajdah."
+        },
+        {
+          "id": "fq-l27-q5",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "What do you say quietly after reciting Surah Faatihah?",
+          "acceptedAnswers": [
+            "aameen",
+            "ameen"
+          ],
+          "explanation": "After Surah Faatihah we say “Aameen” softly."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "What four things do you do before salaah?",
+          "back": "Have wudhu, wear clean clothes, stand on a clean place facing the Qiblah, and be conscious you are speaking to Allah."
+        },
+        {
+          "front": "What is the opening takbeer called?",
+          "back": "Takbeerut Tahreemah."
+        },
+        {
+          "front": "What do you recite in ruku?",
+          "back": "“Subhaana Rabbiyal Azeem” (Glory be to my Lord, the Great), at least three times."
+        },
+        {
+          "front": "Where do you look in Qiyaam?",
+          "back": "At the place where your forehead will rest in sajdah."
+        }
+      ],
+      "story": null,
+      "wordSearch": null,
+      "needsContent": false,
       "needsReview": false
     },
     {
       "id": "g5-fiqh-l28",
       "n": 28,
-      "title": "How to read Salaah",
+      "title": "How to read salaah",
       "pages": "76-81",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
+      "summary": "This lesson continues the practical salaah, from rising out of Ruku to the end of the salaah: the Tasmee' and Qowmah, the two Sajdahs and the Jalsah, the second rakaah, the Qaadah and Tashahhud, Durood Ibraaheem, the duaa, the Salaam, and what to recite after completing the salaah.",
+      "keyTerms": [
+        {
+          "term": "Tasmee'",
+          "meaning": "“Sami'allaahu liman hamidah”, said while rising from ruku"
+        },
+        {
+          "term": "Qowmah",
+          "meaning": "Standing straight after ruku, saying “Rabbanaa lakal hamd”"
+        },
+        {
+          "term": "Tashahhud",
+          "meaning": "The At-tahiyyaat, read sitting in the Qaadah"
+        },
+        {
+          "term": "Durood Ibraaheem",
+          "meaning": "The salutations upon Nabee ﷺ read in the last Qaadah"
+        },
+        {
+          "term": "Salaam",
+          "meaning": "Ending the salaah by turning the face right then left"
+        }
+      ],
+      "points": [
+        "Tasmee' and Qowmah: return to standing saying “Sami'allaahu liman hamidah” (Allah listens to the one who praises Him); while standing say “Rabbanaa lakal hamd” (O our Sustainer, praise be to You alone). Going into sajdah without standing absolutely erect leaves out a Waajib act.",
+        "First Sajdah: go into sajdah saying the Takbeer; place the knees first, then the hands, then the nose and the forehead, with the head between the two hands and the fingers towards the Qiblah; keep the feet upright with the toes facing the Qiblah and not lifted off the ground; keep the arms off the ground and the stomach away from the thighs. Recite “Subhaana Rabbiyal A'laa” (Glory be to my Lord, the Most High) at least three times.",
+        "Jalsah and Second Sajdah: sit up straight saying the Takbeer and pause; then make the second sajdah exactly like the first — one rakaah is now complete.",
+        "Second rakaah: return to standing saying the Takbeer (lifting the forehead first, then the nose, then the knees); recite “Bismillah”, Surah Faatiha and a surah, completing the rakaah as before.",
+        "First Qaadah and Tashahhud: after the second sajdah of the second rakaah, sit in the Qaadah and read the Tashahhud. When reciting the Shahaadah, form a circle with the thumb and fore-finger of the right hand, lifting the index finger at “Laa ilaaha” and lowering it at “illallaah”.",
+        "Third and fourth rakaah: recite only the Tashahhud in the first Qaadah, then stand to complete the remaining rakaahs.",
+        "Second Qaadah: after the Tashahhud read Durood Ibraaheem, then a permitted duaa (for example “Allaahumma innee zalamtu nafsee…” or “Rabbanaa aatinaa fid-dunyaa hasanah…”).",
+        "Salaam: complete the salaah by turning the face to the right saying “Assalaamu alaikum wa rahmatullaah”, then to the left and repeating it, with the niyyah of greeting the angels and the eyes on the shoulders.",
+        "Completion of salaah: recite “Astaghfirullah” three times and make duaa. One may then recite Subhaanallah 33 times, Alhamdulillah 33 times and Allaahu Akbar 34 times."
+      ],
+      "questions": [
+        {
+          "id": "fq-l28-q1",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "What do you say while standing up from ruku (the Tasmee')?",
+          "acceptedAnswers": [
+            "samiallahu liman hamidah",
+            "allah listens to the one who praises him",
+            "sami allahu liman hamidah"
+          ],
+          "explanation": "While rising from ruku we say “Sami'allaahu liman hamidah” — Allah listens to the one who praises Him."
+        },
+        {
+          "id": "fq-l28-q2",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "What do you recite in sajdah?",
+          "acceptedAnswers": [
+            "subhaana rabbiyal alaa",
+            "glory be to my lord the most high",
+            "subhana rabbiyal a'la"
+          ],
+          "explanation": "In sajdah we recite “Subhaana Rabbiyal A'laa” — Glory be to my Lord, the Most High."
+        },
+        {
+          "id": "fq-l28-q3",
+          "type": "fill-blank",
+          "difficulty": "easy",
+          "prompt": "After the Tashahhud, in the last Qaadah, we read ______ Ibraaheem.",
+          "correctAnswer": "durood",
+          "acceptedAnswers": [
+            "durood",
+            "durood ibraaheem",
+            "salawaat"
+          ],
+          "explanation": "In the last Qaadah, after the Tashahhud, we read Durood Ibraaheem."
+        },
+        {
+          "id": "fq-l28-q4",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "To end the salaah, we turn the face to the right and then to the left, saying the Salaam.",
+          "correctAnswer": true,
+          "explanation": "The salaah is ended by making Salaam to the right and then to the left."
+        },
+        {
+          "id": "fq-l28-q5",
+          "type": "multiple-choice",
+          "difficulty": "medium",
+          "prompt": "After completing salaah, how many times do we recite “Allaahu Akbar” in the tasbeeh?",
+          "options": [
+            "33",
+            "34",
+            "10",
+            "100"
+          ],
+          "correctAnswer": "34",
+          "explanation": "After salaah one may recite Subhaanallah 33, Alhamdulillah 33, and Allaahu Akbar 34 times."
+        },
+        {
+          "id": "fq-l28-q6",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "When you stand up from sajdah, which part of the body do you lift first?",
+          "acceptedAnswers": [
+            "the forehead",
+            "forehead first",
+            "the forehead first"
+          ],
+          "explanation": "When rising from sajdah you lift the forehead first, then the nose, then the knees."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "What do you say standing up from ruku?",
+          "back": "“Sami'allaahu liman hamidah” — Allah listens to the one who praises Him."
+        },
+        {
+          "front": "What do you recite in sajdah?",
+          "back": "“Subhaana Rabbiyal A'laa” — Glory be to my Lord, the Most High."
+        },
+        {
+          "front": "What do you read after Tashahhud in the last Qaadah?",
+          "back": "Durood Ibraaheem, then a duaa."
+        },
+        {
+          "front": "How do you end the salaah?",
+          "back": "By making Salaam to the right and then to the left."
+        },
+        {
+          "front": "What tasbeeh can you recite after salaah?",
+          "back": "Subhaanallah 33, Alhamdulillah 33, Allaahu Akbar 34."
+        }
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "wordSearch": null,
+      "needsContent": false,
       "needsReview": false
     }
   ]

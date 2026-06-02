@@ -1,0 +1,687 @@
+{
+  "track": "tasheel",
+  "gradeId": "g5",
+  "subjectId": "g5-duas",
+  "subjectName": "Du'as",
+  "tagline": "Tas-heelud Du'aa — Du'aa made easy (Grade 5)",
+  "sourceBook": {
+    "title": "Tas-heelud Du'aa (Duaa made easy)",
+    "publisher": "Jamiatul Ulama (KZN) / JUT Publishing",
+    "pdfName": "duas.pdf",
+    "gradeSection": "Grade Five",
+    "pageRange": "60-68",
+    "note": "This book is organised by grade (Grades 1-10). Only the Grade Five duas are included here; other grades can be added later as their own files."
+  },
+  "contentModel": "Each dua has parts[] with arabic, transliteration, translation, and source. Quizzed by selection (no Arabic typing).",
+  "reviewNote": "Islamic content must be reviewed by a parent/teacher before use. In particular, verify the Arabic text and diacritics (tashkeel) against the book; duas flagged needsReview have longer Arabic.",
+  "status": "complete",
+  "lessons": [
+    {
+      "id": "g5-duas-l1",
+      "n": 1,
+      "title": "Du'aas when entering the masjid",
+      "pages": "60",
+      "occasion": "Recite when entering the masjid.",
+      "summary": "When we enter the masjid we send salutations on Nabi ﷺ and ask Allah to open the doors of His mercy for us.",
+      "parts": [
+        {
+          "arabic": "بِسْمِ اللهِ، اَللٰهُمَّ صَلِّ عَلٰى مُحَمَّدٍ",
+          "transliteration": "Bismillaahi, Allaahumma salli ʻalaa Muhammadin",
+          "translation": "In the name of Allaah; O Allah send salutations upon Muhammad ﷺ.",
+          "source": "Ibn Sunni"
+        },
+        {
+          "arabic": "اَللٰهُمَّ افْتَحْ لِيْ أَبْوَابَ رَحْمَتِكَ",
+          "transliteration": "Allaahummaf-tah lee abwaaba rahmatik",
+          "translation": "O Allaah, open for me the doors of Your mercy.",
+          "source": "Muslim"
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Rahmah",
+          "meaning": "Mercy"
+        }
+      ],
+      "points": [],
+      "story": null,
+      "questions": [
+        {
+          "id": "dq-l1-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Which dua do we read when entering the masjid?",
+          "options": [
+            "Allaahummaf-tah lee abwaaba rahmatik (O Allah, open for me the doors of Your mercy)",
+            "Allaahumma innee as-aluka min fadlik (O Allah, I seek Your bounty)",
+            "Allaahumma laka sumtu (O Allah, I fasted for You)",
+            "Allaahumma baarik lanaa feehi (O Allah, bless it for us)"
+          ],
+          "correctAnswer": "Allaahummaf-tah lee abwaaba rahmatik (O Allah, open for me the doors of Your mercy)",
+          "explanation": "On entering the masjid we ask Allah to open the doors of His mercy."
+        },
+        {
+          "id": "dq-l1-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What does 'rahmah' mean?",
+          "options": [
+            "Mercy",
+            "Bounty",
+            "Forgiveness",
+            "Light"
+          ],
+          "correctAnswer": "Mercy",
+          "explanation": "Rahmah means mercy — we ask Allah to open its doors when we enter the masjid."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "dq-l1-f1",
+          "front": "Entering the masjid — what do we ask Allah for?",
+          "back": "Allaahummaf-tah lee abwaaba rahmatik — 'O Allah, open for me the doors of Your mercy.'"
+        },
+        {
+          "id": "dq-l1-f2",
+          "front": "What does 'Allaahummaf-tah lee abwaaba rahmatik' mean?",
+          "back": "O Allah, open for me the doors of Your mercy."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "g5-duas-l2",
+      "n": 2,
+      "title": "Du'aas when leaving the masjid",
+      "pages": "61",
+      "occasion": "Recite when leaving the masjid.",
+      "summary": "When we leave the masjid we send salutations on Nabi ﷺ and ask Allah for His bounty (fadl).",
+      "parts": [
+        {
+          "arabic": "بِسْمِ اللهِ، اَللٰهُمَّ صَلِّ عَلٰى مُحَمَّدٍ",
+          "transliteration": "Bismillaahi, Allaahumma salli ʻalaa Muhammadin",
+          "translation": "In the name of Allaah; O Allah send salutations upon Muhammad ﷺ.",
+          "source": "Ibn Sunni"
+        },
+        {
+          "arabic": "اَللٰهُمَّ إِنِّيْ أَسْأَلُكَ مِنْ فَضْلِكَ",
+          "transliteration": "Allaahumma innee as-aluka min fadlik",
+          "translation": "O Allaah, verily, I seek from You Your bounty.",
+          "source": "Muslim"
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Fadl",
+          "meaning": "Bounty / grace"
+        }
+      ],
+      "points": [],
+      "story": null,
+      "questions": [
+        {
+          "id": "dq-l2-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "When leaving the masjid, what do we ask Allah for?",
+          "options": [
+            "His bounty (fadl)",
+            "His mercy (rahmah)",
+            "His forgiveness",
+            "His protection"
+          ],
+          "correctAnswer": "His bounty (fadl)",
+          "explanation": "On leaving the masjid we read 'Allaahumma innee as-aluka min fadlik' — asking for Allah's bounty."
+        },
+        {
+          "id": "dq-l2-q2",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "When entering the masjid we ask for Allah's mercy, and when leaving we ask for His bounty.",
+          "correctAnswer": true,
+          "explanation": "Entering → mercy (rahmah); leaving → bounty (fadl)."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "dq-l2-f1",
+          "front": "Leaving the masjid — what do we say?",
+          "back": "Allaahumma innee as-aluka min fadlik — 'O Allah, I seek from You Your bounty.'"
+        },
+        {
+          "id": "dq-l2-f2",
+          "front": "Entering vs leaving the masjid — what do we ask for?",
+          "back": "Entering: the doors of His mercy. Leaving: His bounty."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "g5-duas-l3",
+      "n": 3,
+      "title": "Du'aa when feeling bodily pain or physical distress",
+      "pages": "62",
+      "occasion": "Recite when feeling pain or distress in the body.",
+      "summary": "When something hurts, we seek protection in Allah and His might from the evil of what we feel and fear.",
+      "parts": [
+        {
+          "arabic": "أَعُوْذُ بِاللهِ وَقُدْرَتِهِ مِنْ شَرِّ مَا أَجِدُ وَأُحَاذِرُ",
+          "transliteration": "Aʻoozu billaahi wa qudratihi min sharri maa ajidu wa uhaaziru",
+          "translation": "I seek protection in Allaah and His might from the evil of what I feel and fear.",
+          "source": "Muslim"
+        }
+      ],
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [
+        {
+          "id": "dq-l3-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Which dua do we read when feeling pain or distress in the body?",
+          "options": [
+            "Aʻoozu billaahi wa qudratihi... (I seek protection in Allah and His might...)",
+            "Allaahumma baarik lanaa feehi... (O Allah, bless it for us...)",
+            "Bisawmi ghadin nawaytu (I am fasting tomorrow)",
+            "Allaahumma laka sumtu... (O Allah, I fasted for You...)"
+          ],
+          "correctAnswer": "Aʻoozu billaahi wa qudratihi... (I seek protection in Allah and His might...)",
+          "explanation": "When in pain we seek protection in Allah and His might from the evil of what we feel and fear."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "dq-l3-f1",
+          "front": "Du'a when feeling pain in the body?",
+          "back": "Aʻoozu billaahi wa qudratihi min sharri maa ajidu wa uhaaziru — 'I seek protection in Allah and His might from the evil of what I feel and fear.'"
+        }
+      ],
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "g5-duas-l4",
+      "n": 4,
+      "title": "Du'aa when experiencing fever",
+      "pages": "62",
+      "occasion": "Recite when one has a fever.",
+      "summary": "When we have a fever, we take Allah's great name and seek refuge in Him from harm.",
+      "parts": [
+        {
+          "arabic": "بِسْمِ اللهِ الْكَبِيْرِ، أَعُوْذُ بِاللهِ الْعَظِيْمِ مِنْ شَرِّ كُلِّ عِرْقٍ نَّعَّارٍ وَّمِنْ شَرِّ حَرِّ النَّارِ",
+          "transliteration": "Bismillaahil-kabeer, aʻoozu billaahil-ʻazeemi min sharri kulli ʻirqin naʻʻaarin wa min sharri harrin-naar",
+          "translation": "In the name of Allaah, The Great. I seek refuge with Allaah, The Lofty, from the evil of every spurting vein and from the evil of the heat of the fire.",
+          "source": "Tirmizee"
+        }
+      ],
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [
+        {
+          "id": "dq-l4-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "The dua for a fever asks Allah for protection from the evil of every spurting vein and from the evil of the heat of the ______.",
+          "options": [
+            "fire",
+            "sun",
+            "sand",
+            "water"
+          ],
+          "correctAnswer": "fire",
+          "explanation": "We seek refuge from the evil of every spurting vein and the heat of the fire."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "dq-l4-f1",
+          "front": "When do we read 'Bismillaahil-kabeer, aʻoozu billaahil-ʻazeem...'?",
+          "back": "When experiencing a fever — seeking refuge in Allah from harm."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": true
+    },
+    {
+      "id": "g5-duas-l5",
+      "n": 5,
+      "title": "Intention to fast (Niyyah)",
+      "pages": "63",
+      "occasion": "Recite when making the intention to fast.",
+      "summary": "We make our intention to fast the next day.",
+      "parts": [
+        {
+          "arabic": "بِصَوْمِ غَدٍ نَّوَيْتُ",
+          "transliteration": "Bisawmi ghadin nawaytu",
+          "translation": "I am fasting tomorrow.",
+          "source": null
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Niyyah",
+          "meaning": "Intention"
+        }
+      ],
+      "points": [],
+      "story": null,
+      "questions": [
+        {
+          "id": "dq-l5-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What does 'Bisawmi ghadin nawaytu' mean?",
+          "options": [
+            "I am fasting tomorrow",
+            "I broke my fast",
+            "I am fasting for Allah",
+            "I will pray tonight"
+          ],
+          "correctAnswer": "I am fasting tomorrow",
+          "explanation": "This is the intention (niyyah) for the next day's fast."
+        },
+        {
+          "id": "dq-l5-q2",
+          "type": "fill-blank",
+          "difficulty": "easy",
+          "prompt": "Fill in the blank: 'Bisawmi ghadin ______' (I am fasting tomorrow).",
+          "correctAnswer": "nawaytu",
+          "acceptedAnswers": [
+            "nawaytu",
+            "nawaitu"
+          ],
+          "explanation": "'Nawaytu' means 'I have intended/I am fasting'."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "dq-l5-f1",
+          "front": "Intention to fast — what do we say?",
+          "back": "Bisawmi ghadin nawaytu — 'I am fasting tomorrow.'"
+        }
+      ],
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "g5-duas-l6",
+      "n": 6,
+      "title": "Du'aa when breaking fast",
+      "pages": "63",
+      "occasion": "Recite when breaking the fast (iftaar).",
+      "summary": "At iftaar we tell Allah we fasted for Him and break our fast with the food He gave us.",
+      "parts": [
+        {
+          "arabic": "اَللٰهُمَّ لَكَ صُمْتُ وَعَلٰى رِزْقِكَ أَفْطَرْتُ",
+          "transliteration": "Allaahumma laka sumtu wa ʻalaa rizqika aftartu",
+          "translation": "O Allaah, I fasted for You and with Your provision (food) do I break my fast.",
+          "source": "Aboo Daawood"
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Rizq",
+          "meaning": "Provision / sustenance from Allah"
+        }
+      ],
+      "points": [],
+      "story": null,
+      "questions": [
+        {
+          "id": "dq-l6-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Which dua is read when breaking the fast?",
+          "options": [
+            "Allaahumma laka sumtu wa ʻalaa rizqika aftartu",
+            "Bisawmi ghadin nawaytu",
+            "Allaahummaf-tah lee abwaaba rahmatik",
+            "Allaahumma baarik lanaa feehi wa zidnaa minhu"
+          ],
+          "correctAnswer": "Allaahumma laka sumtu wa ʻalaa rizqika aftartu",
+          "explanation": "At iftaar: 'O Allah, I fasted for You and with Your provision I break my fast.'"
+        },
+        {
+          "id": "dq-l6-q2",
+          "type": "fill-blank",
+          "difficulty": "easy",
+          "prompt": "Fill in the blank: 'Allaahumma laka ______ wa ʻalaa rizqika aftartu' (O Allah, I fasted for You...).",
+          "correctAnswer": "sumtu",
+          "acceptedAnswers": [
+            "sumtu",
+            "sumto"
+          ],
+          "explanation": "'Sumtu' means 'I fasted'."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "dq-l6-f1",
+          "front": "Du'a when breaking the fast?",
+          "back": "Allaahumma laka sumtu wa ʻalaa rizqika aftartu — 'O Allah, I fasted for You and with Your provision I break my fast.'"
+        }
+      ],
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "g5-duas-l7",
+      "n": 7,
+      "title": "Du'aa when breaking fast at the home of another",
+      "pages": "64",
+      "occasion": "Recite for your host when you break your fast at someone's home.",
+      "summary": "We make dua for the host: that fasting people break fast at their home, the pious eat their food, and the angels pray for them.",
+      "parts": [
+        {
+          "arabic": "أَفْطَرَ عِنْدَكُمُ الصَّائِمُوْنَ وَأَكَلَ طَعَامَكُمُ الْأَبْرَارُ وَصَلَّتْ عَلَيْكُمُ الْمَلَائِكَةُ",
+          "transliteration": "Aftara ʻindakumus-saa-imoona wa akala taʻaamakumul-abraaru wa sallat ʻalaykumul-malaa-ikah",
+          "translation": "May the fasting persons break their fast at your place and may the pious people partake of your food and may the angels pray for mercy for you.",
+          "source": "Aboo Daawood"
+        }
+      ],
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [
+        {
+          "id": "dq-l7-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "When you break your fast at someone's home, who do you make dua will pray for them?",
+          "options": [
+            "The angels",
+            "The neighbours",
+            "The travellers",
+            "The teachers"
+          ],
+          "correctAnswer": "The angels",
+          "explanation": "We ask that the angels pray for mercy for the host."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "dq-l7-f1",
+          "front": "Du'a when breaking fast at someone's home — what do we ask for them?",
+          "back": "That fasting people break fast at their home, the pious eat their food, and the angels pray for mercy for them."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": true
+    },
+    {
+      "id": "g5-duas-l8",
+      "n": 8,
+      "title": "Du'aa when wearing a new garment",
+      "pages": "65",
+      "occasion": "Recite when wearing a new item of clothing.",
+      "summary": "We ask Allah for the goodness of the garment and seek protection from its evil.",
+      "parts": [
+        {
+          "arabic": "اَللٰهُمَّ إِنِّيْ أَسْأَلُكَ مِنْ خَيْرِهِ وَخَيْرِ مَا صُنِعَ لَهُ، وَأَعُوْذُ بِكَ مِنْ شَرِّهِ وَشَرِّ مَا صُنِعَ لَهُ",
+          "transliteration": "Allaahumma innee as-aluka min khayrihi wa khayri maa suniʻa lah, wa aʻoozu bika min sharrihi wa sharri maa suniʻa lah",
+          "translation": "O Allaah, I ask You the goodness of this garment and the goodness of that for which it is made. And I seek your protection from the evil of this garment and the evil of that for which it can be used.",
+          "source": "Aboo Daawood"
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Khayr",
+          "meaning": "Goodness"
+        },
+        {
+          "term": "Sharr",
+          "meaning": "Evil / harm"
+        }
+      ],
+      "points": [],
+      "story": null,
+      "questions": [
+        {
+          "id": "dq-l8-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "When wearing a new garment we ask Allah for its goodness and seek protection from its ______.",
+          "options": [
+            "evil",
+            "colour",
+            "price",
+            "size"
+          ],
+          "correctAnswer": "evil",
+          "explanation": "We ask for the khayr (goodness) and seek protection from the sharr (evil)."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "dq-l8-f1",
+          "front": "Du'a when wearing new clothes — what do we ask for?",
+          "back": "Allah's goodness in the garment, and protection from its evil (khayr, not sharr)."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": true
+    },
+    {
+      "id": "g5-duas-l9",
+      "n": 9,
+      "title": "Du'aa when sighting the new moon",
+      "pages": "66",
+      "occasion": "Recite when you see the new crescent moon.",
+      "summary": "We ask Allah to bring the new month with safety, faith, peace and Islaam.",
+      "parts": [
+        {
+          "arabic": "اَللٰهُمَّ أَهِلَّهُ عَلَيْنَا بِالْيُمْنِ وَالْإِيْمَانِ وَالسَّلَامَةِ وَالْإِسْلَامِ وَالتَّوْفِيْقِ لِمَا تُحِبُّ وَتَرْضٰى، رَبِّيْ وَرَبُّكَ اللهُ",
+          "transliteration": "Allaahumma ahillahu ʻalaynaa bil-yumni wal-eemaani was-salaamati wal-islaami wat-tawfeeqi limaa tuhibbu wa tardaa, Rabbee wa Rabbukallaah",
+          "translation": "O Allaah, bring us the new moon with security and faith, with peace and in Islaam, and in harmony with what our Lord loves and what pleases Him; our Lord and your Lord (O Crescent!) is Allaah.",
+          "source": "Tirmizee"
+        }
+      ],
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [
+        {
+          "id": "dq-l9-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "The dua for the new moon asks Allah to bring it with security, faith, peace and ______.",
+          "options": [
+            "Islaam",
+            "wealth",
+            "rain",
+            "food"
+          ],
+          "correctAnswer": "Islaam",
+          "explanation": "We ask for the new month to come with security, faith, peace and Islaam."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "dq-l9-f1",
+          "front": "When do we read 'Allaahumma ahillahu ʻalaynaa bil-yumni wal-eemaan...'?",
+          "back": "When sighting the new (crescent) moon."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": true
+    },
+    {
+      "id": "g5-duas-l10",
+      "n": 10,
+      "title": "Du'aa when eating the first fruit of the season",
+      "pages": "67",
+      "occasion": "Recite when eating the first fruit of a new season.",
+      "summary": "We ask Allah to put blessings (barakah) in our fruit, our city, and our weights and measures.",
+      "parts": [
+        {
+          "arabic": "اَللٰهُمَّ بَارِكْ لَنَا فِيْ ثَمَرِنَا وَبَارِكْ لَنَا فِيْ مَدِيْنَتِنَا وَبَارِكْ لَنَا فِيْ صَاعِنَا وَبَارِكْ لَنَا فِيْ مُدِّنَا",
+          "transliteration": "Allaahumma baarik lanaa fee thamarinaa wa baarik lanaa fee madeenatinaa wa baarik lanaa fee saaʻinaa wa baarik lanaa fee muddinaa",
+          "translation": "O Allaah, grant blessings in our fruit and grant blessings in our city and grant blessings in our weights and measures.",
+          "source": "Muslim"
+        }
+      ],
+      "keyTerms": [
+        {
+          "term": "Barakah",
+          "meaning": "Blessing"
+        }
+      ],
+      "points": [],
+      "story": null,
+      "questions": [
+        {
+          "id": "dq-l10-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "When eating the first fruit of the season, we ask Allah for blessings in our fruit, our city, and our ______.",
+          "options": [
+            "weights and measures",
+            "clothes",
+            "animals",
+            "books"
+          ],
+          "correctAnswer": "weights and measures",
+          "explanation": "We ask for barakah in our fruit, our city, and our weights and measures."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "dq-l10-f1",
+          "front": "Du'a when eating the first fruit of the season — what do we ask for?",
+          "back": "Barakah (blessing) in our fruit, our city, and our weights and measures."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": true
+    },
+    {
+      "id": "g5-duas-l11",
+      "n": 11,
+      "title": "Du'aa after drinking milk",
+      "pages": "68",
+      "occasion": "Recite after drinking milk.",
+      "summary": "After drinking milk we ask Allah to bless it and increase it for us.",
+      "parts": [
+        {
+          "arabic": "اَللٰهُمَّ بَارِكْ لَنَا فِيْهِ وَزِدْنَا مِنْهُ",
+          "transliteration": "Allaahumma baarik lanaa feehi wa zidnaa minhu",
+          "translation": "O Allaah, grant us blessings in it (the milk) and increase (the milk) for us.",
+          "source": "Aboo Daawood"
+        }
+      ],
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [
+        {
+          "id": "dq-l11-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "After drinking milk we ask Allah to bless it and to ______ it for us.",
+          "options": [
+            "increase",
+            "remove",
+            "cool",
+            "sweeten"
+          ],
+          "correctAnswer": "increase",
+          "explanation": "We ask Allah to put blessing in the milk and to increase it for us."
+        },
+        {
+          "id": "dq-l11-q2",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "After drinking milk we ask Allah to bless it and increase it for us.",
+          "correctAnswer": true,
+          "explanation": "Yes — 'O Allah, bless it for us and increase it for us.'"
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "dq-l11-f1",
+          "front": "Du'a after drinking milk?",
+          "back": "Allaahumma baarik lanaa feehi wa zidnaa minhu — 'O Allah, bless it for us and increase it for us.'"
+        }
+      ],
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "g5-duas-review",
+      "n": 12,
+      "title": "Du'a revision — match & recall",
+      "pages": "60-68",
+      "occasion": "Revision activities covering all Grade 5 duas.",
+      "summary": "Match each occasion to its dua and to its meaning.",
+      "parts": [],
+      "keyTerms": [],
+      "points": [],
+      "story": null,
+      "questions": [
+        {
+          "id": "dq-rev-q1",
+          "type": "match",
+          "difficulty": "medium",
+          "prompt": "Match each occasion to the meaning of its dua:",
+          "pairs": [
+            {
+              "left": "Entering the masjid",
+              "right": "Open for me the doors of Your mercy"
+            },
+            {
+              "left": "Leaving the masjid",
+              "right": "I seek from You Your bounty"
+            },
+            {
+              "left": "Breaking the fast",
+              "right": "I fasted for You and break my fast with Your provision"
+            },
+            {
+              "left": "After drinking milk",
+              "right": "Bless it and increase it for us"
+            }
+          ],
+          "explanation": "These are the meanings of four key Grade 5 duas."
+        },
+        {
+          "id": "dq-rev-q2",
+          "type": "match",
+          "difficulty": "medium",
+          "prompt": "Match each occasion to its dua:",
+          "pairs": [
+            {
+              "left": "Intention to fast",
+              "right": "Bisawmi ghadin nawaytu"
+            },
+            {
+              "left": "Feeling bodily pain",
+              "right": "Aʻoozu billaahi wa qudratihi..."
+            },
+            {
+              "left": "Sighting the new moon",
+              "right": "Allaahumma ahillahu ʻalaynaa..."
+            },
+            {
+              "left": "First fruit of the season",
+              "right": "Allaahumma baarik lanaa fee thamarinaa..."
+            }
+          ],
+          "explanation": "Recognise each dua by its opening words and when it is read."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "dq-rev-f1",
+          "front": "Which two duas are about fasting (Grade 5)?",
+          "back": "Intention to fast (Bisawmi ghadin nawaytu) and breaking the fast (Allaahumma laka sumtu wa ʻalaa rizqika aftartu)."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": false
+    }
+  ]
+}

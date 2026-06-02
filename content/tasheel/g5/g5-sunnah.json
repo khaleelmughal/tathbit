@@ -1,0 +1,1047 @@
+{
+    "track": "tasheel",
+    "gradeId": "g5",
+    "subjectId": "g5-sunnah",
+    "subjectName": "100 Sunnats",
+    "tagline": "100 Sunnats of our beloved Nabi ﷺ",
+    "sources": [
+      {
+        "pdf": "grade-05/100_sunnats.pdf",
+        "note": "100 Sunnats of our beloved Nabi ﷺ"
+      }
+    ],
+  "reviewNote": "Islamic content must be reviewed by a parent/teacher before use.",
+  "status": "complete",
+  "lessons": [
+    {
+      "id": "sunnah-100-s1",
+      "n": 1,
+      "title": "Sunnats of the Toilet",
+      "sunnatRange": "1-11",
+      "pages": "1",
+      "summary": "Our beloved Nabi ✊️ taught us beautiful manners even for using the toilet — which foot to use, sitting down, staying clean, and reading the duas.",
+      "keyTerms": [],
+      "points": [
+        "1. Enter the toilet with your head covered.",
+        "2. Enter the toilet with shoes.",
+        "3. Recite the dua before entering the toilet.",
+        "4. Enter with the left foot.",
+        "5. Sit and urinate. One should never urinate whilst standing.",
+        "6. One should not face or show his back towards the Qiblah.",
+        "7. Do not speak in the toilet.",
+        "8. Be very careful of the splashes of urine (being unmindful in this regard causes one to be punished in the grave).",
+        "9. After relieving oneself, cleanse oneself using water.",
+        "10. Leave the toilet with the right foot.",
+        "11. Recite the dua after coming out of the toilet."
+      ],
+      "story": null,
+      "questions": [
+        {
+          "id": "sn-s1-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Which foot should you use to enter the toilet?",
+          "options": [
+            "The left foot",
+            "The right foot",
+            "Either foot",
+            "Both feet together"
+          ],
+          "correctAnswer": "The left foot",
+          "explanation": "We enter the toilet with the left foot and leave with the right foot."
+        },
+        {
+          "id": "sn-s1-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Which foot should you use to leave the toilet?",
+          "options": [
+            "The right foot",
+            "The left foot",
+            "Either foot",
+            "It does not matter"
+          ],
+          "correctAnswer": "The right foot",
+          "explanation": "We leave the toilet with the right foot (the opposite of entering)."
+        },
+        {
+          "id": "sn-s1-q3",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "We should sit down when relieving ourselves, not stand.",
+          "correctAnswer": true,
+          "explanation": "Yes — one should sit, and never urinate whilst standing."
+        },
+        {
+          "id": "sn-s1-q4",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "It is a sunnah to chat with your friend while in the toilet.",
+          "correctAnswer": false,
+          "explanation": "No — one should not speak in the toilet."
+        },
+        {
+          "id": "sn-s1-q5",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What should you do before entering the toilet?",
+          "options": [
+            "Recite the dua for entering",
+            "Recite Surah Faatihah",
+            "Say Alhamdulillah",
+            "Clap three times"
+          ],
+          "correctAnswer": "Recite the dua for entering",
+          "explanation": "We recite the dua before entering and another dua after coming out."
+        },
+        {
+          "id": "sn-s1-q6",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "It is fine to face the Qiblah while using the toilet.",
+          "correctAnswer": false,
+          "explanation": "No — one should not face the Qiblah or show one's back towards it."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "sn-s1-f1",
+          "front": "Entering the toilet — which foot?",
+          "back": "The left foot."
+        },
+        {
+          "id": "sn-s1-f2",
+          "front": "Leaving the toilet — which foot?",
+          "back": "The right foot."
+        },
+        {
+          "id": "sn-s1-f3",
+          "front": "Should we sit or stand to relieve ourselves?",
+          "back": "Sit down — one should never urinate whilst standing."
+        },
+        {
+          "id": "sn-s1-f4",
+          "front": "Can we talk in the toilet?",
+          "back": "No — one should not speak in the toilet."
+        },
+        {
+          "id": "sn-s1-f5",
+          "front": "Duas of the toilet?",
+          "back": "Recite the dua before entering, and the dua after coming out."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "sunnah-100-s2",
+      "n": 2,
+      "title": "Sunnats of Eating",
+      "sunnatRange": "12-32",
+      "pages": "2-3",
+      "summary": "Eating the sunnah way: read Bismillah, eat with the right hand and three fingers, eat what is in front of you, and thank Allah afterwards.",
+      "keyTerms": [
+        {
+          "term": "Bismillah wa'la barakatillah",
+          "meaning": "“In the name of Allah and with the blessings of Allah” — recited aloud before eating."
+        }
+      ],
+      "points": [
+        "12. Spread out a cloth on the floor before eating.",
+        "13. Wash both hands up to the wrists.",
+        "14. Remove your shoes before eating.",
+        "15. Sit on the floor and eat.",
+        "16. Before eating recite 'Bismillah wa'la barakatillah' aloud.",
+        "17. When eating, sit with either both knees on the ground, or one knee raised, or both knees raised.",
+        "18. Do not lean and eat.",
+        "19. Eat with the right hand.",
+        "20. Eat with three fingers if possible.",
+        "21. One should not eat very hot food.",
+        "22. Do not blow on the food.",
+        "23. Eat from the side that is in front of you.",
+        "24. If a morsel of food falls down, pick it up, clean it and eat it.",
+        "25. Whilst eating, one should not remain completely silent.",
+        "26. Do not find fault with the food.",
+        "27. Clean the plate and other utensils thoroughly after eating. By doing this, the utensil makes dua for one's forgiveness.",
+        "28. After eating, lick the fingers.",
+        "29. Recite the dua after eating.",
+        "30. Remove the food before getting up.",
+        "31. Wash both the hands after meals.",
+        "32. Thereafter gargle the mouth."
+      ],
+      "story": null,
+      "questions": [
+        {
+          "id": "sn-s2-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Which hand should we eat with?",
+          "options": [
+            "The right hand",
+            "The left hand",
+            "Both hands",
+            "Whichever is closer"
+          ],
+          "correctAnswer": "The right hand",
+          "explanation": "We eat with the right hand."
+        },
+        {
+          "id": "sn-s2-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "How many fingers is it sunnah to eat with, if possible?",
+          "options": [
+            "Three fingers",
+            "Two fingers",
+            "Five fingers",
+            "One finger"
+          ],
+          "correctAnswer": "Three fingers",
+          "explanation": "It is sunnah to eat with three fingers if possible."
+        },
+        {
+          "id": "sn-s2-q3",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What do we recite aloud before eating?",
+          "options": [
+            "Bismillah wa'la barakatillah",
+            "Alhamdulillah",
+            "Subhanallah",
+            "Allahu Akbar"
+          ],
+          "correctAnswer": "Bismillah wa'la barakatillah",
+          "explanation": "We say 'Bismillah wa'la barakatillah' aloud before eating."
+        },
+        {
+          "id": "sn-s2-q4",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "It is a sunnah to blow on hot food to cool it down quickly.",
+          "correctAnswer": false,
+          "explanation": "No — we should not blow on the food, and should not eat very hot food."
+        },
+        {
+          "id": "sn-s2-q5",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "If a piece of food falls down, we should just leave it.",
+          "correctAnswer": false,
+          "explanation": "No — pick it up, clean it, and eat it."
+        },
+        {
+          "id": "sn-s2-q6",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "From which part of the plate should we eat?",
+          "options": [
+            "The side in front of you",
+            "The middle",
+            "The far side",
+            "Anywhere you like"
+          ],
+          "correctAnswer": "The side in front of you",
+          "explanation": "We eat from the side that is in front of us."
+        },
+        {
+          "id": "sn-s2-q7",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "It is good manners to find fault with the food if you do not like it.",
+          "correctAnswer": false,
+          "explanation": "No — one should not find fault with the food."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "sn-s2-f1",
+          "front": "Which hand do we eat with?",
+          "back": "The right hand."
+        },
+        {
+          "id": "sn-s2-f2",
+          "front": "How many fingers to eat with?",
+          "back": "Three fingers, if possible."
+        },
+        {
+          "id": "sn-s2-f3",
+          "front": "What do we read before eating?",
+          "back": "Bismillah wa'la barakatillah (aloud)."
+        },
+        {
+          "id": "sn-s2-f4",
+          "front": "What if food falls down?",
+          "back": "Pick it up, clean it, and eat it."
+        },
+        {
+          "id": "sn-s2-f5",
+          "front": "Eating from the plate — which side?",
+          "back": "The side that is in front of you."
+        },
+        {
+          "id": "sn-s2-f6",
+          "front": "What do we do after eating?",
+          "back": "Lick the fingers, recite the dua, wash both hands, and gargle the mouth."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "sunnah-100-s3",
+      "n": 3,
+      "title": "Sunnats of Drinking",
+      "sunnatRange": "33-38",
+      "pages": "3",
+      "summary": "Drinking the sunnah way: say Bismillah, sit, use the right hand, take three sips, and say Alhamdulillah at the end.",
+      "keyTerms": [],
+      "points": [
+        "33. Recite 'Bismillah' before drinking.",
+        "34. A Muslim should drink with the right hand. Shaytaan drinks with the left hand.",
+        "35. Sit and drink.",
+        "36. Do not drink directly from the jug or bottle. One should pour the contents into a glass first and then drink.",
+        "37. Drink in 3 breaths (sips), removing the utensil from the mouth after each sip.",
+        "38. After drinking say 'Alhamdulillah'."
+      ],
+      "story": null,
+      "questions": [
+        {
+          "id": "sn-s3-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "In how many sips (breaths) is it sunnah to drink?",
+          "options": [
+            "Three",
+            "One",
+            "Two",
+            "As many as you like"
+          ],
+          "correctAnswer": "Three",
+          "explanation": "We drink in three sips, taking the cup away from the mouth after each sip."
+        },
+        {
+          "id": "sn-s3-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Which hand should we drink with?",
+          "options": [
+            "The right hand",
+            "The left hand",
+            "Both hands",
+            "Either hand"
+          ],
+          "correctAnswer": "The right hand",
+          "explanation": "A Muslim drinks with the right hand; Shaytaan drinks with the left."
+        },
+        {
+          "id": "sn-s3-q3",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "It is sunnah to drink straight from the bottle while standing.",
+          "correctAnswer": false,
+          "explanation": "No — we should sit, and pour the drink into a glass first."
+        },
+        {
+          "id": "sn-s3-q4",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What do we say after drinking?",
+          "options": [
+            "Alhamdulillah",
+            "Bismillah",
+            "Subhanallah",
+            "Ameen"
+          ],
+          "correctAnswer": "Alhamdulillah",
+          "explanation": "We say 'Bismillah' before drinking and 'Alhamdulillah' after."
+        },
+        {
+          "id": "sn-s3-q5",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "We should finish the whole glass in one long gulp.",
+          "correctAnswer": false,
+          "explanation": "No — we drink in three sips, taking a breath between each."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "sn-s3-f1",
+          "front": "How many sips should we drink in?",
+          "back": "Three sips, removing the cup after each sip."
+        },
+        {
+          "id": "sn-s3-f2",
+          "front": "Which hand do we drink with?",
+          "back": "The right hand."
+        },
+        {
+          "id": "sn-s3-f3",
+          "front": "Should we sit or stand to drink?",
+          "back": "Sit and drink."
+        },
+        {
+          "id": "sn-s3-f4",
+          "front": "Before and after drinking we say...",
+          "back": "'Bismillah' before, 'Alhamdulillah' after."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "sunnah-100-s4",
+      "n": 4,
+      "title": "Sunnats of Sleeping",
+      "sunnatRange": "39-56",
+      "pages": "4-5",
+      "summary": "Going to sleep the sunnah way: sleep in wudhu on the right side, dust the bed, recite the surahs and Tasbeeh-e-Fatimi, and read the dua before sleeping.",
+      "keyTerms": [
+        {
+          "term": "Tasbeeh-e-Fatimi",
+          "meaning": "33 times Subhanallah, 33 times Alhamdulillah, and 34 times Allahu Akbar."
+        },
+        {
+          "term": "Surmah",
+          "meaning": "A natural eye powder (kohl) that is sunnah to apply."
+        }
+      ],
+      "points": [
+        "39. It is sunnah to sleep immediately after the Esha Salaah.",
+        "40. Before going to sleep, discuss with one's family members matters pertaining to Deen (e.g. reading Islamic books or narrating incidents of the Sahaabah).",
+        "41. To sleep in the state of wudhu.",
+        "42. To brush the teeth with a miswaak.",
+        "43. One should change into some other clothes (e.g. pyjamas) before going to sleep.",
+        "44. To apply surmah in both the eyes.",
+        "45. Dust the bed thrice before retiring to bed.",
+        "46. To sleep on the right hand side.",
+        "47. To sleep with the right palm under the right cheek.",
+        "48. To keep the knees slightly bent when sleeping.",
+        "49. Refrain from sleeping on one's stomach.",
+        "50. To sleep on a bed or to sleep on the floor are both sunnah.",
+        "51. To face the Qiblah.",
+        "52. To recite Surah Mulk before sleeping.",
+        "53. To recite Ayatul Kursi.",
+        "54. To recite Surah Ikhlaas, Surah Falaq and Surah Naas before sleeping 3 times, and thereafter blow over the entire body thrice.",
+        "55. Recite Tasbeeh-e-Fatimi before sleeping (33 times Subhanallah, 33 times Alhamdulillah and 34 times Allahu Akbar).",
+        "56. To recite the dua before sleeping."
+      ],
+      "story": null,
+      "questions": [
+        {
+          "id": "sn-s4-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "On which side is it sunnah to sleep?",
+          "options": [
+            "The right side",
+            "The left side",
+            "The stomach",
+            "The back"
+          ],
+          "correctAnswer": "The right side",
+          "explanation": "We sleep on the right side, with the right palm under the right cheek."
+        },
+        {
+          "id": "sn-s4-q2",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "It is disliked to sleep on your stomach.",
+          "correctAnswer": true,
+          "explanation": "Yes — we should refrain from sleeping on the stomach."
+        },
+        {
+          "id": "sn-s4-q3",
+          "type": "multiple-choice",
+          "difficulty": "medium",
+          "prompt": "Tasbeeh-e-Fatimi is 33 Subhanallah, 33 Alhamdulillah, and how many Allahu Akbar?",
+          "options": [
+            "34",
+            "33",
+            "10",
+            "100"
+          ],
+          "correctAnswer": "34",
+          "explanation": "Tasbeeh-e-Fatimi: 33 Subhanallah, 33 Alhamdulillah, 34 Allahu Akbar."
+        },
+        {
+          "id": "sn-s4-q4",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "How many times should we dust the bed before lying down?",
+          "options": [
+            "Three times",
+            "Once",
+            "Seven times",
+            "We do not dust the bed"
+          ],
+          "correctAnswer": "Three times",
+          "explanation": "We dust the bed thrice before retiring to bed."
+        },
+        {
+          "id": "sn-s4-q5",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "It is sunnah to sleep in the state of wudhu.",
+          "correctAnswer": true,
+          "explanation": "Yes — sleeping in wudhu is from the sunnah."
+        },
+        {
+          "id": "sn-s4-q6",
+          "type": "multiple-choice",
+          "difficulty": "medium",
+          "prompt": "Which surah is mentioned to recite before sleeping?",
+          "options": [
+            "Surah Mulk",
+            "Surah Yaseen",
+            "Surah Kahf",
+            "Surah Rahmaan"
+          ],
+          "correctAnswer": "Surah Mulk",
+          "explanation": "We recite Surah Mulk, Ayatul Kursi, and Ikhlaas/Falaq/Naas (3×) before sleeping."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "sn-s4-f1",
+          "front": "Which side should we sleep on?",
+          "back": "The right side, with the right palm under the right cheek."
+        },
+        {
+          "id": "sn-s4-f2",
+          "front": "What are the counts of Tasbeeh-e-Fatimi?",
+          "back": "33 Subhanallah, 33 Alhamdulillah, 34 Allahu Akbar."
+        },
+        {
+          "id": "sn-s4-f3",
+          "front": "Is it okay to sleep on your stomach?",
+          "back": "No — refrain from sleeping on the stomach."
+        },
+        {
+          "id": "sn-s4-f4",
+          "front": "How many times do we dust the bed?",
+          "back": "Three times before lying down."
+        },
+        {
+          "id": "sn-s4-f5",
+          "front": "Which surahs do we recite before sleeping?",
+          "back": "Surah Mulk, Ayatul Kursi, and Ikhlaas/Falaq/Naas (3×, then blow over the body)."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "sunnah-100-s5",
+      "n": 5,
+      "title": "Sunnats when Awakening",
+      "sunnatRange": "57-62",
+      "pages": "5-6",
+      "summary": "Waking up the sunnah way: wake for Tahajjud, thank Allah, recite the Kalima and dua, make your own bed, and clean your mouth with a miswaak.",
+      "keyTerms": [
+        {
+          "term": "Tahajjud",
+          "meaning": "The voluntary night prayer prayed after waking from sleep."
+        }
+      ],
+      "points": [
+        "57. To wake up for Tahajjud Salaah.",
+        "58. On awakening, rub the face and the eyes with the palms of the hands in order to remove the effects of sleep.",
+        "59. Say 'Alhamdulillah' thrice and then recite 'Kalima Tayyibah' on awakening.",
+        "60. Thereafter recite the dua on awakening.",
+        "61. To make the bed yourself.",
+        "62. On awakening, cleanse the mouth with a miswaak."
+      ],
+      "story": null,
+      "questions": [
+        {
+          "id": "sn-s5-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "On awakening, how many times do we say 'Alhamdulillah' before reciting the Kalima?",
+          "options": [
+            "Three times",
+            "Once",
+            "Five times",
+            "Ten times"
+          ],
+          "correctAnswer": "Three times",
+          "explanation": "We say 'Alhamdulillah' thrice, then recite the Kalima Tayyibah."
+        },
+        {
+          "id": "sn-s5-q2",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "It is a sunnah to make your own bed.",
+          "correctAnswer": true,
+          "explanation": "Yes — making the bed yourself is from the sunnah."
+        },
+        {
+          "id": "sn-s5-q3",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What do we use to cleanse the mouth on awakening?",
+          "options": [
+            "A miswaak",
+            "Mouthwash",
+            "A tissue",
+            "Nothing"
+          ],
+          "correctAnswer": "A miswaak",
+          "explanation": "On awakening, we cleanse the mouth with a miswaak."
+        },
+        {
+          "id": "sn-s5-q4",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Waking up for Tahajjud Salaah is from the sunnah.",
+          "correctAnswer": true,
+          "explanation": "Yes — waking for Tahajjud is a beautiful sunnah."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "sn-s5-f1",
+          "front": "On awakening, what do we say first?",
+          "back": "'Alhamdulillah' three times, then the Kalima Tayyibah."
+        },
+        {
+          "id": "sn-s5-f2",
+          "front": "Clean the mouth on awakening with...",
+          "back": "A miswaak."
+        },
+        {
+          "id": "sn-s5-f3",
+          "front": "Who should make the bed?",
+          "back": "Make the bed yourself."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "sunnah-100-s6",
+      "n": 6,
+      "title": "Sunnats when Wearing Clothes",
+      "sunnatRange": "63-69",
+      "pages": "6-7",
+      "summary": "Dressing the sunnah way: begin with the right when putting on, the left when taking off, wear modest clothing, and cover the head.",
+      "keyTerms": [
+        {
+          "term": "Topee",
+          "meaning": "A cap or hat worn on the head (also a turban for men)."
+        }
+      ],
+      "points": [
+        "63. Rasulullah ﷺ loved white clothing.",
+        "64. When putting on any garment, Rasulullah ﷺ always began with the right limb.",
+        "65. When removing any garment, Rasulullah ﷺ always removed the left limb first.",
+        "66. Males must wear the pants above the ankles. Females should ensure that their lower garment covers their ankles.",
+        "67. Males should wear a 'topee' (hat) or turban. Females must wear scarves covering all their hair at all times.",
+        "68. When wearing shoes, first wear the right shoe then the left.",
+        "69. When removing your shoes, first remove the left and then the right."
+      ],
+      "story": null,
+      "questions": [
+        {
+          "id": "sn-s6-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Which colour clothing did Rasulullah ﷺ love?",
+          "options": [
+            "White",
+            "Green",
+            "Black",
+            "Blue"
+          ],
+          "correctAnswer": "White",
+          "explanation": "Rasulullah ﷺ loved white clothing."
+        },
+        {
+          "id": "sn-s6-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "When putting on a garment, which limb do we begin with?",
+          "options": [
+            "The right limb",
+            "The left limb",
+            "Either limb",
+            "Both at once"
+          ],
+          "correctAnswer": "The right limb",
+          "explanation": "We begin with the right when putting on, and the left when taking off."
+        },
+        {
+          "id": "sn-s6-q3",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "When wearing shoes, which shoe goes on first?",
+          "options": [
+            "The right shoe",
+            "The left shoe",
+            "Either shoe",
+            "Both together"
+          ],
+          "correctAnswer": "The right shoe",
+          "explanation": "Wear the right shoe first; when removing, take off the left first."
+        },
+        {
+          "id": "sn-s6-q4",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "When removing your shoes, you should take off the right one first.",
+          "correctAnswer": false,
+          "explanation": "No — remove the left shoe first when taking them off."
+        },
+        {
+          "id": "sn-s6-q5",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Where should males wear their pants/lower garment?",
+          "options": [
+            "Above the ankles",
+            "Below the ankles",
+            "On the ankles",
+            "It does not matter"
+          ],
+          "correctAnswer": "Above the ankles",
+          "explanation": "Males must keep the lower garment above the ankles."
+        },
+        {
+          "id": "sn-s6-q6",
+          "type": "match",
+          "difficulty": "medium",
+          "prompt": "Match each action to the correct side:",
+          "pairs": [
+            {
+              "left": "Putting on a garment",
+              "right": "Begin with the right limb"
+            },
+            {
+              "left": "Removing a garment",
+              "right": "Remove the left first"
+            },
+            {
+              "left": "Wearing shoes",
+              "right": "Right shoe first"
+            },
+            {
+              "left": "Removing shoes",
+              "right": "Left shoe first"
+            }
+          ],
+          "explanation": "Right when putting on, left when taking off — for both clothes and shoes."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "sn-s6-f1",
+          "front": "Putting on clothes — which limb first?",
+          "back": "The right limb first."
+        },
+        {
+          "id": "sn-s6-f2",
+          "front": "Taking off clothes — which side first?",
+          "back": "The left limb first."
+        },
+        {
+          "id": "sn-s6-f3",
+          "front": "Wearing and removing shoes?",
+          "back": "Right shoe on first; left shoe off first."
+        },
+        {
+          "id": "sn-s6-f4",
+          "front": "Which colour did Nabi ﷺ love to wear?",
+          "back": "White clothing."
+        },
+        {
+          "id": "sn-s6-f5",
+          "front": "Where should men's pants reach?",
+          "back": "Above the ankles."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "sunnah-100-s7",
+      "n": 7,
+      "title": "Sunnats when Entering the Home",
+      "sunnatRange": "70-72",
+      "pages": "7",
+      "summary": "Coming home the sunnah way: read the dua, give salaam to those inside, and let people know you have arrived.",
+      "keyTerms": [],
+      "points": [
+        "70. To recite the dua before entering the home.",
+        "71. To greet those that are in the house with 'Assalaamu alaykum.'",
+        "72. To announce one's arrival by coughing, greeting, etc. even though it may be your own house."
+      ],
+      "story": null,
+      "questions": [
+        {
+          "id": "sn-s7-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "When entering the home, how do we greet those inside?",
+          "options": [
+            "With 'Assalaamu alaykum'",
+            "By waving",
+            "Silently",
+            "With a whistle"
+          ],
+          "correctAnswer": "With 'Assalaamu alaykum'",
+          "explanation": "We greet those in the house with 'Assalaamu alaykum'."
+        },
+        {
+          "id": "sn-s7-q2",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "We should enter our own home quietly without letting anyone know.",
+          "correctAnswer": false,
+          "explanation": "No — announce your arrival by coughing, greeting, etc. even in your own house."
+        },
+        {
+          "id": "sn-s7-q3",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What do we recite before entering the home?",
+          "options": [
+            "The dua for entering the home",
+            "Surah Faatihah",
+            "The adhaan",
+            "Tasbeeh-e-Fatimi"
+          ],
+          "correctAnswer": "The dua for entering the home",
+          "explanation": "We recite the dua before entering the home."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "sn-s7-f1",
+          "front": "Entering the home — what do we say?",
+          "back": "'Assalaamu alaykum', and recite the dua for entering."
+        },
+        {
+          "id": "sn-s7-f2",
+          "front": "Should we announce ourselves at our own home?",
+          "back": "Yes — by coughing, greeting, etc."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "sunnah-100-s8",
+      "n": 8,
+      "title": "Sunnats - Miscellaneous",
+      "sunnatRange": "73-100",
+      "pages": "7-9",
+      "summary": "Many beautiful everyday sunnats: the miswaak, the Masjid, good character, kindness to family and neighbours, and turning to Allah.",
+      "keyTerms": [
+        {
+          "term": "Miswaak",
+          "meaning": "A natural tooth-stick used to clean the teeth — a great sunnah."
+        },
+        {
+          "term": "Mashwarah",
+          "meaning": "To consult with parents, teachers or elders before doing any work."
+        },
+        {
+          "term": "Itr",
+          "meaning": "Alcohol-free perfume (applies to men)."
+        }
+      ],
+      "points": [
+        "73. Using a miswaak is a great sunnah of Rasulullah ﷺ. One who makes miswaak when making wudhu and thereafter performs salaah will receive 70 times more reward. It will also enable one to easily recite the kalima at the time of death.",
+        "74. To have a bath on a Friday.",
+        "75. To apply itr (this applies to men only).",
+        "76. For men to keep a beard that is one fist in length.",
+        "77. To carry one's shoes in the left hand.",
+        "78. To make wudhu at home before going to the Musjid.",
+        "79. To enter the Masjid with the right foot.",
+        "80. To leave the Masjid with the left foot.",
+        "81. To keep the gaze on the ground whilst walking.",
+        "82. To speak softly and politely.",
+        "83. To greet all Muslims by saying 'Assalaamu alaykum wa rahmatullahi wa barakaatuhu.'",
+        "84. To show mercy to those who are younger than you.",
+        "85. To respect your elders.",
+        "86. To respect your parents.",
+        "87. To visit a Muslim when he is sick.",
+        "88. To be good towards your neighbour.",
+        "89. To meet a Muslim with a cheerful face.",
+        "90. To care for the poor and needy.",
+        "91. To keep good relations with all your relatives.",
+        "92. To honour a guest, even though he may not be of a very high position.",
+        "93. To be hospitable towards your guest.",
+        "94. To exchange gifts with one another.",
+        "95. To make mashwarah (consult) with one's parents, teachers or elders before doing any work.",
+        "96. To ponder over the creation of Allah Ta'ala.",
+        "97. To command people to do good.",
+        "98. To forbid them from doing evil.",
+        "99. To recite some portion of the Qur'aan Shareef daily.",
+        "100. To make dua to Allah Ta'ala for the fulfillment of one's needs in whatever language one desires."
+      ],
+      "story": null,
+      "questions": [
+        {
+          "id": "sn-s8-q1",
+          "type": "multiple-choice",
+          "difficulty": "medium",
+          "prompt": "Using a miswaak before salaah gives how many times more reward?",
+          "options": [
+            "70 times",
+            "7 times",
+            "10 times",
+            "100 times"
+          ],
+          "correctAnswer": "70 times",
+          "explanation": "Making miswaak with wudhu and then praying gives 70 times more reward."
+        },
+        {
+          "id": "sn-s8-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Which foot do we use to enter the Masjid?",
+          "options": [
+            "The right foot",
+            "The left foot",
+            "Either foot",
+            "Both feet"
+          ],
+          "correctAnswer": "The right foot",
+          "explanation": "We enter the Masjid with the right foot and leave with the left."
+        },
+        {
+          "id": "sn-s8-q3",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Which foot do we use to leave the Masjid?",
+          "options": [
+            "The left foot",
+            "The right foot",
+            "Either foot",
+            "Both feet"
+          ],
+          "correctAnswer": "The left foot",
+          "explanation": "We leave the Masjid with the left foot (the opposite of the toilet)."
+        },
+        {
+          "id": "sn-s8-q4",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "It is a sunnah to have a bath (ghusl) on a Friday.",
+          "correctAnswer": true,
+          "explanation": "Yes — taking a bath on Friday is from the sunnah."
+        },
+        {
+          "id": "sn-s8-q5",
+          "type": "multiple-choice",
+          "difficulty": "medium",
+          "prompt": "How long should a man's beard be, at least?",
+          "options": [
+            "One fist in length",
+            "Half a fist",
+            "Very short",
+            "Any length he likes"
+          ],
+          "correctAnswer": "One fist in length",
+          "explanation": "Men should keep a beard that is at least one fist in length."
+        },
+        {
+          "id": "sn-s8-q6",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "While walking, we should keep our gaze high and look all around.",
+          "correctAnswer": false,
+          "explanation": "No — we keep the gaze on the ground while walking."
+        },
+        {
+          "id": "sn-s8-q7",
+          "type": "multiple-choice",
+          "difficulty": "medium",
+          "prompt": "What does 'mashwarah' mean?",
+          "options": [
+            "To consult elders before doing work",
+            "To rush into a task",
+            "To work alone always",
+            "To copy others"
+          ],
+          "correctAnswer": "To consult elders before doing work",
+          "explanation": "Mashwarah means consulting parents, teachers or elders before doing any work."
+        },
+        {
+          "id": "sn-s8-q8",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "It is a sunnah to recite some portion of the Qur'aan Shareef daily.",
+          "correctAnswer": true,
+          "explanation": "Yes — reciting some Qur'aan every day is from the sunnah."
+        },
+        {
+          "id": "sn-s8-q9",
+          "type": "match",
+          "difficulty": "medium",
+          "prompt": "Match each sunnah to the correct detail:",
+          "pairs": [
+            {
+              "left": "Friday",
+              "right": "Take a bath (ghusl)"
+            },
+            {
+              "left": "Beard (men)",
+              "right": "One fist in length"
+            },
+            {
+              "left": "Miswaak before salaah",
+              "right": "70 times more reward"
+            },
+            {
+              "left": "Mashwarah",
+              "right": "Consult before doing work"
+            }
+          ],
+          "explanation": "These are well-known everyday sunnats from the miscellaneous section."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "sn-s8-f1",
+          "front": "Enter the Masjid with which foot?",
+          "back": "The right foot."
+        },
+        {
+          "id": "sn-s8-f2",
+          "front": "Leave the Masjid with which foot?",
+          "back": "The left foot."
+        },
+        {
+          "id": "sn-s8-f3",
+          "front": "Reward for miswaak before salaah?",
+          "back": "70 times more reward."
+        },
+        {
+          "id": "sn-s8-f4",
+          "front": "Which day is it sunnah to take a bath?",
+          "back": "Friday."
+        },
+        {
+          "id": "sn-s8-f5",
+          "front": "How long should a man's beard be?",
+          "back": "At least one fist in length."
+        },
+        {
+          "id": "sn-s8-f6",
+          "front": "Where should the gaze be while walking?",
+          "back": "On the ground."
+        },
+        {
+          "id": "sn-s8-f7",
+          "front": "What is mashwarah?",
+          "back": "To consult parents, teachers or elders before doing any work."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": false
+    }
+  ]
+}
