@@ -15,123 +15,126 @@
     {
       "id": "g5-fiqh-l1",
       "n": 1,
-      "title": "Najaasah (Impurity)",
+      "title": "Najaasah",
       "pages": "4-7",
-      "summary": "Najaasah means impurity. There are two types of najaasah: Najaasah Haqeeqi (real, visible impurity) and Najaasah Hukmee (technical impurity). Najaasah Haqeeqi is further divided into Ghaleezah (heavy) and Khafeefah (light).",
+      "summary": "A Muslim always stays clean and pure. Nabee ﷺ said that cleanliness is half of faith (Muslim). The Salaah and other acts of worship of an impure person are not accepted by Allah. Impurity in Islam is called Najaasah. There are two types: Haqeeqi (physical impurity that can be felt or seen) and Hukmee (a state of impurity, e.g. being without wudhu). Haqeeqi is itself of two kinds: Ghaleezah (stronger) and Khafeefah (lesser).",
       "keyTerms": [
         {
-          "term": "Najaasah Haqeeqi",
-          "meaning": "Real, visible impurity"
+          "term": "Najaasah",
+          "meaning": "Impurity in Islam"
         },
         {
-          "term": "Najaasah Hukmee",
-          "meaning": "Technical impurity (a state, e.g. after sleep, needing wudhu/ghusl)"
+          "term": "Haqeeqi",
+          "meaning": "Physical impurity that can be felt or seen"
+        },
+        {
+          "term": "Hukmee",
+          "meaning": "A state of impurity, e.g. being without wudhu"
         },
         {
           "term": "Ghaleezah",
-          "meaning": "Heavy impurity — e.g. urine, pus, human blood, dog's saliva, any part of a pig"
+          "meaning": "The stronger type of physical impurity"
         },
         {
           "term": "Khafeefah",
-          "meaning": "Light impurity — e.g. urine of halaal animals, droppings of haraam birds"
+          "meaning": "The lesser type of physical impurity"
         }
       ],
       "points": [
-        "Najaasah is divided into two types: Najaasah Haqeeqi and Najaasah Hukmee.",
-        "Najaasah Haqeeqi is divided into Ghaleezah (heavy) and Khafeefah (light).",
-        "Examples of Ghaleezah: urine, pus, the blood of human beings, the saliva of dogs, and every part of a pig.",
-        "Examples of Khafeefah: the urine of halaal animals, and the droppings of all haraam birds."
+        "A Muslim always stays clean and pure; cleanliness is half of faith.",
+        "The worship of an impure person is not accepted by Allah.",
+        "Najaasah (impurity) has two types: Haqeeqi (physical) and Hukmee (a state).",
+        "Haqeeqi impurity is of two kinds: Ghaleezah (stronger) and Khafeefah (lesser).",
+        "Ghaleezah includes: urine, stool, blood or pus of humans; the urine, stool, blood or flesh of all non-halaal animals (e.g. lions, cats, dogs); the stool of halaal animals; the dead flesh of halaal or haraam animals; every part of a pig; the saliva of dogs or haraam animals; the fat of haraam animals; intoxicants such as wine, brandy, beer; and the droppings of fowls and ducks.",
+        "Khafeefah includes: the urine of halaal animals; and the droppings of all haraam birds."
       ],
       "story": null,
       "questions": [
         {
           "id": "fq-l1-q1",
-          "type": "multiple-choice",
+          "type": "short-answer",
           "difficulty": "easy",
-          "prompt": "What are the two types of Najaasah?",
-          "options": [
-            "Najaasah Haqeeqi and Najaasah Hukmee",
-            "Wudhu and Ghusl",
-            "Halaal and Haraam",
-            "Sunnah and Nafl"
+          "prompt": "Name the two types of Najaasah.",
+          "acceptedAnswers": [
+            "haqeeqi and hukmee",
+            "najaasah haqeeqi and najaasah hukmee",
+            "haqeeqi and hukmi",
+            "physical and state"
           ],
-          "correctAnswer": "Najaasah Haqeeqi and Najaasah Hukmee",
-          "explanation": "Najaasah is divided into Haqeeqi (real) and Hukmee (technical)."
+          "explanation": "The two types are Najaasah Haqeeqi (physical impurity) and Najaasah Hukmee (a state of impurity)."
         },
         {
           "id": "fq-l1-q2",
           "type": "short-answer",
           "difficulty": "medium",
-          "prompt": "Name the two types of Najaasah.",
+          "prompt": "What are the two kinds of Haqeeqi impurity?",
           "acceptedAnswers": [
-            "najaasah haqeeqi and najaasah hukmee",
-            "najasa haqiqi and najasa hukmi",
-            "haqeeqi and hukmee",
-            "haqiqi and hukmi"
+            "ghaleezah and khafeefah",
+            "ghaleezah and khafeefa",
+            "stronger and lesser"
           ],
-          "explanation": "The two types are Najaasah Haqeeqi and Najaasah Hukmee."
+          "explanation": "Haqeeqi impurity is of two kinds: Ghaleezah (stronger) and Khafeefah (lesser)."
         },
         {
           "id": "fq-l1-q3",
-          "type": "multiple-choice",
-          "difficulty": "medium",
-          "prompt": "Najaasah Haqeeqi is divided into which two kinds?",
-          "options": [
-            "Ghaleezah and Khafeefah",
-            "Fardh and Sunnah",
-            "Big and Small",
-            "Wet and Dry"
-          ],
-          "correctAnswer": "Ghaleezah and Khafeefah",
-          "explanation": "Najaasah Haqeeqi is divided into Ghaleezah (heavy) and Khafeefah (light)."
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Every part of a pig is Najaasah Ghaleezah.",
+          "correctAnswer": true,
+          "explanation": "Every part of a pig is counted among the Ghaleezah (stronger) impurities."
         },
         {
           "id": "fq-l1-q4",
           "type": "true-false",
           "difficulty": "medium",
-          "prompt": "The urine of halaal animals is an example of Khafeefah (light) najaasah.",
+          "prompt": "The urine of a halaal animal (e.g. a sheep) is Khafeefah.",
           "correctAnswer": true,
-          "explanation": "Yes — urine of halaal animals and droppings of haraam birds are Khafeefah."
+          "explanation": "The urine of halaal animals is Khafeefah (the lesser impurity)."
         },
         {
           "id": "fq-l1-q5",
-          "type": "multiple-choice",
-          "difficulty": "hard",
-          "prompt": "Which of these is an example of Ghaleezah (heavy) najaasah?",
-          "options": [
-            "The saliva of dogs",
-            "The droppings of haraam birds",
-            "The urine of halaal animals",
-            "Clean rain water"
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "State whether the saliva of dogs is Ghaleezah or Khafeefah.",
+          "acceptedAnswers": [
+            "ghaleezah",
+            "ghaleeza"
           ],
-          "correctAnswer": "The saliva of dogs",
-          "explanation": "Ghaleezah includes urine, pus, human blood, the saliva of dogs, and every part of a pig."
+          "explanation": "The saliva of dogs is Ghaleezah (the stronger impurity)."
+        },
+        {
+          "id": "fq-l1-q6",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "Why is cleanliness so important in Islam?",
+          "acceptedAnswers": [
+            "it is half of faith",
+            "cleanliness is half of imaan",
+            "because worship of an impure person is not accepted"
+          ],
+          "explanation": "Nabee ﷺ said cleanliness is half of faith, and the worship of an impure person is not accepted."
         }
       ],
       "flashcards": [
         {
+          "front": "What is Najaasah?",
+          "back": "Impurity in Islam."
+        },
+        {
           "front": "What are the two types of Najaasah?",
-          "back": "Najaasah Haqeeqi (real) and Najaasah Hukmee (technical)."
+          "back": "Haqeeqi (physical) and Hukmee (a state)."
         },
         {
-          "front": "Najaasah Haqeeqi is divided into…",
-          "back": "Ghaleezah (heavy) and Khafeefah (light)."
+          "front": "What are the two kinds of Haqeeqi impurity?",
+          "back": "Ghaleezah (stronger) and Khafeefah (lesser)."
         },
         {
-          "front": "Give one example of Ghaleezah.",
-          "back": "Urine, pus, human blood, dog's saliva, or any part of a pig."
+          "front": "Is the urine of a halaal animal Ghaleezah or Khafeefah?",
+          "back": "Khafeefah (the lesser impurity)."
         },
         {
-          "front": "What is Najaasah Hukmee?",
-          "back": "Technical impurity — a state like after sleep, needing wudhu or ghusl."
-        },
-        {
-          "front": "Give an example of Khafeefah najaasah.",
-          "back": "The urine of halaal animals or droppings of haraam birds."
-        },
-        {
-          "front": "What does Ghaleezah mean?",
-          "back": "Heavy impurity — the more serious type of real najaasah."
+          "front": "How much of faith is cleanliness?",
+          "back": "Half of faith."
         }
       ],
       "needsContent": false,
@@ -142,13 +145,111 @@
       "n": 2,
       "title": "Najaasah Hukmee",
       "pages": "8-9",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
+      "summary": "Najaasah Hukmee is a state of impurity. It has two types: Hadathul Akbar — the greater impurity, which makes ghusl necessary (e.g. being in the state of haidh or janaabah); and Hadathul Asghar — the lesser impurity, which makes wudhu necessary (e.g. passing urine, stool or wind).",
+      "keyTerms": [
+        {
+          "term": "Hadathul Akbar",
+          "meaning": "The greater impurity, which makes ghusl necessary"
+        },
+        {
+          "term": "Hadathul Asghar",
+          "meaning": "The lesser impurity, which makes wudhu necessary"
+        },
+        {
+          "term": "Janaabah",
+          "meaning": "A state of major impurity requiring ghusl"
+        },
+        {
+          "term": "Haidh",
+          "meaning": "The monthly period; a state requiring ghusl"
+        }
+      ],
+      "points": [
+        "Najaasah Hukmee (a state of impurity) has two types.",
+        "Hadathul Akbar is the greater impurity, which makes it necessary to perform ghusl — e.g. being in the state of haidh or janaabah.",
+        "Hadathul Asghar is the lesser impurity, which makes it necessary to perform wudhu — e.g. passing urine, stool or wind."
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "questions": [
+        {
+          "id": "fq-l2-q1",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "Name the two types of Najaasah Hukmee.",
+          "acceptedAnswers": [
+            "hadathul akbar and hadathul asghar",
+            "hadath ul akbar and hadath ul asghar",
+            "greater and lesser impurity"
+          ],
+          "explanation": "They are Hadathul Akbar (greater) and Hadathul Asghar (lesser)."
+        },
+        {
+          "id": "fq-l2-q2",
+          "type": "fill-blank",
+          "difficulty": "medium",
+          "prompt": "If a person's wudhu breaks because of passing urine or stool, he is in the state of ______.",
+          "correctAnswer": "hadathul asghar",
+          "acceptedAnswers": [
+            "hadathul asghar",
+            "hadath ul asghar",
+            "asghar"
+          ],
+          "explanation": "Passing urine, stool or wind puts one in Hadathul Asghar (the lesser impurity)."
+        },
+        {
+          "id": "fq-l2-q3",
+          "type": "fill-blank",
+          "difficulty": "medium",
+          "prompt": "A woman in the state of haidh is in the state of ______.",
+          "correctAnswer": "hadathul akbar",
+          "acceptedAnswers": [
+            "hadathul akbar",
+            "hadath ul akbar",
+            "akbar"
+          ],
+          "explanation": "Haidh is a state of Hadathul Akbar (the greater impurity)."
+        },
+        {
+          "id": "fq-l2-q4",
+          "type": "fill-blank",
+          "difficulty": "easy",
+          "prompt": "A person in the state of janaabah needs to perform ______.",
+          "correctAnswer": "ghusl",
+          "acceptedAnswers": [
+            "ghusl",
+            "ghusal"
+          ],
+          "explanation": "Janaabah is Hadathul Akbar, which requires ghusl."
+        },
+        {
+          "id": "fq-l2-q5",
+          "type": "fill-blank",
+          "difficulty": "easy",
+          "prompt": "A person who passes urine needs to make ______.",
+          "correctAnswer": "wudhu",
+          "acceptedAnswers": [
+            "wudhu",
+            "wudu",
+            "wuzu"
+          ],
+          "explanation": "Passing urine is Hadathul Asghar, which requires wudhu."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "What are the two types of Najaasah Hukmee?",
+          "back": "Hadathul Akbar (greater) and Hadathul Asghar (lesser)."
+        },
+        {
+          "front": "What does Hadathul Akbar require?",
+          "back": "Ghusl — e.g. after haidh or janaabah."
+        },
+        {
+          "front": "What does Hadathul Asghar require?",
+          "back": "Wudhu — e.g. after passing urine, stool or wind."
+        }
+      ],
+      "needsContent": false,
       "needsReview": false
     },
     {
@@ -156,13 +257,100 @@
       "n": 3,
       "title": "Water",
       "pages": "10-11",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
+      "summary": "Water is one of the greatest gifts Allah has given to man, used for drinking, watering plants and cleaning ourselves. To clean ourselves from impurity the water itself must be clean. Water is divided into two types: flowing water and stagnant water.",
+      "keyTerms": [
+        {
+          "term": "Flowing water",
+          "meaning": "Water such as rain, oceans, seas, rivers, wells, melted snow/hail, springs, dams and large pools"
+        },
+        {
+          "term": "Stagnant water",
+          "meaning": "Still water, e.g. water stored in a container, or water in a pool smaller than 6.5m x 6.5m"
+        }
+      ],
+      "points": [
+        "Water is one of the greatest gifts of Allah; we use it for drinking, plants and cleaning.",
+        "To clean ourselves from impurity, the water itself must be clean.",
+        "Water is divided into two types: flowing and stagnant.",
+        "Examples of flowing water: rain; oceans and seas; rivers; wells; melted snow and hail; springs; dams and large pools.",
+        "Examples of stagnant water: water stored in a container (bucket, drum, tank); water in a pool smaller than 6.5m x 6.5m."
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "questions": [
+        {
+          "id": "fq-l3-q1",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "What are the two types of water?",
+          "acceptedAnswers": [
+            "flowing and stagnant",
+            "flowing water and stagnant water",
+            "running and still"
+          ],
+          "explanation": "Water is divided into flowing water and stagnant water."
+        },
+        {
+          "id": "fq-l3-q2",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Rain is an example of flowing water.",
+          "correctAnswer": true,
+          "explanation": "Rain is listed as flowing water."
+        },
+        {
+          "id": "fq-l3-q3",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Water stored in a bucket is flowing water.",
+          "correctAnswer": false,
+          "explanation": "Water stored in a container (bucket, drum, tank) is stagnant water."
+        },
+        {
+          "id": "fq-l3-q4",
+          "type": "true-false",
+          "difficulty": "medium",
+          "prompt": "A spring is an example of stagnant water.",
+          "correctAnswer": false,
+          "explanation": "A spring is flowing water."
+        },
+        {
+          "id": "fq-l3-q5",
+          "type": "true-false",
+          "difficulty": "medium",
+          "prompt": "Water in a pool smaller than 6.5m x 6.5m is stagnant water.",
+          "correctAnswer": true,
+          "explanation": "A pool smaller than 6.5m x 6.5m counts as stagnant water."
+        },
+        {
+          "id": "fq-l3-q6",
+          "type": "fill-blank",
+          "difficulty": "medium",
+          "prompt": "A pool larger than ______ x ______ is treated as flowing water.",
+          "correctAnswer": "6.5m",
+          "acceptedAnswers": [
+            "6.5m",
+            "6.5 metres",
+            "6.5 meters",
+            "6.5"
+          ],
+          "explanation": "A large pool (bigger than 6.5m x 6.5m) is treated like flowing water."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "What are the two types of water?",
+          "back": "Flowing water and stagnant water."
+        },
+        {
+          "front": "Give three examples of flowing water.",
+          "back": "Rain, rivers, oceans/seas, wells, springs, melted snow — any of these."
+        },
+        {
+          "front": "Give an example of stagnant water.",
+          "back": "Water stored in a bucket, drum or tank; or a pool smaller than 6.5m x 6.5m."
+        }
+      ],
+      "needsContent": false,
       "needsReview": false
     },
     {
@@ -170,13 +358,98 @@
       "n": 4,
       "title": "The rules for water",
       "pages": "12-15",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
+      "summary": "We use only pure water to clean ourselves from impurity. Stagnant water becomes impure even if a little Najaasah falls into it. Flowing water stays taahir even if Najaasah falls in — it only becomes impure if the colour, taste or smell of the Najaasah appears in it.",
+      "keyTerms": [
+        {
+          "term": "Taahir",
+          "meaning": "Pure / clean"
+        },
+        {
+          "term": "Tahaarah",
+          "meaning": "Cleanliness / purification"
+        },
+        {
+          "term": "Polluted",
+          "meaning": "Made impure"
+        }
+      ],
+      "points": [
+        "If the colour, taste or smell of the water is changed, it is incorrect to use such water for tahaarah.",
+        "If something taahir falls into stagnant water without changing its colour, taste, smell or liquidity, it can still be used; if it changes these, it cannot.",
+        "If soap or bath oils change the smell, colour or taste, the water is still taahir as long as its liquidity does not change.",
+        "Water that is muddy in appearance is taahir and suitable for wudhu or ghusl.",
+        "If Najaasah falls into flowing water (e.g. a dam or big pool) and changes its colour, taste or smell, it is incorrect to use.",
+        "Not permissible for tahaarah: water extracted from trees and fruits (juices); stagnant water something impure has fallen into; stagnant water an animal has fallen and died in; water already used for wudhu or ghusl; water in which the signs of Najaasah are greater; liquid extracted from seeds, roses or other plants."
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "questions": [
+        {
+          "id": "fq-l4-q1",
+          "type": "fill-blank",
+          "difficulty": "easy",
+          "prompt": "Pure water has no colour, ______ or smell.",
+          "correctAnswer": "taste",
+          "acceptedAnswers": [
+            "taste"
+          ],
+          "explanation": "Pure water has no colour, taste or smell."
+        },
+        {
+          "id": "fq-l4-q2",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "If the colour, taste or smell of the water is changed, what is the ruling?",
+          "acceptedAnswers": [
+            "it is incorrect to use it for tahaarah",
+            "incorrect to use for tahaarah",
+            "you cannot use it for cleanliness"
+          ],
+          "explanation": "It is incorrect to use such water for tahaarah."
+        },
+        {
+          "id": "fq-l4-q3",
+          "type": "true-false",
+          "difficulty": "medium",
+          "prompt": "Water that is muddy in appearance is taahir and suitable for wudhu.",
+          "correctAnswer": true,
+          "explanation": "Muddy water is still taahir and may be used for wudhu or ghusl."
+        },
+        {
+          "id": "fq-l4-q4",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Juice extracted from fruit can be used for wudhu.",
+          "correctAnswer": false,
+          "explanation": "Water extracted from trees and fruits (juices) is not suitable for tahaarah."
+        },
+        {
+          "id": "fq-l4-q5",
+          "type": "true-false",
+          "difficulty": "medium",
+          "prompt": "Water already used for wudhu or ghusl can be used again for wudhu.",
+          "correctAnswer": false,
+          "explanation": "It is incorrect to use water that has already been used for wudhu or ghusl."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "What makes water unfit for tahaarah?",
+          "back": "When its colour, taste or smell is changed by impurity."
+        },
+        {
+          "front": "Is muddy water taahir?",
+          "back": "Yes — muddy water is taahir and may be used for wudhu or ghusl."
+        },
+        {
+          "front": "Can fruit juice be used for wudhu?",
+          "back": "No. Liquids extracted from fruit, seeds or plants are not suitable for tahaarah."
+        },
+        {
+          "front": "Can water already used for wudhu be reused for wudhu?",
+          "back": "No."
+        }
+      ],
+      "needsContent": false,
       "needsReview": false
     },
     {
@@ -184,27 +457,509 @@
       "n": 5,
       "title": "Istinjaa",
       "pages": "16-17",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
+      "summary": "Islam is a complete way of life. Nabee ﷺ taught us manners about every part of daily life, including using the toilet, and especially warned about being careless when relieving ourselves. He passed by two graves and said one person was being punished because he did not take care of urine drops falling on his body (Bukhaaree, Muslim).",
+      "keyTerms": [
+        {
+          "term": "Istinjaa",
+          "meaning": "Cleaning oneself after relieving oneself"
+        },
+        {
+          "term": "Qiblah",
+          "meaning": "The direction of the Ka'bah, which we face in salaah"
+        }
+      ],
+      "points": [
+        "We do not enter the toilet barefoot.",
+        "We do not face the Qiblah when passing urine or stool.",
+        "We do not show our back to the Qiblah when passing urine or stool.",
+        "We do not eat, drink or talk in the toilet.",
+        "We do not read any books or newspapers in the toilet.",
+        "We do not read dua or Qur'aan in the toilet.",
+        "We do not enter the toilet with anything on which Allah's name can be seen.",
+        "We recite the dua before entering and after leaving the toilet.",
+        "No one should see us when we answer the call of nature."
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
-      "needsReview": false
+      "questions": [
+        {
+          "id": "fq-l5-q1",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "What is Istinjaa?",
+          "acceptedAnswers": [
+            "cleaning oneself after using the toilet",
+            "cleaning yourself after relieving yourself",
+            "cleaning after passing urine or stool"
+          ],
+          "explanation": "Istinjaa is cleaning oneself after relieving oneself."
+        },
+        {
+          "id": "fq-l5-q2",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "We may face the Qiblah while passing urine or stool.",
+          "correctAnswer": false,
+          "explanation": "We do not face the Qiblah, nor show our back to it, when relieving ourselves."
+        },
+        {
+          "id": "fq-l5-q3",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "We may read the Qur'aan in the toilet.",
+          "correctAnswer": false,
+          "explanation": "We do not read dua or Qur'aan in the toilet."
+        },
+        {
+          "id": "fq-l5-q4",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "Why did Nabee ﷺ say a person in the grave was being punished?",
+          "acceptedAnswers": [
+            "he did not take care of urine drops falling on his body",
+            "he was careless about urine drops",
+            "he did not protect himself from urine splashes"
+          ],
+          "explanation": "The person did not take care of urine drops falling on his body while urinating."
+        },
+        {
+          "id": "fq-l5-q5",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "We recite a dua before entering and after leaving the toilet.",
+          "correctAnswer": true,
+          "explanation": "We recite the dua before entering and after leaving the toilet."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "What is Istinjaa?",
+          "back": "Cleaning oneself after relieving oneself."
+        },
+        {
+          "front": "May we face the Qiblah in the toilet?",
+          "back": "No — we neither face the Qiblah nor turn our back to it when relieving ourselves."
+        },
+        {
+          "front": "May we take something with Allah's name into the toilet?",
+          "back": "No."
+        },
+        {
+          "front": "Why was a man in the grave being punished (Hadeeth)?",
+          "back": "He was careless about urine drops falling on his body."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": true,
+      "wordSearch": {
+        "title": "How to use the toilet — word search",
+        "instruction": "Search for the words on how to use the toilet and the don'ts of istinjaa.",
+        "grid": [
+          [
+            "b",
+            "a",
+            "r",
+            "e",
+            "f",
+            "o",
+            "o",
+            "t",
+            "l",
+            "a",
+            "b",
+            "o",
+            "n",
+            "e",
+            "l",
+            "s"
+          ],
+          [
+            "p",
+            "r",
+            "i",
+            "n",
+            "t",
+            "e",
+            "d",
+            "p",
+            "e",
+            "r",
+            "i",
+            "g",
+            "h",
+            "t",
+            "u",
+            "d"
+          ],
+          [
+            "q",
+            "w",
+            "e",
+            "r",
+            "t",
+            "y",
+            "u",
+            "a",
+            "f",
+            "i",
+            "q",
+            "o",
+            "p",
+            "h",
+            "m",
+            "f"
+          ],
+          [
+            "h",
+            "j",
+            "k",
+            "l",
+            "q",
+            "a",
+            "z",
+            "p",
+            "t",
+            "w",
+            "i",
+            "s",
+            "x",
+            "a",
+            "p",
+            "g"
+          ],
+          [
+            "r",
+            "f",
+            "v",
+            "s",
+            "h",
+            "a",
+            "d",
+            "e",
+            "f",
+            "t",
+            "b",
+            "g",
+            "b",
+            "n",
+            "s",
+            "h"
+          ],
+          [
+            "d",
+            "y",
+            "h",
+            "c",
+            "o",
+            "a",
+            "l",
+            "r",
+            "o",
+            "n",
+            "l",
+            "u",
+            "j",
+            "d",
+            "o",
+            "b"
+          ],
+          [
+            "u",
+            "j",
+            "m",
+            "o",
+            "i",
+            "k",
+            "q",
+            "a",
+            "o",
+            "z",
+            "a",
+            "x",
+            "s",
+            "w",
+            "f",
+            "a"
+          ],
+          [
+            "a",
+            "b",
+            "g",
+            "w",
+            "t",
+            "l",
+            "v",
+            "f",
+            "t",
+            "r",
+            "f",
+            "c",
+            "d",
+            "e",
+            "s",
+            "k"
+          ],
+          [
+            "y",
+            "h",
+            "n",
+            "d",
+            "u",
+            "e",
+            "j",
+            "m",
+            "i",
+            "k",
+            "a",
+            "m",
+            "a",
+            "z",
+            "o",
+            "e"
+          ],
+          [
+            "q",
+            "z",
+            "a",
+            "u",
+            "f",
+            "f",
+            "w",
+            "x",
+            "s",
+            "e",
+            "c",
+            "c",
+            "d",
+            "r",
+            "i",
+            "d"
+          ],
+          [
+            "h",
+            "n",
+            "h",
+            "n",
+            "o",
+            "t",
+            "y",
+            "h",
+            "o",
+            "l",
+            "e",
+            "v",
+            "r",
+            "f",
+            "l",
+            "b"
+          ],
+          [
+            "m",
+            "s",
+            "l",
+            "g",
+            "o",
+            "h",
+            "p",
+            "o",
+            "i",
+            "j",
+            "h",
+            "y",
+            "g",
+            "a",
+            "q",
+            "r"
+          ],
+          [
+            "r",
+            "i",
+            "g",
+            "h",
+            "t",
+            "a",
+            "r",
+            "z",
+            "i",
+            "k",
+            "r",
+            "w",
+            "l",
+            "a",
+            "z",
+            "i"
+          ],
+          [
+            "q",
+            "t",
+            "w",
+            "x",
+            "e",
+            "n",
+            "r",
+            "f",
+            "v",
+            "t",
+            "g",
+            "b",
+            "a",
+            "y",
+            "h",
+            "c"
+          ],
+          [
+            "a",
+            "z",
+            "s",
+            "c",
+            "d",
+            "d",
+            "q",
+            "u",
+            "r",
+            "a",
+            "a",
+            "n",
+            "s",
+            "b",
+            "n",
+            "k"
+          ],
+          [
+            "p",
+            "a",
+            "t",
+            "h",
+            "w",
+            "a",
+            "y",
+            "l",
+            "k",
+            "i",
+            "o",
+            "p",
+            "s",
+            "m",
+            "v",
+            "s"
+          ]
+        ],
+        "words": [
+          "BAREFOOT",
+          "RIGHT",
+          "QURAAN",
+          "TALK",
+          "EAT",
+          "DRINK",
+          "QIBLAH",
+          "DUA"
+        ],
+        "note": "Grid transcribed letter-for-letter from p.17; verify the grid letters and confirm the full set of target words against the book scan.",
+        "needsReview": true
+      }
     },
     {
       "id": "g5-fiqh-l6",
       "n": 6,
       "title": "Miswaak",
       "pages": "18-19",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
+      "summary": "It was a habit of Rasoolullah ﷺ to clean his teeth with a miswaak — a tree twig used for brushing and cleansing the teeth. Nabee ﷺ said: 'The miswaak is a means of cleansing the mouth and gaining the pleasure of Allah.' (Bukhaaree)",
+      "keyTerms": [
+        {
+          "term": "Miswaak",
+          "meaning": "A tree twig used to clean and cleanse the teeth, and a Sunnah of Nabee ﷺ"
+        }
+      ],
+      "points": [
+        "The miswaak cleans and sweetens the mouth and removes bad smell.",
+        "It is a cause of Allah's pleasure and a blow to the devil.",
+        "Allah and His angels love the person using miswaak.",
+        "It strengthens the gums and improves eyesight.",
+        "It increases the reward of salaah by seventy times.",
+        "We make miswaak on these occasions: on awakening; when making wudhu; before and after eating; before sleeping; before going to a gathering; upon leaving home; before reciting Qur'aan."
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "questions": [
+        {
+          "id": "fq-l6-q1",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "What is a miswaak?",
+          "acceptedAnswers": [
+            "a tree twig used to clean the teeth",
+            "a twig for brushing the teeth",
+            "a stick used to clean teeth"
+          ],
+          "explanation": "A miswaak is a tree twig used for brushing and cleansing the teeth."
+        },
+        {
+          "id": "fq-l6-q2",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "What is the status of miswaak?",
+          "acceptedAnswers": [
+            "it is a sunnah",
+            "sunnah of nabee",
+            "a sunnah of rasoolullah"
+          ],
+          "explanation": "Using the miswaak is a Sunnah of Nabee ﷺ."
+        },
+        {
+          "id": "fq-l6-q3",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "List three benefits of miswaak.",
+          "acceptedAnswers": [
+            "it cleans and sweetens the mouth",
+            "it strengthens the gums and improves eyesight",
+            "it increases the reward of salaah seventy times",
+            "it is a cause of allah's pleasure"
+          ],
+          "explanation": "Benefits include cleaning/sweetening the mouth, pleasing Allah, strengthening the gums, improving eyesight, and increasing salaah reward seventy times."
+        },
+        {
+          "id": "fq-l6-q4",
+          "type": "fill-blank",
+          "difficulty": "medium",
+          "prompt": "Miswaak increases the reward of salaah by ______ times.",
+          "correctAnswer": "seventy",
+          "acceptedAnswers": [
+            "seventy",
+            "70"
+          ],
+          "explanation": "It increases the reward of salaah by seventy times."
+        },
+        {
+          "id": "fq-l6-q5",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "Name two occasions when we use the miswaak.",
+          "acceptedAnswers": [
+            "on awakening and when making wudhu",
+            "before eating and before sleeping",
+            "before reciting quraan and on leaving home"
+          ],
+          "explanation": "Occasions include: on awakening, when making wudhu, before/after eating, before sleeping, before a gathering, leaving home, and before reciting Qur'aan."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "What is a miswaak?",
+          "back": "A tree twig used to clean the teeth — a Sunnah of Nabee ﷺ."
+        },
+        {
+          "front": "By how much does miswaak increase the reward of salaah?",
+          "back": "Seventy times."
+        },
+        {
+          "front": "Name two benefits of miswaak.",
+          "back": "Cleans/sweetens the mouth, pleases Allah, strengthens gums, improves eyesight (any two)."
+        },
+        {
+          "front": "When do we make miswaak?",
+          "back": "On awakening, for wudhu, before/after eating, before sleep, before a gathering, leaving home, before reciting Qur'aan."
+        }
+      ],
+      "needsContent": false,
       "needsReview": false
     },
     {
@@ -212,13 +967,72 @@
       "n": 7,
       "title": "Virtues of Wudhu",
       "pages": "20-21",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
+      "summary": "Wudhu has great virtue. Rasoolullah ﷺ taught that performing wudhu perfectly wipes out sins and raises a person's stages. He said whoever performs wudhu perfectly, his sins fall off his body, even from under his nails. On the Day of Qiyaamah, his Ummah will be called with shining faces and limbs because of the effects of wudhu.",
+      "keyTerms": [
+        {
+          "term": "Mutawad-dhi",
+          "meaning": "The person who is making wudhu"
+        }
+      ],
+      "points": [
+        "Aboo Hurairah (رضي الله عنه) reports that Rasoolullah ﷺ said: performing wudhu perfectly even under difficult conditions, taking many footsteps to the masjid, and waiting for the next salaah after salaah, is your defence against shaytaan. (Maalik)",
+        "Uthmaan (رضي الله عنه) reports that Rasoolullah ﷺ said: whoever performs wudhu and does so perfectly, his sins fall off his body, even from under his nails. (Bukhaaree)",
+        "Aboo Hurairah (رضي الله عنه) reports that Rasoolullah ﷺ said: my Ummah will be called on the Day of Qiyaamah with shining faces and limbs because of the effects of wudhu — so whoever can extend the shine of his limbs should do so. (Bukhaaree, Muslim)"
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "questions": [
+        {
+          "id": "fq-l7-q1",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "What is the person making wudhu called?",
+          "acceptedAnswers": [
+            "mutawad-dhi",
+            "mutawaddhi",
+            "mutawadhi"
+          ],
+          "explanation": "The person making wudhu is called a Mutawad-dhi."
+        },
+        {
+          "id": "fq-l7-q2",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "According to the Hadeeth, what happens to a person's sins when he makes wudhu perfectly?",
+          "acceptedAnswers": [
+            "they fall off his body even from under his nails",
+            "his sins fall off",
+            "sins are wiped out"
+          ],
+          "explanation": "Rasoolullah ﷺ said his sins fall off his body, even from under his nails."
+        },
+        {
+          "id": "fq-l7-q3",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "How will the Ummah be recognised on the Day of Qiyaamah because of wudhu?",
+          "acceptedAnswers": [
+            "by their shining faces and limbs",
+            "shining faces and limbs",
+            "glowing limbs from wudhu"
+          ],
+          "explanation": "They will be called with shining faces and limbs on account of the effects of wudhu."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "What is a Mutawad-dhi?",
+          "back": "The person who is making wudhu."
+        },
+        {
+          "front": "What happens to sins when wudhu is made perfectly? (Hadeeth)",
+          "back": "They fall off the body, even from under the nails."
+        },
+        {
+          "front": "How will the Ummah be recognised on Qiyaamah due to wudhu?",
+          "back": "By their shining faces and limbs."
+        }
+      ],
+      "needsContent": false,
       "needsReview": false
     },
     {
@@ -226,13 +1040,132 @@
       "n": 8,
       "title": "How to make Wudhu",
       "pages": "22-25",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
+      "summary": "The key to salaah is wudhu — just as a broken key cannot open a door, an improper wudhu will not open the door to salaah. There are four fardh (compulsory) acts in wudhu, taught in the Qur'aan (Suratul Maa-idah, Aayah 6): washing the face, washing the arms including the elbows, making masah of a quarter of the head, and washing the feet including the ankles.",
+      "keyTerms": [
+        {
+          "term": "Fardh (pl. Faraaidh)",
+          "meaning": "Compulsory act — leaving it out invalidates the wudhu"
+        },
+        {
+          "term": "Sunnah (pl. Sunan)",
+          "meaning": "The way of Nabee ﷺ; rewarded but not compulsory"
+        },
+        {
+          "term": "Masah",
+          "meaning": "Wiping a wet hand over a part of the body (e.g. the head)"
+        },
+        {
+          "term": "Khilaal",
+          "meaning": "Passing wet fingers through the beard or between the fingers and toes"
+        }
+      ],
+      "points": [
+        "The mutawad-dhi should try to face the Qiblah while making wudhu.",
+        "Make niyyat (intention) and recite Bismillah.",
+        "Wash both hands up to the wrists thrice, beginning with the right hand.",
+        "Make miswaak and rinse (gargle) the mouth thrice.",
+        "Put water into the nostrils thrice with the right hand and clean the nose with the little finger of the left hand.",
+        "Wash the entire face thrice — from the hairline to below the chin, and from one ear to the other.",
+        "Make khilaal of the beard.",
+        "Wash the right arm including the elbow thrice, then the left in the same way; rotate a tight ring so no part stays dry.",
+        "Make masah of the whole head, the ears and the nape, and khilaal of the fingers.",
+        "Wash the right foot thrice including the ankles, then the left; make khilaal of the toes.",
+        "The FOUR fardh acts of wudhu: (1) wash the full face once; (2) wash both arms including the elbows once; (3) make masah of a quarter of the head once; (4) wash both feet including the ankles once."
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "questions": [
+        {
+          "id": "fq-l8-q1",
+          "type": "short-answer",
+          "difficulty": "hard",
+          "prompt": "What are the four fardh acts of wudhu?",
+          "acceptedAnswers": [
+            "wash the face, wash the arms including the elbows, masah of a quarter of the head, wash the feet including the ankles",
+            "face, arms with elbows, masah of quarter of head, feet with ankles",
+            "washing the face, arms to the elbows, masah of the head, and the feet to the ankles"
+          ],
+          "explanation": "The four faraaidh are: washing the face; washing both arms including the elbows; masah of a quarter of the head; and washing both feet including the ankles."
+        },
+        {
+          "id": "fq-l8-q2",
+          "type": "fill-blank",
+          "difficulty": "medium",
+          "prompt": "There are ______ fardh acts in wudhu.",
+          "correctAnswer": "four",
+          "acceptedAnswers": [
+            "four",
+            "4"
+          ],
+          "explanation": "There are four fardh (compulsory) acts in wudhu."
+        },
+        {
+          "id": "fq-l8-q3",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "How many times is each limb washed in a complete (sunnah) wudhu?",
+          "acceptedAnswers": [
+            "thrice",
+            "three times",
+            "3 times"
+          ],
+          "explanation": "In the complete sunnah method each limb is washed thrice (three times)."
+        },
+        {
+          "id": "fq-l8-q4",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "What is masah?",
+          "acceptedAnswers": [
+            "wiping a wet hand over a part of the body",
+            "to wipe wet hands over the head",
+            "passing wet hands over the head"
+          ],
+          "explanation": "Masah is wiping a wet hand over a part of the body, e.g. the head."
+        },
+        {
+          "id": "fq-l8-q5",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "Why is wudhu called the key to salaah?",
+          "acceptedAnswers": [
+            "because an improper wudhu will not open the door to salaah",
+            "like a broken key cannot open a door, a wrong wudhu means salaah is not accepted",
+            "because salaah is not accepted without correct wudhu"
+          ],
+          "explanation": "Just as a broken key cannot open a door, an improper wudhu will not open the door to salaah (salaah will not be accepted)."
+        },
+        {
+          "id": "fq-l8-q6",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "We begin washing the hands with the left hand.",
+          "correctAnswer": false,
+          "explanation": "We begin with the right hand."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "How many fardh acts are in wudhu?",
+          "back": "Four."
+        },
+        {
+          "front": "Name the four fardh of wudhu.",
+          "back": "Wash the face; wash arms incl. elbows; masah of a quarter of the head; wash feet incl. ankles."
+        },
+        {
+          "front": "Why is wudhu the 'key to salaah'?",
+          "back": "A broken key can't open a door; an improper wudhu won't open the door to salaah."
+        },
+        {
+          "front": "What is masah?",
+          "back": "Wiping a wet hand over a part of the body, e.g. the head."
+        },
+        {
+          "front": "Which hand do we start washing with?",
+          "back": "The right hand."
+        }
+      ],
+      "needsContent": false,
       "needsReview": false
     },
     {
@@ -240,13 +1173,74 @@
       "n": 9,
       "title": "Mustahab acts of Wudhu",
       "pages": "26-29",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
+      "summary": "Certain acts are encouraged (mustahab) when making wudhu. They perfect the wudhu and increase reward; if left out, the wudhu is still correct. We do them to show our love for Allah and His deen.",
+      "keyTerms": [
+        {
+          "term": "Mustahab",
+          "meaning": "An encouraged act — rewarded if done, but the wudhu is valid without it"
+        }
+      ],
+      "points": [
+        "To sit on a raised place so the water does not splash on you.",
+        "To face the Qiblah.",
+        "To make wudhu without the help of another person.",
+        "To recite the respective duas while washing the limbs.",
+        "To insert the small finger into the inner ears.",
+        "To use the right hand for putting water into the mouth and nose.",
+        "To clean the nose with the left hand.",
+        "To read the Shahaadatayn after wudhu.",
+        "To drink the left-over water while standing (if it was used from a container)."
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "questions": [
+        {
+          "id": "fq-l9-q1",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "What does mustahab mean?",
+          "acceptedAnswers": [
+            "an encouraged act",
+            "a deed that is encouraged but not compulsory",
+            "liked but not fardh"
+          ],
+          "explanation": "A mustahab act is encouraged and rewarded, but the wudhu is still valid without it."
+        },
+        {
+          "id": "fq-l9-q2",
+          "type": "true-false",
+          "difficulty": "medium",
+          "prompt": "If a mustahab act of wudhu is left out, the wudhu is still correct.",
+          "correctAnswer": true,
+          "explanation": "Mustahab acts perfect the wudhu; leaving them out does not invalidate it."
+        },
+        {
+          "id": "fq-l9-q3",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "Name two mustahab acts of wudhu.",
+          "acceptedAnswers": [
+            "to face the qiblah and recite the duas",
+            "to sit on a raised place and read the shahaadatayn after",
+            "to use the right hand for the mouth and nose"
+          ],
+          "explanation": "Examples: facing the Qiblah, reciting the duas, reading the Shahaadatayn after wudhu, sitting on a raised place, using the right hand for the mouth/nose."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "What is a mustahab act?",
+          "back": "An encouraged, rewarded act — but the wudhu is valid without it."
+        },
+        {
+          "front": "Is wudhu still valid if a mustahab act is left out?",
+          "back": "Yes."
+        },
+        {
+          "front": "Name a mustahab act of wudhu.",
+          "back": "Facing the Qiblah, reciting the duas, reading the Shahaadatayn afterwards (any)."
+        }
+      ],
+      "needsContent": false,
       "needsReview": false
     },
     {
@@ -254,13 +1248,85 @@
       "n": 10,
       "title": "Makrooh acts of Wudhu",
       "pages": "30-31",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
+      "summary": "Certain acts are disliked (makrooh) when making wudhu. They lessen the reward of wudhu and cause its blessings to be lost; we avoid them because they are disliked by Allah. There are eight makroohaat in wudhu.",
+      "keyTerms": [
+        {
+          "term": "Makrooh",
+          "meaning": "A disliked act that lessens the reward of an act of worship"
+        }
+      ],
+      "points": [
+        "To make wudhu in an impure (najas) place.",
+        "To clean the nostrils with the right hand.",
+        "To speak of worldly things while making wudhu.",
+        "To waste water.",
+        "To use less than the required amount of water.",
+        "To splash water on the face.",
+        "To take assistance from another person without a reason.",
+        "To use water more than once when making masah."
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "questions": [
+        {
+          "id": "fq-l10-q1",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "What does makrooh mean?",
+          "acceptedAnswers": [
+            "a disliked act",
+            "something disliked that lessens reward",
+            "disliked by allah"
+          ],
+          "explanation": "A makrooh act is disliked; it lessens the reward of the wudhu."
+        },
+        {
+          "id": "fq-l10-q2",
+          "type": "fill-blank",
+          "difficulty": "medium",
+          "prompt": "There are ______ makroohaat in wudhu.",
+          "correctAnswer": "eight",
+          "acceptedAnswers": [
+            "eight",
+            "8"
+          ],
+          "explanation": "There are eight makroohaat in wudhu."
+        },
+        {
+          "id": "fq-l10-q3",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "Name two makrooh acts of wudhu.",
+          "acceptedAnswers": [
+            "to waste water and to speak of worldly things",
+            "to splash water on the face and clean the nostrils with the right hand",
+            "to use less than the required water and make wudhu in an impure place"
+          ],
+          "explanation": "Examples: wasting water, speaking of worldly things, splashing water on the face, cleaning the nostrils with the right hand, making wudhu in an impure place."
+        },
+        {
+          "id": "fq-l10-q4",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Wasting water during wudhu is makrooh.",
+          "correctAnswer": true,
+          "explanation": "Wasting water is one of the eight makroohaat of wudhu."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "What does makrooh mean?",
+          "back": "A disliked act that lessens the reward of worship."
+        },
+        {
+          "front": "How many makroohaat are there in wudhu?",
+          "back": "Eight."
+        },
+        {
+          "front": "Name a makrooh of wudhu.",
+          "back": "Wasting water, speaking worldly talk, splashing the face, using the right hand for the nose (any)."
+        }
+      ],
+      "needsContent": false,
       "needsReview": false
     },
     {
@@ -268,27 +1334,561 @@
       "n": 11,
       "title": "Actions that break Wudhu",
       "pages": "32-33",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
+      "summary": "When wudhu breaks, we are in the state of Hadathul Asghar (lesser impurity). A person whose wudhu has broken may not perform salaah, touch the Holy Qur'aan or any aayah, make Sajdah-Tilaawah, or make Tawaaf, until he makes wudhu again.",
+      "keyTerms": [
+        {
+          "term": "Nawaaqidhul wudhu",
+          "meaning": "The things that break (nullify) wudhu"
+        },
+        {
+          "term": "Sajdah-Tilaawah",
+          "meaning": "The prostration made on reciting certain verses of the Qur'aan"
+        },
+        {
+          "term": "Tawaaf",
+          "meaning": "Circling the Ka'bah in worship"
+        }
+      ],
+      "points": [
+        "When wudhu breaks a person may NOT: perform salaah; touch the Holy Qur'aan or any aayah; make Sajdah-Tilaawah; or make Tawaaf.",
+        "Actions that break wudhu: passing stool, urine or wind.",
+        "The flowing of blood or pus from any part of the body.",
+        "Vomiting a mouthful.",
+        "Laughing loudly while performing salaah.",
+        "Becoming unconscious.",
+        "Becoming insane."
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "questions": [
+        {
+          "id": "fq-l11-q1",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "Name three things that break wudhu.",
+          "acceptedAnswers": [
+            "passing wind, flowing blood, vomiting a mouthful",
+            "passing urine or stool, bleeding, laughing loudly in salaah",
+            "becoming unconscious, vomiting a mouthful, passing wind"
+          ],
+          "explanation": "Wudhu breaks by: passing stool/urine/wind; flowing of blood or pus; vomiting a mouthful; laughing loudly in salaah; becoming unconscious; becoming insane."
+        },
+        {
+          "id": "fq-l11-q2",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "Name two things a person cannot do when his wudhu has broken.",
+          "acceptedAnswers": [
+            "perform salaah and touch the quraan",
+            "make tawaaf and sajdah-tilaawah",
+            "read salaah and touch an aayah"
+          ],
+          "explanation": "Without wudhu one cannot perform salaah, touch the Qur'aan or an aayah, make Sajdah-Tilaawah, or make Tawaaf."
+        },
+        {
+          "id": "fq-l11-q3",
+          "type": "true-false",
+          "difficulty": "medium",
+          "prompt": "Laughing loudly during salaah breaks the wudhu.",
+          "correctAnswer": true,
+          "explanation": "Laughing loudly while performing salaah breaks the wudhu."
+        },
+        {
+          "id": "fq-l11-q4",
+          "type": "fill-blank",
+          "difficulty": "easy",
+          "prompt": "When wudhu breaks we are in the state of Hadathul ______.",
+          "correctAnswer": "asghar",
+          "acceptedAnswers": [
+            "asghar",
+            "hadathul asghar"
+          ],
+          "explanation": "A broken wudhu puts one in Hadathul Asghar (the lesser impurity)."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "What state are we in when wudhu breaks?",
+          "back": "Hadathul Asghar (the lesser impurity)."
+        },
+        {
+          "front": "Name two things that break wudhu.",
+          "back": "Passing wind/urine/stool, flowing blood or pus, vomiting a mouthful, laughing loudly in salaah, unconsciousness (any two)."
+        },
+        {
+          "front": "Name two things you cannot do without wudhu.",
+          "back": "Perform salaah, touch the Qur'aan, make Sajdah-Tilaawah, make Tawaaf (any two)."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "g5-fiqh-l12",
+      "n": 12,
+      "title": "Actions that don't break Wudhu",
+      "pages": "34-35",
+      "summary": "Some actions do NOT break the wudhu, even though people sometimes think they do.",
+      "keyTerms": [],
+      "points": [
+        "When blood or pus does not flow beyond the wound.",
+        "When dry skin falls off the body.",
+        "To vomit less than a mouthful.",
+        "To vomit phlegm, even if it is a mouthful.",
+        "To sleep without leaning against an object.",
+        "To cut hair or nails.",
+        "To touch the private parts."
+      ],
+      "questions": [
+        {
+          "id": "fq-l12-q1",
+          "type": "true-false",
+          "difficulty": "medium",
+          "prompt": "Cutting your hair or nails breaks the wudhu.",
+          "correctAnswer": false,
+          "explanation": "Cutting hair or nails does NOT break the wudhu."
+        },
+        {
+          "id": "fq-l12-q2",
+          "type": "true-false",
+          "difficulty": "medium",
+          "prompt": "Vomiting phlegm (even a mouthful) breaks the wudhu.",
+          "correctAnswer": false,
+          "explanation": "Vomiting phlegm does not break wudhu, even if it is a mouthful."
+        },
+        {
+          "id": "fq-l12-q3",
+          "type": "true-false",
+          "difficulty": "medium",
+          "prompt": "Blood that does not flow beyond the wound breaks the wudhu.",
+          "correctAnswer": false,
+          "explanation": "If blood or pus does not flow beyond the wound, the wudhu is not broken."
+        },
+        {
+          "id": "fq-l12-q4",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "Name two actions that do NOT break wudhu.",
+          "acceptedAnswers": [
+            "cutting hair or nails and touching the private parts",
+            "vomiting less than a mouthful and sleeping without leaning",
+            "dry skin falling off and vomiting phlegm"
+          ],
+          "explanation": "Examples: cutting hair/nails, touching the private parts, vomiting less than a mouthful or phlegm, dry skin falling off, sleeping without leaning."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "Does cutting hair or nails break wudhu?",
+          "back": "No."
+        },
+        {
+          "front": "Does vomiting phlegm break wudhu?",
+          "back": "No, even if it is a mouthful."
+        },
+        {
+          "front": "Does sleeping break wudhu?",
+          "back": "Not if you sleep without leaning against an object."
+        }
+      ],
+      "story": null,
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "g5-fiqh-l13",
+      "n": 13,
+      "title": "Occasions when Wudhu is mustahab",
+      "pages": "36-37",
+      "summary": "A mustahab act is a deed loved by Allah; it draws us closer to Him and increases reward. It is mustahab to be in the state of wudhu at all times. If that is not possible, it is mustahab to make wudhu on certain occasions.",
+      "keyTerms": [
+        {
+          "term": "Thikr",
+          "meaning": "The remembrance of Allah"
+        },
+        {
+          "term": "Mayyit",
+          "meaning": "A deceased person"
+        },
+        {
+          "term": "Janaazah",
+          "meaning": "The funeral / funeral bier"
+        }
+      ],
+      "points": [
+        "On awakening from sleep.",
+        "When calling out the Athaan.",
+        "When delivering the Khutbah.",
+        "When learning or teaching deen.",
+        "When making Thikr.",
+        "After giving ghusl to the mayyit.",
+        "When carrying the Janaazah.",
+        "When visiting the blessed grave of Nabee ﷺ.",
+        "On the plains of Arafaat, on the 9th of Thul Hijjah.",
+        "When making Saaee between Safa and Marwa.",
+        "When overtaken by anger."
+      ],
+      "questions": [
+        {
+          "id": "fq-l13-q1",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "When is it best (mustahab) to be in wudhu?",
+          "acceptedAnswers": [
+            "at all times",
+            "to be in wudhu at all times",
+            "always"
+          ],
+          "explanation": "It is mustahab to be in the state of wudhu at all times."
+        },
+        {
+          "id": "fq-l13-q2",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "Name three occasions when wudhu is mustahab.",
+          "acceptedAnswers": [
+            "on awakening, when making thikr, when learning deen",
+            "when calling the athaan, delivering the khutbah, carrying the janaazah",
+            "when overtaken by anger, on arafaat, when learning or teaching deen"
+          ],
+          "explanation": "Examples: on awakening, calling the Athaan, the Khutbah, learning/teaching deen, Thikr, after ghusl of the mayyit, carrying the Janaazah, visiting the Nabee's ﷺ grave, Arafaat, Saaee, and when overtaken by anger."
+        },
+        {
+          "id": "fq-l13-q3",
+          "type": "true-false",
+          "difficulty": "medium",
+          "prompt": "It is mustahab to make wudhu when overtaken by anger.",
+          "correctAnswer": true,
+          "explanation": "Making wudhu when overtaken by anger is one of the mustahab occasions."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "How often is it mustahab to be in wudhu?",
+          "back": "At all times."
+        },
+        {
+          "front": "Name a mustahab occasion to make wudhu.",
+          "back": "On awakening, calling Athaan, Khutbah, learning deen, Thikr, when angry (any)."
+        }
+      ],
+      "story": null,
+      "needsContent": false,
       "needsReview": false
     },
     {
       "id": "g5-fiqh-l14",
       "n": 14,
       "title": "Ghusl",
-      "pages": "38-43",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
+      "pages": "38-39",
+      "summary": "Ghusl is a special method of washing the entire body to become clean from the greater impurity (Hadathul Akbar). Without ghusl, salaah and certain acts of worship are not accepted. A clean body is loved by Allah and also protects us from germs and sickness.",
+      "keyTerms": [
+        {
+          "term": "Ghusl",
+          "meaning": "The prescribed washing of the whole body to remove the greater impurity"
+        }
+      ],
+      "points": [
+        "Ghusl is a special method of washing the entire body to become clean from the greater impurity.",
+        "Without ghusl, salaah will not be accepted while in the state of Hadathul Akbar.",
+        "In the state of Hadath Akbar or Asghar a person may not: perform salaah; hold/touch the Qur'aan; make masah; enter a masjid; make tawaaf of the Kaabah.",
+        "A clean body is loved by Allah and protects us from germs and sickness."
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "questions": [
+        {
+          "id": "fq-l14-q1",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "What does ghusl mean?",
+          "acceptedAnswers": [
+            "washing the entire body to become clean from the greater impurity",
+            "the special washing of the whole body",
+            "a complete wash of the body for purity"
+          ],
+          "explanation": "Ghusl is a special method of washing the entire body to become clean from the greater impurity."
+        },
+        {
+          "id": "fq-l14-q2",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "Without ghusl, what will not be accepted?",
+          "acceptedAnswers": [
+            "salaah",
+            "your salaah",
+            "prayer"
+          ],
+          "explanation": "Without ghusl (when it is fardh), salaah will not be accepted."
+        },
+        {
+          "id": "fq-l14-q3",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "Name two things a person in Hadath Akbar may not do.",
+          "acceptedAnswers": [
+            "perform salaah and touch the quraan",
+            "enter a masjid and make tawaaf",
+            "read salaah and hold the quraan"
+          ],
+          "explanation": "In Hadath Akbar one may not: perform salaah, hold the Qur'aan, make masah, enter a masjid, or make tawaaf of the Kaabah."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "What is ghusl?",
+          "back": "The washing of the entire body to become clean from the greater impurity (Hadathul Akbar)."
+        },
+        {
+          "front": "What is not accepted without ghusl?",
+          "back": "Salaah."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "g5-fiqh-l15",
+      "n": 15,
+      "title": "Ghusl (Fardh acts and method)",
+      "pages": "40-43",
+      "summary": "Allah says in the Qur'aan: 'If you are impure, clean yourselves thoroughly' (make ghusl). Ghusl is only complete if every part of the body is wet. There are three fardh acts of ghusl, and a sunnah method of performing it.",
+      "keyTerms": [
+        {
+          "term": "Fardh acts of ghusl",
+          "meaning": "The three compulsory parts of ghusl: gargling, water in the nostrils up to the bone, and pouring water over the whole body"
+        }
+      ],
+      "points": [
+        "The THREE fardh acts of ghusl: (1) to gargle; (2) to put water in the nostrils up to the bone; (3) to pour water over the entire body from head to toe without leaving a single hair dry.",
+        "Sunnah method of ghusl: wash both hands up to the wrists.",
+        "Make istinjaa.",
+        "Wash off any impurities from the body.",
+        "Perform wudhu (if water pools around the feet, wash the feet at the end of ghusl).",
+        "After wudhu, pour water over the head three times.",
+        "Then pour water over the right shoulder three times.",
+        "Then pour water over the left shoulder three times.",
+        "Wash the feet if they were not washed during wudhu.",
+        "NB: ensure no part of the body remains dry, even to the extent of a hair."
+      ],
+      "questions": [
+        {
+          "id": "fq-l15-q1",
+          "type": "short-answer",
+          "difficulty": "hard",
+          "prompt": "What are the three fardh acts of ghusl?",
+          "acceptedAnswers": [
+            "to gargle, to put water in the nostrils up to the bone, and to pour water over the whole body",
+            "gargling, water in the nose, water over the entire body",
+            "gargle, nostrils to the bone, whole body wet"
+          ],
+          "explanation": "The three faraaidh of ghusl are: gargling; putting water in the nostrils up to the bone; and pouring water over the entire body without leaving a hair dry."
+        },
+        {
+          "id": "fq-l15-q2",
+          "type": "fill-blank",
+          "difficulty": "medium",
+          "prompt": "Ghusl is only complete if every part of the body is ______.",
+          "correctAnswer": "wet",
+          "acceptedAnswers": [
+            "wet"
+          ],
+          "explanation": "Ghusl is complete only if every part of the body becomes wet — not even a hair may stay dry."
+        },
+        {
+          "id": "fq-l15-q3",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "In the sunnah method, over which part do we pour water first, after wudhu?",
+          "acceptedAnswers": [
+            "the head",
+            "over the head three times",
+            "head first"
+          ],
+          "explanation": "After wudhu, pour water over the head three times, then the right shoulder, then the left."
+        },
+        {
+          "id": "fq-l15-q4",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "In ghusl it is permissible to leave a small dry patch of skin.",
+          "correctAnswer": false,
+          "explanation": "No part may remain dry, even to the extent of a hair."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "How many fardh acts does ghusl have?",
+          "back": "Three."
+        },
+        {
+          "front": "Name the three fardh of ghusl.",
+          "back": "Gargle; water in the nostrils up to the bone; pour water over the whole body (no hair left dry)."
+        },
+        {
+          "front": "When is ghusl complete?",
+          "back": "Only when every part of the body is wet — not even a hair stays dry."
+        }
+      ],
+      "story": null,
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "g5-fiqh-l16",
+      "n": 16,
+      "title": "The sunnah acts of Ghusl",
+      "pages": "44-45",
+      "summary": "The sunnah acts of ghusl complete and perfect it, following the way of Nabee ﷺ.",
+      "keyTerms": [
+        {
+          "term": "Niyyah",
+          "meaning": "The intention made in the heart before an act of worship"
+        }
+      ],
+      "points": [
+        "Make Niyyah (intention).",
+        "Wash the hands up to the wrists.",
+        "Wash off all impurities.",
+        "Wash the private parts.",
+        "Perform wudhu.",
+        "Pour water over the whole body three times — start from the head, then the right shoulder, then the left shoulder.",
+        "Rub the body when pouring water over it."
+      ],
+      "questions": [
+        {
+          "id": "fq-l16-q1",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "Name two sunnah acts of ghusl.",
+          "acceptedAnswers": [
+            "make niyyah and wash the hands",
+            "perform wudhu and rub the body",
+            "wash off impurities and wash the private parts"
+          ],
+          "explanation": "Sunnah acts include: niyyah, washing the hands, washing off impurities, washing the private parts, performing wudhu, pouring water thrice (head, right, left), and rubbing the body."
+        },
+        {
+          "id": "fq-l16-q2",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "It is sunnah to rub the body while pouring water over it during ghusl.",
+          "correctAnswer": true,
+          "explanation": "Rubbing the body while pouring water is a sunnah act of ghusl."
+        },
+        {
+          "id": "fq-l16-q3",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "What is the first sunnah act of ghusl?",
+          "acceptedAnswers": [
+            "to make niyyah",
+            "making the intention",
+            "niyyah"
+          ],
+          "explanation": "The first sunnah act is to make niyyah (intention)."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "What is the first sunnah act of ghusl?",
+          "back": "To make niyyah (intention)."
+        },
+        {
+          "front": "Is rubbing the body during ghusl sunnah?",
+          "back": "Yes."
+        }
+      ],
+      "story": null,
+      "needsContent": false,
+      "needsReview": false
+    },
+    {
+      "id": "g5-fiqh-l17",
+      "n": 17,
+      "title": "Occasions when Ghusl becomes fardh",
+      "pages": "46-47",
+      "summary": "Ghusl becomes fardh (compulsory) on certain occasions, sunnah on others, and mustahab on yet others. A person who needs a fardh ghusl is in the state of Hadathul Akbar.",
+      "keyTerms": [
+        {
+          "term": "Janaabah",
+          "meaning": "The state of major impurity"
+        },
+        {
+          "term": "Haidh",
+          "meaning": "The monthly period"
+        },
+        {
+          "term": "Nifaas",
+          "meaning": "Bleeding after childbirth"
+        }
+      ],
+      "points": [
+        "Ghusl is FARDH: when one is in the state of janaabah; when a woman is in the state of haidh; when a woman is in the state of nifaas.",
+        "One who needs a fardh ghusl is in Hadathul Akbar and may NOT: perform salaah; touch or recite the Holy Qur'aan; perform sajdah tilaawah; enter a masjid; make tawaaf.",
+        "Ghusl is SUNNAH: on the day of Jumuah; on the two Eids; before wearing the Ihraam; for a Haajee in Arafaat.",
+        "Ghusl is MUSTAHAB: on embracing Islam; after giving ghusl to the dead; on entering Makkah and Madeenah; on becoming mature (baaligh); returning from a journey; for the salaah of solar and lunar eclipse."
+      ],
+      "questions": [
+        {
+          "id": "fq-l17-q1",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "Name the occasions when ghusl is fardh.",
+          "acceptedAnswers": [
+            "janaabah, haidh and nifaas",
+            "the state of janaabah, haidh, and nifaas",
+            "after janaabah, haidh or nifaas"
+          ],
+          "explanation": "Ghusl is fardh in the states of janaabah, haidh, and nifaas."
+        },
+        {
+          "id": "fq-l17-q2",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "On which day is ghusl sunnah?",
+          "acceptedAnswers": [
+            "jumuah",
+            "the day of jumuah",
+            "friday"
+          ],
+          "explanation": "Ghusl is sunnah on the day of Jumuah (and on the two Eids, before Ihraam, and for a Haajee in Arafaat)."
+        },
+        {
+          "id": "fq-l17-q3",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "Name two occasions when ghusl is mustahab.",
+          "acceptedAnswers": [
+            "on embracing islam and returning from a journey",
+            "on becoming baaligh and entering makkah",
+            "after giving ghusl to the dead and for the eclipse salaah"
+          ],
+          "explanation": "Mustahab occasions include: embracing Islam, after giving ghusl to the dead, entering Makkah/Madeenah, becoming baaligh, returning from a journey, and for the eclipse salaah."
+        },
+        {
+          "id": "fq-l17-q4",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Ghusl is fardh on the day of Jumuah.",
+          "correctAnswer": false,
+          "explanation": "Ghusl on Jumuah is sunnah, not fardh."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "When is ghusl fardh?",
+          "back": "In the states of janaabah, haidh, and nifaas."
+        },
+        {
+          "front": "When is ghusl sunnah?",
+          "back": "On Jumuah, the two Eids, before Ihraam, and for a Haajee in Arafaat."
+        },
+        {
+          "front": "Name a mustahab occasion for ghusl.",
+          "back": "Embracing Islam, becoming baaligh, entering Makkah/Madeenah, returning from a journey (any)."
+        }
+      ],
+      "story": null,
+      "needsContent": false,
       "needsReview": false
     },
     {

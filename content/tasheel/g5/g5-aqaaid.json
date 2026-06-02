@@ -312,27 +312,330 @@
       "n": 3,
       "title": "The Qur'aan",
       "pages": "12-15",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
-      "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
-      "needsReview": false
+      "summary": "The Qur'aan is the final revelation of Allah, revealed to Nabee ﷺ over twenty-three years. Allah Himself protects every word of it from corruption, so no part has ever changed. It is the most superior of all the revealed Books; it cancelled the laws of the previous Books, and all mankind must now follow it. It is the Kalaam (direct speech) of Allah and contains the best and only guidance for all times.",
+      "keyTerms": [
+        {
+          "term": "Kalaam",
+          "meaning": "The direct speech of Allah to mankind"
+        },
+        {
+          "term": "Huffaaz",
+          "meaning": "Those who have memorised the whole Qur'aan"
+        }
+      ],
+      "points": [
+        "The Qur'aan is the most superior Book of Allah, from amongst all the revealed Books.",
+        "The Qur'aan cancelled the laws of all previous revealed Books, and all of mankind must now follow the teachings of the Qur'aan.",
+        "The Qur'aan is the Kalaam (direct speech) of Allah to mankind.",
+        "The Qur'aan is the only Book that will never be changed, lost or destroyed.",
+        "Allah has protected both the words and the meaning of the Qur'aan.",
+        "The Qur'aan is complete and perfect. It contains the best and only guidance for all times.",
+        "The Qur'aan contains one hundred and fourteen chapters, which have been memorised by millions of people ever since the beginning of revelation.",
+        "Every word of the Qur'aan had also been written by a number of appointed people, as it was being revealed upon Nabee ﷺ."
+      ],
+      "story": {
+        "title": "Compilation of the Qur'aan",
+        "text": "In the time of Sayyidina Aboo Bakr (رضي الله عنه) the Muslim army went to fight the false prophet Musailamah. In this battle there were many huffaaz of the Qur'aan as well. However at the end of the battle, though the Muslims were victorious, they lost a lot of huffaaz. A Sahabi came to Sayyidina Aboo Bakr (رضي الله عنه) and said that he was worried that if all the huffaaz were killed then there would be no one left to preserve the Qur'aan. It would therefore be best if the Qur'aan was compiled in book form. Sayyidina Zaid (رضي الله عنه) was given the task of collecting all the pieces of skins and barks upon which the Qur'aan was written, and then he compiled the first copy of the Qur'aan in book form."
+      },
+      "questions": [
+        {
+          "id": "aq-l3-q1",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "What is the rank of the Qur'aan?",
+          "acceptedAnswers": [
+            "it is the most superior book of allah",
+            "the most superior book",
+            "most superior of all the revealed books",
+            "the superior most book"
+          ],
+          "explanation": "The Qur'aan is the most superior Book of Allah from amongst all the revealed Books."
+        },
+        {
+          "id": "aq-l3-q2",
+          "type": "short-answer",
+          "difficulty": "hard",
+          "prompt": "Where were the first verses revealed?",
+          "acceptedAnswers": [
+            "cave of hira",
+            "ghaar hira",
+            "cave hira",
+            "in the cave of hira"
+          ],
+          "explanation": "The first verses were revealed in the Cave of Hira.",
+          "needsReview": true
+        },
+        {
+          "id": "aq-l3-q3",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "What does the Qur'aan contain?",
+          "acceptedAnswers": [
+            "the best and only guidance for all times",
+            "guidance for all times",
+            "the best guidance"
+          ],
+          "explanation": "It is complete and perfect and contains the best and only guidance for all times."
+        },
+        {
+          "id": "aq-l3-q4",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "Up to when will the Qur'aan remain?",
+          "acceptedAnswers": [
+            "forever",
+            "for all times",
+            "it will never be changed lost or destroyed",
+            "till qiyaamah"
+          ],
+          "explanation": "It is the only Book that will never be changed, lost or destroyed."
+        },
+        {
+          "id": "aq-l3-q5",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "How has Allah protected the Qur'aan from change?",
+          "acceptedAnswers": [
+            "he protected both the words and the meaning",
+            "by protecting the words and meaning",
+            "allah protects every word"
+          ],
+          "explanation": "Allah has protected both the words and the meaning of the Qur'aan."
+        },
+        {
+          "id": "aq-l3-q6",
+          "type": "fill-blank",
+          "difficulty": "easy",
+          "prompt": "The Qur'aan contains ______ chapters.",
+          "correctAnswer": "114",
+          "acceptedAnswers": [
+            "114",
+            "one hundred and fourteen",
+            "a hundred and fourteen"
+          ],
+          "explanation": "The Qur'aan contains one hundred and fourteen chapters."
+        },
+        {
+          "id": "aq-l3-q7",
+          "type": "fill-blank",
+          "difficulty": "medium",
+          "prompt": "The Qur'aan was revealed over a period of ______ years.",
+          "correctAnswer": "twenty-three",
+          "acceptedAnswers": [
+            "twenty-three",
+            "twenty three",
+            "23"
+          ],
+          "explanation": "It was revealed to the Prophet ﷺ over a period of twenty-three years."
+        },
+        {
+          "id": "aq-l3-q8",
+          "type": "short-answer",
+          "difficulty": "hard",
+          "prompt": "In whose time was the Qur'aan compiled into book form, and who did it?",
+          "acceptedAnswers": [
+            "sayyidina aboo bakr and sayyidina zaid",
+            "aboo bakr, zaid",
+            "in the time of aboo bakr, zaid compiled it",
+            "sayyidina zaid in the time of aboo bakr"
+          ],
+          "explanation": "In the time of Sayyidina Aboo Bakr (رضي الله عنه), Sayyidina Zaid (رضي الله عنه) compiled the first copy in book form."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "What is the Qur'aan?",
+          "back": "The final revelation and direct speech (Kalaam) of Allah to mankind."
+        },
+        {
+          "front": "How many chapters are in the Qur'aan?",
+          "back": "One hundred and fourteen (114)."
+        },
+        {
+          "front": "Over how long was the Qur'aan revealed?",
+          "back": "Twenty-three years."
+        },
+        {
+          "front": "Who compiled the Qur'aan into book form?",
+          "back": "Sayyidina Zaid (رضي الله عنه), in the time of Sayyidina Aboo Bakr (رضي الله عنه)."
+        },
+        {
+          "front": "What does 'the Qur'aan cancelled previous Books' mean?",
+          "back": "Its laws replaced those of all earlier revealed Books; all mankind must now follow the Qur'aan."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": true
     },
     {
       "id": "g5-aqaaid-l4",
       "n": 4,
       "title": "Nabee Muhammad ﷺ",
       "pages": "16-19",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
-      "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "summary": "Nabee Muhammad ﷺ is the last and final prophet, sent to the whole of humanity and the seal of all Prophets. He is the noblest of all the prophets, sent as a mercy to mankind. His teachings are the Sunnah; just as it is compulsory to follow the Qur'aan, it is compulsory to follow the Sunnah, for we cannot obey Allah without it. He was granted the most miracles of any Nabee and went on Me'raj with both body and soul.",
+      "keyTerms": [
+        {
+          "term": "Me'raj",
+          "meaning": "The miraculous night journey and ascension Nabee ﷺ made by the command of Allah, with both body and soul"
+        },
+        {
+          "term": "Aalimul Ghaib",
+          "meaning": "The Knower of All the Unseen — a quality of Allah alone"
+        },
+        {
+          "term": "Sunnah",
+          "meaning": "The teachings and way of Nabee ﷺ"
+        }
+      ],
+      "points": [
+        "Nabee Muhammad ﷺ is Allah's most beloved servant and messenger.",
+        "He was the noblest of all human beings.",
+        "Nabee's ﷺ teachings explain the laws of the Qur'aan; the Qur'aan therefore cannot be understood without the Sunnah.",
+        "He was the most knowledgeable of all Ambiya. He was given information about certain aspects of the Unseen, but only Allah is the Knower of All the Unseen (Aalimul Ghaib).",
+        "Nabee ﷺ split the moon into two; sometimes trees greeted him and animals spoke to him. Allah granted him the most number of miracles.",
+        "He went on Me'raj by the command of Allah, with both body and soul.",
+        "He was the kindest, most generous and most concerned of all human beings. He possessed the most virtuous character.",
+        "He will intercede for the sinful Muslims on the day of Qiyaamah by Allah's permission.",
+        "Nabee ﷺ could not read and write, nor did he have any teacher. He was taught by Allah.",
+        "We must love and respect him at all times according to the teachings of the Shariah."
+      ],
+      "story": {
+        "title": "A Miracle",
+        "text": "Once Nabee ﷺ went to the house of Sayyidina Anas bin Malik and found a well there which had very unpleasant tasting water. Nabee ﷺ dropped his noble saliva into that well, which caused the water therein to become so sweet that no other well in Madeenah could compare to the water of this well."
+      },
+      "questions": [
+        {
+          "id": "aq-l4-q1",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "What is the position of Rasoolullah ﷺ?",
+          "acceptedAnswers": [
+            "the last and final prophet",
+            "allah's most beloved servant and messenger",
+            "the seal of all prophets",
+            "the noblest of all prophets"
+          ],
+          "explanation": "He is Allah's most beloved servant and messenger, the last and final Prophet and the seal of all Prophets."
+        },
+        {
+          "id": "aq-l4-q2",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "How many miracles did Rasoolullah ﷺ perform?",
+          "acceptedAnswers": [
+            "the most number of miracles",
+            "the most miracles",
+            "allah granted him the most number of miracles"
+          ],
+          "explanation": "Allah granted him the most number of miracles."
+        },
+        {
+          "id": "aq-l4-q3",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "How did he go on Me'raj?",
+          "acceptedAnswers": [
+            "with both body and soul",
+            "body and soul",
+            "with his body and soul"
+          ],
+          "explanation": "He went on Me'raj by the command of Allah, with both body and soul."
+        },
+        {
+          "id": "aq-l4-q4",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "Describe his character.",
+          "acceptedAnswers": [
+            "the kindest most generous and most concerned",
+            "most virtuous character",
+            "kind generous and concerned",
+            "the best character"
+          ],
+          "explanation": "He was the kindest, most generous and most concerned of all human beings, with the most virtuous character."
+        },
+        {
+          "id": "aq-l4-q5",
+          "type": "true-false",
+          "difficulty": "medium",
+          "prompt": "Nabee Muhammad ﷺ is Aalimul Ghaib (the Knower of all the Unseen).",
+          "correctAnswer": false,
+          "explanation": "Only Allah is Aalimul Ghaib. The Nabee ﷺ was given knowledge of certain aspects of the Unseen by Allah, but is not the Knower of all the Unseen."
+        },
+        {
+          "id": "aq-l4-q6",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "What is the meaning of 'intercede'?",
+          "acceptedAnswers": [
+            "to plead on someone's behalf",
+            "to ask allah to forgive someone",
+            "to plead for the sinful muslims"
+          ],
+          "explanation": "To intercede means to plead on someone's behalf — he will plead for the sinful Muslims on the day of Qiyaamah by Allah's permission."
+        },
+        {
+          "id": "aq-l4-q7",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "How must our behaviour towards him be?",
+          "acceptedAnswers": [
+            "we must love and respect him at all times",
+            "love and respect him according to the shariah",
+            "with love and respect"
+          ],
+          "explanation": "We must love and respect him at all times according to the teachings of the Shariah."
+        },
+        {
+          "id": "aq-l4-q8",
+          "type": "fill-blank",
+          "difficulty": "easy",
+          "prompt": "Nabee ﷺ went on a journey called ______.",
+          "correctAnswer": "Me'raj",
+          "acceptedAnswers": [
+            "meraj",
+            "me'raj",
+            "mi'raj",
+            "miraj"
+          ],
+          "explanation": "He went on the journey of Me'raj, with both body and soul."
+        },
+        {
+          "id": "aq-l4-q9",
+          "type": "fill-blank",
+          "difficulty": "easy",
+          "prompt": "Nabee ﷺ had the most virtuous ______.",
+          "correctAnswer": "character",
+          "acceptedAnswers": [
+            "character",
+            "akhlaaq"
+          ],
+          "explanation": "He possessed the most virtuous character."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "Who is Nabee Muhammad ﷺ?",
+          "back": "Allah's most beloved servant and messenger; the last and final Prophet, sent as a mercy to all mankind."
+        },
+        {
+          "front": "What is the Sunnah?",
+          "back": "The teachings and way of Nabee ﷺ — compulsory to follow, just like the Qur'aan."
+        },
+        {
+          "front": "What was Me'raj?",
+          "back": "The night journey and ascension Nabee ﷺ made by Allah's command, with both body and soul."
+        },
+        {
+          "front": "Who is Aalimul Ghaib?",
+          "back": "Allah alone — the Knower of all the Unseen."
+        },
+        {
+          "front": "Could Nabee ﷺ read and write?",
+          "back": "No. He had no teacher; he was taught by Allah."
+        }
+      ],
+      "needsContent": false,
       "needsReview": false
     },
     {
@@ -340,13 +643,154 @@
       "n": 5,
       "title": "Signs of Qiyaamah",
       "pages": "20-23",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
-      "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "summary": "This world will end one day, and only Allah knows the exact time of the Last Hour. Nabee ﷺ gave us signs that show its approach. These are divided into minor signs, which appear first, and major signs, which follow. The major signs include the coming of the Mahdee, the appearance of Dajjal, the descent of Nabee Eesa (عليه السلام), the spread of Yajooj and Majooj, and finally the blowing of the trumpet.",
+      "keyTerms": [
+        {
+          "term": "Imaam Mahdee",
+          "meaning": "A rightly-guided leader who will emerge to lead the Muslims to victory when they are at their weakest"
+        },
+        {
+          "term": "Dajjal",
+          "meaning": "A great deceiver who will appear claiming the powers of Allah; many ignorant people will lose their Imaan by following him"
+        },
+        {
+          "term": "Yajooj and Majooj",
+          "meaning": "Two evil tribes who will spread across the world causing harm and destruction before Qiyaamah"
+        }
+      ],
+      "points": [
+        "Minor sign: Speaking lies will become very common.",
+        "Minor sign: Undeserving and ignorant people will become leaders.",
+        "Minor sign: There will be much bloodshed and violence.",
+        "Minor sign: Mothers will be disobeyed and fathers will be treated as strangers.",
+        "Minor sign: Music and musical instruments will be found in every home.",
+        "Minor sign: People will not care about Halaal or Haraam.",
+        "Major sign: When Muslims are at their weakest, a leader known as the Mahdee will emerge and lead the Muslims to victory.",
+        "Major sign: Dajjal will appear, claiming the powers of Allah; many ignorant people will lose their Imaan by following him.",
+        "Major sign: Nabee Eesa (عليه السلام) will descend from the heavens, lead an army against Dajjal and kill him, after which there will be peace.",
+        "Major sign: Yajooj and Majooj will spread across the world causing harm and destruction, until Allah destroys them.",
+        "Major sign: After all the major signs pass, the trumpet will be blown and Qiyaamah will begin."
+      ],
+      "story": {
+        "title": "Yajooj and Majooj",
+        "text": "A pious soldier by the name of Zul Qarnain, once on a journey, came across a group of people who complained to him about evil tribes known as Yajooj and Majooj. These tribes lived behind a mountain and often crossed it to attack the people on the other side, so they requested Zul Qarnain to help them. He built a very high, strong wall between the mountains and in this way trapped the evil tribes behind the mountain. These tribes tried to break the wall, but each day Allah caused the wall to become thicker. Before Qiyaamah, when Allah wills them to be released, they will break through the wall and spread destruction all over the world."
+      },
+      "questions": [
+        {
+          "id": "aq-l5-q1",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "When will Qiyaamah take place?",
+          "acceptedAnswers": [
+            "only allah knows",
+            "no one knows except allah",
+            "only allah knows the exact time",
+            "allah alone knows"
+          ],
+          "explanation": "Only Allah knows the exact time of the Last Hour."
+        },
+        {
+          "id": "aq-l5-q2",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "Mention some of the minor signs of Qiyaamah.",
+          "acceptedAnswers": [
+            "speaking lies will become common",
+            "ignorant people will become leaders",
+            "music in every home",
+            "people will not care about halaal or haraam",
+            "bloodshed and violence",
+            "mothers disobeyed and fathers treated as strangers"
+          ],
+          "explanation": "Minor signs include: lying becoming common, ignorant people becoming leaders, much bloodshed, mothers disobeyed and fathers treated as strangers, music in every home, and people not caring about Halaal or Haraam."
+        },
+        {
+          "id": "aq-l5-q3",
+          "type": "fill-blank",
+          "difficulty": "easy",
+          "prompt": "The leader who will lead the Muslims to victory will be known as the ______.",
+          "correctAnswer": "Mahdee",
+          "acceptedAnswers": [
+            "mahdee",
+            "mahdi",
+            "imaam mahdee",
+            "imam mahdi"
+          ],
+          "explanation": "He will be known as the Mahdee."
+        },
+        {
+          "id": "aq-l5-q4",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "Who is Dajjal?",
+          "acceptedAnswers": [
+            "a great deceiver",
+            "one who will claim the powers of allah",
+            "a liar who claims to be god",
+            "the great liar"
+          ],
+          "explanation": "Dajjal will appear claiming to have the powers of Allah; many ignorant people will lose their Imaan by following him."
+        },
+        {
+          "id": "aq-l5-q5",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "What will the task of Sayyidina Eesa (عليه السلام) be?",
+          "acceptedAnswers": [
+            "to kill dajjal",
+            "he will descend and kill dajjal",
+            "lead an army against dajjal and kill him"
+          ],
+          "explanation": "He will descend from the heavens, lead an army against Dajjal and kill him, after which there will be peace."
+        },
+        {
+          "id": "aq-l5-q6",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "What will Yajooj and Majooj do?",
+          "acceptedAnswers": [
+            "spread across the world causing harm and destruction",
+            "cause harm and destruction",
+            "spread destruction all over the world"
+          ],
+          "explanation": "They will spread across the entire world causing harm and destruction, until Allah destroys them."
+        },
+        {
+          "id": "aq-l5-q7",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "The minor signs of Qiyaamah appear before the major signs.",
+          "correctAnswer": true,
+          "explanation": "The minor signs appear first, followed by the major signs."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "Who knows the exact time of Qiyaamah?",
+          "back": "Only Allah."
+        },
+        {
+          "front": "Who is the Mahdee?",
+          "back": "A rightly-guided leader who will lead the Muslims to victory when they are at their weakest."
+        },
+        {
+          "front": "Who is Dajjal?",
+          "back": "A great deceiver who will claim the powers of Allah; many will lose their Imaan by following him."
+        },
+        {
+          "front": "What will Nabee Eesa (عليه السلام) do when he descends?",
+          "back": "Lead an army against Dajjal and kill him, bringing peace."
+        },
+        {
+          "front": "Who are Yajooj and Majooj?",
+          "back": "Two evil tribes who will spread destruction across the world before Qiyaamah."
+        },
+        {
+          "front": "What happens after all the major signs pass?",
+          "back": "The trumpet will be blown and Qiyaamah will begin."
+        }
+      ],
+      "needsContent": false,
       "needsReview": false
     },
     {
@@ -354,13 +798,169 @@
       "n": 6,
       "title": "The Hereafter",
       "pages": "24-27",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
-      "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "summary": "After the trumpet is blown for the second time, mankind will come out of their graves to the Plains of Reckoning. People will be cut off from relatives and friends, each coming to Allah alone to give an account of his deeds. The day will be fifty thousand years long. The obedient will be honoured in the shade of Allah's Arsh, given their books in their right hands, drink from the Pond of Kauthar and cross the Bridge of Siraat by the Noor of their Imaan.",
+      "keyTerms": [
+        {
+          "term": "Mizaan",
+          "meaning": "The huge scale set up to weigh the deeds of people"
+        },
+        {
+          "term": "Kauthar",
+          "meaning": "The Pond from which Rasoolullah ﷺ will give his Ummah water sweeter than honey and whiter than milk"
+        },
+        {
+          "term": "Siraat",
+          "meaning": "The bridge over Jahannum, sharper than a sword and thinner than a hair, which everyone must cross"
+        },
+        {
+          "term": "Arsh",
+          "meaning": "The Throne of Allah; its shade is the only shade on the Day of Qiyaamah"
+        },
+        {
+          "term": "Noor",
+          "meaning": "Light — the light of Imaan that guides the believers across the Bridge of Siraat"
+        }
+      ],
+      "points": [
+        "On the Day of Reckoning, all people will stand before Allah to answer for their deeds. There will be so much fear that people will not recognise their own parents and family.",
+        "People will run from prophet to prophet, requesting them to plead with Allah to start the reckoning. All these prophets will refuse.",
+        "The sun will be a mile above the heads of the people and they will be drowning in their own sweat.",
+        "The obedient people will sit in the shade of Allah's Arsh (throne), with no fear or worries, treated with honour and respect.",
+        "Rasoolullah ﷺ will make dua to Allah to commence the reckoning, and his dua will be accepted.",
+        "A huge scale called the Mizaan will be set up to weigh the deeds of people. Those whose good deeds are heavier will be successful; those whose evil deeds are heavier will be thrown into the fire.",
+        "The Book of Deeds will be given to the obedient in their right hands (success) and to the disobedient in their left hands (failure).",
+        "Rasoolullah ﷺ will give his Ummah water to drink from the Pond of Kauthar, sweeter than honey and whiter than milk.",
+        "People will then cross the Bridge of Siraat, which spans across Jahannum and is sharper than a sword and thinner than a hair. The people of Imaan will be guided across by the Noor of their Imaan; those who performed the five salaah punctually will cross with the speed of lightning."
+      ],
+      "story": {
+        "title": "The Shade of Allah's Throne",
+        "text": "On the day of Qiyaamah there will be no trees, no buildings and no shade of any type. The only shade on that day will be that of the Throne of Allah. Nobody will be allowed to sit in that shade except those whom Allah permits. Some of the fortunate people who will be permitted to sit in the special shade of Allah's throne will be: those who loved each other only for the pleasure of Allah; those who cried out of fear for Allah while making Ibaadat in a lonely place; those who always frequented the Masjid; and those who feared Allah and stayed away from committing sin."
+      },
+      "questions": [
+        {
+          "id": "aq-l6-q1",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "Why will people stand in front of Allah on the day of Qiyaamah?",
+          "acceptedAnswers": [
+            "to answer for their deeds",
+            "to give an account of their deeds",
+            "to be reckoned for their deeds"
+          ],
+          "explanation": "All people will stand before Allah to answer for their deeds."
+        },
+        {
+          "id": "aq-l6-q2",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "To whom will the people run?",
+          "acceptedAnswers": [
+            "from prophet to prophet",
+            "to the prophets",
+            "from one prophet to another"
+          ],
+          "explanation": "They will run from prophet to prophet, asking them to plead with Allah to begin the reckoning."
+        },
+        {
+          "id": "aq-l6-q3",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "How hot will it be?",
+          "acceptedAnswers": [
+            "the sun will be a mile above their heads",
+            "people will drown in their own sweat",
+            "the sun will be one mile above the heads"
+          ],
+          "explanation": "The sun will be a mile above the heads of the people and they will be drowning in their own sweat."
+        },
+        {
+          "id": "aq-l6-q4",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "How will the obedient ones be treated?",
+          "acceptedAnswers": [
+            "they will sit in the shade of allah's arsh",
+            "with honour and respect",
+            "in the shade of the throne with no fear"
+          ],
+          "explanation": "They will sit in the shade of Allah's Arsh with no fear or worries, treated with honour and respect."
+        },
+        {
+          "id": "aq-l6-q5",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "What is the Mizaan?",
+          "acceptedAnswers": [
+            "the scale that weighs deeds",
+            "a huge scale to weigh the deeds",
+            "the scale of deeds"
+          ],
+          "explanation": "The Mizaan is a huge scale set up to weigh the deeds of people."
+        },
+        {
+          "id": "aq-l6-q6",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "How will the Books of Deeds be given to the people?",
+          "acceptedAnswers": [
+            "the obedient in their right hands and the disobedient in their left hands",
+            "right hand for the obedient, left hand for the disobedient",
+            "right hands to the successful and left hands to the unsuccessful"
+          ],
+          "explanation": "The obedient receive their books in their right hands (success); the disobedient in their left hands (failure)."
+        },
+        {
+          "id": "aq-l6-q7",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "What is the well of Kauthar and what will happen there?",
+          "acceptedAnswers": [
+            "a pond from which rasoolullah will give his ummah water",
+            "water sweeter than honey and whiter than milk",
+            "the pond of the prophet, water sweeter than honey"
+          ],
+          "explanation": "Rasoolullah ﷺ will give his Ummah water from the Pond of Kauthar, sweeter than honey and whiter than milk."
+        },
+        {
+          "id": "aq-l6-q8",
+          "type": "short-answer",
+          "difficulty": "hard",
+          "prompt": "Describe the Bridge of Siraat and how people will cross it.",
+          "acceptedAnswers": [
+            "sharper than a sword and thinner than a hair",
+            "the people of imaan cross by the noor of their imaan",
+            "those who prayed five salaah punctually cross like lightning"
+          ],
+          "explanation": "It spans across Jahannum, sharper than a sword and thinner than a hair. The people of Imaan cross by the Noor of their Imaan; those who prayed the five salaah punctually cross with the speed of lightning."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "What is the Mizaan?",
+          "back": "The huge scale that weighs people's deeds on the Day of Qiyaamah."
+        },
+        {
+          "front": "What is the Pond of Kauthar?",
+          "back": "A pond from which Rasoolullah ﷺ will give his Ummah water sweeter than honey and whiter than milk."
+        },
+        {
+          "front": "What is the Bridge of Siraat?",
+          "back": "The bridge over Jahannum, sharper than a sword and thinner than a hair, that everyone must cross."
+        },
+        {
+          "front": "How long is the Day of Reckoning?",
+          "back": "Fifty thousand years."
+        },
+        {
+          "front": "In which hand do the obedient receive their Book of Deeds?",
+          "back": "In their right hand — a sign of success."
+        },
+        {
+          "front": "Whose shade will be the only shade on Qiyaamah?",
+          "back": "The shade of Allah's Arsh (Throne)."
+        }
+      ],
+      "needsContent": false,
       "needsReview": false
     },
     {
@@ -368,27 +968,604 @@
       "n": 7,
       "title": "Jannah and Jahannam",
       "pages": "28-31",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
-      "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
-      "needsReview": false
+      "summary": "We have been placed in this world for a short while to prepare for the everlasting life of the Hereafter, which depends on our obedience or disobedience to Allah. After our deeds are accounted for, we will be rewarded with Jannah or punished in Jahannum. Jannah (Darus Salaam) is a place without sickness, hunger, worries or pain, prepared only for the believers. Jahannum (Darul Bawaar) is a place of punishment, pain, tears and sadness, prepared for those who disbelieved and disobeyed Allah.",
+      "keyTerms": [
+        {
+          "term": "Darus Salaam",
+          "meaning": "Another name for Jannah — the place of everlasting peace, happiness and comfort"
+        },
+        {
+          "term": "Ar Rayyaan",
+          "meaning": "A door of Jannah especially for those who fasted during Ramadhaan"
+        },
+        {
+          "term": "Darul Bawaar",
+          "meaning": "Another name for Jahannum — the place of everlasting pain, sadness, ruin and punishment"
+        }
+      ],
+      "points": [
+        "Jannah is also known as 'Darus Salaam' — the place of everlasting peace, happiness and comfort.",
+        "Jannah is very spacious. The smallest Jannah will be equal to the size of this world, plus ten times greater.",
+        "Jannah has beautiful fragrances that can be smelled from as far as seventy years away.",
+        "Jannah has eight doors. All eight doors will be opened for a person who reads the Shahaadatayn after making Wudhu. The door known as 'Ar Rayyaan' is especially for those who fasted during the month of Ramadhaan.",
+        "The palaces of Jannah are made with bricks of gold and silver, stuck together with musk.",
+        "Jannah has rivers flowing with clear water, rivers of honey, rivers of wine and rivers of milk.",
+        "Jannah (paradise) has been prepared only for the believers.",
+        "Jahannum is known as 'Darul Bawaar' — the place of everlasting pain, sadness, ruin and punishment.",
+        "The lightest punishment in Jahannum will be shoes and laces made from fire, which will cause the brains to boil just as a kettle boils.",
+        "Jahannum has seven doors. The people will be thrown into Jahannum most disgracefully.",
+        "They will hear the roaring and exploding sounds of the blazing flames from a great distance.",
+        "The people of Jahannum will be made to drink boiling water and pus, and eat thorny plants. Huge scorpions and poisonous snakes will attack them, while the angels will whip them.",
+        "Jahannum has been prepared for those who disbelieved and disobeyed Allah."
+      ],
+      "story": {
+        "title": "The Greatest Blessing of Jannah",
+        "text": "Nabee ﷺ said that after all the people of Jannah have been placed in Jannah and the people of Jahannum placed in Jahannum, a caller will call out, “O people of Jannah, Allah wishes to fulfil a promise He had made to you.” The people of Jannah will say, “What more can Allah grant us when He has granted us everything in Jannah and saved us from Jahannum?” A curtain will then be raised and the people of Jannah will be granted the opportunity of seeing Allah. This will be the greatest blessing of Jannah and will bring them the most joy."
+      },
+      "questions": [
+        {
+          "id": "aq-l7-q1",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "For whom is Jannah, and what is its other name?",
+          "acceptedAnswers": [
+            "for the believers, darus salaam",
+            "jannah is for the believers and is called darus salaam",
+            "the believers; darus salaam"
+          ],
+          "explanation": "Jannah has been prepared only for the believers and is also known as Darus Salaam."
+        },
+        {
+          "id": "aq-l7-q2",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "How big is Jannah?",
+          "acceptedAnswers": [
+            "the smallest jannah is the size of this world plus ten times greater",
+            "the size of this world plus ten times more",
+            "very spacious, larger than this world"
+          ],
+          "explanation": "The smallest Jannah will be equal to the size of this world, plus ten times greater."
+        },
+        {
+          "id": "aq-l7-q3",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "Describe the sweet smells of Jannah.",
+          "acceptedAnswers": [
+            "they can be smelled from seventy years away",
+            "beautiful fragrances smelled from as far as seventy years away",
+            "fragrances from seventy years away"
+          ],
+          "explanation": "Jannah has beautiful fragrances that can be smelled from as far as seventy years away."
+        },
+        {
+          "id": "aq-l7-q4",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "What is the Door of 'Ar Rayyaan'?",
+          "acceptedAnswers": [
+            "a door of jannah for those who fasted in ramadhaan",
+            "the door for those who fasted",
+            "especially for the people who fasted during ramadhaan"
+          ],
+          "explanation": "Ar Rayyaan is a door of Jannah especially for those who fasted during the month of Ramadhaan."
+        },
+        {
+          "id": "aq-l7-q5",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "What kind of rivers will there be in Jannah?",
+          "acceptedAnswers": [
+            "rivers of water honey wine and milk",
+            "clear water, honey, wine and milk",
+            "water, honey, wine, milk"
+          ],
+          "explanation": "Jannah has rivers of clear water, honey, wine and milk."
+        },
+        {
+          "id": "aq-l7-q6",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "For whom is Jahannum and what is its other name?",
+          "acceptedAnswers": [
+            "for those who disbelieved and disobeyed allah, darul bawaar",
+            "the disbelievers; darul bawaar",
+            "jahannum is for the disobedient and is called darul bawaar"
+          ],
+          "explanation": "Jahannum is prepared for those who disbelieved and disobeyed Allah, and is known as Darul Bawaar."
+        },
+        {
+          "id": "aq-l7-q7",
+          "type": "fill-blank",
+          "difficulty": "easy",
+          "prompt": "Jannah has ______ doors.",
+          "correctAnswer": "eight",
+          "acceptedAnswers": [
+            "eight",
+            "8"
+          ],
+          "explanation": "Jannah has eight doors."
+        },
+        {
+          "id": "aq-l7-q8",
+          "type": "fill-blank",
+          "difficulty": "easy",
+          "prompt": "Jahannum has ______ doors.",
+          "correctAnswer": "seven",
+          "acceptedAnswers": [
+            "seven",
+            "7"
+          ],
+          "explanation": "Jahannum has seven doors."
+        },
+        {
+          "id": "aq-l7-q9",
+          "type": "short-answer",
+          "difficulty": "hard",
+          "prompt": "What will be the food and drink of the people of Jahannum?",
+          "acceptedAnswers": [
+            "boiling water and pus, and thorny plants",
+            "they will drink boiling water and pus and eat thorny plants",
+            "boiling water, pus and thorny plants"
+          ],
+          "explanation": "They will be made to drink boiling water and pus and to eat thorny plants."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "What is another name for Jannah?",
+          "back": "Darus Salaam — the place of everlasting peace, happiness and comfort."
+        },
+        {
+          "front": "What is another name for Jahannum?",
+          "back": "Darul Bawaar — the place of everlasting pain, sadness, ruin and punishment."
+        },
+        {
+          "front": "How many doors does Jannah have?",
+          "back": "Eight."
+        },
+        {
+          "front": "How many doors does Jahannum have?",
+          "back": "Seven."
+        },
+        {
+          "front": "Which door of Jannah is for those who fasted in Ramadhaan?",
+          "back": "Ar Rayyaan."
+        },
+        {
+          "front": "What is the greatest blessing of Jannah?",
+          "back": "Seeing Allah."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": true,
+      "wordSearch": {
+        "title": "Jannah and Jahannam word search",
+        "instruction": "Search for the words connected with 'Jannah and Jahannam'. There are sixteen words.",
+        "grid": [
+          [
+            "q",
+            "w",
+            "a",
+            "e",
+            "b",
+            "d",
+            "t",
+            "y",
+            "h",
+            "u",
+            "d",
+            "i",
+            "o",
+            "p",
+            "s",
+            "a",
+            "s"
+          ],
+          [
+            "d",
+            "f",
+            "r",
+            "g",
+            "o",
+            "a",
+            "h",
+            "j",
+            "o",
+            "k",
+            "a",
+            "l",
+            "z",
+            "x",
+            "c",
+            "c",
+            "v"
+          ],
+          [
+            "m",
+            "b",
+            "r",
+            "j",
+            "i",
+            "r",
+            "n",
+            "m",
+            "n",
+            "q",
+            "r",
+            "w",
+            "e",
+            "r",
+            "o",
+            "t",
+            "y"
+          ],
+          [
+            "i",
+            "u",
+            "a",
+            "a",
+            "l",
+            "u",
+            "i",
+            "o",
+            "e",
+            "p",
+            "u",
+            "a",
+            "s",
+            "d",
+            "r",
+            "f",
+            "g"
+          ],
+          [
+            "l",
+            "h",
+            "y",
+            "n",
+            "i",
+            "l",
+            "j",
+            "k",
+            "y",
+            "j",
+            "s",
+            "l",
+            "z",
+            "x",
+            "p",
+            "c",
+            "v"
+          ],
+          [
+            "k",
+            "b",
+            "y",
+            "n",
+            "n",
+            "b",
+            "n",
+            "q",
+            "m",
+            "a",
+            "s",
+            "w",
+            "e",
+            "r",
+            "i",
+            "t",
+            "y"
+          ],
+          [
+            "u",
+            "i",
+            "a",
+            "a",
+            "g",
+            "a",
+            "o",
+            "p",
+            "a",
+            "h",
+            "a",
+            "s",
+            "d",
+            "f",
+            "o",
+            "g",
+            "h"
+          ],
+          [
+            "j",
+            "k",
+            "a",
+            "t",
+            "w",
+            "w",
+            "l",
+            "z",
+            "x",
+            "a",
+            "l",
+            "c",
+            "v",
+            "b",
+            "n",
+            "n",
+            "m"
+          ],
+          [
+            "q",
+            "w",
+            "n",
+            "e",
+            "a",
+            "a",
+            "r",
+            "t",
+            "y",
+            "n",
+            "a",
+            "u",
+            "i",
+            "o",
+            "s",
+            "p",
+            "a"
+          ],
+          [
+            "s",
+            "d",
+            "f",
+            "g",
+            "t",
+            "a",
+            "h",
+            "j",
+            "k",
+            "n",
+            "a",
+            "l",
+            "m",
+            "i",
+            "l",
+            "k",
+            "z"
+          ],
+          [
+            "m",
+            "u",
+            "s",
+            "k",
+            "e",
+            "r",
+            "x",
+            "c",
+            "v",
+            "a",
+            "m",
+            "r",
+            "i",
+            "v",
+            "e",
+            "r",
+            "s"
+          ],
+          [
+            "b",
+            "n",
+            "m",
+            "q",
+            "r",
+            "w",
+            "e",
+            "r",
+            "t",
+            "m",
+            "y",
+            "u",
+            "i",
+            "o",
+            "p",
+            "a",
+            "s"
+          ],
+          [
+            "d",
+            "f",
+            "s",
+            "e",
+            "v",
+            "e",
+            "n",
+            "d",
+            "o",
+            "o",
+            "r",
+            "s",
+            "g",
+            "h",
+            "j",
+            "k",
+            "l"
+          ],
+          [
+            "t",
+            "h",
+            "o",
+            "r",
+            "n",
+            "y",
+            "p",
+            "l",
+            "a",
+            "n",
+            "t",
+            "s",
+            "z",
+            "x",
+            "c",
+            "v",
+            "b"
+          ],
+          [
+            "n",
+            "m",
+            "q",
+            "w",
+            "e",
+            "r",
+            "t",
+            "y",
+            "f",
+            "r",
+            "a",
+            "g",
+            "r",
+            "a",
+            "n",
+            "c",
+            "e"
+          ],
+          [
+            "h",
+            "o",
+            "n",
+            "e",
+            "y",
+            "u",
+            "i",
+            "g",
+            "o",
+            "l",
+            "d",
+            "p",
+            "o",
+            "a",
+            "s",
+            "d",
+            "f"
+          ]
+        ],
+        "words": [
+          "MUSK",
+          "RIVERS",
+          "SEVEN",
+          "DOORS",
+          "THORNY",
+          "PLANTS",
+          "FRAGRANCE",
+          "HONEY",
+          "GOLD",
+          "MILK"
+        ],
+        "note": "Grid transcribed letter-for-letter from p.31. The book states there are 16 words; 10 are confirmed here. Verify the grid letters and complete the remaining 6 target words against the book scan.",
+        "needsReview": true
+      }
     },
     {
       "id": "g5-aqaaid-l8",
       "n": 8,
       "title": "Al-Maani",
       "pages": "32-33",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
-      "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
+      "summary": "We cannot understand the nature of the physical existence of Allah, but we can recognise His power through His 99 beautiful names, which describe His qualities. His qualities have no beginning or end and cannot be measured; no creature can challenge them. Al-Maani' is one of the names and qualities of Allah. It means 'One Who Prevents'. Allah alone decides harm or benefit; none can give if He does not will, and none can prevent Him from giving.",
+      "keyTerms": [
+        {
+          "term": "Al-Maani'",
+          "meaning": "One Who Prevents — a name and quality of Allah"
+        }
+      ],
+      "points": [
+        "Allah can prevent rainfall and the growth of plants, if He wills.",
+        "Allah can protect a person from diseases or accidents, if He wills.",
+        "Allah can prevent a person from becoming rich or becoming poor, if He wills.",
+        "Allah alone decides harm or benefit for His creation.",
+        "There is none that can give if Allah does not will.",
+        "There is none that can prevent Allah from giving.",
+        "If Allah decides to protect a person, no one can harm him, even if he gets help from the entire creation.",
+        "If Allah decides to harm a person, the entire creation cannot prevent Allah from doing so.",
+        "No creation can challenge the will and power of Allah.",
+        "We are totally dependent on Allah. Allah is Al-Maani'."
+      ],
+      "story": {
+        "title": "The Scorpion and the Snake",
+        "text": "A man was once fast asleep under a tree. Nearby a huge snake was crawling, and it came in his direction to attack him. Allah used a scorpion to help this man, although it was on the other side of the river. Allah ordered a frog to come to the banks of the river. The scorpion climbed onto the frog's back and the frog swam across the river. When the frog hopped onto the opposite shore, the scorpion raced towards the snake and the sleeping man. The snake was just about to bite the man when the scorpion stung the snake, causing it to die. The scorpion then left. When the man awoke, he wondered why a dead snake lay near him. Allah had prevented the man from being harmed."
+      },
+      "questions": [
+        {
+          "id": "aq-l8-q1",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "What does Al-Maani' mean?",
+          "acceptedAnswers": [
+            "one who prevents",
+            "the one who prevents",
+            "preventer"
+          ],
+          "explanation": "Al-Maani' means 'One Who Prevents'."
+        },
+        {
+          "id": "aq-l8-q2",
+          "type": "true-false",
+          "difficulty": "medium",
+          "prompt": "Someone other than Allah can give something even if Allah does not will it.",
+          "correctAnswer": false,
+          "explanation": "There is none that can give if Allah does not will, and none that can prevent Allah from giving."
+        },
+        {
+          "id": "aq-l8-q3",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "If Allah decides to save a person, what can harm him?",
+          "acceptedAnswers": [
+            "nothing",
+            "no one can harm him",
+            "nothing can harm him even with help of the whole creation"
+          ],
+          "explanation": "If Allah decides to protect a person, no one can harm him, even with the help of the entire creation."
+        },
+        {
+          "id": "aq-l8-q4",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "How will one be protected if Allah decides to harm one?",
+          "acceptedAnswers": [
+            "the entire creation cannot prevent allah",
+            "no one can protect him",
+            "nothing can stop allah"
+          ],
+          "explanation": "If Allah decides to harm a person, the entire creation cannot prevent Allah from doing so."
+        },
+        {
+          "id": "aq-l8-q5",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Al-Maani' is one of the 99 beautiful names of Allah.",
+          "correctAnswer": true,
+          "explanation": "Al-Maani' is one of the names and qualities of Allah, meaning 'One Who Prevents'."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "What does Al-Maani' mean?",
+          "back": "One Who Prevents — a name and quality of Allah."
+        },
+        {
+          "front": "Through what can we recognise Allah's power?",
+          "back": "His 99 beautiful names, which describe His qualities."
+        },
+        {
+          "front": "Can anyone give if Allah does not will it?",
+          "back": "No. None can give if Allah does not will, and none can prevent Him from giving."
+        },
+        {
+          "front": "Who decides harm or benefit for the creation?",
+          "back": "Allah alone."
+        }
+      ],
+      "needsContent": false,
       "needsReview": false
     },
     {
@@ -396,14 +1573,119 @@
       "n": 9,
       "title": "Al-Hadee",
       "pages": "34-36",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
+      "summary": "Al-Hadee is one of the names and qualities of Allah. It means 'One Who Guides'. People are divided into two groups — those guided to the straight path and those who are misguided — and Allah alone decides who is guided. Hidaayah (guidance) is the most important desire of a Muslim and the only key that opens the doors of Jannah, so we beg Allah to guide us to the straight path in every raka'aat of salaah.",
+      "keyTerms": [
+        {
+          "term": "Al-Hadee",
+          "meaning": "One Who Guides — a name and quality of Allah"
+        },
+        {
+          "term": "Hidaayah",
+          "meaning": "Guidance — the most important desire of a Muslim"
+        }
+      ],
+      "points": [
+        "Allah guides the poor and the rich, women and men, the weak and the strong. He guides people of all colours.",
+        "Allah sent the Ambiyaa to guide mankind to the straight path.",
+        "No amount of wealth and power can be equal to or compared with the gift of hidaayah (guidance).",
+        "Hidaayah is the only key that will open the doors of Jannah.",
+        "Allah also guides us in the decisions we make, if we beg for His guidance."
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
-      "needsReview": false
+      "questions": [
+        {
+          "id": "aq-l9-q1",
+          "type": "short-answer",
+          "difficulty": "easy",
+          "prompt": "One who grants guidance is called?",
+          "acceptedAnswers": [
+            "al-hadee",
+            "al hadee",
+            "one who guides",
+            "alhadee"
+          ],
+          "explanation": "Al-Hadee means 'One Who Guides' — a name of Allah."
+        },
+        {
+          "id": "aq-l9-q2",
+          "type": "fill-blank",
+          "difficulty": "medium",
+          "prompt": "Allah alone is the One who grants ______.",
+          "correctAnswer": "hidaayah",
+          "acceptedAnswers": [
+            "hidaayah",
+            "hidayah",
+            "guidance"
+          ],
+          "explanation": "Allah alone grants hidaayah (guidance) to whom He wills."
+        },
+        {
+          "id": "aq-l9-q3",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "When do we ask for guidance?",
+          "acceptedAnswers": [
+            "in every rakaat of salaah",
+            "in every raka'aat of salaah",
+            "during salaah",
+            "in salaah"
+          ],
+          "explanation": "We beg Allah to guide us to the straight path in every raka'aat of salaah."
+        },
+        {
+          "id": "aq-l9-q4",
+          "type": "short-answer",
+          "difficulty": "hard",
+          "prompt": "Who will not receive guidance from Allah?",
+          "acceptedAnswers": [
+            "those whom allah wills to leave misguided",
+            "the misguided",
+            "those who turn away from guidance"
+          ],
+          "explanation": "People are divided into the guided and the misguided; Allah alone decides who will be guided or misguided.",
+          "needsReview": true
+        },
+        {
+          "id": "aq-l9-q5",
+          "type": "short-answer",
+          "difficulty": "medium",
+          "prompt": "Who is the fortunate one?",
+          "acceptedAnswers": [
+            "the one whom allah guides",
+            "one who is guided to the straight path",
+            "the one granted hidaayah"
+          ],
+          "explanation": "The fortunate one is the person whom Allah guides to the straight path."
+        },
+        {
+          "id": "aq-l9-q6",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Wealth and power are greater than the gift of hidaayah (guidance).",
+          "correctAnswer": false,
+          "explanation": "No amount of wealth and power can be equal to or compared with the gift of hidaayah."
+        }
+      ],
+      "flashcards": [
+        {
+          "front": "What does Al-Hadee mean?",
+          "back": "One Who Guides — a name and quality of Allah."
+        },
+        {
+          "front": "What is Hidaayah?",
+          "back": "Guidance — the most important desire of a Muslim."
+        },
+        {
+          "front": "What is the only key that opens the doors of Jannah?",
+          "back": "Hidaayah (guidance)."
+        },
+        {
+          "front": "When do we beg Allah for guidance?",
+          "back": "In every raka'aat of salaah."
+        }
+      ],
+      "needsContent": false,
+      "needsReview": true
     }
   ]
 }
