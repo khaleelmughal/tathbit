@@ -51,6 +51,8 @@ export const createClass = (data: { name: string; gradeId: string }) =>
 export const getStudentProgress = (studentId: number) => api(`/progress/student/${studentId}`);
 export const createQuestion = (data: any) => api("/questions", { method: "POST", body: JSON.stringify(data) });
 export const getQuestions = () => api<{ questions: any[] }>("/questions");
+export const updateQuestion = (id: string, data: any) =>
+  api(`/questions/${id}`, { method: "PUT", body: JSON.stringify(data) });
 export const updateQuestionStatus = (id: number, status: string) =>
   api(`/questions/${id}/status`, { method: "PATCH", body: JSON.stringify({ status }) });
 export const deleteQuestion = (id: string) =>

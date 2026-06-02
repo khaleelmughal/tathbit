@@ -65,10 +65,13 @@ authRoutes.get("/me", authRequired, async (req, res) => {
     } else if (user.role === "student") {
       // Get student's class information
       const [studentData] = await q(`
-        SELECT u.id, u.role, u.name, u.username, c.id as class_id, c.name as class_name
+        SELECT u.id, u.role, u.name, u.username,
+               c.id as class_id, c.name as class_name,
+               c.grade_id as grade_id, g.name as grade_name
         FROM users u
         LEFT JOIN class_students cs ON cs.student_id = u.id
         LEFT JOIN classes c ON c.id = cs.class_id
+        LEFT JOIN grades g ON g.id = c.grade_id
         WHERE u.id = $1
       `, [user.id]);
       
@@ -78,7 +81,9 @@ authRoutes.get("/me", authRequired, async (req, res) => {
             ...user, 
             username: studentData.username,
             classId: studentData.class_id, 
-            className: studentData.class_name 
+            className: studentData.class_name,
+            gradeId: studentData.grade_id,
+            gradeName: studentData.grade_name
           } 
         });
       } else {

@@ -1,13 +1,14 @@
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const T = {
   paper: "#FBF7EE", paper2: "#F3ECDD", card: "#FFFFFF", ink: "#2B3A33", ink2: "#5C6B62",
   faint: "#8A968D", line: "#E8E0CF", green: "#1E7A57", greenSoft: "#E4F1E9", gold: "#C99A2E",
 };
 
-const SidebarItem = ({ icon, label, isActive, onClick, badge }) => (
-  <button
-    onClick={onClick}
+const SidebarItem = ({ icon, label, isActive, to, badge }) => (
+  <Link
+    to={to}
     style={{
       width: "100%",
       display: "flex",
@@ -23,6 +24,7 @@ const SidebarItem = ({ icon, label, isActive, onClick, badge }) => (
       fontFamily: "Plus Jakarta Sans, sans-serif",
       fontWeight: isActive ? "600" : "500",
       transition: "all 0.2s ease",
+      textDecoration: "none",
     }}
     onMouseEnter={(e) => {
       if (!isActive) {
@@ -51,25 +53,27 @@ const SidebarItem = ({ icon, label, isActive, onClick, badge }) => (
         {badge}
       </span>
     )}
-  </button>
+  </Link>
 );
 
 export default function Sidebar({ activeSection, onSectionChange, userRole, isCollapsed, onToggle }) {
+  const urlPrefix = userRole === "admin" ? "/admin" : "/teacher";
+  
   const adminMenuItems = [
-    { id: "dashboard", icon: "📊", label: "Dashboard" },
-    { id: "users", icon: "👥", label: "Users" },
-    { id: "classes", icon: "🏫", label: "Classes" },
-    { id: "questions", icon: "❓", label: "Questions" },
-    { id: "content", icon: "📚", label: "Content" },
-    { id: "analytics", icon: "📈", label: "Analytics" },
+    { id: "dashboard", icon: "📊", label: "Dashboard", to: `${urlPrefix}/dashboard` },
+    { id: "users", icon: "👥", label: "Users", to: `${urlPrefix}/users` },
+    { id: "classes", icon: "🏫", label: "Classes", to: `${urlPrefix}/classes` },
+    { id: "questions", icon: "❓", label: "Questions", to: `${urlPrefix}/questions` },
+    { id: "content", icon: "📚", label: "Content", to: `${urlPrefix}/content` },
+    { id: "analytics", icon: "📈", label: "Analytics", to: `${urlPrefix}/analytics` },
   ];
 
   const teacherMenuItems = [
-    { id: "dashboard", icon: "📊", label: "Dashboard" },
-    { id: "class", icon: "🏫", label: "My Class" },
-    { id: "questions", icon: "❓", label: "Questions" },
-    { id: "content", icon: "📚", label: "Syllabus" },
-    { id: "progress", icon: "📈", label: "Progress" },
+    { id: "dashboard", icon: "📊", label: "Dashboard", to: `${urlPrefix}/dashboard` },
+    { id: "class", icon: "🏫", label: "My Class", to: `${urlPrefix}/class` },
+    { id: "questions", icon: "❓", label: "Questions", to: `${urlPrefix}/questions` },
+    { id: "content", icon: "📚", label: "Syllabus", to: `${urlPrefix}/content` },
+    { id: "progress", icon: "📈", label: "Progress", to: `${urlPrefix}/progress` },
   ];
 
   const menuItems = userRole === "admin" ? adminMenuItems : teacherMenuItems;
@@ -142,7 +146,7 @@ export default function Sidebar({ activeSection, onSectionChange, userRole, isCo
             icon={item.icon}
             label={isCollapsed ? "" : item.label}
             isActive={activeSection === item.id}
-            onClick={() => onSectionChange(item.id)}
+            to={item.to}
             badge={item.badge}
           />
         ))}

@@ -81,11 +81,31 @@ function AppRoutes() {
         path="/admin" 
         element={
           user && user.role === "admin" ? (
-            <AdminDashboard user={user} onLogout={handleLogout} />
+            <Navigate to="/admin/dashboard" replace />
           ) : user && user.role === "teacher" ? (
-            <TeacherDashboard user={user} onLogout={handleLogout} />
+            <Navigate to="/teacher/dashboard" replace />
           ) : (
             <StaffLogin onSuccess={handleLogin} />
+          )
+        } 
+      />
+      <Route 
+        path="/admin/*" 
+        element={
+          user && user.role === "admin" ? (
+            <AdminDashboard user={user} onLogout={handleLogout} />
+          ) : (
+            <Navigate to="/admin" replace />
+          )
+        } 
+      />
+      <Route 
+        path="/teacher/*" 
+        element={
+          user && user.role === "teacher" ? (
+            <TeacherDashboard user={user} onLogout={handleLogout} />
+          ) : (
+            <Navigate to="/admin" replace />
           )
         } 
       />

@@ -13,6 +13,19 @@ flashcardRoutes.post("/", requireRole("admin", "teacher"), async (req, res) => {
       return res.status(400).json({ error: "lessonId, front, and back are required" });
     }
 
+    // Verify lesson exists and get its grade info
+    const [lesson] = await q(`
+      SELECT l.id, l.title, s.name as subject_name, g.name as grade_name 
+      FROM lessons l 
+      JOIN subjects s ON l.subject_id = s.id 
+      JOIN grades g ON s.grade_id = g.id 
+      WHERE l.id = $1
+    `, [lessonId]);
+
+    if (!lesson) {
+      return res.status(400).json({ error: "Lesson not found" });
+    }
+
     const [flashcard] = await q(
       `INSERT INTO flashcards (lesson_id, front, back, difficulty, tags, created_by)
        VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`,
@@ -26,7 +39,7 @@ flashcardRoutes.post("/", requireRole("admin", "teacher"), async (req, res) => {
   }
 });
 
-// Get all flashcards for admin/teacher or specific lesson flashcards for students
+// Get all flashcards for admin/teacher or grade-accessible flashcards for students
 flashcardRoutes.get("/", authRequired, async (req, res) => {
   try {
     const user = (req as any).user;
@@ -50,15 +63,23 @@ flashcardRoutes.get("/", authRequired, async (req, res) => {
       `;
       params = [lessonId as string || null, difficulty as string || null];
     } else {
-      // Students see flashcards for lessons they have access to
+      // Students see flashcards for their grade (via class assignment)
       query = `
         SELECT f.*, 
                fr.quality as last_quality,
                fr.ease_factor,
                fr.interval_days,
                fr.next_review_date,
-               fr.review_count
+               fr.review_count,
+               l.title as lesson_title,
+               s.name as subject_name,
+               g.name as grade_name
         FROM flashcards f
+        JOIN lessons l ON f.lesson_id = l.id
+        JOIN subjects s ON l.subject_id = s.id
+        JOIN grades g ON s.grade_id = g.id
+        JOIN class_students cs ON cs.student_id = $1
+        JOIN classes c ON c.id = cs.class_id AND c.grade_id = g.id
         LEFT JOIN flashcard_reviews fr ON (f.id = fr.flashcard_id AND fr.student_id = $1)
         WHERE ($2::text IS NULL OR f.lesson_id = $2)
           AND ($3::text IS NULL OR f.difficulty = $3)
@@ -83,7 +104,7 @@ flashcardRoutes.get("/", authRequired, async (req, res) => {
   }
 });
 
-// Get due flashcards for spaced repetition
+// Get due flashcards for spaced repetition (grade-based access)
 flashcardRoutes.get("/due", requireRole("student"), async (req, res) => {
   try {
     const user = (req as any).user;
@@ -95,8 +116,16 @@ flashcardRoutes.get("/due", requireRole("student"), async (req, res) => {
              fr.ease_factor,
              fr.interval_days,
              fr.next_review_date,
-             fr.review_count
+             fr.review_count,
+             l.title as lesson_title,
+             s.name as subject_name,
+             g.name as grade_name
       FROM flashcards f
+      JOIN lessons l ON f.lesson_id = l.id
+      JOIN subjects s ON l.subject_id = s.id
+      JOIN grades g ON s.grade_id = g.id
+      JOIN class_students cs ON cs.student_id = $1
+      JOIN classes c ON c.id = cs.class_id AND c.grade_id = g.id
       LEFT JOIN flashcard_reviews fr ON (f.id = fr.flashcard_id AND fr.student_id = $1)
       WHERE fr.next_review_date IS NULL 
          OR fr.next_review_date <= NOW()

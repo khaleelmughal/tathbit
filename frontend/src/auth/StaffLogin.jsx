@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { GraduationCap, Lock } from "lucide-react";
 import { staffLogin, setToken } from "../lib/api";
+import logoSquare from "@assets/login-page.png";
 
 const T = {
   paper: "#FBF7EE", paper2: "#F3ECDD", card: "#FFFFFF", ink: "#2B3A33", ink2: "#5C6B62",
@@ -75,26 +75,24 @@ export default function StaffLogin({ onSuccess }) {
     }}>
       <Card style={{ width: "100%", maxWidth: "400px" }}>
         <div style={{ textAlign: "center", marginBottom: "32px" }}>
-          <div style={{
-            width: "64px",
-            height: "64px",
-            borderRadius: "50%",
-            background: T.greenSoft,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            margin: "0 auto 16px"
-          }}>
-            <GraduationCap size={32} style={{ color: T.green }} />
-          </div>
+          <img
+            src={logoSquare}
+            alt="Tathbīt"
+            style={{
+              width: "375px",
+              objectFit: "contain",
+              margin: "0 auto 16px",
+              display: "block",
+            }}
+          />
           <h1 style={{
             fontSize: "32px",
             fontFamily: "Fraunces, serif",
             color: T.ink,
             margin: 0,
-            marginBottom: "8px"
+            marginBottom: "1px"
           }}>
-            Tathbīt - Staff Login
+          Staff Login
           </h1>
           <p style={{ color: T.ink2, margin: 0, fontSize: "16px" }}>
             Admin and Teacher access

@@ -6,7 +6,8 @@ import {
   deleteFlashcard, 
   getFlashcardStats,
   reviewFlashcard,
-  getDueFlashcards
+  getDueFlashcards,
+  getSyllabus
 } from '../lib/api';
 import { 
   Brain, 
@@ -59,6 +60,16 @@ const FlashcardPreview = ({ flashcard, onEdit, onDelete, isStudent, onReview }) 
           <span className={`${getDifficultyColor(flashcard.difficulty)} text-white text-xs px-2 py-1 rounded-full font-medium capitalize`}>
             {flashcard.difficulty || 'medium'}
           </span>
+          {flashcard.subject_name && (
+            <span className="text-xs px-2 py-1 bg-blue-50 text-blue-600 rounded-full font-medium">
+              {flashcard.subject_name}
+            </span>
+          )}
+          {flashcard.lesson_title && (
+            <span className="text-xs px-2 py-1 bg-gray-50 text-gray-600 rounded-full font-medium">
+              {flashcard.lesson_title}
+            </span>
+          )}
           {isStudent && (
             <span className={`text-xs px-2 py-1 rounded-full font-medium ${
               flashcard.next_review_date && new Date(flashcard.next_review_date) <= new Date() 
@@ -161,18 +172,30 @@ const FlashcardPreview = ({ flashcard, onEdit, onDelete, isStudent, onReview }) 
 
 const CreateFlashcardModal = ({ onClose, onFlashcardCreated, editingFlashcard }) => {
   const [formData, setFormData] = useState({
-    lessonId: 'aqaaid-001',
+    gradeId: '',
+    subjectId: '',
+    lessonId: '',
     front: '',
     back: '',
     difficulty: 'medium',
     tags: []
   });
   const [saving, setSaving] = useState(false);
+  const [grades, setGrades] = useState([]);
+  const [subjects, setSubjects] = useState([]);
+  const [lessons, setLessons] = useState([]);
+  const [loadingSyllabus, setLoadingSyllabus] = useState(true);
+
+  useEffect(() => {
+    loadSyllabus();
+  }, []);
 
   useEffect(() => {
     if (editingFlashcard) {
       setFormData({
-        lessonId: editingFlashcard.lesson_id || 'aqaaid-001',
+        gradeId: '',
+        subjectId: '',
+        lessonId: editingFlashcard.lesson_id || '',
         front: editingFlashcard.front || '',
         back: editingFlashcard.back || '',
         difficulty: editingFlashcard.difficulty || 'medium',
@@ -180,6 +203,41 @@ const CreateFlashcardModal = ({ onClose, onFlashcardCreated, editingFlashcard })
       });
     }
   }, [editingFlashcard]);
+
+  const loadSyllabus = async () => {
+    try {
+      setLoadingSyllabus(true);
+      const response = await getSyllabus();
+      const sortedGrades = response.grades.sort((a, b) => a.position - b.position);
+      setGrades(sortedGrades);
+      setSubjects(response.subjects || []);
+      setLessons(response.lessons || []);
+    } catch (error) {
+      console.error('Failed to load syllabus:', error);
+    } finally {
+      setLoadingSyllabus(false);
+    }
+  };
+
+  const handleFormChange = (field, value) => {
+    setFormData(prev => {
+      const updated = { ...prev, [field]: value };
+      
+      // Cascading logic
+      if (field === "gradeId") {
+        updated.subjectId = "";
+        updated.lessonId = "";
+      } else if (field === "subjectId") {
+        updated.lessonId = "";
+      }
+      
+      return updated;
+    });
+  };
+
+  // Filter subjects and lessons based on selections
+  const filteredSubjects = subjects.filter(subject => subject.grade_id === formData.gradeId);
+  const filteredLessons = lessons.filter(lesson => lesson.subject_id === formData.subjectId);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -225,18 +283,77 @@ const CreateFlashcardModal = ({ onClose, onFlashcardCreated, editingFlashcard })
 
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
           <div>
-            <label className="block text-sm font-medium text-ink mb-1 font-sans">Lesson</label>
+            <label className="block text-sm font-medium text-ink mb-1 font-sans">Grade</label>
+            <select
+              value={formData.gradeId}
+              onChange={(e) => handleFormChange("gradeId", e.target.value)}
+              className="w-full px-3 py-2 border border-line rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent font-sans"
+              disabled={saving || loadingSyllabus || !!editingFlashcard}
+            >
+              {loadingSyllabus ? (
+                <option value="">Loading grades...</option>
+              ) : grades.length === 0 ? (
+                <option value="">No grades available</option>
+              ) : (
+                <>
+                  <option value="">Select a grade</option>
+                  {grades.map((grade) => (
+                    <option key={grade.id} value={grade.id}>
+                      {grade.name}
+                    </option>
+                  ))}
+                </>
+              )}
+            </select>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-ink mb-1 font-sans">Subject</label>
+            <select
+              value={formData.subjectId}
+              onChange={(e) => handleFormChange("subjectId", e.target.value)}
+              className="w-full px-3 py-2 border border-line rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent font-sans"
+              disabled={saving || !formData.gradeId || !!editingFlashcard}
+            >
+              {!formData.gradeId ? (
+                <option value="">Select a grade first</option>
+              ) : filteredSubjects.length === 0 ? (
+                <option value="">No subjects available for this grade</option>
+              ) : (
+                <>
+                  <option value="">Select a subject</option>
+                  {filteredSubjects.map((subject) => (
+                    <option key={subject.id} value={subject.id}>
+                      {subject.name}
+                    </option>
+                  ))}
+                </>
+              )}
+            </select>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-ink mb-1 font-sans">Lesson (optional)</label>
             <select
               value={formData.lessonId}
-              onChange={(e) => setFormData({ ...formData, lessonId: e.target.value })}
+              onChange={(e) => handleFormChange("lessonId", e.target.value)}
               className="w-full px-3 py-2 border border-line rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent font-sans"
-              disabled={!!editingFlashcard}
+              disabled={saving || !formData.subjectId || !!editingFlashcard}
             >
-              <option value="aqaaid-001">Aqaaid - Lesson 1</option>
-              <option value="aqaaid-002">Aqaaid - Lesson 2</option>
-              <option value="hadeeth-001">Hadeeth - Lesson 1</option>
-              <option value="akhlaaq-001">Akhlaaq - Lesson 1</option>
-              <option value="fiqh-001">Fiqh - Lesson 1</option>
+              {!formData.subjectId ? (
+                <option value="">Select a subject first</option>
+              ) : filteredLessons.length === 0 ? (
+                <option value="">No lessons available for this subject</option>
+              ) : (
+                <>
+                  <option value="">No specific lesson</option>
+                  {filteredLessons.map((lesson) => (
+                    <option key={lesson.id} value={lesson.id}>
+                      {lesson.name}
+                    </option>
+                  ))}
+                </>
+              )}
             </select>
           </div>
 
@@ -245,7 +362,7 @@ const CreateFlashcardModal = ({ onClose, onFlashcardCreated, editingFlashcard })
             <textarea
               required
               value={formData.front}
-              onChange={(e) => setFormData({ ...formData, front: e.target.value })}
+              onChange={(e) => handleFormChange("front", e.target.value)}
               className="w-full px-3 py-2 border border-line rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent font-sans"
               rows="3"
               placeholder="Enter the question or prompt..."
@@ -257,7 +374,7 @@ const CreateFlashcardModal = ({ onClose, onFlashcardCreated, editingFlashcard })
             <textarea
               required
               value={formData.back}
-              onChange={(e) => setFormData({ ...formData, back: e.target.value })}
+              onChange={(e) => handleFormChange("back", e.target.value)}
               className="w-full px-3 py-2 border border-line rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent font-sans"
               rows="3"
               placeholder="Enter the answer or explanation..."
@@ -268,7 +385,7 @@ const CreateFlashcardModal = ({ onClose, onFlashcardCreated, editingFlashcard })
             <label className="block text-sm font-medium text-ink mb-1 font-sans">Difficulty</label>
             <select
               value={formData.difficulty}
-              onChange={(e) => setFormData({ ...formData, difficulty: e.target.value })}
+              onChange={(e) => handleFormChange("difficulty", e.target.value)}
               className="w-full px-3 py-2 border border-line rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent font-sans"
             >
               <option value="easy">Easy</option>
@@ -308,10 +425,20 @@ const FlashcardManager = ({ userRole }) => {
   const [editingFlashcard, setEditingFlashcard] = useState(null);
   const [filters, setFilters] = useState({
     difficulty: '',
-    lessonId: ''
+    lessonId: '',
+    gradeId: '',
+    subjectId: ''
   });
+  const [allLessons, setAllLessons] = useState([]);
+  const [allGrades, setAllGrades] = useState([]);
+  const [allSubjects, setAllSubjects] = useState([]);
+  const [loadingSyllabus, setLoadingSyllabus] = useState(true);
 
   const isStudent = userRole === 'student';
+
+  useEffect(() => {
+    loadSyllabusForFilter();
+  }, []);
 
   useEffect(() => {
     loadFlashcards();
@@ -319,6 +446,29 @@ const FlashcardManager = ({ userRole }) => {
       loadStats();
     }
   }, [filters]);
+
+  const loadSyllabusForFilter = async () => {
+    try {
+      setLoadingSyllabus(true);
+      const response = await getSyllabus();
+      const sortedGrades = response.grades.sort((a, b) => a.position - b.position);
+      setAllGrades(sortedGrades);
+      setAllSubjects(response.subjects || []);
+      setAllLessons(response.lessons || []);
+    } catch (error) {
+      console.error('Failed to load syllabus for filter:', error);
+    } finally {
+      setLoadingSyllabus(false);
+    }
+  };
+
+  // Filter subjects and lessons based on selections
+  const filteredSubjects = allSubjects.filter(subject => 
+    !filters.gradeId || subject.grade_id === filters.gradeId
+  );
+  const filteredLessons = allLessons.filter(lesson => 
+    !filters.subjectId || lesson.subject_id === filters.subjectId
+  );
 
   const loadFlashcards = async () => {
     try {
@@ -421,8 +571,8 @@ const FlashcardManager = ({ userRole }) => {
           </h1>
           <p className="text-ink2 font-sans">
             {isStudent 
-              ? 'Review flashcards using spaced repetition for optimal learning' 
-              : 'Create and manage flashcards for students'
+              ? 'Review flashcards from your grade using spaced repetition for optimal learning' 
+              : 'Create and manage flashcards shared by grade level'
             }
           </p>
         </div>
@@ -473,15 +623,81 @@ const FlashcardManager = ({ userRole }) => {
 
       {/* Filters */}
       <div className="bg-white border border-line rounded-xl p-6">
-        <div className="flex gap-4 items-center flex-wrap">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 items-end">
           <div>
-            <label className="text-sm font-medium text-ink mr-2 font-sans">
-              Difficulty:
+            <label className="block text-sm font-medium text-ink mb-1 font-sans">
+              Grade
+            </label>
+            <select
+              value={filters.gradeId}
+              onChange={(e) => setFilters({ 
+                ...filters, 
+                gradeId: e.target.value,
+                subjectId: '',
+                lessonId: ''
+              })}
+              className="w-full px-3 py-1.5 border border-line rounded-lg text-sm font-sans"
+              disabled={loadingSyllabus}
+            >
+              <option value="">All Grades</option>
+              {allGrades.map((grade) => (
+                <option key={grade.id} value={grade.id}>
+                  {grade.name}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-ink mb-1 font-sans">
+              Subject
+            </label>
+            <select
+              value={filters.subjectId}
+              onChange={(e) => setFilters({ 
+                ...filters, 
+                subjectId: e.target.value,
+                lessonId: ''
+              })}
+              className="w-full px-3 py-1.5 border border-line rounded-lg text-sm font-sans"
+              disabled={!filters.gradeId || loadingSyllabus}
+            >
+              <option value="">All Subjects</option>
+              {filteredSubjects.map((subject) => (
+                <option key={subject.id} value={subject.id}>
+                  {subject.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          
+          <div>
+            <label className="block text-sm font-medium text-ink mb-1 font-sans">
+              Lesson
+            </label>
+            <select
+              value={filters.lessonId}
+              onChange={(e) => setFilters({ ...filters, lessonId: e.target.value })}
+              className="w-full px-3 py-1.5 border border-line rounded-lg text-sm font-sans"
+              disabled={!filters.subjectId || loadingSyllabus}
+            >
+              <option value="">All Lessons</option>
+              {filteredLessons.map((lesson) => (
+                <option key={lesson.id} value={lesson.id}>
+                  {lesson.name}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-ink mb-1 font-sans">
+              Difficulty
             </label>
             <select
               value={filters.difficulty}
               onChange={(e) => setFilters({ ...filters, difficulty: e.target.value })}
-              className="px-3 py-1.5 border border-line rounded-lg text-sm font-sans"
+              className="w-full px-3 py-1.5 border border-line rounded-lg text-sm font-sans"
             >
               <option value="">All Levels</option>
               <option value="easy">Easy</option>
@@ -489,29 +705,15 @@ const FlashcardManager = ({ userRole }) => {
               <option value="hard">Hard</option>
             </select>
           </div>
-          
-          <div>
-            <label className="text-sm font-medium text-ink mr-2 font-sans">
-              Lesson:
-            </label>
-            <select
-              value={filters.lessonId}
-              onChange={(e) => setFilters({ ...filters, lessonId: e.target.value })}
-              className="px-3 py-1.5 border border-line rounded-lg text-sm font-sans"
-            >
-              <option value="">All Lessons</option>
-              <option value="aqaaid-001">Aqaaid - Lesson 1</option>
-              <option value="hadeeth-001">Hadeeth - Lesson 1</option>
-              <option value="akhlaaq-001">Akhlaaq - Lesson 1</option>
-            </select>
-          </div>
 
-          <button 
-            onClick={loadFlashcards} 
-            className="ml-auto px-4 py-2 border border-line rounded-lg hover:bg-paper2 transition-colors font-sans font-medium"
-          >
-            Refresh
-          </button>
+          <div>
+            <button 
+              onClick={loadFlashcards} 
+              className="w-full px-4 py-2 border border-line rounded-lg hover:bg-paper2 transition-colors font-sans font-medium"
+            >
+              Refresh
+            </button>
+          </div>
         </div>
       </div>
 

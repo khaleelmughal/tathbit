@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Routes, Route, Navigate, useLocation, useNavigate } from "react-router-dom";
 import DashboardLayout from "../components/DashboardLayout";
 import StatCard from "../components/StatCard";
 import CreateClassForm from "../components/CreateClassForm";
@@ -49,10 +50,11 @@ const Card = ({ children, title, style = {} }) => (
 );
 
 export default function AdminDashboard({ user, onLogout }) {
-  const [activeSection, setActiveSection] = useState("dashboard");
   const [refreshTrigger, setRefreshTrigger] = useState(0);
   const [stats, setStats] = useState(null);
   const [statsLoading, setStatsLoading] = useState(true);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     loadStats();
@@ -90,7 +92,7 @@ export default function AdminDashboard({ user, onLogout }) {
             subtitle={`${stats?.usersByRole?.teacher || 0} teachers, ${stats?.usersByRole?.student || 0} students`}
             icon="👥"
             loading={statsLoading}
-            onClick={() => setActiveSection("users")}
+            onClick={() => navigate("/admin/users")}
           />
           <StatCard
             title="Classes"
@@ -98,7 +100,7 @@ export default function AdminDashboard({ user, onLogout }) {
             subtitle="Active classes"
             icon="🏫"
             loading={statsLoading}
-            onClick={() => setActiveSection("classes")}
+            onClick={() => navigate("/admin/classes")}
           />
           <StatCard
             title="Questions"
@@ -106,7 +108,7 @@ export default function AdminDashboard({ user, onLogout }) {
             subtitle="Available questions"
             icon="❓"
             loading={statsLoading}
-            onClick={() => setActiveSection("questions")}
+            onClick={() => navigate("/admin/questions")}
           />
           <StatCard
             title="Recent Activity"
@@ -202,33 +204,34 @@ export default function AdminDashboard({ user, onLogout }) {
     );
   };
 
-  const renderActiveSection = () => {
-    switch (activeSection) {
-      case "dashboard":
-        return renderDashboardSection();
-      case "users":
-        return renderUsersSection();
-      case "classes":
-        return renderClassesSection();
-      case "questions":
-        return renderQuestionsSection();
-      case "content":
-        return renderContentSection();
-      case "analytics":
-        return renderAnalyticsSection();
-      default:
-        return renderDashboardSection();
-    }
+  // Get active section from current pathname
+  const getActiveSection = () => {
+    const path = location.pathname;
+    if (path.includes('/users')) return 'users';
+    if (path.includes('/classes')) return 'classes'; 
+    if (path.includes('/questions')) return 'questions';
+    if (path.includes('/content')) return 'content';
+    if (path.includes('/analytics')) return 'analytics';
+    return 'dashboard';
   };
 
   return (
     <DashboardLayout
       user={user}
       onLogout={onLogout}
-      activeSection={activeSection}
-      onSectionChange={setActiveSection}
+      activeSection={getActiveSection()}
+      onSectionChange={null} // Will be handled by navigation in DashboardLayout
     >
-      {renderActiveSection()}
+      <Routes>
+        <Route path="/dashboard" element={renderDashboardSection()} />
+        <Route path="/users" element={renderUsersSection()} />
+        <Route path="/classes" element={renderClassesSection()} />
+        <Route path="/questions" element={renderQuestionsSection()} />
+        <Route path="/content" element={renderContentSection()} />
+        <Route path="/analytics" element={renderAnalyticsSection()} />
+        <Route path="/" element={<Navigate to="/admin/dashboard" replace />} />
+        <Route path="*" element={<Navigate to="/admin/dashboard" replace />} />
+      </Routes>
     </DashboardLayout>
   );
 }

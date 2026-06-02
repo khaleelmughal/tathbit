@@ -83,6 +83,45 @@ questionRoutes.post("/import", requireRole("teacher", "admin"), async (req, res)
   }
 });
 
+// Update a question (admin or owner only)
+questionRoutes.put("/:id", requireRole("teacher", "admin"), async (req, res) => {
+  try {
+    const user = (req as any).user;
+    const questionId = req.params.id;
+    const { gradeId, subjectId, lessonId, type, prompt, payload, explanation, difficulty, status } = req.body ?? {};
+    
+    // Check if question exists and user has permission to update it
+    const [question] = await q(`SELECT * FROM questions WHERE id = $1`, [questionId]);
+    if (!question) {
+      return res.status(404).json({ error: "Question not found" });
+    }
+    
+    // Admin can update any question, teacher can only update their own
+    if (user.role !== "admin" && question.created_by !== user.id) {
+      return res.status(403).json({ error: "You can only update questions you created" });
+    }
+    
+    // Validate required fields
+    if (!type || !prompt) {
+      return res.status(400).json({ error: "type and prompt are required" });
+    }
+    
+    const [updatedQuestion] = await q(
+      `UPDATE questions 
+       SET grade_id = $1, subject_id = $2, lesson_id = $3, type = $4, prompt = $5, 
+           payload = $6, explanation = $7, difficulty = $8, status = $9, updated_at = CURRENT_TIMESTAMP
+       WHERE id = $10 RETURNING *`,
+      [gradeId, subjectId, lessonId || null, type, prompt, payload || {}, explanation || null,
+       difficulty || "medium", status === "draft" ? "draft" : "active", questionId]
+    );
+    
+    res.json(updatedQuestion);
+  } catch (error) {
+    console.error("Error updating question:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
 // Delete a question (admin or owner only)
 questionRoutes.delete("/:id", requireRole("teacher", "admin"), async (req, res) => {
   try {

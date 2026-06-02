@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { getQuestions, updateQuestionStatus, createQuestion, deleteQuestion } from "../lib/api";
+import { getQuestions, updateQuestionStatus, createQuestion, updateQuestion, deleteQuestion, getSyllabus } from "../lib/api";
 import { List, Eye, EyeOff, Edit, Trash2, Plus, HelpCircle, Search, Filter, MoreVertical, BookOpen, Users, BarChart3 } from "lucide-react";
 import { LoadingCard } from "./Loading";
 import EmptyState from "./EmptyState";
+import AddQuestionForm from "./AddQuestionForm";
+import { getSubjectDisplayName, lookupFriendlyName } from "../lib/utils";
 
 const T = {
   paper: "#FBF7EE", paper2: "#F3ECDD", card: "#FFFFFF", ink: "#2B3A33", ink2: "#5C6B62",
@@ -117,7 +119,7 @@ const DifficultyBadge = ({ difficulty }) => {
   );
 };
 
-const SubjectBadge = ({ subjectId }) => {
+const SubjectBadge = ({ subjectId, syllabus }) => {
   const getSubjectStyle = (id) => {
     const colors = ["#3B82F6", "#8B5CF6", "#10B981", "#F59E0B", "#EF4444"];
     const index = id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) % colors.length;
@@ -126,6 +128,7 @@ const SubjectBadge = ({ subjectId }) => {
   };
 
   const styles = getSubjectStyle(subjectId);
+  const displayName = lookupFriendlyName(subjectId, syllabus.grades, syllabus.subjects, syllabus.lessons);
 
   return (
     <span style={{
@@ -133,12 +136,12 @@ const SubjectBadge = ({ subjectId }) => {
       padding: "4px 10px", borderRadius: "12px",
       fontSize: "11px", fontWeight: "600"
     }}>
-      {subjectId.replace(/^g\d+-/, '').toUpperCase()}
+      {displayName.toUpperCase()}
     </span>
   );
 };
 
-const QuestionCard = ({ question, onStatusChange, onEdit, onDelete }) => {
+const QuestionCard = ({ question, onStatusChange, onEdit, onDelete, syllabus }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [updating, setUpdating] = useState(false);
   const [deleting, setDeleting] = useState(false);
@@ -242,7 +245,7 @@ const QuestionCard = ({ question, onStatusChange, onEdit, onDelete }) => {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "16px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }}>
             <StatusBadge status={question.status} />
-            <SubjectBadge subjectId={question.subject_id} />
+            <SubjectBadge subjectId={question.subject_id} syllabus={syllabus} />
             <DifficultyBadge difficulty={question.difficulty} />
             <span style={{
               background: T.blueSoft, color: T.blue,
@@ -361,35 +364,13 @@ const QuestionCard = ({ question, onStatusChange, onEdit, onDelete }) => {
   );
 };
 
-const CreateQuestionModal = ({ isOpen, onClose, onSuccess }) => {
-  const [formData, setFormData] = useState({
-    type: "multiple-choice",
-    prompt: "",
-    explanation: "",
-    difficulty: "medium",
-    gradeId: "g5",
-    subjectId: "g5-aqaaid",
-    payload: {}
-  });
-  const [saving, setSaving] = useState(false);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setSaving(true);
-    try {
-      await createQuestion(formData);
-      onSuccess();
-      onClose();
-      setFormData({ type: "multiple-choice", prompt: "", explanation: "", difficulty: "medium", gradeId: "g5", subjectId: "g5-aqaaid", payload: {} });
-    } catch (err) {
-      console.error("Failed to create question:", err);
-      alert("Failed to create question: " + (err.message || "Unknown error"));
-    } finally {
-      setSaving(false);
-    }
-  };
-
+const QuestionModal = ({ isOpen, onClose, onSuccess, editingQuestion }) => {
   if (!isOpen) return null;
+
+  const handleModalSuccess = () => {
+    onSuccess();
+    onClose();
+  };
 
   return (
     <div style={{
@@ -398,102 +379,37 @@ const CreateQuestionModal = ({ isOpen, onClose, onSuccess }) => {
       display: "flex", alignItems: "center", justifyContent: "center",
       padding: "20px"
     }}>
-      <Card style={{ width: "100%", maxWidth: "600px", maxHeight: "90vh", overflow: "auto" }}>
-        <div style={{ padding: "24px" }}>
-          <h2 style={{ margin: "0 0 20px 0", fontSize: "24px", fontFamily: "Fraunces, serif", color: T.ink }}>
-            Create New Question
-          </h2>
-          
-          <form onSubmit={handleSubmit}>
-            <div style={{ display: "grid", gap: "16px" }}>
-              <div>
-                <label style={{ display: "block", fontSize: "14px", fontWeight: "600", marginBottom: "6px", color: T.ink }}>
-                  Question Type *
-                </label>
-                <select
-                  value={formData.type}
-                  onChange={(e) => setFormData(prev => ({ ...prev, type: e.target.value }))}
-                  style={{ width: "100%", padding: "10px", border: `1px solid ${T.line}`, borderRadius: "8px", fontSize: "14px" }}
-                  required
-                >
-                  <option value="multiple-choice">Multiple Choice</option>
-                  <option value="true-false">True/False</option>
-                  <option value="fill-blank">Fill in the Blank</option>
-                  <option value="short-answer">Short Answer</option>
-                </select>
-              </div>
-
-              <div>
-                <label style={{ display: "block", fontSize: "14px", fontWeight: "600", marginBottom: "6px", color: T.ink }}>
-                  Question Prompt *
-                </label>
-                <textarea
-                  value={formData.prompt}
-                  onChange={(e) => setFormData(prev => ({ ...prev, prompt: e.target.value }))}
-                  style={{ width: "100%", padding: "12px", border: `1px solid ${T.line}`, borderRadius: "8px", fontSize: "14px", minHeight: "100px", resize: "vertical" }}
-                  placeholder="Enter your question here..."
-                  required
-                />
-              </div>
-
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
-                <div>
-                  <label style={{ display: "block", fontSize: "14px", fontWeight: "600", marginBottom: "6px", color: T.ink }}>
-                    Difficulty *
-                  </label>
-                  <select
-                    value={formData.difficulty}
-                    onChange={(e) => setFormData(prev => ({ ...prev, difficulty: e.target.value }))}
-                    style={{ width: "100%", padding: "10px", border: `1px solid ${T.line}`, borderRadius: "8px", fontSize: "14px" }}
-                  >
-                    <option value="easy">Easy</option>
-                    <option value="medium">Medium</option>
-                    <option value="hard">Hard</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label style={{ display: "block", fontSize: "14px", fontWeight: "600", marginBottom: "6px", color: T.ink }}>
-                    Subject *
-                  </label>
-                  <select
-                    value={formData.subjectId}
-                    onChange={(e) => setFormData(prev => ({ ...prev, subjectId: e.target.value }))}
-                    style={{ width: "100%", padding: "10px", border: `1px solid ${T.line}`, borderRadius: "8px", fontSize: "14px" }}
-                  >
-                    <option value="g5-aqaaid">Aqaaid (Beliefs)</option>
-                    <option value="g5-fiqh">Fiqh (Islamic Law)</option>
-                    <option value="g5-hadeeth">Hadeeth</option>
-                    <option value="g5-tareekh">Tareekh (History)</option>
-                    <option value="g5-akhlaaq">Akhlaaq (Character)</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label style={{ display: "block", fontSize: "14px", fontWeight: "600", marginBottom: "6px", color: T.ink }}>
-                  Explanation (Optional)
-                </label>
-                <textarea
-                  value={formData.explanation}
-                  onChange={(e) => setFormData(prev => ({ ...prev, explanation: e.target.value }))}
-                  style={{ width: "100%", padding: "12px", border: `1px solid ${T.line}`, borderRadius: "8px", fontSize: "14px", minHeight: "80px", resize: "vertical" }}
-                  placeholder="Provide an explanation for the answer..."
-                />
-              </div>
-            </div>
-
-            <div style={{ display: "flex", justifyContent: "flex-end", gap: "12px", marginTop: "24px", paddingTop: "16px", borderTop: `1px solid ${T.line}` }}>
-              <Btn onClick={onClose} type="button">
-                Cancel
-              </Btn>
-              <Btn variant="primary" type="submit" loading={saving}>
-                Create Question
-              </Btn>
-            </div>
-          </form>
+      <div style={{
+        width: "100%", maxWidth: "800px", maxHeight: "90vh", 
+        overflow: "auto", background: "white", borderRadius: "16px"
+      }}>
+        <div style={{ 
+          position: "sticky", top: 0, background: "white", 
+          padding: "20px 24px 0", borderBottom: `1px solid ${T.line}`,
+          borderRadius: "16px 16px 0 0", zIndex: 10
+        }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <h2 style={{ margin: 0, fontSize: "24px", fontFamily: "Fraunces, serif", color: T.ink }}>
+              {editingQuestion ? "Edit Question" : "Create New Question"}
+            </h2>
+            <button
+              onClick={onClose}
+              style={{
+                background: "none", border: "none", fontSize: "24px",
+                color: T.faint, cursor: "pointer", padding: "4px"
+              }}
+            >
+              ×
+            </button>
+          </div>
         </div>
-      </Card>
+        <div style={{ padding: "0 24px 24px" }}>
+          <AddQuestionForm 
+            onSuccess={handleModalSuccess} 
+            editingQuestion={editingQuestion}
+          />
+        </div>
+      </div>
     </div>
   );
 };
@@ -507,10 +423,22 @@ export default function QuestionManager({ refreshTrigger, isAdmin = false }) {
   const [selectedSubject, setSelectedSubject] = useState("all");
   const [selectedDifficulty, setSelectedDifficulty] = useState("all");
   const [showCreateModal, setShowCreateModal] = useState(false);
+  const [editingQuestion, setEditingQuestion] = useState(null);
+  const [syllabus, setSyllabus] = useState({ grades: [], subjects: [], lessons: [] });
 
   useEffect(() => {
     loadQuestions();
+    loadSyllabus();
   }, [refreshTrigger]);
+
+  const loadSyllabus = async () => {
+    try {
+      const response = await getSyllabus();
+      setSyllabus(response);
+    } catch (error) {
+      console.error('Failed to load syllabus:', error);
+    }
+  };
 
   const loadQuestions = async () => {
     try {
@@ -531,8 +459,8 @@ export default function QuestionManager({ refreshTrigger, isAdmin = false }) {
   };
 
   const handleEdit = (question) => {
-    // TODO: Implement edit modal
-    console.log("Edit question:", question);
+    setEditingQuestion(question);
+    setShowCreateModal(true);
   };
 
   const handleDelete = async (questionId) => {
@@ -694,7 +622,7 @@ export default function QuestionManager({ refreshTrigger, isAdmin = false }) {
               <option value="all">All Subjects</option>
               {availableSubjects.map(subject => (
                 <option key={subject} value={subject}>
-                  {subject.replace(/^g\d+-/, '').toUpperCase()}
+                  {lookupFriendlyName(subject, syllabus.grades, syllabus.subjects, syllabus.lessons)}
                 </option>
               ))}
             </select>
@@ -755,7 +683,7 @@ export default function QuestionManager({ refreshTrigger, isAdmin = false }) {
                 display: "flex", alignItems: "center", gap: "8px"
               }}>
                 <BookOpen size={16} />
-                {subjectId.replace(/^g\d+-/, '').toUpperCase()} ({subjectQuestions.length} questions)
+                {lookupFriendlyName(subjectId, syllabus.grades, syllabus.subjects, syllabus.lessons).toUpperCase()} ({subjectQuestions.length} questions)
               </div>
               {subjectQuestions.map(question => (
                 <QuestionCard
@@ -764,6 +692,7 @@ export default function QuestionManager({ refreshTrigger, isAdmin = false }) {
                   onStatusChange={handleStatusChange}
                   onEdit={handleEdit}
                   onDelete={handleDelete}
+                  syllabus={syllabus}
                 />
               ))}
             </div>
@@ -771,11 +700,15 @@ export default function QuestionManager({ refreshTrigger, isAdmin = false }) {
         </div>
       )}
 
-      {/* Create Question Modal */}
-      <CreateQuestionModal
+      {/* Create/Edit Question Modal */}
+      <QuestionModal
         isOpen={showCreateModal}
-        onClose={() => setShowCreateModal(false)}
+        onClose={() => {
+          setShowCreateModal(false);
+          setEditingQuestion(null);
+        }}
         onSuccess={loadQuestions}
+        editingQuestion={editingQuestion}
       />
 
       <style jsx>{`
