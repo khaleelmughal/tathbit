@@ -508,11 +508,11 @@ userRoutes.get("/:id", requireRole("admin", "teacher"), async (req, res) => {
       `, [userId]);
 
       const recentActivity = await q(`
-        SELECT a.created_at, q.prompt, q.subject_id, a.is_correct
+        SELECT a.completed_at as created_at, q.prompt, q.subject_id, a.is_correct
         FROM attempts a
         JOIN questions q ON q.id = a.question_id
         WHERE a.student_id = $1
-        ORDER BY a.created_at DESC
+        ORDER BY a.completed_at DESC
         LIMIT 10
       `, [userId]);
 

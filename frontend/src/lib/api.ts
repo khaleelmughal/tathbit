@@ -78,3 +78,7 @@ export const reviewFlashcard = (id: string, quality: number) =>
     { method: "POST", body: JSON.stringify({ quality }) });
 export const getFlashcardStats = () =>
   api<{ stats: any; subjectStats: any[]; recentActivity: any[] }>("/flashcards/stats");
+
+// Syllabus API helpers  
+export const getSyllabus = () =>
+  api<{ grades: any[]; subjects: any[]; lessons: any[] }>("/syllabus");

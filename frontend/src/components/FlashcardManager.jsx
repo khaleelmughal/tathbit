@@ -18,43 +18,7 @@ import {
   Clock,
   Target,
   TrendingUp,
-  BarChart3,
-  Zap
 } from 'lucide-react';
-
-const T = {
-  paper: "#FBF7EE", paper2: "#F3ECDD", card: "#FFFFFF", ink: "#2B3A33", ink2: "#5C6B62",
-  faint: "#8A968D", line: "#E8E0CF", green: "#1E7A57", greenSoft: "#E4F1E9", gold: "#C99A2E",
-};
-
-const Card = ({ children, style = {} }) => (
-  <div style={{
-    background: T.card, border: `1px solid ${T.line}`,
-    borderRadius: "12px", padding: "24px", ...style
-  }}>
-    {children}
-  </div>
-);
-
-const Btn = ({ children, onClick, disabled, variant = "outline", type = "button", style = {} }) => (
-  <button
-    type={type}
-    onClick={onClick}
-    disabled={disabled}
-    style={{
-      background: variant === "primary" ? T.green : variant === "danger" ? "#dc2626" : "transparent",
-      color: variant === "primary" || variant === "danger" ? "white" : T.ink,
-      border: variant === "primary" || variant === "danger" ? "none" : `1px solid ${T.line}`,
-      padding: "8px 16px", borderRadius: "6px", cursor: disabled ? "not-allowed" : "pointer",
-      fontSize: "14px", fontWeight: "500", opacity: disabled ? 0.6 : 1,
-      fontFamily: "Plus Jakarta Sans, sans-serif",
-      display: "flex", alignItems: "center", gap: "6px",
-      ...style
-    }}
-  >
-    {children}
-  </button>
-);
 
 const FlashcardPreview = ({ flashcard, onEdit, onDelete, isStudent, onReview }) => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -62,10 +26,10 @@ const FlashcardPreview = ({ flashcard, onEdit, onDelete, isStudent, onReview }) 
 
   const getDifficultyColor = (difficulty) => {
     switch (difficulty) {
-      case 'easy': return '#10b981';
-      case 'medium': return '#f59e0b';
-      case 'hard': return '#ef4444';
-      default: return T.faint;
+      case 'easy': return 'bg-emerald-500';
+      case 'medium': return 'bg-amber-500';
+      case 'hard': return 'bg-red-500';
+      default: return 'bg-faint';
     }
   };
 
@@ -87,149 +51,93 @@ const FlashcardPreview = ({ flashcard, onEdit, onDelete, isStudent, onReview }) 
   };
 
   return (
-    <Card style={{ 
-      marginBottom: "16px",
-      minHeight: "200px",
-      position: "relative",
-      background: isFlipped ? T.greenSoft : T.card
-    }}>
+    <div className={`bg-white border border-line rounded-xl p-6 mb-4 min-h-[200px] relative transition-colors ${isFlipped ? 'bg-brandSoft' : ''}`}>
       {/* Header */}
-      <div style={{ 
-        display: "flex", 
-        justifyContent: "space-between", 
-        alignItems: "center",
-        marginBottom: "16px" 
-      }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Brain size={16} color={T.green} />
-          <span style={{
-            background: getDifficultyColor(flashcard.difficulty),
-            color: "white",
-            padding: "2px 8px",
-            borderRadius: "12px",
-            fontSize: "12px",
-            fontWeight: "500",
-            textTransform: "capitalize"
-          }}>
+      <div className="flex justify-between items-center mb-4">
+        <div className="flex items-center gap-2">
+          <Brain size={16} className="text-brand" />
+          <span className={`${getDifficultyColor(flashcard.difficulty)} text-white text-xs px-2 py-1 rounded-full font-medium capitalize`}>
             {flashcard.difficulty || 'medium'}
           </span>
           {isStudent && (
-            <span style={{
-              background: flashcard.next_review_date && new Date(flashcard.next_review_date) <= new Date() 
-                ? "#fef2f2" : T.paper2,
-              color: flashcard.next_review_date && new Date(flashcard.next_review_date) <= new Date()
-                ? "#dc2626" : T.ink2,
-              padding: "2px 8px",
-              borderRadius: "12px",
-              fontSize: "11px",
-              fontWeight: "500"
-            }}>
+            <span className={`text-xs px-2 py-1 rounded-full font-medium ${
+              flashcard.next_review_date && new Date(flashcard.next_review_date) <= new Date() 
+                ? 'bg-red-50 text-red-600' : 'bg-paper2 text-ink2'
+            }`}>
               {getNextReviewText(flashcard)}
             </span>
           )}
         </div>
         
-        <div style={{ display: "flex", gap: "8px" }}>
+        <div className="flex gap-2">
           {isStudent ? (
-            <Btn 
+            <button 
               onClick={() => setIsFlipped(!isFlipped)}
-              variant="outline"
-              style={{ padding: "4px 8px", fontSize: "12px" }}
+              className="flex items-center gap-1 px-3 py-1 text-xs border border-line rounded-lg hover:bg-paper2 transition-colors"
             >
               {isFlipped ? <EyeOff size={14} /> : <Eye size={14} />}
               {isFlipped ? 'Hide' : 'Flip'}
-            </Btn>
+            </button>
           ) : (
             <>
-              <Btn 
+              <button 
                 onClick={() => onEdit(flashcard)}
-                variant="outline"
-                style={{ padding: "4px 8px", fontSize: "12px" }}
+                className="flex items-center gap-1 px-3 py-1 text-xs border border-line rounded-lg hover:bg-paper2 transition-colors"
               >
                 <Edit size={14} />
                 Edit
-              </Btn>
-              <Btn 
+              </button>
+              <button 
                 onClick={() => onDelete(flashcard.id)}
-                variant="danger"
-                style={{ padding: "4px 8px", fontSize: "12px" }}
+                className="flex items-center gap-1 px-3 py-1 text-xs bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors"
               >
                 <Trash2 size={14} />
                 Delete
-              </Btn>
+              </button>
             </>
           )}
         </div>
       </div>
 
       {/* Card Content */}
-      <div style={{ textAlign: "center", padding: "20px 0" }}>
-        <div style={{
-          fontSize: "18px",
-          fontWeight: "600",
-          color: T.ink,
-          marginBottom: "16px",
-          minHeight: "50px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center"
-        }}>
+      <div className="text-center py-5">
+        <div className="text-lg font-semibold text-ink mb-4 min-h-[50px] flex items-center justify-center">
           {isFlipped ? flashcard.back : flashcard.front}
         </div>
         
         {isStudent && isFlipped && !showingAnswer && (
           <div>
-            <Btn 
+            <button 
               onClick={() => setShowingAnswer(true)}
-              variant="primary"
-              style={{ margin: "0 auto" }}
+              className="bg-brand text-white px-4 py-2 rounded-lg font-sans font-medium hover:bg-brand/90 transition-colors"
             >
               Show Quality Options
-            </Btn>
+            </button>
           </div>
         )}
 
         {isStudent && showingAnswer && (
-          <div style={{ marginTop: "20px" }}>
-            <p style={{ 
-              fontSize: "14px", 
-              color: T.ink2, 
-              marginBottom: "16px" 
-            }}>
+          <div className="mt-5">
+            <p className="text-sm text-ink2 mb-4">
               Rate your recall quality:
             </p>
-            <div style={{ 
-              display: "flex", 
-              justifyContent: "center", 
-              gap: "8px",
-              flexWrap: "wrap" 
-            }}>
+            <div className="flex justify-center gap-2 flex-wrap">
               {[
-                { value: 0, label: "Complete blackout", color: "#dc2626" },
-                { value: 1, label: "Incorrect", color: "#ea580c" },
-                { value: 2, label: "Difficult", color: "#d97706" },
-                { value: 3, label: "Hesitant", color: "#ca8a04" },
-                { value: 4, label: "Easy", color: "#16a34a" },
-                { value: 5, label: "Perfect", color: "#059669" }
+                { value: 0, label: "Complete blackout", color: "bg-red-600 hover:bg-red-700" },
+                { value: 1, label: "Incorrect", color: "bg-red-500 hover:bg-red-600" },
+                { value: 2, label: "Difficult", color: "bg-orange-500 hover:bg-orange-600" },
+                { value: 3, label: "Hesitant", color: "bg-yellow-500 hover:bg-yellow-600" },
+                { value: 4, label: "Easy", color: "bg-green-500 hover:bg-green-600" },
+                { value: 5, label: "Perfect", color: "bg-emerald-500 hover:bg-emerald-600" }
               ].map(option => (
                 <button
                   key={option.value}
                   onClick={() => handleReview(option.value)}
-                  style={{
-                    background: option.color,
-                    color: "white",
-                    border: "none",
-                    padding: "8px 12px",
-                    borderRadius: "6px",
-                    fontSize: "12px",
-                    fontWeight: "500",
-                    cursor: "pointer",
-                    minWidth: "60px"
-                  }}
+                  className={`${option.color} text-white border-none px-3 py-2 rounded-lg text-xs font-medium cursor-pointer min-w-[60px] transition-colors`}
                 >
                   {option.value}
                   <br />
-                  <span style={{ fontSize: "10px" }}>{option.label}</span>
+                  <span className="text-[10px]">{option.label}</span>
                 </button>
               ))}
             </div>
@@ -239,28 +147,21 @@ const FlashcardPreview = ({ flashcard, onEdit, onDelete, isStudent, onReview }) 
 
       {/* Student Stats */}
       {isStudent && flashcard.review_count > 0 && (
-        <div style={{ 
-          marginTop: "16px", 
-          padding: "12px", 
-          background: T.paper2, 
-          borderRadius: "6px",
-          fontSize: "12px",
-          color: T.ink2
-        }}>
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div className="mt-4 p-3 bg-paper2 rounded-lg text-xs text-ink2">
+          <div className="flex justify-between">
             <span>Reviews: {flashcard.review_count}</span>
             <span>Ease: {flashcard.ease_factor?.toFixed(2) || '2.50'}</span>
             <span>Interval: {flashcard.interval_days || 0} days</span>
           </div>
         </div>
       )}
-    </Card>
+    </div>
   );
 };
 
 const CreateFlashcardModal = ({ onClose, onFlashcardCreated, editingFlashcard }) => {
   const [formData, setFormData] = useState({
-    lessonId: 'aqaaid-001', // Default lesson
+    lessonId: 'aqaaid-001',
     front: '',
     back: '',
     difficulty: 'medium',
@@ -307,15 +208,15 @@ const CreateFlashcardModal = ({ onClose, onFlashcardCreated, editingFlashcard })
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-[#fefdfb] rounded-lg shadow-xl w-full max-w-md">
-        <div className="p-6 border-b border-[#f5f5f0]">
+      <div className="bg-white rounded-xl2 shadow-xl w-full max-w-md max-h-[90vh] overflow-y-auto">
+        <div className="p-6 border-b border-line">
           <div className="flex justify-between items-center">
-            <h2 className="text-xl font-medium text-[#2c5530]" style={{ fontFamily: 'Fraunces' }}>
+            <h2 className="text-xl font-serif font-medium text-ink">
               {editingFlashcard ? 'Edit Flashcard' : 'Create New Flashcard'}
             </h2>
             <button
               onClick={onClose}
-              className="text-gray-500 hover:text-gray-700 text-2xl"
+              className="text-faint hover:text-ink text-2xl transition-colors"
             >
               ×
             </button>
@@ -324,11 +225,11 @@ const CreateFlashcardModal = ({ onClose, onFlashcardCreated, editingFlashcard })
 
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Lesson</label>
+            <label className="block text-sm font-medium text-ink mb-1 font-sans">Lesson</label>
             <select
               value={formData.lessonId}
               onChange={(e) => setFormData({ ...formData, lessonId: e.target.value })}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2c5530] focus:border-transparent"
+              className="w-full px-3 py-2 border border-line rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent font-sans"
               disabled={!!editingFlashcard}
             >
               <option value="aqaaid-001">Aqaaid - Lesson 1</option>
@@ -340,35 +241,35 @@ const CreateFlashcardModal = ({ onClose, onFlashcardCreated, editingFlashcard })
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Front (Question)</label>
+            <label className="block text-sm font-medium text-ink mb-1 font-sans">Front (Question)</label>
             <textarea
               required
               value={formData.front}
               onChange={(e) => setFormData({ ...formData, front: e.target.value })}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2c5530] focus:border-transparent"
+              className="w-full px-3 py-2 border border-line rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent font-sans"
               rows="3"
               placeholder="Enter the question or prompt..."
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Back (Answer)</label>
+            <label className="block text-sm font-medium text-ink mb-1 font-sans">Back (Answer)</label>
             <textarea
               required
               value={formData.back}
               onChange={(e) => setFormData({ ...formData, back: e.target.value })}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2c5530] focus:border-transparent"
+              className="w-full px-3 py-2 border border-line rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent font-sans"
               rows="3"
               placeholder="Enter the answer or explanation..."
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Difficulty</label>
+            <label className="block text-sm font-medium text-ink mb-1 font-sans">Difficulty</label>
             <select
               value={formData.difficulty}
               onChange={(e) => setFormData({ ...formData, difficulty: e.target.value })}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2c5530] focus:border-transparent"
+              className="w-full px-3 py-2 border border-line rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent font-sans"
             >
               <option value="easy">Easy</option>
               <option value="medium">Medium</option>
@@ -380,14 +281,14 @@ const CreateFlashcardModal = ({ onClose, onFlashcardCreated, editingFlashcard })
             <button
               type="button"
               onClick={onClose}
-              className="flex-1 px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition-colors"
+              className="flex-1 px-4 py-2 bg-faint text-white rounded-lg hover:bg-ink2 transition-colors font-sans font-medium"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={saving}
-              className="flex-1 px-4 py-2 bg-[#2c5530] text-white rounded-lg hover:bg-[#1e3a21] transition-colors disabled:opacity-50"
+              className="flex-1 px-4 py-2 bg-brand text-white rounded-lg hover:bg-brand/90 transition-colors disabled:opacity-50 font-sans font-medium"
             >
               {saving ? 'Saving...' : (editingFlashcard ? 'Update' : 'Create')}
             </button>
@@ -472,7 +373,7 @@ const FlashcardManager = ({ userRole }) => {
   const handleReview = async (flashcardId, quality) => {
     try {
       await reviewFlashcard(flashcardId, quality);
-      loadFlashcards(); // Refresh to update review status
+      loadFlashcards();
     } catch (error) {
       console.error('Failed to review flashcard:', error);
       alert('Failed to review flashcard: ' + error.message);
@@ -481,49 +382,44 @@ const FlashcardManager = ({ userRole }) => {
 
   if (loading) {
     return (
-      <Card>
+      <div className="bg-white border border-line rounded-xl p-6">
         <div className="flex items-center justify-center py-12">
           <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#2c5530] mx-auto mb-4"></div>
-            <p className="text-gray-600">Loading flashcards...</p>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-brand mx-auto mb-4"></div>
+            <p className="text-ink2 font-sans">Loading flashcards...</p>
           </div>
         </div>
-      </Card>
+      </div>
     );
   }
 
   if (error) {
     return (
-      <Card>
-        <div style={{ color: "#DC2626", padding: "20px", textAlign: "center" }}>
+      <div className="bg-white border border-line rounded-xl p-6">
+        <div className="text-red-600 p-5 text-center">
           Error: {error}
-          <div style={{ marginTop: "16px" }}>
-            <Btn onClick={loadFlashcards}>Retry</Btn>
+          <div className="mt-4">
+            <button 
+              onClick={loadFlashcards}
+              className="bg-brand text-white px-4 py-2 rounded-lg font-sans font-medium hover:bg-brand/90 transition-colors"
+            >
+              Retry
+            </button>
           </div>
         </div>
-      </Card>
+      </div>
     );
   }
 
   return (
-    <div className="space-y-6">
+    <div className="max-w-5xl mx-auto space-y-6">
       {/* Header */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+      <div className="flex justify-between items-center">
         <div>
-          <h1 style={{
-            fontSize: "28px",
-            fontFamily: "Fraunces, serif",
-            color: T.ink,
-            margin: 0,
-            marginBottom: "4px"
-          }}>
+          <h1 className="text-3xl font-serif text-ink mb-1">
             {isStudent ? 'Study Flashcards' : 'Flashcard Manager'}
           </h1>
-          <p style={{
-            fontSize: "16px",
-            color: T.ink2,
-            margin: 0
-          }}>
+          <p className="text-ink2 font-sans">
             {isStudent 
               ? 'Review flashcards using spaced repetition for optimal learning' 
               : 'Create and manage flashcards for students'
@@ -531,71 +427,61 @@ const FlashcardManager = ({ userRole }) => {
           </p>
         </div>
         {!isStudent && (
-          <Btn 
+          <button 
             onClick={() => setShowCreateModal(true)}
-            variant="primary"
+            className="bg-brand text-white px-4 py-2 rounded-lg font-sans font-medium hover:bg-brand/90 transition-colors flex items-center gap-2"
           >
             <Plus size={16} />
             Add Flashcard
-          </Btn>
+          </button>
         )}
       </div>
 
       {/* Statistics for Teachers/Admins */}
       {!isStudent && stats && (
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <Card style={{ textAlign: "center", padding: "20px" }}>
-            <Brain size={24} color={T.green} style={{ margin: "0 auto 12px" }} />
-            <div style={{ fontSize: "32px", fontWeight: "bold", color: T.ink }}>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="bg-white border border-line rounded-xl p-5 text-center">
+            <Brain size={24} className="text-brand mx-auto mb-3" />
+            <div className="text-2xl font-bold text-ink font-sans">
               {stats.stats.total_flashcards || 0}
             </div>
-            <div style={{ fontSize: "14px", color: T.ink2 }}>Total Flashcards</div>
-          </Card>
-          <Card style={{ textAlign: "center", padding: "20px" }}>
-            <Target size={24} color="#3b82f6" style={{ margin: "0 auto 12px" }} />
-            <div style={{ fontSize: "32px", fontWeight: "bold", color: T.ink }}>
+            <div className="text-sm text-ink2 font-sans">Total Flashcards</div>
+          </div>
+          <div className="bg-white border border-line rounded-xl p-5 text-center">
+            <Target size={24} className="text-blue-500 mx-auto mb-3" />
+            <div className="text-2xl font-bold text-ink font-sans">
               {stats.stats.total_reviews || 0}
             </div>
-            <div style={{ fontSize: "14px", color: T.ink2 }}>Total Reviews</div>
-          </Card>
-          <Card style={{ textAlign: "center", padding: "20px" }}>
-            <TrendingUp size={24} color="#10b981" style={{ margin: "0 auto 12px" }} />
-            <div style={{ fontSize: "32px", fontWeight: "bold", color: T.ink }}>
+            <div className="text-sm text-ink2 font-sans">Total Reviews</div>
+          </div>
+          <div className="bg-white border border-line rounded-xl p-5 text-center">
+            <TrendingUp size={24} className="text-emerald-500 mx-auto mb-3" />
+            <div className="text-2xl font-bold text-ink font-sans">
               {Math.round((stats.stats.avg_success_rate || 0) * 100)}%
             </div>
-            <div style={{ fontSize: "14px", color: T.ink2 }}>Success Rate</div>
-          </Card>
-          <Card style={{ textAlign: "center", padding: "20px" }}>
-            <Clock size={24} color="#f59e0b" style={{ margin: "0 auto 12px" }} />
-            <div style={{ fontSize: "32px", fontWeight: "bold", color: T.ink }}>
+            <div className="text-sm text-ink2 font-sans">Success Rate</div>
+          </div>
+          <div className="bg-white border border-line rounded-xl p-5 text-center">
+            <Clock size={24} className="text-amber-500 mx-auto mb-3" />
+            <div className="text-2xl font-bold text-ink font-sans">
               {stats.stats.cards_due_now || 0}
             </div>
-            <div style={{ fontSize: "14px", color: T.ink2 }}>Due Now</div>
-          </Card>
+            <div className="text-sm text-ink2 font-sans">Due Now</div>
+          </div>
         </div>
       )}
 
       {/* Filters */}
-      <Card>
-        <div style={{ display: "flex", gap: "16px", alignItems: "center", flexWrap: "wrap" }}>
+      <div className="bg-white border border-line rounded-xl p-6">
+        <div className="flex gap-4 items-center flex-wrap">
           <div>
-            <label style={{ 
-              fontSize: "14px", 
-              fontWeight: "500", 
-              color: T.ink,
-              marginRight: "8px" 
-            }}>
+            <label className="text-sm font-medium text-ink mr-2 font-sans">
               Difficulty:
             </label>
             <select
               value={filters.difficulty}
               onChange={(e) => setFilters({ ...filters, difficulty: e.target.value })}
-              style={{
-                padding: "6px 12px",
-                border: `1px solid ${T.line}`,
-                borderRadius: "6px",
-                fontSize: "14px"
-              }}
+              className="px-3 py-1.5 border border-line rounded-lg text-sm font-sans"
             >
               <option value="">All Levels</option>
               <option value="easy">Easy</option>
@@ -605,23 +491,13 @@ const FlashcardManager = ({ userRole }) => {
           </div>
           
           <div>
-            <label style={{ 
-              fontSize: "14px", 
-              fontWeight: "500", 
-              color: T.ink,
-              marginRight: "8px" 
-            }}>
+            <label className="text-sm font-medium text-ink mr-2 font-sans">
               Lesson:
             </label>
             <select
               value={filters.lessonId}
               onChange={(e) => setFilters({ ...filters, lessonId: e.target.value })}
-              style={{
-                padding: "6px 12px",
-                border: `1px solid ${T.line}`,
-                borderRadius: "6px",
-                fontSize: "14px"
-              }}
+              className="px-3 py-1.5 border border-line rounded-lg text-sm font-sans"
             >
               <option value="">All Lessons</option>
               <option value="aqaaid-001">Aqaaid - Lesson 1</option>
@@ -630,27 +506,25 @@ const FlashcardManager = ({ userRole }) => {
             </select>
           </div>
 
-          <Btn onClick={loadFlashcards} style={{ marginLeft: "auto" }}>
+          <button 
+            onClick={loadFlashcards} 
+            className="ml-auto px-4 py-2 border border-line rounded-lg hover:bg-paper2 transition-colors font-sans font-medium"
+          >
             Refresh
-          </Btn>
+          </button>
         </div>
-      </Card>
+      </div>
 
       {/* Flashcards */}
-      <Card>
-        <h2 style={{
-          fontSize: "20px",
-          fontFamily: "Fraunces, serif",
-          color: T.ink,
-          margin: "0 0 20px 0"
-        }}>
+      <div className="bg-white border border-line rounded-xl p-6">
+        <h2 className="text-xl font-serif text-ink mb-5">
           {isStudent ? `Flashcards Due for Review (${flashcards.length})` : `All Flashcards (${flashcards.length})`}
         </h2>
 
         {flashcards.length === 0 ? (
           <div className="text-center py-12">
-            <Brain className="mx-auto h-12 w-12 text-gray-400 mb-4" />
-            <p className="text-gray-500">
+            <Brain className="mx-auto h-12 w-12 text-faint mb-4" />
+            <p className="text-faint font-sans">
               {isStudent 
                 ? 'No flashcards are due for review right now. Great job!' 
                 : 'No flashcards found. Create your first flashcard to get started.'
@@ -658,7 +532,7 @@ const FlashcardManager = ({ userRole }) => {
             </p>
           </div>
         ) : (
-          <div style={{ marginTop: "20px" }}>
+          <div className="space-y-4">
             {flashcards.map(flashcard => (
               <FlashcardPreview
                 key={flashcard.id}
@@ -671,7 +545,7 @@ const FlashcardManager = ({ userRole }) => {
             ))}
           </div>
         )}
-      </Card>
+      </div>
 
       {/* Create/Edit Modal */}
       {showCreateModal && (

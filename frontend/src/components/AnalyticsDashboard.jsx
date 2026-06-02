@@ -13,77 +13,39 @@ import {
   GraduationCap
 } from 'lucide-react';
 
-const T = {
-  paper: "#FBF7EE", paper2: "#F3ECDD", card: "#FFFFFF", ink: "#2B3A33", ink2: "#5C6B62",
-  faint: "#8A968D", line: "#E8E0CF", green: "#1E7A57", greenSoft: "#E4F1E9", gold: "#C99A2E",
-};
-
-const Card = ({ children, style = {} }) => (
-  <div style={{
-    background: T.card, border: `1px solid ${T.line}`,
-    borderRadius: "12px", padding: "24px", ...style
-  }}>
-    {children}
-  </div>
-);
-
-const StatCard = ({ title, value, subtitle, icon: Icon, trend, color = T.green }) => (
-  <Card style={{ textAlign: "center" }}>
-    <div style={{ display: "flex", justifyContent: "center", marginBottom: "12px" }}>
-      <Icon size={24} color={color} />
+const StatCard = ({ title, value, subtitle, icon: Icon, trend, color = 'text-brand' }) => (
+  <div className="bg-white border border-line rounded-xl p-6 text-center">
+    <div className="flex justify-center mb-3">
+      <Icon size={24} className={color} />
     </div>
-    <div style={{ 
-      fontSize: "32px", 
-      fontWeight: "bold", 
-      color: T.ink,
-      marginBottom: "4px" 
-    }}>
+    <div className="text-3xl font-bold text-ink mb-1 font-sans">
       {value}
     </div>
-    <div style={{ 
-      fontSize: "14px", 
-      color: T.ink2,
-      fontWeight: "600",
-      marginBottom: "4px" 
-    }}>
+    <div className="text-sm text-ink2 font-semibold mb-1 font-sans">
       {title}
     </div>
     {subtitle && (
-      <div style={{ fontSize: "12px", color: T.faint }}>
+      <div className="text-xs text-faint font-sans">
         {subtitle}
       </div>
     )}
     {trend && (
-      <div style={{ 
-        display: "flex", 
-        alignItems: "center", 
-        justifyContent: "center",
-        gap: "4px",
-        marginTop: "8px",
-        fontSize: "12px",
-        color: trend > 0 ? "#16a34a" : "#dc2626"
-      }}>
+      <div className={`flex items-center justify-center gap-1 mt-2 text-xs ${
+        trend > 0 ? 'text-green-600' : 'text-red-600'
+      }`}>
         {trend > 0 ? <TrendingUp size={14} /> : <TrendingDown size={14} />}
         {Math.abs(trend)}%
       </div>
     )}
-  </Card>
+  </div>
 );
 
-const ProgressBar = ({ percentage, color = T.green }) => (
-  <div style={{
-    width: "100%",
-    height: "8px",
-    backgroundColor: T.line,
-    borderRadius: "4px",
-    overflow: "hidden"
-  }}>
-    <div style={{
-      height: "100%",
-      backgroundColor: color,
-      width: `${Math.min(100, Math.max(0, percentage))}%`,
-      transition: "width 0.3s ease"
-    }} />
+const ProgressBar = ({ percentage, colorClass = 'bg-brand' }) => (
+  <div className="w-full h-2 bg-line rounded-full overflow-hidden">
+    <div 
+      className={`h-full ${colorClass} transition-all duration-300`}
+      style={{ width: `${Math.min(100, Math.max(0, percentage))}%` }}
+    />
   </div>
 );
 
@@ -110,39 +72,32 @@ const AnalyticsDashboard = () => {
 
   if (loading) {
     return (
-      <Card>
+      <div className="bg-white border border-line rounded-xl p-6">
         <div className="flex items-center justify-center py-12">
           <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#2c5530] mx-auto mb-4"></div>
-            <p className="text-gray-600">Loading analytics...</p>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-brand mx-auto mb-4"></div>
+            <p className="text-ink2 font-sans">Loading analytics...</p>
           </div>
         </div>
-      </Card>
+      </div>
     );
   }
 
   if (error) {
     return (
-      <Card>
-        <div style={{ color: "#DC2626", padding: "20px", textAlign: "center" }}>
+      <div className="bg-white border border-line rounded-xl p-6">
+        <div className="text-red-600 p-5 text-center">
           Error: {error}
-          <div style={{ marginTop: "16px" }}>
+          <div className="mt-4">
             <button
               onClick={loadAnalytics}
-              style={{
-                background: T.green,
-                color: "white",
-                border: "none",
-                padding: "8px 16px",
-                borderRadius: "6px",
-                cursor: "pointer"
-              }}
+              className="bg-brand text-white px-4 py-2 rounded-lg font-sans font-medium hover:bg-brand/90 transition-colors"
             >
               Retry
             </button>
           </div>
         </div>
-      </Card>
+      </div>
     );
   }
 
@@ -164,217 +119,146 @@ const AnalyticsDashboard = () => {
     : 0;
 
   return (
-    <div className="space-y-6">
+    <div className="max-w-7xl mx-auto space-y-6">
       {/* Header */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+      <div className="flex justify-between items-center">
         <div>
-          <h1 style={{
-            fontSize: "28px",
-            fontFamily: "Fraunces, serif",
-            color: T.ink,
-            margin: 0,
-            marginBottom: "4px"
-          }}>
+          <h1 className="text-3xl font-serif text-ink mb-1">
             Analytics Dashboard
           </h1>
-          <p style={{
-            fontSize: "16px",
-            color: T.ink2,
-            margin: 0
-          }}>
+          <p className="text-ink2 font-sans">
             Comprehensive insights into student performance and learning patterns
           </p>
         </div>
         <button
           onClick={loadAnalytics}
-          style={{
-            background: T.green,
-            color: "white",
-            border: "none",
-            padding: "8px 16px",
-            borderRadius: "6px",
-            cursor: "pointer",
-            fontSize: "14px",
-            fontWeight: "500"
-          }}
+          className="bg-brand text-white px-4 py-2 rounded-lg font-sans font-medium hover:bg-brand/90 transition-colors"
         >
           Refresh Data
         </button>
       </div>
 
       {/* System Overview */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <StatCard
           title="Total Students"
           value={systemStats.total_students || 0}
           subtitle="Active learners"
           icon={Users}
-          color="#3b82f6"
+          color="text-blue-500"
         />
         <StatCard
           title="Total Questions"
           value={systemStats.total_questions || 0}
           subtitle="Available content"
           icon={BookOpen}
-          color="#8b5cf6"
+          color="text-purple-500"
         />
         <StatCard
           title="Total Attempts"
           value={systemStats.total_attempts || 0}
           subtitle="Learning sessions"
           icon={Target}
-          color="#f59e0b"
+          color="text-amber-500"
         />
         <StatCard
           title="Success Rate"
           value={`${overallSuccessRate}%`}
           subtitle="Overall performance"
           icon={TrendingUp}
-          color={overallSuccessRate >= 70 ? "#10b981" : overallSuccessRate >= 50 ? "#f59e0b" : "#ef4444"}
+          color={overallSuccessRate >= 70 ? 'text-emerald-500' : overallSuccessRate >= 50 ? 'text-amber-500' : 'text-red-500'}
         />
       </div>
 
       {/* Subject Performance */}
       {subjectPerformance && subjectPerformance.length > 0 && (
-        <Card>
-          <h2 style={{
-            fontSize: "20px",
-            fontFamily: "Fraunces, serif",
-            color: T.ink,
-            margin: "0 0 20px 0"
-          }}>
+        <div className="bg-white border border-line rounded-xl p-6">
+          <h2 className="text-xl font-serif text-ink mb-5">
             Subject Performance Overview
           </h2>
           <div className="space-y-4">
             {subjectPerformance.map((subject, index) => (
-              <div key={index} style={{ 
-                display: "flex", 
-                justifyContent: "space-between", 
-                alignItems: "center",
-                padding: "16px",
-                background: T.paper,
-                borderRadius: "8px"
-              }}>
-                <div style={{ flex: 1 }}>
-                  <div style={{ fontWeight: "600", fontSize: "16px", color: T.ink, marginBottom: "4px" }}>
+              <div key={index} className="flex justify-between items-center p-4 bg-paper rounded-lg">
+                <div className="flex-1">
+                  <div className="font-semibold text-lg text-ink mb-1 font-sans">
                     {subject.subject_id}
                   </div>
-                  <div style={{ fontSize: "14px", color: T.ink2 }}>
+                  <div className="text-sm text-ink2 font-sans">
                     {subject.question_count} questions • {subject.total_attempts} attempts
                   </div>
-                  <div style={{ marginTop: "8px" }}>
+                  <div className="mt-2">
                     <ProgressBar 
                       percentage={subject.success_rate || 0}
-                      color={subject.success_rate >= 70 ? "#10b981" : subject.success_rate >= 50 ? "#f59e0b" : "#ef4444"}
+                      colorClass={subject.success_rate >= 70 ? 'bg-emerald-500' : subject.success_rate >= 50 ? 'bg-amber-500' : 'bg-red-500'}
                     />
                   </div>
                 </div>
-                <div style={{ 
-                  fontSize: "24px", 
-                  fontWeight: "bold", 
-                  color: subject.success_rate >= 70 ? "#10b981" : subject.success_rate >= 50 ? "#f59e0b" : "#ef4444",
-                  marginLeft: "20px",
-                  minWidth: "60px",
-                  textAlign: "right"
-                }}>
+                <div className={`text-2xl font-bold ml-5 min-w-[60px] text-right font-sans ${
+                  subject.success_rate >= 70 ? 'text-emerald-500' : subject.success_rate >= 50 ? 'text-amber-500' : 'text-red-500'
+                }`}>
                   {subject.success_rate || 0}%
                 </div>
               </div>
             ))}
           </div>
-        </Card>
+        </div>
       )}
 
       {/* Performance Insights */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Top Performing Students */}
         {studentPerformance && studentPerformance.length > 0 && (
-          <Card>
-            <h3 style={{
-              fontSize: "18px",
-              fontFamily: "Fraunces, serif",
-              color: T.ink,
-              margin: "0 0 16px 0"
-            }}>
+          <div className="bg-white border border-line rounded-xl p-6">
+            <h3 className="text-lg font-serif text-ink mb-4">
               Top Performing Students
             </h3>
             <div className="space-y-3 max-h-64 overflow-y-auto">
               {studentPerformance.slice(0, 10).map((student, index) => (
-                <div key={student.id} style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  padding: "12px",
-                  background: index < 3 ? T.greenSoft : T.paper,
-                  borderRadius: "6px",
-                  border: index < 3 ? `1px solid ${T.green}` : "1px solid transparent"
-                }}>
+                <div key={student.id} className={`flex justify-between items-center p-3 rounded-lg border ${
+                  index < 3 ? 'bg-brandSoft border-brand' : 'bg-paper border-transparent'
+                }`}>
                   <div>
-                    <div style={{ fontWeight: "600", fontSize: "14px", color: T.ink }}>
+                    <div className="font-semibold text-sm text-ink font-sans">
                       #{index + 1} {student.name}
                     </div>
-                    <div style={{ fontSize: "12px", color: T.ink2 }}>
+                    <div className="text-xs text-ink2 font-sans">
                       {student.class_name || 'No class'} • {student.total_attempts} attempts
                     </div>
                   </div>
-                  <div style={{ 
-                    fontSize: "16px", 
-                    fontWeight: "bold", 
-                    color: T.green 
-                  }}>
+                  <div className="text-lg font-bold text-brand font-sans">
                     {student.success_rate || 0}%
                   </div>
                 </div>
               ))}
             </div>
-          </Card>
+          </div>
         )}
 
         {/* Struggling Students */}
         {strugglingStudents && strugglingStudents.length > 0 && (
-          <Card>
-            <h3 style={{
-              fontSize: "18px",
-              fontFamily: "Fraunces, serif",
-              color: T.ink,
-              margin: "0 0 16px 0",
-              display: "flex",
-              alignItems: "center",
-              gap: "8px"
-            }}>
-              <AlertTriangle size={20} color="#ef4444" />
+          <div className="bg-white border border-line rounded-xl p-6">
+            <h3 className="text-lg font-serif text-ink mb-4 flex items-center gap-2">
+              <AlertTriangle size={20} className="text-red-500" />
               Students Needing Support
             </h3>
             <div className="space-y-3 max-h-64 overflow-y-auto">
               {strugglingStudents.map((student) => (
-                <div key={student.id} style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  padding: "12px",
-                  background: "#fef2f2",
-                  borderRadius: "6px",
-                  border: "1px solid #fecaca"
-                }}>
+                <div key={student.id} className="flex justify-between items-center p-3 bg-red-50 rounded-lg border border-red-200">
                   <div>
-                    <div style={{ fontWeight: "600", fontSize: "14px", color: T.ink }}>
+                    <div className="font-semibold text-sm text-ink font-sans">
                       {student.name}
                     </div>
-                    <div style={{ fontSize: "12px", color: T.ink2 }}>
+                    <div className="text-xs text-ink2 font-sans">
                       {student.class_name || 'No class'} • {student.total_attempts} attempts
                     </div>
                   </div>
-                  <div style={{ 
-                    fontSize: "16px", 
-                    fontWeight: "bold", 
-                    color: "#ef4444" 
-                  }}>
+                  <div className="text-lg font-bold text-red-500 font-sans">
                     {student.success_rate || 0}%
                   </div>
                 </div>
               ))}
             </div>
-          </Card>
+          </div>
         )}
       </div>
 
@@ -382,155 +266,90 @@ const AnalyticsDashboard = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Most Difficult Questions */}
         {difficultQuestions && difficultQuestions.length > 0 && (
-          <Card>
-            <h3 style={{
-              fontSize: "18px",
-              fontFamily: "Fraunces, serif",
-              color: T.ink,
-              margin: "0 0 16px 0",
-              display: "flex",
-              alignItems: "center",
-              gap: "8px"
-            }}>
-              <Brain size={20} color="#ef4444" />
+          <div className="bg-white border border-line rounded-xl p-6">
+            <h3 className="text-lg font-serif text-ink mb-4 flex items-center gap-2">
+              <Brain size={20} className="text-red-500" />
               Most Challenging Questions
             </h3>
             <div className="space-y-3 max-h-64 overflow-y-auto">
               {difficultQuestions.map((question, index) => (
-                <div key={question.id} style={{
-                  padding: "12px",
-                  background: T.paper,
-                  borderRadius: "6px",
-                  border: "1px solid " + T.line
-                }}>
-                  <div style={{ 
-                    fontSize: "14px", 
-                    fontWeight: "600", 
-                    color: T.ink,
-                    marginBottom: "4px"
-                  }}>
+                <div key={question.id} className="p-3 bg-paper rounded-lg border border-line">
+                  <div className="text-sm font-semibold text-ink mb-1 font-sans">
                     {question.prompt.length > 60 ? question.prompt.substring(0, 60) + '...' : question.prompt}
                   </div>
-                  <div style={{ 
-                    display: "flex", 
-                    justifyContent: "space-between", 
-                    alignItems: "center" 
-                  }}>
-                    <div style={{ fontSize: "12px", color: T.ink2 }}>
+                  <div className="flex justify-between items-center">
+                    <div className="text-xs text-ink2 font-sans">
                       {question.subject_id} • {question.attempt_count} attempts
                     </div>
-                    <div style={{ 
-                      fontSize: "14px", 
-                      fontWeight: "bold", 
-                      color: "#ef4444" 
-                    }}>
+                    <div className="text-sm font-bold text-red-500 font-sans">
                       {question.success_rate || 0}%
                     </div>
                   </div>
                 </div>
               ))}
             </div>
-          </Card>
+          </div>
         )}
 
         {/* Class Performance Comparison */}
         {classPerformance && classPerformance.length > 0 && (
-          <Card>
-            <h3 style={{
-              fontSize: "18px",
-              fontFamily: "Fraunces, serif",
-              color: T.ink,
-              margin: "0 0 16px 0",
-              display: "flex",
-              alignItems: "center",
-              gap: "8px"
-            }}>
-              <GraduationCap size={20} color={T.green} />
+          <div className="bg-white border border-line rounded-xl p-6">
+            <h3 className="text-lg font-serif text-ink mb-4 flex items-center gap-2">
+              <GraduationCap size={20} className="text-brand" />
               Class Performance
             </h3>
             <div className="space-y-3 max-h-64 overflow-y-auto">
               {classPerformance.map((cls) => (
-                <div key={cls.id} style={{
-                  padding: "12px",
-                  background: T.paper,
-                  borderRadius: "6px",
-                  border: "1px solid " + T.line
-                }}>
-                  <div style={{ 
-                    display: "flex", 
-                    justifyContent: "space-between", 
-                    alignItems: "center",
-                    marginBottom: "8px" 
-                  }}>
+                <div key={cls.id} className="p-3 bg-paper rounded-lg border border-line">
+                  <div className="flex justify-between items-center mb-2">
                     <div>
-                      <div style={{ fontWeight: "600", fontSize: "14px", color: T.ink }}>
+                      <div className="font-semibold text-sm text-ink font-sans">
                         {cls.class_name}
                       </div>
-                      <div style={{ fontSize: "12px", color: T.ink2 }}>
+                      <div className="text-xs text-ink2 font-sans">
                         {cls.teacher_name || 'No teacher'} • {cls.student_count} students
                       </div>
                     </div>
-                    <div style={{ 
-                      fontSize: "16px", 
-                      fontWeight: "bold", 
-                      color: cls.class_success_rate >= 70 ? "#10b981" : cls.class_success_rate >= 50 ? "#f59e0b" : "#ef4444"
-                    }}>
+                    <div className={`text-lg font-bold font-sans ${
+                      cls.class_success_rate >= 70 ? 'text-emerald-500' : cls.class_success_rate >= 50 ? 'text-amber-500' : 'text-red-500'
+                    }`}>
                       {cls.class_success_rate || 0}%
                     </div>
                   </div>
                   <ProgressBar 
                     percentage={cls.class_success_rate || 0}
-                    color={cls.class_success_rate >= 70 ? "#10b981" : cls.class_success_rate >= 50 ? "#f59e0b" : "#ef4444"}
+                    colorClass={cls.class_success_rate >= 70 ? 'bg-emerald-500' : cls.class_success_rate >= 50 ? 'bg-amber-500' : 'bg-red-500'}
                   />
                 </div>
               ))}
             </div>
-          </Card>
+          </div>
         )}
       </div>
 
       {/* Activity Trends */}
       {dailyActivity && dailyActivity.length > 0 && (
-        <Card>
-          <h3 style={{
-            fontSize: "18px",
-            fontFamily: "Fraunces, serif",
-            color: T.ink,
-            margin: "0 0 16px 0",
-            display: "flex",
-            alignItems: "center",
-            gap: "8px"
-          }}>
-            <Calendar size={20} color={T.green} />
+        <div className="bg-white border border-line rounded-xl p-6">
+          <h3 className="text-lg font-serif text-ink mb-4 flex items-center gap-2">
+            <Calendar size={20} className="text-brand" />
             Daily Activity Trends (Last 30 Days)
           </h3>
-          <div style={{ 
-            display: "grid", 
-            gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))", 
-            gap: "8px",
-            maxHeight: "200px",
-            overflowY: "auto"
-          }}>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-3 max-h-48 overflow-y-auto">
             {dailyActivity.slice(0, 15).map((day) => (
-              <div key={day.date} style={{
-                padding: "8px",
-                background: T.paper,
-                borderRadius: "4px",
-                textAlign: "center"
-              }}>
-                <div style={{ fontSize: "12px", color: T.faint, marginBottom: "4px" }}>
+              <div key={day.date} className="p-3 bg-paper rounded-lg text-center">
+                <div className="text-xs text-faint mb-1 font-sans">
                   {new Date(day.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
                 </div>
-                <div style={{ fontSize: "16px", fontWeight: "bold", color: T.ink }}>
+                <div className="text-lg font-bold text-ink font-sans">
                   {day.attempts}
                 </div>
-                <div style={{ fontSize: "11px", color: T.green }}>
+                <div className="text-xs text-brand font-sans">
                   {day.correct_attempts} correct
                 </div>
               </div>
             ))}
           </div>
-        </Card>
+        </div>
       )}
     </div>
   );
