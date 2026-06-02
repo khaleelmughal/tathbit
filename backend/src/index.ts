@@ -7,6 +7,7 @@ import { userRoutes } from "./routes/users.routes.js";
 import { syllabusRoutes } from "./routes/syllabus.routes.js";
 import { questionRoutes } from "./routes/questions.routes.js";
 import { progressRoutes } from "./routes/progress.routes.js";
+import { flashcardRoutes } from "./routes/flashcards.routes.js";
 
 const app = express();
 app.use(cors());
@@ -19,6 +20,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/syllabus", syllabusRoutes);
 app.use("/api/questions", questionRoutes);
 app.use("/api/progress", progressRoutes);
+app.use("/api/flashcards", flashcardRoutes);
 
 const PORT = Number(process.env.PORT) || 4000;
 app.listen(PORT, () => console.log(`Madrasah API on http://localhost:${PORT}`));

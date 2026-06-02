@@ -143,6 +143,14 @@
         {
           "front": "Which two hills are near Zam Zam?",
           "back": "Safa and Marwah."
+        },
+        {
+          "front": "What happened to Abdullah, father of Rasoolullah ﷺ?",
+          "back": "He passed away at Yathrib (Madeenah) before his son's birth."
+        },
+        {
+          "front": "Which Surah tells about the elephants?",
+          "back": "Surah Feel (The Elephants)."
         }
       ],
       "needsContent": false,

@@ -72,12 +72,24 @@
       ],
       "flashcards": [
         {
-          "front": "Complete the hadeeth: “It is not permissible for a Muslim to ____ another Muslim.”",
+          "front": "Complete the hadeeth: \"It is not permissible for a Muslim to ____ another Muslim.\"",
           "back": "…to frighten another Muslim."
         },
         {
           "front": "Why is frightening others not allowed?",
           "back": "It causes shock, pain and worry — harming a fellow Muslim, even as a joke."
+        },
+        {
+          "front": "What does 'permissible' mean?",
+          "back": "Allowed in Islam."
+        },
+        {
+          "front": "Give an example of frightening someone inappropriately.",
+          "back": "Shouting in the dark, suddenly jumping at them, or falsely telling them they're in trouble."
+        },
+        {
+          "front": "Should we scare friends even as a joke?",
+          "back": "No, because we must never harm a fellow Muslim, even jokingly."
         }
       ],
       "needsContent": false,

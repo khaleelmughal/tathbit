@@ -55,9 +55,18 @@ function* walkContent(dir: string): Generator<string> {
 async function seedContent() {
   const seenGrades = new Set<string>();
   let subjects = 0, lessons = 0, questions = 0, files = 0;
+  const skippedFiles: string[] = [];
 
   for (const fp of walkContent(CONTENT_DIR)) {
-    const c = JSON.parse(fs.readFileSync(fp, "utf8"));
+    let c: any;
+    try {
+      c = JSON.parse(fs.readFileSync(fp, "utf8"));
+    } catch (error) {
+      console.warn(`⚠️  Skipping broken JSON file: ${fp}`);
+      console.warn(`   Error: ${error.message}`);
+      skippedFiles.push(fp);
+      continue;
+    }
     if (!c.track || !c.gradeId || !c.subjectId) continue; // skip manifest etc.
     files++;
     const gId = dbGradeId(c.track, c.gradeId);
@@ -101,6 +110,11 @@ async function seedContent() {
   }
   console.log(`Seeded ${files} content files: ${seenGrades.size} grades, ${subjects} subjects, ${lessons} lessons, ${questions} questions.`);
   if (files === 0) console.log("No content files yet. Run `node scripts/scaffold.mjs` then fill them (see INGESTION.md).");
+  
+  if (skippedFiles.length > 0) {
+    console.log(`\n⚠️  Skipped ${skippedFiles.length} broken JSON files:`);
+    skippedFiles.forEach(file => console.log(`   - ${file}`));
+  }
 }
 
 (async () => {

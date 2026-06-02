@@ -117,11 +117,45 @@ CREATE TABLE student_state (
 CREATE TABLE attempts (
   id           UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   student_id   UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  question_id  UUID REFERENCES questions(id) ON DELETE SET NULL,
   subject_id   TEXT,
   lesson_id    TEXT,
   mode         TEXT,
+  is_correct   BOOLEAN,
   score        INT NOT NULL,
   total        INT NOT NULL,
   completed_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 CREATE INDEX attempts_student_idx ON attempts(student_id);
+CREATE INDEX attempts_question_idx ON attempts(question_id);
+
+-- ---- Flashcards -----------------------------------------------------------
+-- Spaced repetition flashcards for each lesson
+CREATE TABLE flashcards (
+  id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  lesson_id   TEXT NOT NULL REFERENCES lessons(id) ON DELETE CASCADE,
+  front       TEXT NOT NULL,            -- Question or prompt
+  back        TEXT NOT NULL,            -- Answer or explanation
+  difficulty  TEXT NOT NULL DEFAULT 'medium',  -- 'easy' | 'medium' | 'hard'
+  tags        JSONB NOT NULL DEFAULT '[]'::jsonb,
+  created_by  UUID REFERENCES users(id) ON DELETE SET NULL,
+  created_at  TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+CREATE INDEX flashcards_lesson_idx ON flashcards(lesson_id);
+
+-- Spaced repetition review tracking per student
+CREATE TABLE flashcard_reviews (
+  id                UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  flashcard_id      UUID NOT NULL REFERENCES flashcards(id) ON DELETE CASCADE,
+  student_id        UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  quality           INT NOT NULL CHECK (quality >= 0 AND quality <= 5),  -- 0-5 quality rating
+  ease_factor       DECIMAL(3,2) NOT NULL DEFAULT 2.50,  -- SM-2 algorithm ease factor
+  interval_days     INT NOT NULL DEFAULT 1,               -- Days until next review
+  next_review_date  TIMESTAMPTZ NOT NULL,                 -- When to review next
+  review_count      INT NOT NULL DEFAULT 1,               -- How many times reviewed
+  reviewed_at       TIMESTAMPTZ NOT NULL DEFAULT now(),
+  UNIQUE(flashcard_id, student_id)  -- One review record per student per flashcard
+);
+CREATE INDEX flashcard_reviews_student_idx ON flashcard_reviews(student_id);
+CREATE INDEX flashcard_reviews_due_idx ON flashcard_reviews(next_review_date);
+CREATE INDEX flashcard_reviews_flashcard_idx ON flashcard_reviews(flashcard_id);
