@@ -2,285 +2,2378 @@
   "track": "tasheel",
   "gradeId": "g5",
   "subjectId": "g5-tareekh",
-  "subjectName": "Tareekh (Seerah)",
-  "tagline": "The blessed life of Rasoolullah ﷺ",
-  "sources": [
-    {
-      "pdf": "grade-05/tareekh-5.pdf",
-      "note": "Tas-heel Islamic History 5"
-    }
-  ],
-  "status": "in_progress",
+  "subjectName": "Tareekh",
+  "tagline": "Tas-heelut Taa-reekh — History made easy (Level 5)",
+  "sourceBook": {
+    "title": "Tasheel-ut-Taareekh Level 5",
+    "publisher": "Jamiatul Ulama Taalimi Board / JUT Publishing",
+    "pdfName": "islamic-history-5.pdf",
+    "pageRange": "6-88",
+    "structureNote": "Introduction and a dates/events timeline, then 21 lessons covering the Seerah of Rasoolullah ﷺ from the Pre-Islaamic Age to the Hijrah to Madeenah. Each lesson has a New Words list, narrative content and exercises (true/false, fill-in, match, underline, short-answer). A revision lesson is added at the end. Quizzed by selection (no Arabic typing)."
+  },
+  "contentModel": "Each lesson has a summary, key terms, teaching points, an optional story, selection-based questions (multiple-choice, true-false, match) and flashcards.",
+  "reviewNote": "Islamic content must be reviewed by a parent/teacher before use. In particular, verify names, dates and the events of the Seerah against the book; lessons flagged needsReview contain more sensitive material (e.g. the martyrdom narratives and the Me'raj).",
+  "status": "complete",
   "lessons": [
     {
-      "id": "g5-tareekh-l2",
-      "n": 2,
-      "title": "The Birth of Rasoolullah ﷺ",
-      "pages": "12-15",
-      "summary": "Rasoolullah ﷺ was born in the “Year of the Elephants”. In that year, Abrahaa-bin-Saba, the governor of Yemen, came with an army of “The Men of Elephants” to destroy the Kaabah. Allah sent flights of birds which rained down stones and destroyed the army — mentioned in Surah Feel (The Elephants). His father Abdullah had passed away at Yathrib (Madeenah) before his birth.",
+      "id": "g5-tareekh-l0",
+      "n": 0,
+      "title": "Introduction & Timeline of Rasoolullah ﷺ",
+      "pages": "6-7",
+      "arabic": null,
+      "transliteration": null,
+      "translation": null,
+      "source": null,
+      "summary": "Tareekh (Seerah) is the recorded life of Rasoolullah ﷺ from birth to demise. By studying it we come to know him, love him and follow his Sunnah — the Siratul Mustaqeem (straight path).",
       "keyTerms": [
         {
-          "term": "Year of the Elephants",
-          "meaning": "The year Rasoolullah ﷺ was born"
+          "term": "Seerah / Tareekh",
+          "meaning": "The history and life-story of Rasoolullah ﷺ."
         },
         {
-          "term": "Abrahaa",
-          "meaning": "The governor of Yemen who tried to destroy the Kaabah"
+          "term": "Sunnah",
+          "meaning": "The way of life and practice of Rasoolullah ﷺ."
         },
         {
-          "term": "Zam Zam",
-          "meaning": "The blessed spring near the hills of Safa and Marwah"
+          "term": "Nubuwwat",
+          "meaning": "Prophethood; the years are counted from the first revelation."
         },
         {
-          "term": "Surah Feel",
-          "meaning": "The chapter of the Qur'an about the Elephants"
+          "term": "Hijrah",
+          "meaning": "The emigration to Madeenah; the start of the Islamic calendar."
         }
       ],
       "points": [
-        "Rasoolullah ﷺ was born in the Year of the Elephants.",
-        "Abrahaa came with an army of elephants to destroy the Kaabah; Allah sent birds that rained stones and destroyed them (Surah Feel).",
-        "Sayyidah Haajirah رضي الله عنه, mother of Sayyidina Ismaaeel عليه السلام, found Zam Zam between the hills of Safa and Marwah and built walls around it.",
-        "His father Abdullah passed away at Yathrib (Madeenah) before his birth."
+        "Seerah covers the Prophet's ﷺ birth, family, features, journeys, manners and his dealings with others; his teachings cover every aspect of life.",
+        "He ﷺ was born on 12 Rabiul Awwal in the Year of the Elephants (570/571 C.E.).",
+        "He received the first Divine Revelation (Wahee) at the age of 40, in Ramadhaan (609 C.E.).",
+        "The public declaration of Islam came at the age of 43 (612 C.E.).",
+        "The Hijrah (emigration) to Madeenah took place in 623 C.E. and marks the beginning of the Islamic (Hijri) calendar, AH 1.",
+        "Major events after the Hijrah: Battle of Badr (AH 2), Uhad (AH 3), the Trench (AH 5), Treaty of Hudaibiyya (AH 6), Conquest of Khaibar (AH 7), Conquest of Makkah (AH 8), Tabook (AH 9) and the Farewell Pilgrimage (AH 10).",
+        "Rasoolullah ﷺ passed away at the age of 63, on 12 Rabiul Awwal (632 C.E. / AH 11)."
       ],
       "story": null,
       "questions": [
         {
-          "id": "tr-l2-q1",
+          "id": "tk-l0-q1",
           "type": "multiple-choice",
           "difficulty": "easy",
-          "prompt": "In which year was Rasoolullah ﷺ born?",
+          "prompt": "In which year (C.E.) was Rasoolullah ﷺ born?",
           "options": [
-            "The Year of the Elephants",
-            "The Year of the Hijrah",
-            "The Year of Sorrow",
-            "The Year of Victory"
+            "570 / 571",
+            "622",
+            "609",
+            "632"
           ],
-          "correctAnswer": "The Year of the Elephants",
-          "explanation": "He ﷺ was born in the Year of the Elephants — when Abrahaa's army was destroyed."
+          "correctAnswer": "570 / 571",
+          "explanation": "He ﷺ was born on 12 Rabiul Awwal in the Year of the Elephants, 570/571 C.E."
         },
         {
-          "id": "tr-l2-q2",
-          "type": "short-answer",
-          "difficulty": "medium",
-          "prompt": "Who came with an army of elephants to destroy the Kaabah?",
-          "acceptedAnswers": [
-            "abrahaa",
-            "abraha",
-            "abrahaa-bin-saba",
-            "abrahaa bin saba"
-          ],
-          "explanation": "Abrahaa-bin-Saba, the governor of Yemen, tried to destroy the Kaabah."
-        },
-        {
-          "id": "tr-l2-q3",
+          "id": "tk-l0-q2",
           "type": "multiple-choice",
-          "difficulty": "medium",
-          "prompt": "How did Allah destroy Abrahaa's army?",
+          "difficulty": "easy",
+          "prompt": "At what age did Rasoolullah ﷺ receive the first revelation?",
           "options": [
-            "He sent flights of birds which rained down stones",
-            "He sent a great flood",
-            "He sent a strong wind",
-            "He sent an earthquake"
+            "40",
+            "25",
+            "53",
+            "63"
           ],
-          "correctAnswer": "He sent flights of birds which rained down stones",
-          "explanation": "Allah sent birds that pelted the army with stones — told in Surah Feel."
+          "correctAnswer": "40",
+          "explanation": "The first Wahee came in Ramadhaan when he was forty years old."
         },
         {
-          "id": "tr-l2-q4",
-          "type": "short-answer",
+          "id": "tk-l0-q3",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "The Hijrah to Madeenah marks the beginning of the Islamic calendar.",
+          "correctAnswer": true,
+          "explanation": "Yes — the Hijrah in 623 C.E. is the start of the Hijri calendar, AH 1."
+        },
+        {
+          "id": "tk-l0-q4",
+          "type": "match",
           "difficulty": "medium",
-          "prompt": "Which two hills are close to the well of Zam Zam?",
-          "acceptedAnswers": [
-            "safa and marwah",
-            "safa and marwa",
-            "saffa and marwah",
-            "marwah and safa"
+          "prompt": "Match each battle to its Hijri year:",
+          "pairs": [
+            {
+              "left": "Battle of Badr",
+              "right": "AH 2"
+            },
+            {
+              "left": "Battle of Uhad",
+              "right": "AH 3"
+            },
+            {
+              "left": "Battle of the Trench",
+              "right": "AH 5"
+            },
+            {
+              "left": "Conquest of Makkah",
+              "right": "AH 8"
+            }
           ],
-          "explanation": "Safa and Marwah are the two hills, now part of the noble sanctuary."
-        },
-        {
-          "id": "tr-l2-q5",
-          "type": "fill-blank",
-          "difficulty": "hard",
-          "prompt": "The Qur'an mentions the elephants in Surah ______.",
-          "correctAnswer": "Feel",
-          "acceptedAnswers": [
-            "feel",
-            "fil",
-            "al-feel",
-            "al feel"
-          ],
-          "explanation": "Surah Feel (The Elephants) tells of Abrahaa's army."
-        },
-        {
-          "id": "tr-l2-q6",
-          "type": "short-answer",
-          "difficulty": "hard",
-          "prompt": "Where did Abdullah, the father of Rasoolullah ﷺ, pass away?",
-          "acceptedAnswers": [
-            "yathrib",
-            "madeenah",
-            "madinah",
-            "yathrib madeenah",
-            "yathrib (madeenah)"
-          ],
-          "explanation": "He passed away at Yathrib, which is Madeenah."
+          "explanation": "Badr was AH 2, Uhad AH 3, the Trench AH 5 and the Conquest of Makkah AH 8."
         }
       ],
       "flashcards": [
         {
-          "front": "In which year was Rasoolullah ﷺ born?",
-          "back": "The Year of the Elephants."
+          "id": "tk-l0-f1",
+          "front": "What is the Seerah?",
+          "back": "The recorded life of Rasoolullah ﷺ from birth to demise."
         },
         {
-          "front": "Who tried to destroy the Kaabah with elephants?",
-          "back": "Abrahaa-bin-Saba, the governor of Yemen."
+          "id": "tk-l0-f2",
+          "front": "When was Rasoolullah ﷺ born?",
+          "back": "12 Rabiul Awwal, in the Year of the Elephants (570/571 C.E.)."
         },
         {
-          "front": "How did Allah save the Kaabah?",
-          "back": "He sent birds that rained stones on the army (Surah Feel)."
-        },
-        {
-          "front": "Which two hills are near Zam Zam?",
-          "back": "Safa and Marwah."
-        },
-        {
-          "front": "What happened to Abdullah, father of Rasoolullah ﷺ?",
-          "back": "He passed away at Yathrib (Madeenah) before his son's birth."
-        },
-        {
-          "front": "Which Surah tells about the elephants?",
-          "back": "Surah Feel (The Elephants)."
+          "id": "tk-l0-f3",
+          "front": "At what age did he ﷺ pass away?",
+          "back": "63 years old (12 Rabiul Awwal, 632 C.E.)."
         }
-      ],
-      "needsContent": false,
-      "needsReview": false
+      ]
     },
     {
       "id": "g5-tareekh-l1",
       "n": 1,
       "title": "The Pre-Islaamic Age",
       "pages": "8-11",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
+      "arabic": null,
+      "transliteration": null,
+      "translation": null,
+      "source": null,
+      "summary": "Before Islam, Arabia was home to many tribes who were brave but uncivilised. Family life and women were not respected, idol-worship and evil were widespread — yet the Arabs also had some good qualities such as hospitality and a remarkable memory.",
+      "keyTerms": [
+        {
+          "term": "Genealogy",
+          "meaning": "The record of one's ancestors; the Arabs could recite it for many generations."
+        },
+        {
+          "term": "Bedouins",
+          "meaning": "The desert-dwelling Arabs of the countryside."
+        },
+        {
+          "term": "Progeny",
+          "meaning": "One's children and descendants."
+        }
+      ],
+      "points": [
+        "Well-known early tribes included Aad, Thamud, Aabeel, Amaaliqah, Jurhum, Hadramaut and Hazoor; Aad was one of the first kings of Arabia.",
+        "The Arabs were well built and strong but bold and uncivilised, divided into tribes and proud of fighting; the quarrel between Banoo Bakr and Banoo Tublugh lasted over forty years.",
+        "Women were treated badly; the birth of a daughter was a shame and many tribes buried baby girls alive (Qays-bin-Aasim of the Banoo Tameem buried ten of his own daughters).",
+        "Stealing, killing, drinking and gambling were common; the Kaabah itself was used as a gambling den before the idol Hubal, and there were about 360 idols in and around it.",
+        "Amr-ibn-Luhayy introduced idol-worship to the Arabs; famous idols were Laat, Manaat, Hubal and Uzza.",
+        "Good qualities also existed: contests of skill, hospitality to guests, charity to the poor, and a famous ability to memorise long genealogies. Some kept away from idols, and Jews and Christians foretold the coming of 'Ahmad' ﷺ."
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
-      "needsReview": false
+      "questions": [
+        {
+          "id": "tk-l1-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Who was one of the first kings of Arabia?",
+          "options": [
+            "Aad",
+            "Thamud",
+            "Jurhum",
+            "Hubal"
+          ],
+          "correctAnswer": "Aad",
+          "explanation": "Aad was one of the first kings of Arabia."
+        },
+        {
+          "id": "tk-l1-q2",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Before Islam the Arabs loved and respected their daughters.",
+          "correctAnswer": false,
+          "explanation": "False — the birth of a daughter was considered shameful and many tribes buried baby girls alive."
+        },
+        {
+          "id": "tk-l1-q3",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "The quarrel between Banoo Bakr and Banoo Tublugh lasted over forty years.",
+          "correctAnswer": true,
+          "explanation": "Yes — some tribal wars carried on for generations; this one lasted over forty years."
+        },
+        {
+          "id": "tk-l1-q4",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Who introduced idol-worship to the Arabs?",
+          "options": [
+            "Amr-ibn-Luhayy",
+            "Qays-bin-Aasim",
+            "Abdul Muttaalib",
+            "Buhayra"
+          ],
+          "correctAnswer": "Amr-ibn-Luhayy",
+          "explanation": "Amr-ibn-Luhayy introduced idol-worship; famous idols were Laat, Manaat, Hubal and Uzza."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "tk-l1-f1",
+          "front": "How many idols were in and around the Kaabah?",
+          "back": "About 360."
+        },
+        {
+          "id": "tk-l1-f2",
+          "front": "Name four famous idols of the Arabs.",
+          "back": "Laat, Manaat, Hubal and Uzza."
+        },
+        {
+          "id": "tk-l1-f3",
+          "front": "What good qualities did the Arabs have?",
+          "back": "Hospitality, charity, skill contests and a great ability to memorise."
+        }
+      ]
+    },
+    {
+      "id": "g5-tareekh-l2",
+      "n": 2,
+      "title": "The Birth of Rasoolullah ﷺ",
+      "pages": "12-15",
+      "arabic": null,
+      "transliteration": null,
+      "translation": null,
+      "source": null,
+      "summary": "Abdul Muttaalib rediscovered the well of Zam Zam and protected the Kaabah from Abrahah's army of elephants. In the Year of the Elephants, Rasoolullah ﷺ was born into the Banoo Hasheem, after his father Abdullah had already passed away.",
+      "keyTerms": [
+        {
+          "term": "Safa & Marwah",
+          "meaning": "Two small hills in the noble sanctuary, near Zam Zam."
+        },
+        {
+          "term": "Sacred fire",
+          "meaning": "A fire worshipped in Persia for a thousand years; it went out at the Prophet's ﷺ birth."
+        }
+      ],
+      "points": [
+        "Abdul Muttaalib and his son Haarith searched for and uncovered the well of Zam Zam, near the hills of Safa and Marwah where Sayyiditina Haajirah رضي الله عنها had once found water for the infant Ismaaeel عليه السلام.",
+        "Abrahah-bin-Saba, the governor of Yemen, came with an army of elephants to destroy the Kaabah; Allah sent flights of birds that rained down stones and destroyed the attackers — mentioned in Surah 'Feel'. This was the Year of the Elephants.",
+        "Just before the Prophet's ﷺ birth, his father Abdullah died at Yathrib (Madeenah) while returning from a trade journey to Syria.",
+        "Rasoolullah ﷺ was born on Monday 12 Rabiul Awwal into the Banoo Hasheem; his mother Aaminah was from the Banoo Zuhra, whose lineage links to Sayyidina Ismaaeel عليه السلام.",
+        "Many divine events marked his birth: a bright star seen by a Jew in Madeenah, the extinguishing of a sacred fire that had burned for a thousand years in Persia, and a great light seen as far as Syria.",
+        "An angel told Aaminah to name the boy 'Ahmad' (the Praised One); the joyful Abdul Muttaalib took the infant to the Kaabah and thanked Allah."
+      ],
+      "story": "When Abrahah's mighty army of elephants advanced on Makkah to destroy the Kaabah, Allah sent flocks of small birds carrying stones in their beaks and claws. The stones rained down upon the army and destroyed them — and so the year became known as the Year of the Elephants, the very year Rasoolullah ﷺ was born.",
+      "questions": [
+        {
+          "id": "tk-l2-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Which two hills were close to the well of Zam Zam?",
+          "options": [
+            "Safa and Marwah",
+            "Uhad and Thoor",
+            "Heera and Noor",
+            "Safa and Heera"
+          ],
+          "correctAnswer": "Safa and Marwah",
+          "explanation": "Sayyiditina Haajirah رضي الله عنها searched between Safa and Marwah, where the Zam Zam spring appeared."
+        },
+        {
+          "id": "tk-l2-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What did Abrahah-bin-Saba intend to do?",
+          "options": [
+            "Destroy the Kaabah",
+            "Rebuild Zam Zam",
+            "Trade in Syria",
+            "Marry into Banoo Hasheem"
+          ],
+          "correctAnswer": "Destroy the Kaabah",
+          "explanation": "Abrahah, governor of Yemen, came with an army of elephants to destroy the Kaabah but was destroyed by Allah."
+        },
+        {
+          "id": "tk-l2-q3",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Rasoolullah ﷺ was born after his father Abdullah had passed away.",
+          "correctAnswer": true,
+          "explanation": "Yes — Abdullah died at Yathrib before the Prophet's ﷺ birth."
+        },
+        {
+          "id": "tk-l2-q4",
+          "type": "match",
+          "difficulty": "medium",
+          "prompt": "Match each item to its description:",
+          "pairs": [
+            {
+              "left": "Yathrib",
+              "right": "Another name for Madeenah"
+            },
+            {
+              "left": "Aaminah",
+              "right": "From the Banoo Zuhra"
+            },
+            {
+              "left": "Banoo Zuhra",
+              "right": "Linked with Sayyidina Ismaaeel عليه السلام"
+            },
+            {
+              "left": "Abdullah's death",
+              "right": "Took place in Madeenah"
+            }
+          ],
+          "explanation": "Yathrib is Madeenah; Aaminah was of Banoo Zuhra, whose line links to Ismaaeel عليه السلام; Abdullah died there."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "tk-l2-f1",
+          "front": "Who uncovered the well of Zam Zam?",
+          "back": "Abdul Muttaalib (with his son Haarith)."
+        },
+        {
+          "id": "tk-l2-f2",
+          "front": "What is the Year of the Elephants?",
+          "back": "The year Abrahah's army of elephants was destroyed — the year Rasoolullah ﷺ was born."
+        },
+        {
+          "id": "tk-l2-f3",
+          "front": "What name did the angel tell Aaminah to give her son?",
+          "back": "Ahmad — the Praised One."
+        }
+      ]
     },
     {
       "id": "g5-tareekh-l3",
       "n": 3,
       "title": "Childhood",
       "pages": "16-19",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
+      "arabic": null,
+      "transliteration": null,
+      "translation": null,
+      "source": null,
+      "summary": "As an infant Rasoolullah ﷺ was suckled by Thuwaybah and then by Haleemah of the Banoo Sa'ad, in whose home there was great barakah. The splitting of his blessed chest took place, and by the age of eight he had lost his mother and grandfather.",
+      "keyTerms": [
+        {
+          "term": "Aqeeqah",
+          "meaning": "The sacrifice offered in thanks for a newborn child."
+        },
+        {
+          "term": "Foster brother",
+          "meaning": "A boy suckled by the same woman; Hamza رضي الله عنه was the Prophet's ﷺ."
+        }
+      ],
+      "points": [
+        "He ﷺ was first suckled for seven days by Thuwaybah, the freed slave of Aboo Lahab; Sayyidina Hamza رضي الله عنه was also suckled by her and so became his foster brother.",
+        "On the seventh day Abdul Muttaalib offered an aqeeqah and invited the Quraish to a feast.",
+        "On the eighth day he was given to Sayyiditina Haleemah رضي الله عنها of the Banoo Sa'ad; the Arabs sent children to the countryside to grow strong and learn the pure Bedouin Arabic, which was considered superior to that of the city.",
+        "Since the Prophet ﷺ joined her, there was barakah and prosperity in Haleemah's home; her animals gained weight and gave milk in abundance.",
+        "While in her care, two persons in white split open his chest and removed something from his heart, leaving no mark; afterwards she returned him to his mother.",
+        "At six, Aaminah took him to Yathrib and passed away at Abwa on the return; Abdul Muttaalib cared for him for two years and then passed away when the Prophet ﷺ was eight."
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
-      "needsReview": false
+      "questions": [
+        {
+          "id": "tk-l3-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Who suckled Rasoolullah ﷺ for the first seven days?",
+          "options": [
+            "Thuwaybah",
+            "Haleemah",
+            "Aaminah",
+            "Haajirah"
+          ],
+          "correctAnswer": "Thuwaybah",
+          "explanation": "Thuwaybah, the freed slave of Aboo Lahab, suckled him for seven days."
+        },
+        {
+          "id": "tk-l3-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "To which tribe did Sayyiditina Haleemah belong?",
+          "options": [
+            "Banoo Sa'ad",
+            "Banoo Zuhra",
+            "Banoo Hasheem",
+            "Banoo Tameem"
+          ],
+          "correctAnswer": "Banoo Sa'ad",
+          "explanation": "Haleemah رضي الله عنها was of the Banoo Sa'ad."
+        },
+        {
+          "id": "tk-l3-q3",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "The language of the countryside was considered superior to that of the city.",
+          "correctAnswer": true,
+          "explanation": "Yes — children were sent to the countryside partly to learn the pure Arabic of the Bedouin."
+        },
+        {
+          "id": "tk-l3-q4",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "How old was Rasoolullah ﷺ when Abdul Muttaalib passed away?",
+          "options": [
+            "Eight",
+            "Six",
+            "Four",
+            "Twelve"
+          ],
+          "correctAnswer": "Eight",
+          "explanation": "Aaminah died when he was six; Abdul Muttaalib then cared for him for two years and died when he was eight."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "tk-l3-f1",
+          "front": "Who became the Prophet's ﷺ foster brother?",
+          "back": "Sayyidina Hamza رضي الله عنه, also suckled by Thuwaybah."
+        },
+        {
+          "id": "tk-l3-f2",
+          "front": "What is an aqeeqah?",
+          "back": "A sacrifice and feast offered for a newborn child."
+        },
+        {
+          "id": "tk-l3-f3",
+          "front": "Where did Aaminah pass away?",
+          "back": "At Abwa, on the return journey from Yathrib."
+        }
+      ]
     },
     {
       "id": "g5-tareekh-l4",
       "n": 4,
       "title": "First Journey to Syria",
       "pages": "20-21",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
+      "arabic": null,
+      "transliteration": null,
+      "translation": null,
+      "source": null,
+      "summary": "Aboo Taalib became the guardian of Rasoolullah ﷺ and took him on a trade journey to Syria. At Basra the monk Buhayra recognised the signs of prophethood and warned Aboo Taalib to protect the boy from the Jews.",
+      "keyTerms": [
+        {
+          "term": "Blood brother",
+          "meaning": "A brother by birth; Abdullah and Aboo Taalib were blood brothers."
+        },
+        {
+          "term": "Monk",
+          "meaning": "A devout Christian; Buhayra was a monk at Basra."
+        },
+        {
+          "term": "Ambiyaa",
+          "meaning": "The prophets of Allah (plural of Nabee)."
+        }
+      ],
+      "points": [
+        "Abdul Muttaalib wished his son Aboo Taalib to become the Prophet's ﷺ guardian, because Abdullah was Aboo Taalib's blood brother and Aboo Taalib loved him dearly.",
+        "Aboo Taalib protected him and let no one harm him; unlike other boys, Rasoolullah ﷺ was polite, respectful and pious, and he helped pass the stones when the Kaabah was being repaired.",
+        "At twelve he accompanied Aboo Taalib on a trade journey to Syria; at Basra, a caravan stop, the Christian monk Buhayra recognised him as the promised 'Last of all the Ambiyaa'.",
+        "Buhayra pointed out the seal of prophethood on his back and warned Aboo Taalib that the Jews would harm him if he went on to Syria.",
+        "Aboo Taalib quickly sold his goods and returned to Makkah; though he had not reached Syria as planned, he made a large profit, which he attributed to the company of Rasoolullah ﷺ."
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
-      "needsReview": false
+      "questions": [
+        {
+          "id": "tk-l4-q1",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Rasoolullah ﷺ accompanied Aboo Taalib on a trade journey to Iran.",
+          "correctAnswer": false,
+          "explanation": "False — the journey was to Syria, not Iran."
+        },
+        {
+          "id": "tk-l4-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Who recognised the Prophet ﷺ as the 'Last of all the Ambiyaa' at Basra?",
+          "options": [
+            "Buhayra",
+            "Nasturaa",
+            "Waraqah-bin-Nawfal",
+            "Maysarah"
+          ],
+          "correctAnswer": "Buhayra",
+          "explanation": "The monk Buhayra recognised the signs of prophethood at Basra."
+        },
+        {
+          "id": "tk-l4-q3",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What did Buhayra point out on the Prophet's ﷺ back?",
+          "options": [
+            "The seal of prophethood",
+            "A star",
+            "A picture",
+            "A scar"
+          ],
+          "correctAnswer": "The seal of prophethood",
+          "explanation": "He pointed out the seal of prophethood between his shoulders."
+        },
+        {
+          "id": "tk-l4-q4",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Sayyidina Abdullah was Aboo Taalib's blood brother.",
+          "correctAnswer": true,
+          "explanation": "Yes — that was a reason Abdul Muttaalib chose Aboo Taalib as guardian."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "tk-l4-f1",
+          "front": "Who became the guardian of Rasoolullah ﷺ after Abdul Muttaalib?",
+          "back": "His uncle Aboo Taalib."
+        },
+        {
+          "id": "tk-l4-f2",
+          "front": "What was Basra?",
+          "back": "A caravan stop-over near Syria, where Buhayra met the Prophet ﷺ."
+        },
+        {
+          "id": "tk-l4-f3",
+          "front": "Who would have harmed the Prophet ﷺ in Syria?",
+          "back": "The Jews — so Aboo Taalib returned to Makkah."
+        }
+      ]
     },
     {
       "id": "g5-tareekh-l5",
       "n": 5,
       "title": "Youth",
       "pages": "22-23",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
+      "arabic": null,
+      "transliteration": null,
+      "translation": null,
+      "source": null,
+      "summary": "As a young man Rasoolullah ﷺ had no equal in Makkah for character. He kept away from sin and entertainment, took to trade, helped re-establish the Hilf-ul-Fudul, and was famed for keeping his word.",
+      "keyTerms": [
+        {
+          "term": "Harb-ul-Fujaar",
+          "meaning": "A war between the Quraish and Banoo Qays."
+        },
+        {
+          "term": "Hilf-ul-Fudul",
+          "meaning": "The Pledge of Virtues to protect the weak and keep peace."
+        },
+        {
+          "term": "As-Saadiq / Al-Ameen",
+          "meaning": "The Truthful / The Trustworthy."
+        }
+      ],
+      "points": [
+        "He ﷺ kept away from the pleasures and entertainment of the youth; he was of excellent character, very shy, respected by all, and had no enemies.",
+        "During the war Harb-ul-Fujaar between the Quraish and Banoo Qays, his only role was to gather the enemy's arrows for the Qurashi fighters — he did not fight.",
+        "He took great interest in trade from an early age, encouraged by Aboo Taalib who took him on journeys.",
+        "He never partook of any sinful act, and helped re-establish the Hilf-ul-Fudul (Pledge of Virtues): to keep peace among tribes, protect travellers, help the poor and needy, and protect the weak from oppressors.",
+        "His truthfulness was famous: when Abdullah-ibn-Abi-Al-Hamsar asked him to wait, he waited patiently for three days until the man returned."
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
-      "needsReview": false
+      "questions": [
+        {
+          "id": "tk-l5-q1",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Rasoolullah ﷺ loved pleasures and entertainment as a youth.",
+          "correctAnswer": false,
+          "explanation": "False — he kept himself away from all pleasures and entertainment."
+        },
+        {
+          "id": "tk-l5-q2",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "He ﷺ took an active part in tribal fighting.",
+          "correctAnswer": false,
+          "explanation": "False — in Harb-ul-Fujaar his only role was to gather the enemy's arrows."
+        },
+        {
+          "id": "tk-l5-q3",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What was the Hilf-ul-Fudul?",
+          "options": [
+            "The Pledge of Virtues",
+            "A trade caravan",
+            "A war between tribes",
+            "A type of salaah"
+          ],
+          "correctAnswer": "The Pledge of Virtues",
+          "explanation": "It was an institution to keep peace, protect travellers, help the needy and protect the weak."
+        },
+        {
+          "id": "tk-l5-q4",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Why was the Prophet ﷺ known as As-Saadiq and Al-Ameen?",
+          "options": [
+            "For his truthfulness and trustworthiness",
+            "For his wealth",
+            "For his fighting",
+            "For his poetry"
+          ],
+          "correctAnswer": "For his truthfulness and trustworthiness",
+          "explanation": "As-Saadiq means 'the Truthful' and Al-Ameen means 'the Trustworthy'."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "tk-l5-f1",
+          "front": "Name the four aims of the Hilf-ul-Fudul.",
+          "back": "Keep peace among tribes; protect travellers; help the poor and needy; protect the weak from oppressors."
+        },
+        {
+          "id": "tk-l5-f2",
+          "front": "How did the Prophet ﷺ show he kept his promise?",
+          "back": "He waited three days for Abdullah-ibn-Abi-Al-Hamsar to return."
+        },
+        {
+          "id": "tk-l5-f3",
+          "front": "What two titles was he given?",
+          "back": "As-Saadiq (the Truthful) and Al-Ameen (the Trustworthy)."
+        }
+      ]
     },
     {
       "id": "g5-tareekh-l6",
       "n": 6,
       "title": "Building of the Kaabah",
       "pages": "24-27",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
+      "arabic": null,
+      "transliteration": null,
+      "translation": null,
+      "source": null,
+      "summary": "The Kaabah, built by Ibraaheem عليه السلام and Ismaaeel عليه السلام, was rebuilt by the Quraish after a fire. When tribes nearly fought over who would place the Black Stone, the young Al-Ameen ﷺ solved it wisely, aged 35.",
+      "keyTerms": [
+        {
+          "term": "Circumambulation (Tawaaf)",
+          "meaning": "Circling the Kaabah in worship."
+        },
+        {
+          "term": "Hajre Aswad",
+          "meaning": "The Black Stone of the Kaabah."
+        },
+        {
+          "term": "Period of ignorance",
+          "meaning": "The age of jaahiliyyah before Islam."
+        }
+      ],
+      "points": [
+        "Since the time of Ibraaheem عليه السلام, Makkah was the 'City of Peace' and the Kaabah was Baitullah ('House of Allah'), a neutral meeting place for trade, tawaaf and pilgrimage.",
+        "Rasoolullah ﷺ reported that the Hajre Aswad (Black Stone) descended from Jannah whiter than milk, and the sins of man caused it to become black.",
+        "After a fire damaged the Kaabah, the Quraish rebuilt it; Waleed bin Mugheera began the work, using timber from a wrecked ship bought at Jeddah.",
+        "Placing the Black Stone became a touchy issue — each tribe wanted the honour and daggers were nearly drawn. A wise old man, Aboo Umayah, suggested the first to enter the sanctuary next morning should decide.",
+        "The first to enter was Rasoolullah ﷺ; a shout of 'Al-Ameen!' rose up. He spread a sheet, placed the Stone on it, and had each tribal leader lift an edge; then he set the Stone in its corner with his own hands — preventing a war. He was 35 years old."
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
-      "needsReview": false
+      "questions": [
+        {
+          "id": "tk-l6-q1",
+          "type": "match",
+          "difficulty": "medium",
+          "prompt": "Match the following:",
+          "pairs": [
+            {
+              "left": "Sayyidina Ismaaeel عليه السلام",
+              "right": "Son of Ibraaheem عليه السلام"
+            },
+            {
+              "left": "The Kaabah",
+              "right": "A neutral meeting place"
+            },
+            {
+              "left": "Replacing the Hajre Aswad",
+              "right": "Became a touchy issue"
+            },
+            {
+              "left": "Jeddah",
+              "right": "The nearest port to Makkah"
+            }
+          ],
+          "explanation": "Ismaaeel was Ibraaheem's son; the Kaabah was a neutral meeting place; placing the Stone nearly caused conflict; Jeddah is the nearest port."
+        },
+        {
+          "id": "tk-l6-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Who said the Hajre Aswad came from Jannah whiter than milk?",
+          "options": [
+            "Rasoolullah ﷺ",
+            "Ibn Abbaas رضي الله عنه",
+            "Waleed bin Mugheera",
+            "Aboo Umayah"
+          ],
+          "correctAnswer": "Rasoolullah ﷺ",
+          "explanation": "Rasoolullah ﷺ said it, as reported by Ibn Abbaas رضي الله عنه."
+        },
+        {
+          "id": "tk-l6-q3",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "How old was Rasoolullah ﷺ when he placed the Black Stone?",
+          "options": [
+            "35",
+            "25",
+            "40",
+            "23"
+          ],
+          "correctAnswer": "35",
+          "explanation": "He ﷺ was thirty-five years old at the time of this incident."
+        },
+        {
+          "id": "tk-l6-q4",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Tawaaf is also known as circumambulation.",
+          "correctAnswer": true,
+          "explanation": "Yes — tawaaf means circling the Kaabah, i.e. circumambulation."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "tk-l6-f1",
+          "front": "Who built the Kaabah originally?",
+          "back": "Ibraaheem عليه السلام and his son Ismaaeel عليه السلام."
+        },
+        {
+          "id": "tk-l6-f2",
+          "front": "How did the Prophet ﷺ settle the dispute?",
+          "back": "He placed the Stone on a sheet and had each tribal leader lift an edge together."
+        },
+        {
+          "id": "tk-l6-f3",
+          "front": "What is the Hajre Aswad?",
+          "back": "The Black Stone, set in the corner of the Kaabah."
+        }
+      ]
+    },
+    {
+      "id": "g5-tareekh-l7",
+      "n": 7,
+      "title": "Adulthood",
+      "pages": "28-31",
+      "arabic": null,
+      "transliteration": null,
+      "translation": null,
+      "source": null,
+      "summary": "Khadeejah رضي الله عنها, a wealthy businesswoman, employed Rasoolullah ﷺ for a trade journey to Syria that brought great profit. His noble character shone in caring for relatives and in freeing and adopting Zaid رضي الله عنه.",
+      "keyTerms": [
+        {
+          "term": "Caravan",
+          "meaning": "A group of traders travelling together."
+        },
+        {
+          "term": "Famine",
+          "meaning": "A severe shortage of food."
+        },
+        {
+          "term": "Scriptures",
+          "meaning": "The earlier holy books, in which the Prophet's ﷺ coming was foretold."
+        }
+      ],
+      "points": [
+        "Sayyiditina Khadeejah-binte-Khuaylid رضي الله عنها was a rich businesswoman whose trade reached Syria, Iraq and Yemen; amazed by his character, she sent her nephew Qatima to ask the Prophet ﷺ to trade for her.",
+        "He set out on a second journey to Syria with her slave Maysarah; the monk Nasturaa again declared him the expected 'Last of all the Ambiyaa', and the journey was very profitable.",
+        "When famine struck, he took Sayyidina Ali-ibn-Aboo Taalib رضي الله عنه into his care to relieve Aboo Taalib, while Abbaas رضي الله عنه cared for Jafar رضي الله عنه.",
+        "Zaid-bin-Haarith رضي الله عنه, a slave given by Khadeejah رضي الله عنها, was freed by the Prophet ﷺ; when Zaid chose to stay rather than leave, the Prophet ﷺ proclaimed him his own son before the people of Makkah."
+      ],
+      "story": null,
+      "questions": [
+        {
+          "id": "tk-l7-q1",
+          "type": "match",
+          "difficulty": "medium",
+          "prompt": "Match the following:",
+          "pairs": [
+            {
+              "left": "Rasoolullah's ﷺ trade mission",
+              "right": "Proved very profitable"
+            },
+            {
+              "left": "Sayyidina Abbaas",
+              "right": "Cared for Jafar-bin-Aboo Taalib"
+            },
+            {
+              "left": "Sayyidina Ali",
+              "right": "Cared for by Rasoolullah ﷺ"
+            },
+            {
+              "left": "Zaid bin Haarith",
+              "right": "A slave given to Rasoolullah ﷺ"
+            }
+          ],
+          "explanation": "The trade was profitable; Abbaas cared for Jafar; the Prophet ﷺ cared for Ali; Zaid was a slave given to him."
+        },
+        {
+          "id": "tk-l7-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Who sent Rasoolullah ﷺ on a trade journey to Syria?",
+          "options": [
+            "Khadeejah رضي الله عنها",
+            "Aboo Taalib",
+            "Abdul Muttaalib",
+            "Maysarah"
+          ],
+          "correctAnswer": "Khadeejah رضي الله عنها",
+          "explanation": "Khadeejah رضي الله عنها employed him for the journey on her behalf."
+        },
+        {
+          "id": "tk-l7-q3",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What did Rasoolullah ﷺ do for Zaid-bin-Haarith رضي الله عنه?",
+          "options": [
+            "Freed him and proclaimed him his son",
+            "Sold him",
+            "Sent him to Syria",
+            "Made him a guard"
+          ],
+          "correctAnswer": "Freed him and proclaimed him his son",
+          "explanation": "The Prophet ﷺ freed Zaid and proclaimed him his own son before the people of Makkah."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "tk-l7-f1",
+          "front": "Who was Maysarah?",
+          "back": "Khadeejah's رضي الله عنها slave who travelled with the Prophet ﷺ to Syria."
+        },
+        {
+          "id": "tk-l7-f2",
+          "front": "Who was Nasturaa?",
+          "back": "A monk who declared the Prophet ﷺ the expected last of the prophets."
+        },
+        {
+          "id": "tk-l7-f3",
+          "front": "Whom did the Prophet ﷺ take into his care during the famine?",
+          "back": "Sayyidina Ali-ibn-Aboo Taalib رضي الله عنه."
+        }
+      ]
     },
     {
       "id": "g5-tareekh-l8",
       "n": 8,
       "title": "Marriage",
       "pages": "32-35",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
+      "arabic": null,
+      "transliteration": null,
+      "translation": null,
+      "source": null,
+      "summary": "Won over by his character, Khadeejah رضي الله عنها sent a marriage proposal through two friends. Aboo Taalib performed the Nikah; she was forty and he ﷺ was twenty-five. They were blessed with two sons and four daughters.",
+      "keyTerms": [
+        {
+          "term": "Mahr (dowry)",
+          "meaning": "The gift the husband gives the wife at marriage."
+        },
+        {
+          "term": "Wakeel",
+          "meaning": "A representative; Umar-bin-Asad was Khadeejah's رضي الله عنها wakeel."
+        },
+        {
+          "term": "Khutbah",
+          "meaning": "A sermon."
+        }
+      ],
+      "points": [
+        "Khadeejah رضي الله عنها — pretty, rich and widowed — declined the Quraish noblemen and sent a marriage proposal to the Prophet ﷺ through her friends Aatikah and Nafeesah.",
+        "As a mark of respect he consulted Aboo Taalib, who gladly accepted; she was forty and he ﷺ was twenty-five.",
+        "Aboo Taalib performed the Nikah and delivered the khutbah; Waraqah-bin-Nawfal رضي الله عنه also gave a khutbah, and Umar-bin-Asad represented Khadeejah رضي الله عنها as her wakeel.",
+        "The Mahr (dowry) was four hundred misqaal of gold; thus the 'proposal' and 'acceptance' of the Nikah were completed.",
+        "They had two sons, Qasim and Abdullah (who died in childhood), and four daughters: Zainab, Ruqayya, Umme-Kulthum and Faatimah رضي الله عنهن."
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
-      "needsReview": false
+      "questions": [
+        {
+          "id": "tk-l8-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "How old was Sayyiditina Khadeejah رضي الله عنها at the marriage?",
+          "options": [
+            "Forty",
+            "Twenty-five",
+            "Thirty",
+            "Fifty"
+          ],
+          "correctAnswer": "Forty",
+          "explanation": "She was forty and Rasoolullah ﷺ was twenty-five."
+        },
+        {
+          "id": "tk-l8-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What is Mahr?",
+          "options": [
+            "A dowry",
+            "Wages",
+            "A fee",
+            "A gift to guests"
+          ],
+          "correctAnswer": "A dowry",
+          "explanation": "Mahr is the dowry given by the husband to the wife."
+        },
+        {
+          "id": "tk-l8-q3",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "A 'proposal' and an 'acceptance' are necessary for a Nikah.",
+          "correctAnswer": true,
+          "explanation": "Yes — the Nikah is completed by proposal and acceptance."
+        },
+        {
+          "id": "tk-l8-q4",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "How many daughters did Rasoolullah ﷺ and Khadeejah رضي الله عنها have?",
+          "options": [
+            "Four",
+            "Two",
+            "Three",
+            "Five"
+          ],
+          "correctAnswer": "Four",
+          "explanation": "Four daughters: Zainab, Ruqayya, Umme-Kulthum and Faatimah رضي الله عنهن."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "tk-l8-f1",
+          "front": "Who performed the Nikah?",
+          "back": "Aboo Taalib, who also delivered the khutbah."
+        },
+        {
+          "id": "tk-l8-f2",
+          "front": "What is a khutbah?",
+          "back": "A sermon."
+        },
+        {
+          "id": "tk-l8-f3",
+          "front": "Name the two sons of the Prophet ﷺ from Khadeejah رضي الله عنها.",
+          "back": "Qasim and Abdullah, both of whom died in childhood."
+        }
+      ]
+    },
+    {
+      "id": "g5-tareekh-l9",
+      "n": 9,
+      "title": "Search for Truth",
+      "pages": "36-37",
+      "arabic": null,
+      "transliteration": null,
+      "translation": null,
+      "source": null,
+      "summary": "From the age of thirty-three, Rasoolullah ﷺ was drawn to solitude and the contemplation of Allah. He disliked idols and polytheism and retired to the Cave of Heera, where Divine dreams came to him for years.",
+      "keyTerms": [
+        {
+          "term": "Noor",
+          "meaning": "Divine light."
+        },
+        {
+          "term": "Polytheism",
+          "meaning": "Worship of more than one god (shirk)."
+        },
+        {
+          "term": "Tendency to be alone",
+          "meaning": "His love of solitude for worship and contemplation."
+        }
+      ],
+      "points": [
+        "At thirty-three he longed to be alone in deep thought and was drawn towards contemplation of the Great Creator, Allah; an ever-present light (Noor) gladdened his heart.",
+        "He disliked the worship of idols, denounced polytheism, and abstained from food offered to idols.",
+        "At forty his desire for solitude grew stronger; he retired to the Cave of Heera, about five kilometres from Makkah, which was only about three metres by two metres.",
+        "On his visits he took only barley bread and water, and was always engaged in prayer and contemplation.",
+        "He had Divine dreams of things to come; over seven years these dreams became a regular part of his life."
+      ],
+      "story": null,
+      "questions": [
+        {
+          "id": "tk-l9-q1",
+          "type": "match",
+          "difficulty": "medium",
+          "prompt": "Match the following:",
+          "pairs": [
+            {
+              "left": "Polytheism",
+              "right": "Worship of more than one god"
+            },
+            {
+              "left": "Idols",
+              "right": "False gods"
+            },
+            {
+              "left": "The Cave of Heera",
+              "right": "Small in size"
+            },
+            {
+              "left": "His food at the cave",
+              "right": "Barley bread and water"
+            }
+          ],
+          "explanation": "Polytheism is worship of many gods; idols are false gods; the cave was small; he took barley bread and water."
+        },
+        {
+          "id": "tk-l9-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What is 'Noor'?",
+          "options": [
+            "Divine light",
+            "Moonlight",
+            "Sunlight",
+            "Firelight"
+          ],
+          "correctAnswer": "Divine light",
+          "explanation": "Noor is divine light; an ever-present Noor gladdened his heart."
+        },
+        {
+          "id": "tk-l9-q3",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Rasoolullah ﷺ ate food that had been offered to idols.",
+          "correctAnswer": false,
+          "explanation": "False — he abstained from any food offered to idols."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "tk-l9-f1",
+          "front": "Where did the Prophet ﷺ retire for solitude?",
+          "back": "The Cave of Heera, about five kilometres from Makkah."
+        },
+        {
+          "id": "tk-l9-f2",
+          "front": "What did he take with him to the cave?",
+          "back": "Only barley bread and water."
+        },
+        {
+          "id": "tk-l9-f3",
+          "front": "What is polytheism?",
+          "back": "The worship of more than one god."
+        }
+      ]
     },
     {
       "id": "g5-tareekh-l10",
       "n": 10,
       "title": "Prophethood",
       "pages": "38-41",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
+      "arabic": null,
+      "transliteration": null,
+      "translation": null,
+      "source": null,
+      "summary": "In the Cave of Heera the angel Jibraaeel عليه السلام commanded him to 'Read', and the first revelation came. Khadeejah رضي الله عنها comforted him, and the first believers embraced Islam.",
+      "keyTerms": [
+        {
+          "term": "Wahee",
+          "meaning": "Divine revelation from Allah."
+        },
+        {
+          "term": "Clot of blood",
+          "meaning": "Mentioned in the first revelation: Allah created man from a clot of blood."
+        }
+      ],
+      "points": [
+        "At forty, an angel appeared in the Cave of Heera and commanded 'Read'; three times he replied he could not, until the angel recited: 'Read, in the name of Allah who created… who taught man by the pen that which he did not know.'",
+        "Shaken, he hurried home and asked Khadeejah رضي الله عنها to cover him; she comforted him, saying Allah would never forsake him because he was loving, helpful, truthful, of excellent character and just.",
+        "She took him to her aging cousin Waraqah-bin-Nawfal رضي الله عنه, who confirmed the signs of prophethood and warned that his own people would persecute him.",
+        "The first to accept Islam were: Khadeejah رضي الله عنها (first woman and first of all), Aboo Bakr رضي الله عنه (first man), Ali رضي الله عنه (the young cousin) and Zaid-bin-Haarith رضي الله عنه (the freed slave).",
+        "Through Aboo Bakr رضي الله عنه, others embraced Islam: Uthmaan, Talha, Sa'ad-ibn-Abi Waqqas, Abdur Rahmaan-bin-Auf and Zubayr-bin-Awwam رضي الله عنهم."
+      ],
+      "story": "In the stillness of the Cave of Heera the angel Jibraaeel عليه السلام appeared and said, 'Read.' 'I cannot read,' the Prophet ﷺ replied. The angel embraced him firmly, released him, and again said 'Read' — three times — until he recited the first words of the Qur'aan. Trembling, the Prophet ﷺ hurried home to Khadeejah رضي الله عنها, who wrapped him in a blanket and comforted him with words of certainty that Allah would never forsake him.",
+      "questions": [
+        {
+          "id": "tk-l10-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What was the first word the angel commanded?",
+          "options": [
+            "Read",
+            "Pray",
+            "Fast",
+            "Stand"
+          ],
+          "correctAnswer": "Read",
+          "explanation": "The angel commanded 'Read' (Iqra) three times."
+        },
+        {
+          "id": "tk-l10-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Who was the first man to accept Islam?",
+          "options": [
+            "Sayyidina Aboo Bakr رضي الله عنه",
+            "Sayyidina Ali رضي الله عنه",
+            "Sayyidina Umar رضي الله عنه",
+            "Sayyidina Hamza رضي الله عنه"
+          ],
+          "correctAnswer": "Sayyidina Aboo Bakr رضي الله عنه",
+          "explanation": "Khadeejah رضي الله عنها was the first of all; Aboo Bakr رضي الله عنه was the first man."
+        },
+        {
+          "id": "tk-l10-q3",
+          "type": "match",
+          "difficulty": "medium",
+          "prompt": "Match each person to their relationship with the Prophet ﷺ:",
+          "pairs": [
+            {
+              "left": "Waraqah-bin-Nawfal",
+              "right": "Khadeejah's cousin"
+            },
+            {
+              "left": "Aboo Bakr رضي الله عنه",
+              "right": "His close friend"
+            },
+            {
+              "left": "Ali رضي الله عنه",
+              "right": "His young cousin"
+            },
+            {
+              "left": "Zaid رضي الله عنه",
+              "right": "His freed slave"
+            }
+          ],
+          "explanation": "Waraqah was Khadeejah's cousin; Aboo Bakr his close friend; Ali his cousin; Zaid his freed slave."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "tk-l10-f1",
+          "front": "Who was the first woman, and first of all, to accept Islam?",
+          "back": "Sayyiditina Khadeejah رضي الله عنها."
+        },
+        {
+          "id": "tk-l10-f2",
+          "front": "Who confirmed the signs of prophethood?",
+          "back": "Waraqah-bin-Nawfal رضي الله عنه, Khadeejah's aging cousin."
+        },
+        {
+          "id": "tk-l10-f3",
+          "front": "Where did the first revelation come?",
+          "back": "In the Cave of Heera (Jabl-e-Noor)."
+        }
+      ]
+    },
+    {
+      "id": "g5-tareekh-l11",
+      "n": 11,
+      "title": "Preaching",
+      "pages": "42-45",
+      "arabic": null,
+      "transliteration": null,
+      "translation": null,
+      "source": null,
+      "summary": "For three years the Prophet ﷺ preached secretly, supported by Aboo Bakr رضي الله عنه. When commanded to preach openly from Mount Safa, Aboo Lahab cursed him and Surah Lahab was revealed. He then taught at Dar-ul-Arqam.",
+      "keyTerms": [
+        {
+          "term": "Dar-ul-Arqam",
+          "meaning": "The house of Al-Arqam, the first centre of Islamic learning."
+        },
+        {
+          "term": "Aboo Lahab",
+          "meaning": "An uncle of the Prophet ﷺ and a fierce enemy of Islam."
+        }
+      ],
+      "points": [
+        "At first he ﷺ preached secretly among relatives and friends; Aboo Bakr رضي الله عنه was a pillar of strength.",
+        "For three years the small group practised in secret in the valleys and ravines; gradually others, disgusted with idolatry, joined Islam, while the Quraish mocked the new religion.",
+        "The first violent clash came when the Quraish tried to stop Muslims praying in a valley; Sayyidina Sa'ad-bin-Waqqas رضي الله عنه drew his sword and one of the Quraish was wounded.",
+        "Aboo Taalib, finding the Muslims at salaah, was invited to Islam but politely declined, not wishing to forsake the religion of his ancestors.",
+        "Commanded to preach openly, he ﷺ addressed the tribes from Mount Safa; Aboo Lahab cursed him and Allah revealed Surah 'Lahab'. He then preached regularly at Dar-ul-Arqam, the house of Al-Arqam near the foothills of Safa."
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
-      "needsReview": false
+      "questions": [
+        {
+          "id": "tk-l11-q1",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "From the very beginning, the Muslims preached openly.",
+          "correctAnswer": false,
+          "explanation": "False — they preached secretly for the first three years."
+        },
+        {
+          "id": "tk-l11-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "From where did Rasoolullah ﷺ first preach openly?",
+          "options": [
+            "The top of Mount Safa",
+            "Mount Uhad",
+            "The Cave of Heera",
+            "Masjidul Aqsa"
+          ],
+          "correctAnswer": "The top of Mount Safa",
+          "explanation": "He addressed the tribes of Makkah from the top of Mount Safa."
+        },
+        {
+          "id": "tk-l11-q3",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Which Surah was revealed when Aboo Lahab cursed the Prophet ﷺ?",
+          "options": [
+            "Surah Lahab",
+            "Surah Feel",
+            "Surah Kahf",
+            "Surah Naas"
+          ],
+          "correctAnswer": "Surah Lahab",
+          "explanation": "Allah revealed Surah 'Lahab' after Aboo Lahab cursed him."
+        },
+        {
+          "id": "tk-l11-q4",
+          "type": "match",
+          "difficulty": "medium",
+          "prompt": "Match the following:",
+          "pairs": [
+            {
+              "left": "Aboo Bakr رضي الله عنه",
+              "right": "The Prophet's ﷺ close friend"
+            },
+            {
+              "left": "Aboo Lahab",
+              "right": "Enemy of the Muslims"
+            },
+            {
+              "left": "Dar-ul-Arqam",
+              "right": "Place of learning at Safa"
+            },
+            {
+              "left": "The Quraish",
+              "right": "Scoffed at Islam"
+            }
+          ],
+          "explanation": "Aboo Bakr was his close friend; Aboo Lahab an enemy; Dar-ul-Arqam the learning place; the Quraish mocked Islam."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "tk-l11-f1",
+          "front": "What was Dar-ul-Arqam?",
+          "back": "The house of Al-Arqam near Safa, used as the first place of learning."
+        },
+        {
+          "id": "tk-l11-f2",
+          "front": "Who was a pillar of strength in the early preaching?",
+          "back": "Sayyidina Aboo Bakr رضي الله عنه."
+        },
+        {
+          "id": "tk-l11-f3",
+          "front": "How did Aboo Taalib respond to the call of Islam?",
+          "back": "He politely declined, not wishing to forsake his ancestors' religion."
+        }
+      ]
+    },
+    {
+      "id": "g5-tareekh-l12",
+      "n": 12,
+      "title": "Two Loyal and Courageous Friends",
+      "pages": "46-49",
+      "arabic": null,
+      "transliteration": null,
+      "translation": null,
+      "source": null,
+      "summary": "When Aboo Jahl injured the Prophet ﷺ, the brave Hamza رضي الله عنه embraced Islam. Soon after, Umar رضي الله عنه, who set out to kill the Prophet ﷺ, was changed by the Qur'aan and also became a Muslim.",
+      "keyTerms": [
+        {
+          "term": "Temperamental",
+          "meaning": "Quick-tempered; people avoided clashing with Umar رضي الله عنه."
+        },
+        {
+          "term": "Unsheathed",
+          "meaning": "A sword drawn out of its cover."
+        },
+        {
+          "term": "Persecuted",
+          "meaning": "Cruelly treated for one's beliefs."
+        }
+      ],
+      "points": [
+        "Aboo Jahl, a sworn enemy, abused and then struck Rasoolullah ﷺ with a stone near Safa, wounding his head.",
+        "Sayyidina Hamza رضي الله عنه — the Prophet's ﷺ uncle and foster brother, and one of Arabia's bravest — returned from hunting, heard of it, struck Aboo Jahl, and then embraced Islam.",
+        "Sayyidina Umar رضي الله عنه was strong and temperamental; tempted by Aboo Jahl's reward of a hundred camels and a thousand silver coins, he set out with an unsheathed sword to assassinate the Prophet ﷺ.",
+        "On the way, Nuaym bin Abdullah told him to first set his own house in order: his sister Faatimah رضي الله عنها and her husband Saeed-bin-Zayd رضي الله عنه had secretly become Muslims.",
+        "Hearing them recite the Qur'aan, Umar رضي الله عنه beat them, then asked to hear it; moved by the recital he went to Dar-ul-Arqam and accepted Islam — in the sixth year of Nubuwwat."
+      ],
+      "story": null,
+      "questions": [
+        {
+          "id": "tk-l12-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Who was the sworn enemy who threw a stone at Rasoolullah ﷺ?",
+          "options": [
+            "Aboo Jahl",
+            "Aboo Lahab",
+            "Nuaym",
+            "Umayya"
+          ],
+          "correctAnswer": "Aboo Jahl",
+          "explanation": "Aboo Jahl hurled a stone and wounded the Prophet's ﷺ head."
+        },
+        {
+          "id": "tk-l12-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What reward did Aboo Jahl promise for killing the Prophet ﷺ?",
+          "options": [
+            "A hundred camels and a thousand silver coins",
+            "Gold and a house",
+            "Land in Syria",
+            "A trade caravan"
+          ],
+          "correctAnswer": "A hundred camels and a thousand silver coins",
+          "explanation": "Aboo Jahl promised Umar رضي الله عنه a hundred camels and a thousand silver coins."
+        },
+        {
+          "id": "tk-l12-q3",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Sayyidina Hamza رضي الله عنه was the uncle and foster brother of Rasoolullah ﷺ.",
+          "correctAnswer": true,
+          "explanation": "Yes — both his uncle and his foster brother."
+        },
+        {
+          "id": "tk-l12-q4",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What changed Sayyidina Umar's رضي الله عنه heart?",
+          "options": [
+            "Hearing the recital of the Qur'aan",
+            "A dream",
+            "A gift",
+            "A battle"
+          ],
+          "correctAnswer": "Hearing the recital of the Qur'aan",
+          "explanation": "On hearing the Qur'aan recited at his sister's house he decided to accept Islam."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "tk-l12-f1",
+          "front": "Which married couple had secretly accepted Islam?",
+          "back": "Umar's sister Faatimah رضي الله عنها and her husband Saeed-bin-Zayd رضي الله عنه."
+        },
+        {
+          "id": "tk-l12-f2",
+          "front": "Who advised Umar رضي الله عنه to set his own house in order?",
+          "back": "Nuaym bin Abdullah."
+        },
+        {
+          "id": "tk-l12-f3",
+          "front": "In which year of Nubuwwat did Umar رضي الله عنه accept Islam?",
+          "back": "The sixth year."
+        }
+      ]
+    },
+    {
+      "id": "g5-tareekh-l13",
+      "n": 13,
+      "title": "Torture and Persecution",
+      "pages": "50-53",
+      "arabic": null,
+      "transliteration": null,
+      "translation": null,
+      "source": null,
+      "summary": "With Umar رضي الله عنه and Hamza رضي الله عنه now Muslims, the Quraish turned to brutal torture. Many companions, including Bilaal and Sumayyah رضي الله عنهم, endured terrible suffering for their faith.",
+      "keyTerms": [
+        {
+          "term": "Torture",
+          "meaning": "Cruel infliction of pain."
+        },
+        {
+          "term": "Persecution",
+          "meaning": "Ill-treatment because of one's beliefs."
+        },
+        {
+          "term": "Inhale",
+          "meaning": "To breathe in; Zubayr رضي الله عنه was forced to inhale smoke."
+        }
+      ],
+      "points": [
+        "After Umar's رضي الله عنه acceptance the Muslims grew bolder; failing to bribe the Prophet ﷺ to give up Islam, the Quraish turned to torture of the most brutal kind.",
+        "Sayyidina Bilaal رضي الله عنه, slave of Umayya-bin-Khalaf, was laid on hot sand with a heavy stone on his chest and beaten.",
+        "Sayyidina Uthmaan رضي الله عنه was tied and beaten by his uncle; Sayyidina Zubayr رضي الله عنه was rolled in a mat and made to inhale smoke.",
+        "Aboo Jahl martyred Sayyiditina Sumayyah رضي الله عنها with a spear — a torture without parallel — and beat the slave lady Zaneerah رضي الله عنها until she became blind.",
+        "Sayyidina Abbaas رضي الله عنه, not yet a Muslim, recognised Sayyidina Aboo Zar رضي الله عنه and saved him from the Quraish; helpless Muslims like Khabbab رضي الله عنه were pushed into fire."
+      ],
+      "story": null,
+      "questions": [
+        {
+          "id": "tk-l13-q1",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "The Quraish used only one kind of torture against the Muslims.",
+          "correctAnswer": false,
+          "explanation": "False — they used many cruel kinds of torture."
+        },
+        {
+          "id": "tk-l13-q2",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Bribes were offered to Rasoolullah ﷺ to give up Islam.",
+          "correctAnswer": true,
+          "explanation": "Yes — the Quraish tried to bribe him with wealth, but he refused."
+        },
+        {
+          "id": "tk-l13-q3",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Whose slave was Sayyidina Bilaal رضي الله عنه?",
+          "options": [
+            "Umayya-bin-Khalaf",
+            "Aboo Jahl",
+            "Aboo Lahab",
+            "Waleed"
+          ],
+          "correctAnswer": "Umayya-bin-Khalaf",
+          "explanation": "Bilaal رضي الله عنه was the slave of Umayya-bin-Khalaf."
+        },
+        {
+          "id": "tk-l13-q4",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Who became blind from Aboo Jahl's beating?",
+          "options": [
+            "Sayyiditina Zaneerah رضي الله عنها",
+            "Sayyiditina Sumayyah رضي الله عنها",
+            "Sayyiditina Khadeejah رضي الله عنها",
+            "Sayyiditina Faatimah رضي الله عنها"
+          ],
+          "correctAnswer": "Sayyiditina Zaneerah رضي الله عنها",
+          "explanation": "Aboo Jahl beat the slave lady Zaneerah رضي الله عنها until she became totally blind."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "tk-l13-f1",
+          "front": "How was Sayyidina Bilaal رضي الله عنه tortured?",
+          "back": "Laid on hot sand with a heavy stone on his chest and beaten."
+        },
+        {
+          "id": "tk-l13-f2",
+          "front": "Who was the first martyr of Islam?",
+          "back": "Sayyiditina Sumayyah رضي الله عنها, killed by Aboo Jahl."
+        },
+        {
+          "id": "tk-l13-f3",
+          "front": "Who saved Sayyidina Aboo Zar رضي الله عنه from the Quraish?",
+          "back": "Sayyidina Abbaas رضي الله عنه, who was not yet a Muslim."
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "g5-tareekh-l14",
+      "n": 14,
+      "title": "Hijrah to Abyssinia",
+      "pages": "54-57",
+      "arabic": null,
+      "transliteration": null,
+      "translation": null,
+      "source": null,
+      "summary": "In the fifth year of Nubuwwat the Prophet ﷺ permitted the persecuted Muslims to migrate to Abyssinia, the land of the just King Negus. Jafar's رضي الله عنه reply foiled the plot of the Quraish envoys.",
+      "keyTerms": [
+        {
+          "term": "Hijrah",
+          "meaning": "Migration for the sake of Allah."
+        },
+        {
+          "term": "Envoys",
+          "meaning": "Messengers sent on behalf of others; the Quraish sent them to King Negus."
+        }
+      ],
+      "points": [
+        "In the fifth year of Nubuwwat, as persecution grew unbearable, the Prophet ﷺ allowed the Muslims to migrate to Abyssinia (Ethiopia), the kingdom of King Negus in north-east Africa.",
+        "The first group of respectable families included Uthmaan رضي الله عنه and his wife Ruqayyah رضي الله عنها (the Prophet's ﷺ daughter), Huzayfa, Abdullah-bin-Mas'ood and Abdur Rahmaan-bin-Auf رضي الله عنهم.",
+        "They sailed from Jeddah before the pursuing Quraish could seize them; in time about eighty-three Muslims gathered in Abyssinia, welcomed warmly by King Negus (Najjash).",
+        "A rumour that the whole Quraish had become Muslim drew some back to Makkah; finding it false, they returned in the Second Migration.",
+        "The Quraish sent envoys claiming the Muslims were rebel slaves to be deported, but Sayyidina Jafar-bin-Abi-Taalib's رضي الله عنه sincere explanation foiled them, and the King let the Muslims stay."
+      ],
+      "story": null,
+      "questions": [
+        {
+          "id": "tk-l14-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "In which year of Nubuwwat did the migration to Abyssinia take place?",
+          "options": [
+            "The fifth year",
+            "The third year",
+            "The seventh year",
+            "The first year"
+          ],
+          "correctAnswer": "The fifth year",
+          "explanation": "Permission to migrate to Abyssinia came in the fifth year of Nubuwwat."
+        },
+        {
+          "id": "tk-l14-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "On which continent is Abyssinia?",
+          "options": [
+            "Africa",
+            "Asia",
+            "Europe",
+            "Arabia"
+          ],
+          "correctAnswer": "Africa",
+          "explanation": "Abyssinia (Ethiopia) is in north-east Africa."
+        },
+        {
+          "id": "tk-l14-q3",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Whose explanation persuaded King Negus to let the Muslims stay?",
+          "options": [
+            "Sayyidina Jafar رضي الله عنه",
+            "Sayyidina Uthmaan رضي الله عنه",
+            "Sayyidina Umar رضي الله عنه",
+            "Sayyidina Hamza رضي الله عنه"
+          ],
+          "correctAnswer": "Sayyidina Jafar رضي الله عنه",
+          "explanation": "Sayyidina Jafar-bin-Abi-Taalib's رضي الله عنه sincere reply foiled the Quraish."
+        },
+        {
+          "id": "tk-l14-q4",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "The Muslims travelled to Abyssinia by ship.",
+          "correctAnswer": true,
+          "explanation": "Yes — they sailed from the port of Jeddah."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "tk-l14-f1",
+          "front": "Who was the king of Abyssinia?",
+          "back": "King Negus (Najjash), a just ruler."
+        },
+        {
+          "id": "tk-l14-f2",
+          "front": "Which daughter of the Prophet ﷺ migrated to Abyssinia?",
+          "back": "Sayyiditina Ruqayyah رضي الله عنها, wife of Uthmaan رضي الله عنه."
+        },
+        {
+          "id": "tk-l14-f3",
+          "front": "Why did the Quraish send envoys to King Negus?",
+          "back": "To claim the Muslims were rebel slaves and demand they be deported."
+        }
+      ]
+    },
+    {
+      "id": "g5-tareekh-l15",
+      "n": 15,
+      "title": "Boycott",
+      "pages": "58-61",
+      "arabic": null,
+      "transliteration": null,
+      "translation": null,
+      "source": null,
+      "summary": "The Quraish drew up a charter to boycott the Banoo Hasheem. For three years the Muslims suffered terrible hardship in Sh'ob-e-Aboo Taalib, until white ants destroyed the charter and the boycott ended.",
+      "keyTerms": [
+        {
+          "term": "Boycott",
+          "meaning": "To cut off all dealings with a group of people."
+        },
+        {
+          "term": "Charter",
+          "meaning": "A written list of rules; here, the list of boycott items."
+        },
+        {
+          "term": "Sh'ob-e-Aboo Taalib",
+          "meaning": "The secluded valley where the Banoo Hasheem sheltered."
+        }
+      ],
+      "points": [
+        "Drawing strength from their faith and from Hamza رضي الله عنه and Umar رضي الله عنه, the Muslims now offered salaah in the sanctuary.",
+        "The Quraish demanded Aboo Taalib hand over the Prophet ﷺ, or the whole Banoo Hasheem and their sympathisers would be boycotted.",
+        "A charter was drawn up and hung in the Kaabah, forbidding association, greeting, marriage, socialising, buying and selling, and the supply of food to the Muslims.",
+        "For three years (the seventh to the tenth year of Nubuwwat) the Muslims, sheltered in Sh'ob-e-Aboo Taalib, suffered starvation — some ate the leaves of trees, and the children grew thin and weak.",
+        "Hisham-ibn-Amr began a campaign to end it; the Prophet ﷺ revealed that white ants had eaten the charter, leaving only the word 'Allah' — and so the boycott came to an end."
+      ],
+      "story": null,
+      "questions": [
+        {
+          "id": "tk-l15-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Who joined the Muslims to give them more courage?",
+          "options": [
+            "Hamza رضي الله عنه and Umar رضي الله عنه",
+            "Aboo Jahl and Aboo Lahab",
+            "Buhayra and Nasturaa",
+            "Waleed and Umayya"
+          ],
+          "correctAnswer": "Hamza رضي الله عنه and Umar رضي الله عنه",
+          "explanation": "Their acceptance of Islam strengthened the Muslims."
+        },
+        {
+          "id": "tk-l15-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "How long did the boycott last?",
+          "options": [
+            "Three years",
+            "One year",
+            "Five years",
+            "Ten years"
+          ],
+          "correctAnswer": "Three years",
+          "explanation": "From the seventh to the tenth year of Nubuwwat — three years."
+        },
+        {
+          "id": "tk-l15-q3",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What was the only word left on the charter?",
+          "options": [
+            "Allah",
+            "Quraish",
+            "Hasheem",
+            "Makkah"
+          ],
+          "correctAnswer": "Allah",
+          "explanation": "White ants ate the charter, leaving only the word 'Allah'."
+        },
+        {
+          "id": "tk-l15-q4",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "The boycott forbade buying, selling and the supply of food to the Muslims.",
+          "correctAnswer": true,
+          "explanation": "Yes — these were among the items on the charter."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "tk-l15-f1",
+          "front": "Who drew up the charter of boycott?",
+          "back": "All the heads of the Quraish."
+        },
+        {
+          "id": "tk-l15-f2",
+          "front": "Where did the Banoo Hasheem shelter during the boycott?",
+          "back": "Sh'ob-e-Aboo Taalib, a secluded place of safety."
+        },
+        {
+          "id": "tk-l15-f3",
+          "front": "How did the boycott end?",
+          "back": "White ants destroyed the charter, leaving only the word 'Allah'."
+        }
+      ]
+    },
+    {
+      "id": "g5-tareekh-l16",
+      "n": 16,
+      "title": "Loss of Two Friends",
+      "pages": "62-65",
+      "arabic": null,
+      "transliteration": null,
+      "translation": null,
+      "source": null,
+      "summary": "In the tenth year of Nubuwwat — the Year of Sorrow — Rasoolullah ﷺ lost his two beloved supporters: his uncle and protector Aboo Taalib, and his wife Sayyiditina Khadeejah رضي الله عنها.",
+      "keyTerms": [
+        {
+          "term": "Bosom friend",
+          "meaning": "A closest, most trusted friend — Aboo Bakr رضي الله عنه."
+        }
+      ],
+      "points": [
+        "After the boycott the Quraish did not relent but continued their persecution.",
+        "In the tenth year of Nubuwwat, Aboo Taalib — aged eighty, weakened by the boycott — became ill and passed away in the month of Rajab; he had loved and protected the Prophet ﷺ more than his own children.",
+        "Two months later, Sayyiditina Khadeejah رضي الله عنها passed away on the 10th of Ramadhaan; the first to embrace Islam, she was a tower of strength who shared all his discomforts.",
+        "Sayyidina Aboo Bakr رضي الله عنه, the Prophet's ﷺ bosom friend, refused the protection of Ibn-ul-Dughunna rather than stop obeying the commands of Allah, which made the Quraish more furious."
+      ],
+      "story": null,
+      "questions": [
+        {
+          "id": "tk-l16-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "In which year of Nubuwwat did Aboo Taalib and Khadeejah رضي الله عنها pass away?",
+          "options": [
+            "The tenth year",
+            "The fifth year",
+            "The seventh year",
+            "The first year"
+          ],
+          "correctAnswer": "The tenth year",
+          "explanation": "Both passed away in the tenth year of Nubuwwat — the Year of Sorrow."
+        },
+        {
+          "id": "tk-l16-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "On which date did Sayyiditina Khadeejah رضي الله عنها pass away?",
+          "options": [
+            "The 10th of Ramadhaan",
+            "The 12th of Rabiul Awwal",
+            "The 27th of Rajab",
+            "The 1st of Shawwal"
+          ],
+          "correctAnswer": "The 10th of Ramadhaan",
+          "explanation": "She passed away on the 10th of Ramadhaan, two months after Aboo Taalib."
+        },
+        {
+          "id": "tk-l16-q3",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Sayyiditina Khadeejah رضي الله عنها was the first to embrace Islam.",
+          "correctAnswer": true,
+          "explanation": "Yes — she was the first of all to accept Islam and a tower of strength to the Prophet ﷺ."
+        },
+        {
+          "id": "tk-l16-q4",
+          "type": "match",
+          "difficulty": "medium",
+          "prompt": "Match each person to a fact:",
+          "pairs": [
+            {
+              "left": "Aboo Taalib",
+              "right": "Protector of the Prophet ﷺ"
+            },
+            {
+              "left": "Khadeejah رضي الله عنها",
+              "right": "First to accept Islam"
+            },
+            {
+              "left": "Aboo Bakr رضي الله عنه",
+              "right": "The bosom friend"
+            },
+            {
+              "left": "Ibn-ul-Dughunna",
+              "right": "Offered Aboo Bakr protection"
+            }
+          ],
+          "explanation": "Aboo Taalib protected him; Khadeejah was the first Muslim; Aboo Bakr was the bosom friend; Ibn-ul-Dughunna offered protection."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "tk-l16-f1",
+          "front": "Why is this called the Year of Sorrow?",
+          "back": "Because the Prophet ﷺ lost both Aboo Taalib and Khadeejah رضي الله عنها in it."
+        },
+        {
+          "id": "tk-l16-f2",
+          "front": "How old was Aboo Taalib when he passed away?",
+          "back": "Eighty years old."
+        },
+        {
+          "id": "tk-l16-f3",
+          "front": "Who is meant by 'the bosom friend'?",
+          "back": "Sayyidina Aboo Bakr رضي الله عنه."
+        }
+      ]
+    },
+    {
+      "id": "g5-tareekh-l17",
+      "n": 17,
+      "title": "Journey to Taeef",
+      "pages": "66-69",
+      "arabic": null,
+      "transliteration": null,
+      "translation": null,
+      "source": null,
+      "summary": "Seeking new ground for Islam, Rasoolullah ﷺ went to Taeef, where its leaders mocked him and a mob stoned him until he bled. Yet he prayed for their guidance, and the slave Addaas and the jinn of Nukhla accepted Islam.",
+      "keyTerms": [
+        {
+          "term": "Jinn",
+          "meaning": "Beings created from fire; some accepted Islam at Nukhla."
+        },
+        {
+          "term": "Arab hospitality",
+          "meaning": "The custom of generous welcome; Utba sent grapes to the Prophet ﷺ."
+        }
+      ],
+      "points": [
+        "Facing harsh persecution in Makkah, the Prophet ﷺ turned to Taeef, about forty-eight kilometres away, whose people worshipped the idol Laat.",
+        "The three proud brothers — Abdiya Lail, Mas'ud and Habeeb of the Banoo Thaqeef — mocked him and set their slaves, boys and street people to pelt him with stones.",
+        "His faithful companion Sayyidina Zaid-bin-Haarith رضي الله عنه tried to shield him; he bled so much that the blood clotted in his sandals.",
+        "An angel offered to crush the people of Taeef between the mountains, but he ﷺ refused and prayed instead that one day they would become Muslims.",
+        "In the orchard of Utba-bin-Rabeeah, the Christian slave Addaas brought grapes and accepted Islam; that night at Nukhla, seven leaders of the jinn of Naseebeen heard the Qur'aan and became Muslims."
+      ],
+      "story": null,
+      "questions": [
+        {
+          "id": "tk-l17-q1",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Rasoolullah ﷺ cursed the people of Taeef.",
+          "correctAnswer": false,
+          "explanation": "False — he prayed that one day they would become Muslims."
+        },
+        {
+          "id": "tk-l17-q2",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Utba-bin-Rabeeah attacked Rasoolullah ﷺ.",
+          "correctAnswer": false,
+          "explanation": "False — Utba showed kindness, giving him refuge and sending grapes."
+        },
+        {
+          "id": "tk-l17-q3",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Which idol did the people of Taeef worship?",
+          "options": [
+            "Laat",
+            "Hubal",
+            "Uzza",
+            "Manaat"
+          ],
+          "correctAnswer": "Laat",
+          "explanation": "The residents of Taeef were worshippers of the idol Laat."
+        },
+        {
+          "id": "tk-l17-q4",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Who accepted Islam in Utba's orchard?",
+          "options": [
+            "Addaas",
+            "Buhayra",
+            "Nasturaa",
+            "Habeeb"
+          ],
+          "correctAnswer": "Addaas",
+          "explanation": "Addaas, Utba's Christian slave, brought grapes and accepted Islam."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "tk-l17-f1",
+          "front": "How far is Taeef from Makkah?",
+          "back": "About forty-eight kilometres."
+        },
+        {
+          "id": "tk-l17-f2",
+          "front": "Who tried to protect the Prophet ﷺ from the mob?",
+          "back": "His companion Sayyidina Zaid-bin-Haarith رضي الله عنه."
+        },
+        {
+          "id": "tk-l17-f3",
+          "front": "Who became Muslims at Nukhla?",
+          "back": "Seven leaders of the jinn of Naseebeen."
+        }
+      ]
     },
     {
       "id": "g5-tareekh-l18",
       "n": 18,
-      "title": "Meraj",
+      "title": "Me'raj (Ascension)",
       "pages": "70-73",
-      "summary": "",
-      "keyTerms": [],
-      "points": [],
+      "arabic": null,
+      "transliteration": null,
+      "translation": null,
+      "source": null,
+      "summary": "In the month of Rajab, Rasoolullah ﷺ was taken on the Me'raj — by Buraaq to Masjid-ul-Aqsa, then through the heavens to Sidratul Muntaha and the Divine Meeting, where the five daily salaah were made compulsory.",
+      "keyTerms": [
+        {
+          "term": "Me'raj",
+          "meaning": "The miraculous Ascension of the Prophet ﷺ through the heavens."
+        },
+        {
+          "term": "Buraaq",
+          "meaning": "The lightning-swift animal from Jannah used on the Me'raj."
+        },
+        {
+          "term": "Sidratul Muntaha",
+          "meaning": "A stage in the seventh heaven."
+        },
+        {
+          "term": "Siddiq",
+          "meaning": "A Faithful Witness of the Truth — the title of Aboo Bakr رضي الله عنه."
+        }
+      ],
+      "points": [
+        "In the tenth year of Nubuwwat, in Shawwal, the Prophet ﷺ made nikah to Sayyiditina Aisha رضي الله عنها and Sawdah رضي الله عنها.",
+        "On the 27th of Rajab, Jibraaeel عليه السلام took him from Muqam-e-Ibraaheem on the lightning steed Buraaq, an animal from Jannah, to Masjid-ul-Aqsa in Jerusalem, where he led all the prophets in two rakaah of Nafil salaah.",
+        "He was then taken through the heavens, meeting an eminent prophet at each stage, up to Sidratul Muntaha in the seventh heaven, where Jibraaeel عليه السلام left him to proceed alone to his Divine Meeting with Allah.",
+        "On this occasion the five daily salaah were made compulsory upon the Muslims.",
+        "When he related the Me'raj, the Quraish disbelieved, but he described a caravan's exact position; Aboo Bakr رضي الله عنه at once believed him and earned the title 'Siddiq' (the Faithful Witness of the Truth). On his return, his bed had not even lost its warmth."
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
-      "needsReview": false
+      "questions": [
+        {
+          "id": "tk-l18-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "On what did Rasoolullah ﷺ travel during the Me'raj?",
+          "options": [
+            "The Buraaq",
+            "A camel",
+            "A horse",
+            "A ship"
+          ],
+          "correctAnswer": "The Buraaq",
+          "explanation": "He mounted the Buraaq, a lightning-swift animal from Jannah."
+        },
+        {
+          "id": "tk-l18-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What was made compulsory on the night of Me'raj?",
+          "options": [
+            "The five daily salaah",
+            "Fasting in Ramadhaan",
+            "Hajj",
+            "Zakaat"
+          ],
+          "correctAnswer": "The five daily salaah",
+          "explanation": "The five daily salaah were made compulsory upon the Muslims."
+        },
+        {
+          "id": "tk-l18-q3",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Which companion earned the title 'Siddiq' by believing the Me'raj?",
+          "options": [
+            "Sayyidina Aboo Bakr رضي الله عنه",
+            "Sayyidina Umar رضي الله عنه",
+            "Sayyidina Uthmaan رضي الله عنه",
+            "Sayyidina Ali رضي الله عنه"
+          ],
+          "correctAnswer": "Sayyidina Aboo Bakr رضي الله عنه",
+          "explanation": "He at once accepted it and earned the title Siddiq."
+        },
+        {
+          "id": "tk-l18-q4",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "At Masjid-ul-Aqsa, Rasoolullah ﷺ led all the prophets in salaah.",
+          "correctAnswer": true,
+          "explanation": "Yes — he led all the prophets in two rakaah of Nafil salaah."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "tk-l18-f1",
+          "front": "Where is Masjid-ul-Aqsa?",
+          "back": "In Jerusalem."
+        },
+        {
+          "id": "tk-l18-f2",
+          "front": "What is Sidratul Muntaha?",
+          "back": "A stage in the seventh heaven, up to which Jibraaeel عليه السلام accompanied him."
+        },
+        {
+          "id": "tk-l18-f3",
+          "front": "What does 'Siddiq' mean?",
+          "back": "A Faithful Witness of the Truth."
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "g5-tareekh-l19",
+      "n": 19,
+      "title": "The First Pledge of Aqabah",
+      "pages": "74-77",
+      "arabic": null,
+      "transliteration": null,
+      "translation": null,
+      "source": null,
+      "summary": "At the valley of Aqabah, men of the Khazraj tribe of Madeenah accepted Islam and took the First Pledge. Mus'ab-bin-Umayr رضي الله عنه was sent to teach, and Islam spread rapidly in Madeenah.",
+      "keyTerms": [
+        {
+          "term": "Pledge of Aqabah",
+          "meaning": "A solemn promise of faith and obedience taken at the valley of Aqaba."
+        },
+        {
+          "term": "Khazraj",
+          "meaning": "A prominent tribe of Madeenah, foremost in accepting Islam."
+        },
+        {
+          "term": "Yathrib",
+          "meaning": "The old name of Madeenah."
+        }
+      ],
+      "points": [
+        "At the end of the eleventh year of Nubuwwat, the forty-year war between the Aus and Khazraj of Madeenah had ended, and tribes came to Makkah for the pilgrimage.",
+        "The Prophet ﷺ slipped out to the pilgrims' camps to preach; the first six men of the Khazraj became Muslims in the Valley of Aqaba.",
+        "The next year twelve more men of the Khazraj accepted Islam and took the First Pledge of Aqaba.",
+        "They pledged: to worship none but Allah; not to steal or commit adultery; not to kill their daughters; not to defame anyone; not to backbite; and in every deed to honour and obey the word of Rasoolullah ﷺ.",
+        "Mus'ab-bin-Umayr رضي الله عنه was sent to teach Islam in Madeenah, where it took root and spread; Yathrib later became 'Madeenatun Nabee', the city of the Prophet ﷺ."
+      ],
+      "story": null,
+      "questions": [
+        {
+          "id": "tk-l19-q1",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "The tribes of Aus and Khazraj had fought for forty years.",
+          "correctAnswer": true,
+          "explanation": "Yes — a forty-year war, which had virtually ended by this time."
+        },
+        {
+          "id": "tk-l19-q2",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Aboo Jahl was sent to teach Islam in Madeenah.",
+          "correctAnswer": false,
+          "explanation": "False — Mus'ab-bin-Umayr رضي الله عنه was deputed to teach Islam in Madeenah."
+        },
+        {
+          "id": "tk-l19-q3",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "From which tribe were the first to accept Islam at Aqaba?",
+          "options": [
+            "Khazraj",
+            "Aus",
+            "Quraish",
+            "Banoo Sa'ad"
+          ],
+          "correctAnswer": "Khazraj",
+          "explanation": "The first six were of the Khazraj tribe of Madeenah."
+        },
+        {
+          "id": "tk-l19-q4",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Which was NOT part of the First Pledge of Aqaba?",
+          "options": [
+            "To fight the Quraish in battle",
+            "To worship none but Allah",
+            "Not to steal",
+            "Not to backbite"
+          ],
+          "correctAnswer": "To fight the Quraish in battle",
+          "explanation": "The First Pledge was about belief and good conduct, not about fighting."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "tk-l19-f1",
+          "front": "Who was sent to teach Islam in Madeenah?",
+          "back": "Sayyidina Mus'ab-bin-Umayr رضي الله عنه."
+        },
+        {
+          "id": "tk-l19-f2",
+          "front": "What was Madeenah originally called?",
+          "back": "Yathrib; it later became Madeenatun Nabee, the city of the Prophet ﷺ."
+        },
+        {
+          "id": "tk-l19-f3",
+          "front": "Name three things pledged at the First Pledge of Aqaba.",
+          "back": "To worship only Allah, not to steal, and to obey the word of Rasoolullah ﷺ."
+        }
+      ]
+    },
+    {
+      "id": "g5-tareekh-l20",
+      "n": 20,
+      "title": "The Second Pledge of Aqabah",
+      "pages": "78-81",
+      "arabic": null,
+      "transliteration": null,
+      "translation": null,
+      "source": null,
+      "summary": "As the thirteenth year of Nubuwwat closed, seventy Muslims of Madeenah met the Prophet ﷺ at Aqabah and pledged to protect him with their lives. He then directed the Muslims to migrate to Madeenah.",
+      "keyTerms": [
+        {
+          "term": "Hasheemites",
+          "meaning": "The clan of Banoo Hasheem who protected the Prophet ﷺ in Makkah."
+        },
+        {
+          "term": "Second Pledge of Aqaba",
+          "meaning": "The promise of the Muslims of Madeenah to protect the Prophet ﷺ with their lives."
+        }
+      ],
+      "points": [
+        "Madeenah held the tribes of Aus and Khazraj and a section of Jews; the Khazraj were foremost in the quest for Islam.",
+        "As the thirteenth year of Nubuwwat closed, seventy Muslims (including two women) came to Aqabah, led by Mus'ab-bin-Umayr رضي الله عنه.",
+        "Sayyidina Abbaas رضي الله عنه, not yet a Muslim, cautioned them that protecting the Prophet ﷺ would mean sacrificing their lives and facing wars; only if prepared should they invite him.",
+        "They pledged to protect him and Islam with their lives as they would their own wives and children — the Second Pledge of Aqaba; he chose twelve leaders, nine of them from the Khazraj.",
+        "He then directed the Muslims to migrate to Madeenah; the Quraish caused heartbreak, beatings and seizures, until only a few Muslims remained with him, awaiting Divine guidance to leave."
+      ],
+      "story": null,
+      "questions": [
+        {
+          "id": "tk-l20-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Which two Arab tribes were prominent in Madeenah?",
+          "options": [
+            "Aus and Khazraj",
+            "Quraish and Hasheem",
+            "Banoo Sa'ad and Zuhra",
+            "Thaqeef and Tameem"
+          ],
+          "correctAnswer": "Aus and Khazraj",
+          "explanation": "The Aus and Khazraj were the prominent tribes of Madeenah."
+        },
+        {
+          "id": "tk-l20-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "How many Muslims of Madeenah did the Prophet ﷺ choose as leaders?",
+          "options": [
+            "Twelve",
+            "Six",
+            "Seventy",
+            "Nine"
+          ],
+          "correctAnswer": "Twelve",
+          "explanation": "He chose twelve leaders, of whom nine were from the Khazraj."
+        },
+        {
+          "id": "tk-l20-q3",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What was Sayyidina Abbaas's رضي الله عنه reaction?",
+          "options": [
+            "He cautioned them about the sacrifice involved",
+            "He refused them",
+            "He accepted Islam",
+            "He told the Quraish"
+          ],
+          "correctAnswer": "He cautioned them about the sacrifice involved",
+          "explanation": "He warned that protecting the Prophet ﷺ would mean great sacrifice and war."
+        },
+        {
+          "id": "tk-l20-q4",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "One section of Madeenah was occupied by the Jews.",
+          "correctAnswer": true,
+          "explanation": "Yes — a separate section of Madeenah was dominated by the Jews."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "tk-l20-f1",
+          "front": "Who led the deputation of Madeenah?",
+          "back": "Sayyidina Mus'ab-bin-Umayr رضي الله عنه."
+        },
+        {
+          "id": "tk-l20-f2",
+          "front": "What did the Muslims pledge at the Second Pledge?",
+          "back": "To protect the Prophet ﷺ and Islam with their lives."
+        },
+        {
+          "id": "tk-l20-f3",
+          "front": "How many of the twelve leaders were from the Khazraj?",
+          "back": "Nine."
+        }
+      ]
     },
     {
       "id": "g5-tareekh-l21",
       "n": 21,
       "title": "Hijrah to Madeenah",
       "pages": "82-88",
-      "summary": "",
+      "arabic": null,
+      "transliteration": null,
+      "translation": null,
+      "source": null,
+      "summary": "As the Quraish plotted to assassinate him, Rasoolullah ﷺ left Makkah with Aboo Bakr رضي الله عنه, sheltered in the Cave of Thoor, and reached Madeenah — where the Muhajireen and Ansaar were united and the Islamic calendar began.",
+      "keyTerms": [
+        {
+          "term": "Dar-un-Nadwah",
+          "meaning": "The Quraish council hall where the plot was made."
+        },
+        {
+          "term": "Cave of Thoor",
+          "meaning": "The cave where the Prophet ﷺ and Aboo Bakr رضي الله عنه hid."
+        },
+        {
+          "term": "Muhajireen",
+          "meaning": "The Muslims who emigrated to Madeenah."
+        },
+        {
+          "term": "Ansaar",
+          "meaning": "The Muslims of Madeenah who helped the emigrants."
+        },
+        {
+          "term": "Al-Qaswa",
+          "meaning": "The camel of Rasoolullah ﷺ."
+        }
+      ],
+      "points": [
+        "Only the Prophet ﷺ, Aboo Bakr رضي الله عنه and the youthful Ali رضي الله عنه remained; at Dar-un-Nadwah the Quraish chose one youth from each clan to assassinate him so no clan could be blamed.",
+        "Jibraaeel عليه السلام forewarned him; Ali رضي الله عنه slept in his bed to return the trusts, and he ﷺ left with Aboo Bakr رضي الله عنه, reciting Surah Yaseen, taking refuge in the Cave of Thoor.",
+        "When the enemy neared the cave, the Prophet ﷺ assured Aboo Bakr رضي الله عنه, 'Allah is with us!'; by a miracle a spider's web and a pigeon's nest made the cave look undisturbed.",
+        "After three days they continued on the camel Al-Qaswa, guided by Abdullah-bin-Urayqit; the horseman Suraaqah who pursued them sank into the sand and begged forgiveness.",
+        "On the sixth day they reached Quba (8 Rabiul Awwal), where the first masjid was founded; on Friday 12 Rabiul Awwal he led the first Jummah at Banoo Saalim, and Al-Qaswa stopped at the house of Aboo Ayoob Ansaari رضي الله عنه. The emigrants were the Muhajireen and their hosts the Ansaar; the Muslim calendar began in this year."
+      ],
+      "story": "As the enemy stood at the very mouth of the Cave of Thoor, Aboo Bakr رضي الله عنه feared they would be seen. The Prophet ﷺ calmed him: 'Do not grieve — Allah is with us.' By Allah's command a spider had spun its web across the entrance and a pigeon had laid eggs in a nest nearby, so the cave seemed long undisturbed, and the searchers turned away.",
+      "questions": [
+        {
+          "id": "tk-l21-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "In which cave did Rasoolullah ﷺ and Aboo Bakr رضي الله عنه take refuge?",
+          "options": [
+            "The Cave of Thoor",
+            "The Cave of Heera",
+            "The Cave of Hira",
+            "The Cave of Uhad"
+          ],
+          "correctAnswer": "The Cave of Thoor",
+          "explanation": "They sheltered in the Cave of Thoor, about seven kilometres from Makkah."
+        },
+        {
+          "id": "tk-l21-q2",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "What was the name of the Prophet's ﷺ camel on the Hijrah?",
+          "options": [
+            "Al-Qaswa",
+            "Buraaq",
+            "Al-Ameen",
+            "Yaseen"
+          ],
+          "correctAnswer": "Al-Qaswa",
+          "explanation": "He mounted his camel Al-Qaswa, which finally stopped at the house of Aboo Ayoob Ansaari رضي الله عنه."
+        },
+        {
+          "id": "tk-l21-q3",
+          "type": "match",
+          "difficulty": "medium",
+          "prompt": "Match the following:",
+          "pairs": [
+            {
+              "left": "Muhajireen",
+              "right": "The emigrant Muslims"
+            },
+            {
+              "left": "Ansaar",
+              "right": "The hosts of Madeenah"
+            },
+            {
+              "left": "Al-Qaswa",
+              "right": "The Prophet's ﷺ camel"
+            },
+            {
+              "left": "Cave of Thoor",
+              "right": "Their refuge during the Hijrah"
+            }
+          ],
+          "explanation": "The emigrants were the Muhajireen; their hosts the Ansaar; Al-Qaswa was the camel; Thoor their refuge."
+        },
+        {
+          "id": "tk-l21-q4",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Sayyidina Ali رضي الله عنه slept in the Prophet's ﷺ bed on the night of the Hijrah.",
+          "correctAnswer": true,
+          "explanation": "Yes — so he could return the trusts and mislead the Quraish."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "tk-l21-f1",
+          "front": "Who said 'Allah is with us', and where?",
+          "back": "Rasoolullah ﷺ, to Aboo Bakr رضي الله عنه in the Cave of Thoor."
+        },
+        {
+          "id": "tk-l21-f2",
+          "front": "Where did the Prophet ﷺ lay the foundation of the first masjid?",
+          "back": "At Quba, on reaching the border of Madeenah."
+        },
+        {
+          "id": "tk-l21-f3",
+          "front": "Who were the Muhajireen and the Ansaar?",
+          "back": "The Muhajireen were the emigrants; the Ansaar were the Madeenans who hosted them."
+        }
+      ]
+    },
+    {
+      "id": "g5-tareekh-review",
+      "n": 22,
+      "title": "Revision — The Life of Rasoolullah ﷺ",
+      "pages": "8-88",
+      "arabic": null,
+      "transliteration": null,
+      "translation": null,
+      "source": null,
+      "summary": "A mixed revision across the whole book: the pre-Islamic age, the Prophet's ﷺ birth and youth, prophethood, persecution, the migrations and the Hijrah to Madeenah.",
       "keyTerms": [],
-      "points": [],
+      "points": [
+        "Revise the key people: Aaminah, Abdul Muttaalib, Aboo Taalib, Khadeejah رضي الله عنها, Haleemah رضي الله عنها, Hamza, Umar, Aboo Bakr, Ali and Zaid رضي الله عنهم.",
+        "Revise the key events in order: birth, childhood, journeys to Syria, marriage, prophethood, persecution, Abyssinia, the boycott, the Year of Sorrow, Taeef, Me'raj, the two Pledges of Aqabah and the Hijrah.",
+        "Revise the titles: As-Saadiq, Al-Ameen (the Prophet ﷺ) and Siddiq (Aboo Bakr رضي الله عنه)."
+      ],
       "story": null,
-      "questions": [],
-      "flashcards": [],
-      "needsContent": true,
-      "needsReview": false
+      "questions": [
+        {
+          "id": "tk-lreview-q1",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Which title means 'the Trustworthy'?",
+          "options": [
+            "Al-Ameen",
+            "As-Saadiq",
+            "Siddiq",
+            "Al-Qaswa"
+          ],
+          "correctAnswer": "Al-Ameen",
+          "explanation": "Al-Ameen means 'the Trustworthy'; As-Saadiq means 'the Truthful'."
+        },
+        {
+          "id": "tk-lreview-q2",
+          "type": "match",
+          "difficulty": "medium",
+          "prompt": "Match each event to where it happened:",
+          "pairs": [
+            {
+              "left": "First revelation",
+              "right": "Cave of Heera"
+            },
+            {
+              "left": "Refuge during the Hijrah",
+              "right": "Cave of Thoor"
+            },
+            {
+              "left": "Led the prophets in salaah",
+              "right": "Masjid-ul-Aqsa"
+            },
+            {
+              "left": "First masjid founded",
+              "right": "Quba"
+            }
+          ],
+          "explanation": "Heera — first Wahee; Thoor — refuge; Aqsa — led the prophets; Quba — first masjid."
+        },
+        {
+          "id": "tk-lreview-q3",
+          "type": "true-false",
+          "difficulty": "easy",
+          "prompt": "Rasoolullah ﷺ passed away at the age of 63.",
+          "correctAnswer": true,
+          "explanation": "Yes — on 12 Rabiul Awwal, in the eleventh year after the Hijrah."
+        },
+        {
+          "id": "tk-lreview-q4",
+          "type": "multiple-choice",
+          "difficulty": "easy",
+          "prompt": "Who was the first of all to accept Islam?",
+          "options": [
+            "Sayyiditina Khadeejah رضي الله عنها",
+            "Sayyidina Aboo Bakr رضي الله عنه",
+            "Sayyidina Ali رضي الله عنه",
+            "Sayyidina Umar رضي الله عنه"
+          ],
+          "correctAnswer": "Sayyiditina Khadeejah رضي الله عنها",
+          "explanation": "Khadeejah رضي الله عنها was the first woman and the first of all to accept Islam."
+        }
+      ],
+      "flashcards": [
+        {
+          "id": "tk-lreview-f1",
+          "front": "Name the two beloved supporters lost in the Year of Sorrow.",
+          "back": "Aboo Taalib and Sayyiditina Khadeejah رضي الله عنها."
+        },
+        {
+          "id": "tk-lreview-f2",
+          "front": "What began in the year of the Hijrah?",
+          "back": "The Islamic (Hijri) calendar."
+        },
+        {
+          "id": "tk-lreview-f3",
+          "front": "What were the emigrants and their hosts called?",
+          "back": "The Muhajireen and the Ansaar."
+        }
+      ]
     }
   ]
 }
