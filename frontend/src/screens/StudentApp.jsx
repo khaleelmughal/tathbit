@@ -574,20 +574,20 @@ function Shell({ children, tab, goTab, noNav }){
         input:focus,textarea:focus,select:focus{ outline:2px solid ${T.green}40; }
       `}</style>
       <div style={{ maxWidth:540, margin:"0 auto", minHeight:"100vh", background:T.paper, backgroundImage:"radial-gradient("+T.paper2+" 1px, transparent 1px)", backgroundSize:"22px 22px", display:"flex", flexDirection:"column" }}>
-        <div style={{ flex:1, padding:"20px 18px", paddingBottom:noNav?28:100 }}>{children}</div>
+        <div style={{ flex:1, padding:"20px 18px", paddingBottom:noNav?28:80 }}>{children}</div>
         {!noNav && (
-          <footer style={{ textAlign:"center", padding:"20px 18px 8px", borderTop:"1px solid "+T.line }}>
-            <img src={logoLandscape} alt="Tathbīt" style={{ height:36, width:"auto", objectFit:"contain", marginBottom:8 }} />
-            <p style={{ margin:0, fontSize:12, color:T.faint }}>Copyright &copy; 2026 Tathbīt</p>
-          </footer>
-        )}
-        {!noNav && (
-          <nav style={{ position:"sticky", bottom:0, background:"rgba(251,247,238,.92)", backdropFilter:"blur(10px)", borderTop:"1px solid "+T.line, display:"flex", padding:"8px 6px calc(8px + env(safe-area-inset-bottom))", maxWidth:540, margin:"0 auto" }}>
-            {[{k:"home",I:Home,l:"Home"},{k:"subjects",I:BookOpen,l:"Subjects"},{k:"cards",I:Layers,l:"Cards"},{k:"plan",I:Calendar,l:"Plan"},{k:"me",I:User,l:"Me"}].map(({k,I,l})=>{
-              const on=tab===k;
-              return <button key={k} onClick={()=>goTab(k)} style={{ flex:1, border:"none", background:"transparent", cursor:"pointer", display:"flex", flexDirection:"column", alignItems:"center", gap:3, padding:"6px 0", color:on?T.green:T.faint }}><I size={22} strokeWidth={on?2.5:2} /><span style={{ fontSize:11, fontWeight:on?700:600 }}>{l}</span></button>;
-            })}
-          </nav>
+          <div style={{ position:"sticky", bottom:0, background:"rgba(251,247,238,.92)", backdropFilter:"blur(10px)" }}>
+            <footer style={{ textAlign:"center", padding:"12px 18px 8px", background:"rgba(251,247,238,.92)" }}>
+              <img src={logoLandscape} alt="Tathbīt" style={{ height:32, width:"auto", objectFit:"contain", marginBottom:6 }} />
+              <p style={{ margin:0, fontSize:11, color:T.faint }}>Copyright &copy; 2026 Tathbīt</p>
+            </footer>
+            <nav style={{ borderTop:"1px solid "+T.line, display:"flex", padding:"12px 8px calc(12px + env(safe-area-inset-bottom))" }}>
+              {[{k:"home",I:Home,l:"Home"},{k:"subjects",I:BookOpen,l:"Subjects"},{k:"cards",I:Layers,l:"Cards"},{k:"plan",I:Calendar,l:"Plan"},{k:"me",I:User,l:"Me"}].map(({k,I,l})=>{
+                const on=tab===k;
+                return <button key={k} onClick={()=>goTab(k)} style={{ flex:1, border:"none", background:"transparent", cursor:"pointer", display:"flex", flexDirection:"column", alignItems:"center", gap:4, padding:"8px 4px", color:on?T.green:T.faint, minHeight:48 }}><I size={20} strokeWidth={on?2.5:2} /><span style={{ fontSize:10, fontWeight:on?700:600 }}>{l}</span></button>;
+              })}
+            </nav>
+          </div>
         )}
       </div>
     </div>
