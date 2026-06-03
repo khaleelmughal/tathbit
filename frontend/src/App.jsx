@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { getToken, getCurrentUser, logout } from "./lib/api";
+import { trackPage } from "./lib/analytics";
 import ErrorBoundary from "./components/ErrorBoundary";
 
 import StudentLogin from "./auth/StudentLogin";
@@ -15,10 +16,15 @@ function AppRoutes() {
   const [initializing, setInitializing] = useState(true);
   const location = useLocation();
 
+  // Send an anonymous pageview on every client-side route change
+  useEffect(() => {
+    trackPage(location.pathname);
+  }, [location.pathname]);
+
   useEffect(() => {
     const initializeSession = async () => {
       const token = getToken();
-      
+
       if (token) {
         try {
           const response = await getCurrentUser();
@@ -28,7 +34,7 @@ function AppRoutes() {
           logout();
         }
       }
-      
+
       setLoading(false);
       setInitializing(false);
     };
@@ -67,18 +73,18 @@ function AppRoutes() {
 
   return (
     <Routes>
-      <Route 
-        path="/" 
+      <Route
+        path="/"
         element={
           user && user.role === "student" ? (
             <StudentApp user={user} onLogout={handleLogout} />
           ) : (
             <StudentLogin onSuccess={handleLogin} />
           )
-        } 
+        }
       />
-      <Route 
-        path="/admin" 
+      <Route
+        path="/admin"
         element={
           user && user.role === "admin" ? (
             <Navigate to="/admin/dashboard" replace />
@@ -87,31 +93,31 @@ function AppRoutes() {
           ) : (
             <StaffLogin onSuccess={handleLogin} />
           )
-        } 
+        }
       />
-      <Route 
-        path="/admin/*" 
+      <Route
+        path="/admin/*"
         element={
           user && user.role === "admin" ? (
             <AdminDashboard user={user} onLogout={handleLogout} />
           ) : (
             <Navigate to="/admin" replace />
           )
-        } 
+        }
       />
-      <Route 
-        path="/teacher/*" 
+      <Route
+        path="/teacher/*"
         element={
           user && user.role === "teacher" ? (
             <TeacherDashboard user={user} onLogout={handleLogout} />
           ) : (
             <Navigate to="/admin" replace />
           )
-        } 
+        }
       />
-      <Route 
-        path="*" 
-        element={<Navigate to="/" replace />} 
+      <Route
+        path="*"
+        element={<Navigate to="/" replace />}
       />
     </Routes>
   );

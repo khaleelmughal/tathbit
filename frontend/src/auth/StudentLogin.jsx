@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { studentLogin, setToken } from "../lib/api";
 import logoSquare from "@assets/login-page.png";
+import { identify, Track } from "../lib/analytics";
 
 const T = {
   paper: "#FBF7EE", paper2: "#F3ECDD", card: "#FFFFFF", ink: "#2B3A33", ink2: "#5C6B62",
@@ -54,6 +55,9 @@ export default function StudentLogin({ onSuccess }) {
     try {
       const response = await studentLogin(username.trim(), pin.trim());
       setToken(response.token);
+      // Analytics: anonymous id + role, then a login event
+      identify(response.user);
+      Track.login(response.user.role);
       onSuccess(response.user);
     } catch (err) {
       setError(err.message || "Login failed. Please check your credentials.");
@@ -79,7 +83,8 @@ export default function StudentLogin({ onSuccess }) {
             src={logoSquare}
             alt="Tathbīt"
             style={{
-              width: "375px",
+              width: "100%",
+              maxWidth: "375px",
               objectFit: "contain",
               margin: "0 auto 16px",
               display: "block",
@@ -124,7 +129,8 @@ export default function StudentLogin({ onSuccess }) {
                 fontSize: "16px",
                 fontFamily: "Plus Jakarta Sans, sans-serif",
                 background: "white",
-                color: T.ink
+                color: T.ink,
+                boxSizing: "border-box"
               }}
             />
           </div>
@@ -153,7 +159,8 @@ export default function StudentLogin({ onSuccess }) {
                 fontSize: "16px",
                 fontFamily: "Plus Jakarta Sans, sans-serif",
                 background: "white",
-                color: T.ink
+                color: T.ink,
+                boxSizing: "border-box"
               }}
             />
           </div>
