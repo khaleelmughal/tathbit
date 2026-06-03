@@ -1,5 +1,6 @@
 {
-  "name": "madrasah-revision",
+  "name": "tathbit",
+  "type": "module",
   "private": true,
   "version": "0.1.0",
   "description": "Madrasah revision platform \u2014 Tas-heel series. Admin creates teachers; teachers have one class of students. Vite + React frontend, Express + PostgreSQL backend.",
