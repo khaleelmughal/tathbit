@@ -64,7 +64,7 @@ const UserCard = ({ user, onEditClick }) => {
       transition: "all 0.2s ease",
       border: `1px solid ${T.line}`,
       boxShadow: "0 1px 3px rgba(43, 58, 51, 0.04)",
-    }>
+    }}>
       <div 
         style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}
         onClick={() => onEditClick(user.id)}
