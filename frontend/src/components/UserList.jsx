@@ -63,17 +63,18 @@ const UserCard = ({ user, onEditClick }) => {
       cursor: "pointer",
       transition: "all 0.2s ease",
       border: `1px solid ${T.line}`,
-    }}>
+      boxShadow: "0 1px 3px rgba(43, 58, 51, 0.04)",
+    }>
       <div 
         style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}
         onClick={() => onEditClick(user.id)}
         onMouseEnter={(e) => {
           e.currentTarget.parentElement.style.transform = "translateY(-1px)";
-          e.currentTarget.parentElement.style.boxShadow = "0 4px 12px rgba(0,0,0,0.1)";
+          e.currentTarget.parentElement.style.boxShadow = "0 4px 12px rgba(43, 58, 51, 0.1), 0 2px 4px rgba(43, 58, 51, 0.06)";
         }}
         onMouseLeave={(e) => {
           e.currentTarget.parentElement.style.transform = "translateY(0)";
-          e.currentTarget.parentElement.style.boxShadow = "none";
+          e.currentTarget.parentElement.style.boxShadow = "0 1px 3px rgba(43, 58, 51, 0.04)";
         }}
       >
         <div style={{ flex: 1 }}>

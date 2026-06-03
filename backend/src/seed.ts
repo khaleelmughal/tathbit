@@ -63,7 +63,7 @@ async function seedContent() {
       c = JSON.parse(fs.readFileSync(fp, "utf8"));
     } catch (error) {
       console.warn(`⚠️  Skipping broken JSON file: ${fp}`);
-      console.warn(`   Error: ${error.message}`);
+      console.warn(`   Error: ${(error as Error).message}`);
       skippedFiles.push(fp);
       continue;
     }

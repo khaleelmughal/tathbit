@@ -5,7 +5,7 @@ import ClassProfileModal from './ClassProfileModal';
 
 const ClassCard = ({ classItem, onEditClick }) => {
   return (
-    <div className="bg-white border border-line rounded-xl p-6 mb-3 cursor-pointer transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg">
+    <div className="bg-white border border-line rounded-xl p-6 mb-3 cursor-pointer transition-all duration-200 hover:-translate-y-0.5" style={{boxShadow: "0 1px 3px rgba(43, 58, 51, 0.06), 0 1px 2px rgba(43, 58, 51, 0.04)"}} onMouseEnter={(e) => e.target.style.boxShadow = "0 4px 12px rgba(43, 58, 51, 0.1), 0 2px 4px rgba(43, 58, 51, 0.06)"} onMouseLeave={(e) => e.target.style.boxShadow = "0 1px 3px rgba(43, 58, 51, 0.06), 0 1px 2px rgba(43, 58, 51, 0.04)"}>
       <div 
         className="flex justify-between items-start"
         onClick={() => onEditClick(classItem.id)}
@@ -103,7 +103,7 @@ const CreateClassModal = ({ onClose, onClassCreated }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-xl2 shadow-xl w-full max-w-md max-h-[90vh] overflow-y-auto">
+      <div className="bg-white rounded-xl w-full max-w-md max-h-[90vh] overflow-y-auto" style={{boxShadow: "0 20px 25px -5px rgba(43, 58, 51, 0.1), 0 10px 10px -5px rgba(43, 58, 51, 0.04)"}}>
         <div className="p-6 border-b border-line">
           <div className="flex justify-between items-center">
             <h2 className="text-xl font-serif font-medium text-ink">

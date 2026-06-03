@@ -5,6 +5,58 @@ import { authRequired, requireRole } from "../auth.js";
 export const flashcardRoutes = Router();
 flashcardRoutes.use(authRequired);
 
+// Catalogue of the flashcards students actually see — sourced from lesson
+// content (lessons.content.flashcards), the single source of truth, joined to
+// flashcard_results for real known / learning / forgot counts. This is what the
+// admin Flashcard Manager reads (the standalone flashcards table is unused).
+flashcardRoutes.get("/catalogue", requireRole("admin", "teacher"), async (req, res) => {
+  try {
+    const { gradeId, subjectId, lessonId } = req.query as Record<string, string>;
+    const cards = await q(
+      `SELECT
+         g.id AS grade_id, g.name AS grade_name,
+         s.id AS subject_id, s.name AS subject_name,
+         l.id AS lesson_id, l.title AS lesson_title, l.n AS lesson_n,
+         ('seed-' || l.id || '-' || (fc.ord - 1)) AS card_id,
+         fc.val->>'front' AS front,
+         fc.val->>'back'  AS back,
+         COALESCE(r.reviews, 0)  AS reviews,
+         COALESCE(r.known, 0)    AS known,
+         COALESCE(r.learning, 0) AS learning,
+         COALESCE(r.forgot, 0)   AS forgot
+       FROM lessons l
+       JOIN subjects s ON s.id = l.subject_id
+       JOIN grades g ON g.id = s.grade_id
+       CROSS JOIN LATERAL jsonb_array_elements(COALESCE(l.content->'flashcards', '[]'::jsonb))
+         WITH ORDINALITY AS fc(val, ord)
+       LEFT JOIN (
+         SELECT card_id,
+                COUNT(*) AS reviews,
+                COUNT(*) FILTER (WHERE result = 'known')    AS known,
+                COUNT(*) FILTER (WHERE result = 'learning') AS learning,
+                COUNT(*) FILTER (WHERE result = 'forgot')   AS forgot
+         FROM flashcard_results GROUP BY card_id
+       ) r ON r.card_id = ('seed-' || l.id || '-' || (fc.ord - 1))
+       WHERE ($1::text IS NULL OR g.id = $1)
+         AND ($2::text IS NULL OR s.id = $2)
+         AND ($3::text IS NULL OR l.id = $3)
+       ORDER BY g.name, s.name, l.n, fc.ord`,
+      [gradeId || null, subjectId || null, lessonId || null]
+    );
+
+    const n = (v: any) => Number(v) || 0;
+    const totalCards = cards.length;
+    const totalReviews = cards.reduce((a: number, c: any) => a + n(c.reviews), 0);
+    const totalKnown = cards.reduce((a: number, c: any) => a + n(c.known), 0);
+    const successRate = totalReviews > 0 ? Math.round((totalKnown / totalReviews) * 100) : 0;
+
+    res.json({ cards, stats: { totalCards, totalReviews, successRate } });
+  } catch (error) {
+    console.error("Error building flashcard catalogue:", (error as Error).message);
+    res.status(500).json({ error: "Could not load flashcard catalogue" });
+  }
+});
+
 // Admin/Teacher creates or updates flashcards
 flashcardRoutes.post("/", requireRole("admin", "teacher"), async (req, res) => {
   try {

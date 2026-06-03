@@ -397,6 +397,61 @@ userRoutes.get("/analytics", requireRole("admin"), async (req, res) => {
       ORDER BY total_attempts DESC
     `);
 
+    // Mixed (exam) vs fixed (lesson/quick) test breakdown, with timing.
+    const modeBreakdown = await q(`
+      SELECT
+        mode,
+        COUNT(*) AS sessions,
+        ROUND(AVG(score * 100.0 / NULLIF(total,0)), 1) AS avg_score_pct,
+        ROUND(AVG(duration_ms) / 1000.0, 1) AS avg_seconds
+      FROM quiz_sessions
+      GROUP BY mode
+      ORDER BY sessions DESC
+    `);
+
+    // Speed + accuracy trend over the most recent sessions (are they getting
+    // faster / better?). Per-day averages for the last 30 days.
+    const speedTrend = await q(`
+      SELECT
+        DATE(completed_at) AS date,
+        COUNT(*) AS sessions,
+        ROUND(AVG(duration_ms) / 1000.0, 1) AS avg_seconds,
+        ROUND(AVG(score * 100.0 / NULLIF(total,0)), 1) AS avg_score_pct
+      FROM quiz_sessions
+      WHERE completed_at >= NOW() - INTERVAL '30 days'
+      GROUP BY DATE(completed_at)
+      ORDER BY date ASC
+    `);
+
+    // Flashcard knowledge across all students (latest result per student+card).
+    const flashcardStats = await q(`
+      WITH latest AS (
+        SELECT DISTINCT ON (student_id, card_id) student_id, card_id, front, subject_id, result
+        FROM flashcard_results
+        ORDER BY student_id, card_id, reviewed_at DESC
+      )
+      SELECT result, COUNT(*) AS count FROM latest GROUP BY result
+    `);
+
+    // Hardest flashcards (most often "forgot") so teachers see weak spots.
+    const hardestFlashcards = await q(`
+      SELECT card_id, MAX(front) AS front, subject_id,
+             COUNT(*) FILTER (WHERE result = 'forgot') AS forgot,
+             COUNT(*) AS reviews
+      FROM flashcard_results
+      GROUP BY card_id, subject_id
+      HAVING COUNT(*) FILTER (WHERE result = 'forgot') > 0
+      ORDER BY forgot DESC LIMIT 15
+    `);
+
+    // Recent activity feed across all students.
+    const recentActivity = await q(`
+      SELECT e.type, e.subject_id, e.lesson_id, e.meta, e.created_at,
+             s.name AS student_name
+      FROM activity_events e JOIN users s ON s.id = e.student_id
+      ORDER BY e.created_at DESC LIMIT 40
+    `);
+
     const analytics = {
       systemStats,
       questionPerformance,
@@ -405,7 +460,12 @@ userRoutes.get("/analytics", requireRole("admin"), async (req, res) => {
       strugglingStudents,
       difficultQuestions,
       dailyActivity,
-      classPerformance
+      classPerformance,
+      modeBreakdown,
+      speedTrend,
+      flashcardStats,
+      hardestFlashcards,
+      recentActivity
     };
 
     res.json({ analytics });
@@ -572,9 +632,9 @@ userRoutes.patch("/:id", requireRole("admin"), async (req, res) => {
     res.json({ user });
   } catch (error) {
     console.error("Error updating user:", error);
-    if (error.constraint?.includes('email')) {
+    if ((error as any).constraint?.includes('email')) {
       res.status(400).json({ error: "Email already exists" });
-    } else if (error.constraint?.includes('username')) {
+    } else if ((error as any).constraint?.includes('username')) {
       res.status(400).json({ error: "Username already exists" });
     } else {
       res.status(500).json({ error: "Internal Server Error" });

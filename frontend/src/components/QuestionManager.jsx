@@ -1,721 +1,251 @@
-import React, { useState, useEffect } from "react";
-import { getQuestions, updateQuestionStatus, createQuestion, updateQuestion, deleteQuestion, getSyllabus } from "../lib/api";
-import { List, Eye, EyeOff, Edit, Trash2, Plus, HelpCircle, Search, Filter, MoreVertical, BookOpen, Users, BarChart3 } from "lucide-react";
-import { LoadingCard } from "./Loading";
-import EmptyState from "./EmptyState";
+import React, { useState, useEffect, useCallback, useRef } from "react";
+import {
+  getQuestions, updateQuestionStatus, deleteQuestion, getSyllabus,
+} from "../lib/api";
+import { lookupFriendlyName } from "../lib/utils";
 import AddQuestionForm from "./AddQuestionForm";
-import { getSubjectDisplayName, lookupFriendlyName } from "../lib/utils";
+import {
+  Search, Plus, Edit2, Trash2, Check, X, ChevronLeft, ChevronRight,
+  Eye, EyeOff, FileText, AlertCircle,
+} from "lucide-react";
 
 const T = {
   paper: "#FBF7EE", paper2: "#F3ECDD", card: "#FFFFFF", ink: "#2B3A33", ink2: "#5C6B62",
   faint: "#8A968D", line: "#E8E0CF", green: "#1E7A57", greenSoft: "#E4F1E9", gold: "#C99A2E",
-  red: "#DC2626", redSoft: "#FEF2F2", blue: "#2563EB", blueSoft: "#EFF6FF"
+  danger: "#C0563B", dangerSoft: "#FBEFEC",
 };
+const TYPE_LABEL = {
+  "multiple-choice": "Multiple choice", "true-false": "True / False",
+  "fill-blank": "Fill blank", "short-answer": "Short answer", "match": "Match",
+};
+const PAGE_SIZE = 20;
 
-const Card = ({ children, style = {}, className = "" }) => (
-  <div style={{
-    background: T.card, border: `1px solid ${T.line}`,
-    borderRadius: "16px", overflow: "hidden", ...style
-  }} className={className}>
-    {children}
-  </div>
+const Badge = ({ children, color = T.ink2, bg = T.paper2 }) => (
+  <span style={{ background: bg, color, padding: "3px 9px", borderRadius: 99, fontSize: 11, fontWeight: 700, whiteSpace: "nowrap" }}>{children}</span>
 );
 
-const Btn = ({ children, onClick, disabled, variant = "outline", type = "button", style = {}, icon, loading, size = "md" }) => {
-  const sizes = {
-    sm: { padding: "6px 12px", fontSize: "12px" },
-    md: { padding: "8px 16px", fontSize: "14px" },
-    lg: { padding: "12px 24px", fontSize: "16px" }
-  };
-
-  return (
-    <button
-      type={type}
-      onClick={onClick}
-      disabled={disabled || loading}
-      style={{
-        background: variant === "primary" ? T.green : variant === "danger" ? T.red : "transparent",
-        color: variant === "primary" || variant === "danger" ? "white" : T.ink,
-        border: variant === "primary" || variant === "danger" ? "none" : `1px solid ${T.line}`,
-        borderRadius: "8px", cursor: disabled ? "not-allowed" : "pointer",
-        fontWeight: "600", opacity: disabled ? 0.6 : 1,
-        fontFamily: "Plus Jakarta Sans, sans-serif",
-        display: "flex", alignItems: "center", gap: "6px",
-        transition: "all 0.2s ease",
-        ...sizes[size],
-        ...style
-      }}
-      onMouseEnter={(e) => {
-        if (!disabled) {
-          e.target.style.transform = "translateY(-1px)";
-          e.target.style.boxShadow = "0 4px 12px rgba(0,0,0,0.1)";
-        }
-      }}
-      onMouseLeave={(e) => {
-        e.target.style.transform = "translateY(0)";
-        e.target.style.boxShadow = "none";
-      }}
-    >
-      {loading ? (
-        <div style={{
-          width: "16px", height: "16px", border: "2px solid currentColor",
-          borderTop: "2px solid transparent", borderRadius: "50%",
-          animation: "spin 1s linear infinite"
-        }} />
-      ) : icon}
-      {children}
-    </button>
-  );
-};
-
-const StatusBadge = ({ status }) => {
-  const getStatusStyle = () => {
-    switch (status) {
-      case "active": return { bg: "#DCFCE7", color: "#16A34A", icon: "🟢" };
-      case "draft": return { bg: "#FEF3C7", color: "#92400E", icon: "📝" };
-      default: return { bg: T.line, color: T.faint, icon: "❓" };
-    }
-  };
-
-  const styles = getStatusStyle();
-  
-  return (
-    <span style={{
-      background: styles.bg, color: styles.color,
-      padding: "4px 12px", borderRadius: "12px",
-      fontSize: "12px", fontWeight: "600",
-      textTransform: "capitalize", display: "inline-flex",
-      alignItems: "center", gap: "4px"
-    }}>
-      <span>{styles.icon}</span>
-      {status}
-    </span>
-  );
-};
-
-const DifficultyBadge = ({ difficulty }) => {
-  const getStyle = () => {
-    switch (difficulty) {
-      case "easy": return { color: "#16A34A", bg: "#F0FDF4", icon: "🟢" };
-      case "medium": return { color: "#D97706", bg: "#FFFBEB", icon: "🟡" };
-      case "hard": return { color: "#DC2626", bg: "#FEF2F2", icon: "🔴" };
-      default: return { color: T.faint, bg: T.line, icon: "⚪" };
-    }
-  };
-
-  const styles = getStyle();
-
-  return (
-    <span style={{
-      color: styles.color, background: styles.bg,
-      padding: "4px 8px", borderRadius: "12px",
-      fontSize: "11px", fontWeight: "600",
-      textTransform: "capitalize", display: "inline-flex",
-      alignItems: "center", gap: "4px"
-    }}>
-      <span>{styles.icon}</span>
-      {difficulty}
-    </span>
-  );
-};
-
-const SubjectBadge = ({ subjectId, syllabus }) => {
-  const getSubjectStyle = (id) => {
-    const colors = ["#3B82F6", "#8B5CF6", "#10B981", "#F59E0B", "#EF4444"];
-    const index = id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) % colors.length;
-    const color = colors[index];
-    return { color, bg: color + "15" };
-  };
-
-  const styles = getSubjectStyle(subjectId);
-  const displayName = lookupFriendlyName(subjectId, syllabus.grades, syllabus.subjects, syllabus.lessons);
-
-  return (
-    <span style={{
-      background: styles.bg, color: styles.color,
-      padding: "4px 10px", borderRadius: "12px",
-      fontSize: "11px", fontWeight: "600"
-    }}>
-      {displayName.toUpperCase()}
-    </span>
-  );
-};
-
-const QuestionCard = ({ question, onStatusChange, onEdit, onDelete, syllabus }) => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [updating, setUpdating] = useState(false);
-  const [deleting, setDeleting] = useState(false);
-
-  const handleStatusToggle = async () => {
-    setUpdating(true);
-    try {
-      const newStatus = question.status === "active" ? "draft" : "active";
-      await updateQuestionStatus(question.id, newStatus);
-      onStatusChange();
-    } catch (err) {
-      console.error("Failed to update status:", err);
-    } finally {
-      setUpdating(false);
-    }
-  };
-
-  const handleDelete = async () => {
-    if (!window.confirm("Are you sure you want to delete this question? This action cannot be undone.")) return;
-    setDeleting(true);
-    try {
-      await onDelete(question.id);
-    } catch (err) {
-      console.error("Failed to delete question:", err);
-    } finally {
-      setDeleting(false);
-    }
-  };
-
-  const formatPayload = () => {
-    switch (question.type) {
-      case "multiple-choice":
-        return (
-          <div style={{ marginTop: "12px" }}>
-            <div style={{ fontSize: "12px", color: T.ink2, marginBottom: "8px", fontWeight: "600" }}>
-              Multiple Choice Options:
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
-              {question.payload?.options?.map((option, index) => (
-                <div key={index} style={{ 
-                  padding: "8px 12px", background: option === question.payload?.correctAnswer ? T.greenSoft : T.paper2,
-                  border: option === question.payload?.correctAnswer ? `2px solid ${T.green}` : `1px solid ${T.line}`,
-                  borderRadius: "8px", fontSize: "14px",
-                  color: option === question.payload?.correctAnswer ? T.green : T.ink,
-                  fontWeight: option === question.payload?.correctAnswer ? "600" : "normal"
-                }}>
-                  <span style={{ marginRight: "8px" }}>{String.fromCharCode(65 + index)}.</span>
-                  {option}
-                  {option === question.payload?.correctAnswer && (
-                    <span style={{ float: "right", color: T.green }}>✓ Correct</span>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        );
-      case "true-false":
-        return (
-          <div style={{ marginTop: "12px", padding: "12px", background: T.greenSoft, borderRadius: "8px" }}>
-            <span style={{ fontSize: "14px", fontWeight: "600", color: T.green }}>
-              Correct Answer: {question.payload?.correctAnswer ? "True" : "False"}
-            </span>
-          </div>
-        );
-      case "fill-blank":
-      case "short-answer":
-        const answers = question.type === "fill-blank" 
-          ? [question.payload?.correctAnswer] 
-          : question.payload?.acceptedAnswers || [];
-        return (
-          <div style={{ marginTop: "12px" }}>
-            <div style={{ fontSize: "12px", color: T.ink2, marginBottom: "8px", fontWeight: "600" }}>
-              {question.type === "fill-blank" ? "Correct Answer:" : "Accepted Answers:"}
-            </div>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
-              {answers.filter(Boolean).map((answer, index) => (
-                <span key={index} style={{
-                  background: T.greenSoft, color: T.green,
-                  padding: "4px 10px", borderRadius: "12px",
-                  fontSize: "13px", fontWeight: "600"
-                }}>
-                  {answer}
-                </span>
-              ))}
-            </div>
-          </div>
-        );
-      default:
-        return null;
-    }
-  };
-
-  return (
-    <Card style={{ 
-      marginBottom: "16px", 
-      transition: "all 0.2s ease",
-      position: "relative"
-    }}>
-      <div style={{ padding: "24px" }}>
-        {/* Header with badges and actions */}
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "16px" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }}>
-            <StatusBadge status={question.status} />
-            <SubjectBadge subjectId={question.subject_id} syllabus={syllabus} />
-            <DifficultyBadge difficulty={question.difficulty} />
-            <span style={{
-              background: T.blueSoft, color: T.blue,
-              padding: "4px 10px", borderRadius: "12px",
-              fontSize: "11px", fontWeight: "600"
-            }}>
-              {question.type.replace("-", " ").toUpperCase()}
-            </span>
-          </div>
-          
-          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            <Btn
-              onClick={handleStatusToggle}
-              disabled={updating}
-              loading={updating}
-              variant={question.status === "active" ? "outline" : "primary"}
-              size="sm"
-              icon={question.status === "active" ? <EyeOff size={14} /> : <Eye size={14} />}
-            >
-              {question.status === "active" ? "Hide" : "Publish"}
-            </Btn>
-            
-            <div style={{ position: "relative" }}>
-              <Btn
-                onClick={() => setMenuOpen(!menuOpen)}
-                size="sm"
-                icon={<MoreVertical size={14} />}
-                style={{ padding: "8px" }}
-              />
-              
-              {menuOpen && (
-                <div style={{
-                  position: "absolute", top: "100%", right: "0", zIndex: 10,
-                  background: "white", border: `1px solid ${T.line}`, borderRadius: "8px",
-                  boxShadow: "0 8px 32px rgba(0,0,0,0.1)", minWidth: "120px",
-                  marginTop: "4px"
-                }}>
-                  <button
-                    onClick={() => { onEdit(question); setMenuOpen(false); }}
-                    style={{
-                      width: "100%", padding: "8px 12px", border: "none",
-                      background: "transparent", color: T.ink, fontSize: "14px",
-                      textAlign: "left", cursor: "pointer", display: "flex",
-                      alignItems: "center", gap: "8px"
-                    }}
-                  >
-                    <Edit size={14} />
-                    Edit
-                  </button>
-                  <button
-                    onClick={handleDelete}
-                    disabled={deleting}
-                    style={{
-                      width: "100%", padding: "8px 12px", border: "none",
-                      background: "transparent", color: T.red, fontSize: "14px",
-                      textAlign: "left", cursor: "pointer", display: "flex",
-                      alignItems: "center", gap: "8px", opacity: deleting ? 0.6 : 1
-                    }}
-                  >
-                    <Trash2 size={14} />
-                    {deleting ? "Deleting..." : "Delete"}
-                  </button>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-
-        {/* Question prompt */}
-        <div style={{
-          fontSize: "18px", fontWeight: "600", color: T.ink,
-          lineHeight: "1.5", marginBottom: "12px",
-          fontFamily: "Fraunces, serif"
-        }}>
-          {question.prompt}
-        </div>
-
-        {/* Answer options/content */}
-        {formatPayload()}
-
-        {/* Explanation */}
-        {question.explanation && (
-          <div style={{ 
-            marginTop: "16px", padding: "16px", 
-            background: "linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%)",
-            borderRadius: "12px", border: `1px solid #BAE6FD`
-          }}>
-            <div style={{ fontSize: "13px", color: T.blue, fontWeight: "600", marginBottom: "8px" }}>
-              💡 Explanation
-            </div>
-            <div style={{ fontSize: "14px", color: T.ink, lineHeight: "1.5" }}>
-              {question.explanation}
-            </div>
-          </div>
-        )}
-
-        {/* Metadata */}
-        <div style={{ 
-          marginTop: "16px", paddingTop: "16px", 
-          borderTop: `1px solid ${T.line}`, display: "flex",
-          justifyContent: "space-between", alignItems: "center"
-        }}>
-          <div style={{ fontSize: "12px", color: T.faint }}>
-            {question.created_by ? (
-              <>👤 Created by you • {new Date(question.created_at).toLocaleDateString()}</>
-            ) : (
-              <>📚 From curriculum • {question.lesson_id || 'No lesson'}</>
-            )}
-          </div>
-          <div style={{ fontSize: "11px", color: T.faint, fontFamily: "mono" }}>
-            ID: {question.id.slice(-8)}
-          </div>
-        </div>
-      </div>
-    </Card>
-  );
-};
-
-const QuestionModal = ({ isOpen, onClose, onSuccess, editingQuestion }) => {
-  if (!isOpen) return null;
-
-  const handleModalSuccess = () => {
-    onSuccess();
-    onClose();
-  };
-
-  return (
-    <div style={{
-      position: "fixed", top: 0, left: 0, right: 0, bottom: 0,
-      background: "rgba(0,0,0,0.5)", zIndex: 1000,
-      display: "flex", alignItems: "center", justifyContent: "center",
-      padding: "20px"
-    }}>
-      <div style={{
-        width: "100%", maxWidth: "800px", maxHeight: "90vh", 
-        overflow: "auto", background: "white", borderRadius: "16px"
-      }}>
-        <div style={{ 
-          position: "sticky", top: 0, background: "white", 
-          padding: "20px 24px 0", borderBottom: `1px solid ${T.line}`,
-          borderRadius: "16px 16px 0 0", zIndex: 10
-        }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <h2 style={{ margin: 0, fontSize: "24px", fontFamily: "Fraunces, serif", color: T.ink }}>
-              {editingQuestion ? "Edit Question" : "Create New Question"}
-            </h2>
-            <button
-              onClick={onClose}
-              style={{
-                background: "none", border: "none", fontSize: "24px",
-                color: T.faint, cursor: "pointer", padding: "4px"
-              }}
-            >
-              ×
-            </button>
-          </div>
-        </div>
-        <div style={{ padding: "0 24px 24px" }}>
-          <AddQuestionForm 
-            onSuccess={handleModalSuccess} 
-            editingQuestion={editingQuestion}
-          />
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default function QuestionManager({ refreshTrigger, isAdmin = false }) {
-  const [questions, setQuestions] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
-  const [filter, setFilter] = useState("all");
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedSubject, setSelectedSubject] = useState("all");
-  const [selectedDifficulty, setSelectedDifficulty] = useState("all");
-  const [showCreateModal, setShowCreateModal] = useState(false);
-  const [editingQuestion, setEditingQuestion] = useState(null);
-  const [syllabus, setSyllabus] = useState({ grades: [], subjects: [], lessons: [] });
-
-  useEffect(() => {
-    loadQuestions();
-    loadSyllabus();
-  }, [refreshTrigger]);
-
-  const loadSyllabus = async () => {
-    try {
-      const response = await getSyllabus();
-      setSyllabus(response);
-    } catch (error) {
-      console.error('Failed to load syllabus:', error);
-    }
-  };
-
-  const loadQuestions = async () => {
-    try {
-      setLoading(true);
-      const response = await getQuestions();
-      setQuestions(Array.isArray(response) ? response : response.questions || []);
-      setError("");
-    } catch (err) {
-      console.error("Failed to load questions:", err);
-      setError(err.message || "Failed to load questions");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleStatusChange = () => {
-    loadQuestions();
-  };
-
-  const handleEdit = (question) => {
-    setEditingQuestion(question);
-    setShowCreateModal(true);
-  };
-
-  const handleDelete = async (questionId) => {
-    try {
-      await deleteQuestion(questionId);
-      await loadQuestions(); // Refresh the list
-    } catch (error) {
-      console.error("Failed to delete question:", error);
-      alert("Failed to delete question: " + (error.message || "Unknown error"));
-      throw error; // Re-throw so the component can handle loading state
-    }
-  };
-
-  // Filter questions based on all criteria
-  const filteredQuestions = questions.filter(q => {
-    const matchesStatus = filter === "all" || 
-                         (filter === "active" && q.status === "active") ||
-                         (filter === "draft" && q.status === "draft") ||
-                         (filter === "mine" && q.created_by !== null);
-    
-    const matchesSearch = !searchTerm || 
-                         q.prompt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         q.explanation?.toLowerCase().includes(searchTerm.toLowerCase());
-    
-    const matchesSubject = selectedSubject === "all" || q.subject_id === selectedSubject;
-    const matchesDifficulty = selectedDifficulty === "all" || q.difficulty === selectedDifficulty;
-    
-    return matchesStatus && matchesSearch && matchesSubject && matchesDifficulty;
-  });
-
-  // Group questions by subject
-  const groupedQuestions = filteredQuestions.reduce((acc, q) => {
-    if (!acc[q.subject_id]) acc[q.subject_id] = [];
-    acc[q.subject_id].push(q);
-    return acc;
-  }, {});
-
-  // Get unique subjects from all questions
-  const availableSubjects = [...new Set(questions.map(q => q.subject_id))].sort();
-
-  // Statistics
-  const stats = {
-    total: questions.length,
-    active: questions.filter(q => q.status === "active").length,
-    draft: questions.filter(q => q.status === "draft").length,
-    mine: questions.filter(q => q.created_by !== null).length
-  };
-
-  if (loading) {
-    return <LoadingCard message="Loading questions..." />;
-  }
-
-  if (error) {
+// One compact, self-contained answer summary per type — the answer is always visible.
+function AnswerLine({ q }) {
+  const p = q.payload || {};
+  const wrap = { fontSize: 13, color: T.ink2, marginTop: 8, lineHeight: 1.5 };
+  if (q.type === "multiple-choice") {
     return (
-      <Card style={{ padding: "24px", textAlign: "center" }}>
-        <div style={{ color: T.red, marginBottom: "16px", fontSize: "16px", fontWeight: "600" }}>
-          ❌ {error}
-        </div>
-        <Btn onClick={loadQuestions} variant="primary">
-          Retry Loading
-        </Btn>
-      </Card>
+      <div style={{ ...wrap, display: "flex", flexWrap: "wrap", gap: 6 }}>
+        {(p.options || []).map((o, i) => {
+          const correct = o === p.correctAnswer;
+          return (
+            <span key={i} style={{
+              display: "inline-flex", alignItems: "center", gap: 4, padding: "3px 9px", borderRadius: 8, fontSize: 12.5,
+              border: `1px solid ${correct ? T.green : T.line}`, background: correct ? T.greenSoft : T.card,
+              color: correct ? T.green : T.ink2, fontWeight: correct ? 700 : 500,
+            }}>{correct && <Check size={13} />}{o}</span>
+          );
+        })}
+      </div>
     );
   }
+  if (q.type === "true-false")
+    return <div style={wrap}>Answer: <b style={{ color: T.green }}>{p.correctAnswer ? "True" : "False"}</b></div>;
+  if (q.type === "fill-blank")
+    return <div style={wrap}>Answer: <b style={{ color: T.green }}>{p.correctAnswer}</b>{p.acceptedAnswers?.length ? <span style={{ color: T.faint }}> (also: {p.acceptedAnswers.join(", ")})</span> : null}</div>;
+  if (q.type === "short-answer")
+    return <div style={wrap}>Accepts: <b style={{ color: T.green }}>{(p.acceptedAnswers || []).join(", ")}</b></div>;
+  if (q.type === "match")
+    return <div style={wrap}>{(p.pairs || []).map((pr, i) => <span key={i}>{pr.left} → <b style={{ color: T.green }}>{pr.right}</b>{i < p.pairs.length - 1 ? "  ·  " : ""}</span>)}</div>;
+  return null;
+}
 
+function Row({ q, syllabus, onEdit, onDelete, onToggle, busy }) {
+  const subjectName = lookupFriendlyName(q.subject_id, syllabus.grades, syllabus.subjects, syllabus.lessons);
+  const active = q.status === "active";
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-      {/* Header with stats */}
-      <Card style={{ padding: "24px" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
-          <div>
-            <h2 style={{ margin: 0, fontSize: "28px", fontFamily: "Fraunces, serif", color: T.ink }}>
-              📝 Question Bank
-            </h2>
-            <p style={{ margin: "8px 0 0 0", color: T.ink2, fontSize: "14px" }}>
-              Manage and organize your Islamic studies questions
-            </p>
+    <div style={{ background: T.card, border: `1px solid ${T.line}`, borderRadius: 14, padding: "16px 18px", marginBottom: 10 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", gap: 12, alignItems: "flex-start" }}>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 6, alignItems: "center" }}>
+            <Badge color={active ? T.green : T.gold} bg={active ? T.greenSoft : "#F6EFD6"}>{active ? "Active" : "Draft"}</Badge>
+            <Badge>{subjectName}</Badge>
+            <Badge color="#6D5BD0" bg="#ECE9FB">{TYPE_LABEL[q.type] || q.type}</Badge>
+            <Badge color={q.difficulty === "hard" ? T.danger : q.difficulty === "medium" ? "#D97706" : T.green}
+              bg={q.difficulty === "hard" ? T.dangerSoft : q.difficulty === "medium" ? "#FFFBEB" : T.greenSoft}>{q.difficulty}</Badge>
           </div>
-          <Btn 
-            onClick={() => setShowCreateModal(true)} 
-            variant="primary"
-            icon={<Plus size={16} />}
-          >
-            Create Question
-          </Btn>
+          <div style={{ fontSize: 15, color: T.ink, fontWeight: 600, lineHeight: 1.4 }}>{q.prompt}</div>
+          <AnswerLine q={q} />
         </div>
-
-        {/* Quick stats */}
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))",
-          gap: "16px"
-        }}>
-          <div style={{ textAlign: "center", padding: "16px", background: T.paper2, borderRadius: "12px" }}>
-            <div style={{ fontSize: "24px", fontWeight: "700", color: T.ink }}>{stats.total}</div>
-            <div style={{ fontSize: "12px", color: T.faint }}>Total Questions</div>
-          </div>
-          <div style={{ textAlign: "center", padding: "16px", background: "#DCFCE7", borderRadius: "12px" }}>
-            <div style={{ fontSize: "24px", fontWeight: "700", color: "#16A34A" }}>{stats.active}</div>
-            <div style={{ fontSize: "12px", color: "#15803D" }}>Published</div>
-          </div>
-          <div style={{ textAlign: "center", padding: "16px", background: "#FEF3C7", borderRadius: "12px" }}>
-            <div style={{ fontSize: "24px", fontWeight: "700", color: "#92400E" }}>{stats.draft}</div>
-            <div style={{ fontSize: "12px", color: "#92400E" }}>Draft</div>
-          </div>
-          <div style={{ textAlign: "center", padding: "16px", background: T.blueSoft, borderRadius: "12px" }}>
-            <div style={{ fontSize: "24px", fontWeight: "700", color: T.blue }}>{stats.mine}</div>
-            <div style={{ fontSize: "12px", color: T.blue }}>Mine</div>
-          </div>
+        <div style={{ display: "flex", gap: 6, flexShrink: 0 }}>
+          <IconBtn title={active ? "Unpublish" : "Publish"} onClick={() => onToggle(q)} disabled={busy}>
+            {active ? <EyeOff size={16} /> : <Eye size={16} />}
+          </IconBtn>
+          <IconBtn title="Edit" onClick={() => onEdit(q)} disabled={busy}><Edit2 size={16} /></IconBtn>
+          <IconBtn title="Delete" danger onClick={() => onDelete(q)} disabled={busy}><Trash2 size={16} /></IconBtn>
         </div>
-      </Card>
-
-      {/* Filters */}
-      <Card style={{ padding: "24px" }}>
-        <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-          {/* Search */}
-          <div style={{ position: "relative" }}>
-            <Search size={16} style={{ 
-              position: "absolute", left: "12px", top: "50%", 
-              transform: "translateY(-50%)", color: T.faint 
-            }} />
-            <input
-              type="text"
-              placeholder="Search questions by text..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              style={{
-                width: "100%", padding: "12px 12px 12px 40px",
-                border: `1px solid ${T.line}`, borderRadius: "12px",
-                fontSize: "14px", background: T.paper2
-              }}
-            />
-          </div>
-
-          {/* Filter dropdowns */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: "12px" }}>
-            <select
-              value={filter}
-              onChange={(e) => setFilter(e.target.value)}
-              style={{
-                padding: "10px 12px", border: `1px solid ${T.line}`,
-                borderRadius: "8px", fontSize: "14px", background: "white"
-              }}
-            >
-              <option value="all">All Status ({stats.total})</option>
-              <option value="active">Published ({stats.active})</option>
-              <option value="draft">Draft ({stats.draft})</option>
-              <option value="mine">My Questions ({stats.mine})</option>
-            </select>
-
-            <select
-              value={selectedSubject}
-              onChange={(e) => setSelectedSubject(e.target.value)}
-              style={{
-                padding: "10px 12px", border: `1px solid ${T.line}`,
-                borderRadius: "8px", fontSize: "14px", background: "white"
-              }}
-            >
-              <option value="all">All Subjects</option>
-              {availableSubjects.map(subject => (
-                <option key={subject} value={subject}>
-                  {lookupFriendlyName(subject, syllabus.grades, syllabus.subjects, syllabus.lessons)}
-                </option>
-              ))}
-            </select>
-
-            <select
-              value={selectedDifficulty}
-              onChange={(e) => setSelectedDifficulty(e.target.value)}
-              style={{
-                padding: "10px 12px", border: `1px solid ${T.line}`,
-                borderRadius: "8px", fontSize: "14px", background: "white"
-              }}
-            >
-              <option value="all">All Difficulties</option>
-              <option value="easy">Easy</option>
-              <option value="medium">Medium</option>
-              <option value="hard">Hard</option>
-            </select>
-
-            <Btn onClick={loadQuestions} icon={<Search size={14} />} size="md">
-              Refresh
-            </Btn>
-          </div>
-        </div>
-      </Card>
-
-      {/* Questions list */}
-      {filteredQuestions.length === 0 ? (
-        <EmptyState
-          icon={<HelpCircle size={48} color={T.faint} />}
-          title="No Questions Found"
-          description={
-            searchTerm || selectedSubject !== "all" || selectedDifficulty !== "all"
-              ? "No questions match your current filters. Try adjusting your search criteria."
-              : filter === "mine" 
-                ? "You haven't created any questions yet. Click 'Create Question' to get started."
-                : "No questions available. Import questions from the curriculum or create new ones."
-          }
-        />
-      ) : (
-        <div>
-          <div style={{ marginBottom: "16px", padding: "0 4px" }}>
-            <h3 style={{ 
-              fontSize: "18px", fontWeight: "600", color: T.ink, margin: 0,
-              display: "flex", alignItems: "center", gap: "8px"
-            }}>
-              <List size={18} />
-              Questions ({filteredQuestions.length})
-            </h3>
-          </div>
-
-          {Object.entries(groupedQuestions).map(([subjectId, subjectQuestions]) => (
-            <div key={subjectId} style={{ marginBottom: "32px" }}>
-              <div style={{
-                fontSize: "16px", fontWeight: "700", color: T.ink,
-                marginBottom: "16px", padding: "12px 16px",
-                background: `linear-gradient(135deg, ${T.greenSoft} 0%, ${T.blueSoft} 100%)`,
-                border: `1px solid ${T.line}`, borderRadius: "12px",
-                display: "flex", alignItems: "center", gap: "8px"
-              }}>
-                <BookOpen size={16} />
-                {lookupFriendlyName(subjectId, syllabus.grades, syllabus.subjects, syllabus.lessons).toUpperCase()} ({subjectQuestions.length} questions)
-              </div>
-              {subjectQuestions.map(question => (
-                <QuestionCard
-                  key={question.id}
-                  question={question}
-                  onStatusChange={handleStatusChange}
-                  onEdit={handleEdit}
-                  onDelete={handleDelete}
-                  syllabus={syllabus}
-                />
-              ))}
-            </div>
-          ))}
-        </div>
-      )}
-
-      {/* Create/Edit Question Modal */}
-      <QuestionModal
-        isOpen={showCreateModal}
-        onClose={() => {
-          setShowCreateModal(false);
-          setEditingQuestion(null);
-        }}
-        onSuccess={loadQuestions}
-        editingQuestion={editingQuestion}
-      />
-
-      <style jsx>{`
-        @keyframes spin {
-          to { transform: rotate(360deg); }
-        }
-      `}</style>
+      </div>
     </div>
   );
 }
+const IconBtn = ({ children, onClick, title, danger, disabled }) => (
+  <button title={title} onClick={onClick} disabled={disabled}
+    style={{ width: 34, height: 34, borderRadius: 9, border: `1px solid ${T.line}`, background: T.card,
+      color: danger ? T.danger : T.ink2, cursor: disabled ? "not-allowed" : "pointer", display: "grid", placeItems: "center", opacity: disabled ? 0.5 : 1 }}>
+    {children}
+  </button>
+);
+
+const selectStyle = { padding: "9px 12px", border: `1.5px solid ${T.line}`, borderRadius: 9, fontSize: 13.5, background: T.card, color: T.ink, cursor: "pointer", fontFamily: "inherit" };
+
+function Modal({ open, onClose, title, children }) {
+  if (!open) return null;
+  return (
+    <div onClick={onClose} style={{ position: "fixed", inset: 0, background: "rgba(20,26,23,.45)", zIndex: 1000, display: "grid", placeItems: "center", padding: 16 }}>
+      <div onClick={(e) => e.stopPropagation()} style={{ background: T.paper, borderRadius: 18, width: "100%", maxWidth: 620, maxHeight: "90vh", overflow: "hidden", display: "flex", flexDirection: "column", boxShadow: "0 24px 60px rgba(0,0,0,.3)" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "18px 22px", borderBottom: `1px solid ${T.line}`, flexShrink: 0 }}>
+          <h2 style={{ margin: 0, fontFamily: "Fraunces, serif", fontSize: 20, color: T.ink }}>{title}</h2>
+          <button onClick={onClose} style={{ border: "none", background: "transparent", cursor: "pointer", color: T.ink2 }}><X size={22} /></button>
+        </div>
+        <div style={{ padding: "20px 22px", overflowY: "auto" }}>{children}</div>
+      </div>
+    </div>
+  );
+}
+
+export default function QuestionManager({ refreshTrigger, isAdmin = false }) {
+  const [data, setData] = useState({ questions: [], total: 0, page: 1, totalPages: 1 });
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [syllabus, setSyllabus] = useState({ grades: [], subjects: [], lessons: [] });
+
+  const [page, setPage] = useState(1);
+  const [searchInput, setSearchInput] = useState("");
+  const [search, setSearch] = useState("");
+  const [status, setStatus] = useState("all");
+  const [subjectId, setSubjectId] = useState("all");
+  const [type, setType] = useState("all");
+  const [difficulty, setDifficulty] = useState("all");
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const [editing, setEditing] = useState(null);
+  const [busyId, setBusyId] = useState(null);
+
+  // Debounce the search box → query.
+  const debounce = useRef();
+  useEffect(() => {
+    clearTimeout(debounce.current);
+    debounce.current = setTimeout(() => { setSearch(searchInput); setPage(1); }, 350);
+    return () => clearTimeout(debounce.current);
+  }, [searchInput]);
+
+  useEffect(() => { getSyllabus().then(setSyllabus).catch(() => {}); }, []);
+
+  const load = useCallback(async () => {
+    try {
+      setLoading(true); setError("");
+      const r = await getQuestions({ page, pageSize: PAGE_SIZE, search, status, subjectId, type, difficulty, mine: !isAdmin });
+      setData(r);
+    } catch (e) { setError(e.message || "Failed to load questions"); }
+    finally { setLoading(false); }
+  }, [page, search, status, subjectId, type, difficulty, isAdmin]);
+
+  useEffect(() => { load(); }, [load, refreshTrigger]);
+  useEffect(() => { setPage(1); }, [status, subjectId, type, difficulty]);
+
+  const subjectsForGrade = syllabus.subjects || [];
+
+  const openCreate = () => { setEditing(null); setModalOpen(true); };
+  const openEdit = (q) => { setEditing(q); setModalOpen(true); };
+  const onSuccess = () => { setModalOpen(false); setEditing(null); load(); };
+
+  const toggle = async (q) => {
+    setBusyId(q.id);
+    try { await updateQuestionStatus(q.id, q.status === "active" ? "draft" : "active"); await load(); }
+    catch (e) { setError(e.message); } finally { setBusyId(null); }
+  };
+  const remove = async (q) => {
+    if (!window.confirm("Delete this question? This cannot be undone.")) return;
+    setBusyId(q.id);
+    try { await deleteQuestion(q.id); await load(); }
+    catch (e) { setError(e.message); } finally { setBusyId(null); }
+  };
+
+  const start = data.total === 0 ? 0 : (data.page - 1) * PAGE_SIZE + 1;
+  const end = Math.min(data.page * PAGE_SIZE, data.total);
+
+  return (
+    <div>
+      {/* Header */}
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12, marginBottom: 18 }}>
+        <div>
+          <h1 style={{ fontFamily: "Fraunces, serif", fontSize: 26, color: T.ink, margin: 0 }}>Question Bank</h1>
+          <p style={{ color: T.ink2, margin: "4px 0 0", fontSize: 14 }}>{data.total} questions{search || status !== "all" || subjectId !== "all" || type !== "all" || difficulty !== "all" ? " match your filters" : ""}</p>
+        </div>
+        <button onClick={openCreate} style={{ display: "inline-flex", alignItems: "center", gap: 8, background: T.green, color: "#fff", border: "none", borderRadius: 10, padding: "12px 18px", fontSize: 14, fontWeight: 700, cursor: "pointer" }}>
+          <Plus size={18} /> Add question
+        </button>
+      </div>
+
+      {/* Search + filters */}
+      <div style={{ background: T.card, border: `1px solid ${T.line}`, borderRadius: 14, padding: 14, marginBottom: 18, display: "flex", flexWrap: "wrap", gap: 10, alignItems: "center" }}>
+        <div style={{ position: "relative", flex: "1 1 260px" }}>
+          <Search size={17} style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)", color: T.faint }} />
+          <input value={searchInput} onChange={(e) => setSearchInput(e.target.value)} placeholder="Search question text…"
+            style={{ width: "100%", padding: "10px 12px 10px 38px", border: `1.5px solid ${T.line}`, borderRadius: 9, fontSize: 14, boxSizing: "border-box", color: T.ink, background: T.card }} />
+        </div>
+        <select value={status} onChange={(e) => setStatus(e.target.value)} style={selectStyle}>
+          <option value="all">All status</option><option value="active">Active</option><option value="draft">Draft</option>
+        </select>
+        <select value={subjectId} onChange={(e) => setSubjectId(e.target.value)} style={selectStyle}>
+          <option value="all">All subjects</option>
+          {subjectsForGrade.map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}
+        </select>
+        <select value={type} onChange={(e) => setType(e.target.value)} style={selectStyle}>
+          <option value="all">All types</option>
+          {Object.entries(TYPE_LABEL).map(([v, l]) => <option key={v} value={v}>{l}</option>)}
+        </select>
+        <select value={difficulty} onChange={(e) => setDifficulty(e.target.value)} style={selectStyle}>
+          <option value="all">All levels</option><option value="easy">Easy</option><option value="medium">Medium</option><option value="hard">Hard</option>
+        </select>
+      </div>
+
+      {error && (
+        <div style={{ display: "flex", alignItems: "center", gap: 8, background: T.dangerSoft, color: T.danger, padding: "10px 14px", borderRadius: 10, marginBottom: 14, fontSize: 14 }}>
+          <AlertCircle size={16} />{error}
+        </div>
+      )}
+
+      {/* List */}
+      {loading ? (
+        <div style={{ textAlign: "center", padding: 50, color: T.ink2 }}>Loading…</div>
+      ) : data.questions.length === 0 ? (
+        <div style={{ textAlign: "center", padding: 60, color: T.ink2, background: T.card, border: `1px dashed ${T.line}`, borderRadius: 14 }}>
+          <FileText size={36} color={T.faint} style={{ marginBottom: 10 }} />
+          <p style={{ margin: 0 }}>No questions match. Try clearing filters or add a new one.</p>
+        </div>
+      ) : (
+        <>
+          {data.questions.map((q) => (
+            <Row key={q.id} q={q} syllabus={syllabus} onEdit={openEdit} onDelete={remove} onToggle={toggle} busy={busyId === q.id} />
+          ))}
+          {/* Pagination */}
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 18, flexWrap: "wrap", gap: 10 }}>
+            <span style={{ color: T.ink2, fontSize: 13.5 }}>Showing {start}–{end} of {data.total}</span>
+            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              <PageBtn disabled={data.page <= 1} onClick={() => setPage(data.page - 1)}><ChevronLeft size={16} /> Prev</PageBtn>
+              <span style={{ fontSize: 13.5, color: T.ink, fontWeight: 600 }}>Page {data.page} / {data.totalPages}</span>
+              <PageBtn disabled={data.page >= data.totalPages} onClick={() => setPage(data.page + 1)}>Next <ChevronRight size={16} /></PageBtn>
+            </div>
+          </div>
+        </>
+      )}
+
+      <Modal open={modalOpen} onClose={() => { setModalOpen(false); setEditing(null); }} title={editing ? "Edit question" : "New question"}>
+        <AddQuestionForm editingQuestion={editing} onSuccess={onSuccess} />
+      </Modal>
+    </div>
+  );
+}
+
+const PageBtn = ({ children, onClick, disabled }) => (
+  <button onClick={onClick} disabled={disabled}
+    style={{ display: "inline-flex", alignItems: "center", gap: 4, padding: "8px 14px", borderRadius: 9, border: `1.5px solid ${T.line}`, background: disabled ? T.paper2 : T.card, color: disabled ? T.faint : T.ink, cursor: disabled ? "not-allowed" : "pointer", fontSize: 13.5, fontWeight: 600 }}>
+    {children}
+  </button>
+);

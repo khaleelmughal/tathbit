@@ -9,6 +9,9 @@
 
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";   -- for gen_random_uuid()
 
+DROP TABLE IF EXISTS activity_events CASCADE;
+DROP TABLE IF EXISTS flashcard_results CASCADE;
+DROP TABLE IF EXISTS quiz_sessions CASCADE;
 DROP TABLE IF EXISTS attempts CASCADE;
 DROP TABLE IF EXISTS student_state CASCADE;
 DROP TABLE IF EXISTS questions CASCADE;
@@ -81,8 +84,10 @@ CREATE TABLE lessons (
   -- flexibility per book layout.
   content     JSONB NOT NULL DEFAULT '{}'::jsonb,
   needs_content BOOLEAN NOT NULL DEFAULT false,
-  position    INT NOT NULL DEFAULT 0
+  position    INT NOT NULL DEFAULT 0,
+  updated_at  TIMESTAMPTZ NOT NULL DEFAULT now()
 );
+-- (trigger created after set_updated_at() is defined, below the questions table)
 
 -- Every question type lives here. Type-specific fields (options, pairs,
 -- accepted answers, correct answer) go in `payload` JSONB so one table serves
@@ -99,10 +104,25 @@ CREATE TABLE questions (
   difficulty  TEXT NOT NULL DEFAULT 'medium',
   status      TEXT NOT NULL DEFAULT 'active',   -- 'active' | 'draft'  (teacher chooses each time)
   created_by  UUID REFERENCES users(id) ON DELETE SET NULL,  -- NULL = seeded from the book
-  created_at  TIMESTAMPTZ NOT NULL DEFAULT now()
+  created_at  TIMESTAMPTZ NOT NULL DEFAULT now(),
+  updated_at  TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 CREATE INDEX questions_lesson_idx  ON questions(lesson_id);
 CREATE INDEX questions_subject_idx ON questions(subject_id);
+CREATE INDEX questions_grade_idx   ON questions(grade_id);
+CREATE INDEX questions_status_idx  ON questions(status);
+CREATE INDEX questions_type_idx    ON questions(type);
+CREATE EXTENSION IF NOT EXISTS pg_trgm;
+CREATE INDEX questions_prompt_trgm_idx ON questions USING gin (prompt gin_trgm_ops);
+
+-- Auto-maintain updated_at on UPDATE (questions + lessons).
+CREATE OR REPLACE FUNCTION set_updated_at() RETURNS trigger AS $$
+BEGIN NEW.updated_at = now(); RETURN NEW; END;
+$$ LANGUAGE plpgsql;
+CREATE TRIGGER questions_set_updated_at BEFORE UPDATE ON questions
+  FOR EACH ROW EXECUTE FUNCTION set_updated_at();
+CREATE TRIGGER lessons_set_updated_at BEFORE UPDATE ON lessons
+  FOR EACH ROW EXECUTE FUNCTION set_updated_at();
 
 -- ---- Progress -------------------------------------------------------------
 -- Whole-progress blob per student (mirrors the frontend state shape exactly,
@@ -113,21 +133,76 @@ CREATE TABLE student_state (
   updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
--- Queryable attempt log so teachers get fast dashboards without parsing JSON.
+-- Per-QUESTION attempt log (one row per answered question) so teachers get fast
+-- dashboards without parsing JSON: is_correct + question_id drive every report.
 CREATE TABLE attempts (
   id           UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   student_id   UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   question_id  UUID REFERENCES questions(id) ON DELETE SET NULL,
+  grade_id     TEXT,
   subject_id   TEXT,
   lesson_id    TEXT,
+  type         TEXT,
   mode         TEXT,
   is_correct   BOOLEAN,
-  score        INT NOT NULL,
-  total        INT NOT NULL,
+  time_ms      INT,
+  session_id   UUID,
+  score        INT,
+  total        INT,
   completed_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 CREATE INDEX attempts_student_idx ON attempts(student_id);
 CREATE INDEX attempts_question_idx ON attempts(question_id);
+CREATE INDEX attempts_subject_idx ON attempts(subject_id);
+CREATE INDEX attempts_session_idx ON attempts(session_id);
+CREATE INDEX attempts_completed_idx ON attempts(completed_at);
+
+-- One row per finished quiz: time-per-test, speed trends, mixed-vs-fixed split.
+CREATE TABLE quiz_sessions (
+  id           UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  student_id   UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  grade_id     TEXT,
+  subject_id   TEXT,
+  lesson_id    TEXT,
+  mode         TEXT,
+  score        INT NOT NULL DEFAULT 0,
+  total        INT NOT NULL DEFAULT 0,
+  duration_ms  INT,
+  started_at   TIMESTAMPTZ,
+  completed_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+CREATE INDEX quiz_sessions_student_idx ON quiz_sessions(student_id);
+CREATE INDEX quiz_sessions_completed_idx ON quiz_sessions(completed_at);
+
+-- Flashcard knowledge: what each student knows / is still learning / forgot.
+-- (Distinct from the SM-2 flashcard_reviews table below, which tracks spaced
+-- repetition against the flashcards table.)
+CREATE TABLE flashcard_results (
+  id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  student_id  UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  card_id     TEXT NOT NULL,
+  subject_id  TEXT,
+  lesson_id   TEXT,
+  grade_id    TEXT,
+  front       TEXT,
+  result      TEXT NOT NULL,
+  reviewed_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+CREATE INDEX flashcard_results_student_idx ON flashcard_results(student_id);
+CREATE INDEX flashcard_results_card_idx ON flashcard_results(card_id);
+
+-- Activity feed: login, logout, lesson reads, quiz + flashcard sessions.
+CREATE TABLE activity_events (
+  id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  student_id  UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  type        TEXT NOT NULL,
+  subject_id  TEXT,
+  lesson_id   TEXT,
+  meta        JSONB,
+  created_at  TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+CREATE INDEX activity_events_student_idx ON activity_events(student_id);
+CREATE INDEX activity_events_created_idx ON activity_events(created_at);
 
 -- ---- Flashcards -----------------------------------------------------------
 -- Spaced repetition flashcards for each lesson

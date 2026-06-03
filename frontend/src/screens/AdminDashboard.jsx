@@ -11,6 +11,7 @@ import QuestionManager from "../components/QuestionManager";
 import AnalyticsDashboard from "../components/AnalyticsDashboard";
 import ClassList from "../components/ClassList";
 import FlashcardManager from "../components/FlashcardManager";
+import LessonContentEditor from "../components/LessonContentEditor";
 import { getAdminStats } from "../lib/api";
 
 const T = {
@@ -51,6 +52,7 @@ const Card = ({ children, title, style = {} }) => (
 
 export default function AdminDashboard({ user, onLogout }) {
   const [refreshTrigger, setRefreshTrigger] = useState(0);
+  const [contentTab, setContentTab] = useState("lessons");
   const [stats, setStats] = useState(null);
   const [statsLoading, setStatsLoading] = useState(true);
   const location = useLocation();
@@ -189,9 +191,24 @@ export default function AdminDashboard({ user, onLogout }) {
   };
 
   const renderContentSection = () => {
+    const tab = (id, label) => (
+      <button onClick={() => setContentTab(id)} style={{
+        padding: "10px 18px", borderRadius: 10, border: "none", cursor: "pointer",
+        fontSize: 14, fontWeight: 700, fontFamily: "Plus Jakarta Sans, sans-serif",
+        background: contentTab === id ? T.green : T.card,
+        color: contentTab === id ? "#fff" : T.ink2,
+        boxShadow: contentTab === id ? "none" : `inset 0 0 0 1.5px ${T.line}`,
+      }}>{label}</button>
+    );
     return (
-      <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-        <FlashcardManager refreshTrigger={refreshTrigger} onUpdate={handleFormSuccess} />
+      <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+        <div style={{ display: "flex", gap: 10 }}>
+          {tab("lessons", "Lesson content")}
+          {tab("flashcards", "Flashcards")}
+        </div>
+        {contentTab === "lessons"
+          ? <LessonContentEditor />
+          : <FlashcardManager refreshTrigger={refreshTrigger} onUpdate={handleFormSuccess} />}
       </div>
     );
   };

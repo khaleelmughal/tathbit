@@ -49,6 +49,12 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 
+node_modules/
+frontend/dist/
+.env
+**/.env
+.DS_Store
+
 # Editor / IDE
 .vscode/
 !.vscode/extensions.json

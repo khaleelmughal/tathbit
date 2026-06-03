@@ -1,9 +1,23 @@
 import { useState, useEffect } from 'react';
-import { getUserDetails, updateUser, deleteUser } from '../lib/api';
+import { getUserDetails, updateUser, deleteUser, getStudentProgress } from '../lib/api';
+import { LogIn, LogOut, BookOpen, Target, Layers, Activity, Clock } from 'lucide-react';
+
+const ACT_META = {
+  login:             { Icon: LogIn,  c: 'text-emerald-600', label: 'Logged in' },
+  logout:            { Icon: LogOut, c: 'text-faint',       label: 'Logged out' },
+  lesson_view:       { Icon: BookOpen, c: 'text-blue-600',  label: 'Read a lesson' },
+  quiz_complete:     { Icon: Target, c: 'text-brand',       label: 'Finished a quiz' },
+  flashcard_session: { Icon: Layers, c: 'text-purple-600',  label: 'Reviewed flashcards' },
+};
+const fmtWhen = (ts) => new Date(ts).toLocaleString('en-GB', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+const secs = (ms) => (ms == null ? '—' : Math.round(Number(ms) / 1000) + 's');
+const numv = (v) => Number(v) || 0;
 
 const UserProfileModal = ({ userId, onClose, onUserUpdated, onUserDeleted }) => {
   const [user, setUser] = useState(null);
   const [analytics, setAnalytics] = useState(null);
+  const [progress, setProgress] = useState(null);
+  const [tab, setTab] = useState('overview');
   const [loading, setLoading] = useState(true);
   const [editing, setEditing] = useState(false);
   const [editForm, setEditForm] = useState({});
@@ -28,6 +42,10 @@ const UserProfileModal = ({ userId, onClose, onUserUpdated, onUserDeleted }) => 
         email: data.user.email || '',
         username: data.user.username || ''
       });
+      if (data.user.role === 'student') {
+        try { setProgress(await getStudentProgress(userId)); }
+        catch (e) { setProgress(null); }
+      }
     } catch (error) {
       console.error('Failed to load user details:', error);
     } finally {
@@ -73,7 +91,7 @@ const UserProfileModal = ({ userId, onClose, onUserUpdated, onUserDeleted }) => 
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-xl2 shadow-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto">
+      <div className="bg-white rounded-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto" style={{boxShadow: "0 20px 25px -5px rgba(43, 58, 51, 0.1), 0 10px 10px -5px rgba(43, 58, 51, 0.04)"}}>
         <div className="p-6 border-b border-line">
           <div className="flex justify-between items-center">
             <h2 className="text-2xl font-serif font-medium text-ink">
@@ -217,88 +235,106 @@ const UserProfileModal = ({ userId, onClose, onUserUpdated, onUserDeleted }) => 
                 </div>
               </div>
 
-              {/* Student Analytics */}
-              {analytics && user.role === 'student' && (
-                <>
-                  {/* Question Statistics */}
+              {/* Student progress tabs */}
+              {user.role === 'student' && (() => {
+                const stats = (progress && progress.stats) || {};
+                const totalAnswers = numv(stats.total_answers);
+                const correct = numv(stats.correct_answers);
+                const success = stats.success_rate != null ? stats.success_rate : (totalAnswers ? Math.round(correct * 100 / totalAnswers) : 0);
+                const subjects = (progress && progress.subjectBreakdown) || [];
+                const sessions = (progress && progress.sessions) || [];
+                const activity = (progress && progress.activity) || [];
+                const weak = (progress && progress.weakQuestions) || [];
+                const fcards = (progress && progress.flashcards) || [];
+                const known = fcards.filter(f => f.result === 'known');
+                const needWork = fcards.filter(f => f.result !== 'known');
+                const TABS = [['overview', 'Overview'], ['activity', 'Activity'], ['flashcards', 'Flashcards'], ['weak', 'Weak questions']];
+                return (
                   <div className="bg-white rounded-xl border border-line p-6">
-                    <h3 className="text-lg font-serif font-medium text-ink mb-4">
-                      Question Statistics
-                    </h3>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      <div className="text-center">
-                        <div className="text-3xl font-bold text-brand font-sans">
-                          {analytics.questionStats.total_attempts || 0}
-                        </div>
-                        <div className="text-sm text-ink2 font-sans">Total Attempts</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-3xl font-bold text-emerald-600 font-sans">
-                          {analytics.questionStats.correct_answers || 0}
-                        </div>
-                        <div className="text-sm text-ink2 font-sans">Correct Answers</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-3xl font-bold text-blue-600 font-sans">
-                          {analytics.questionStats.success_rate || 0}%
-                        </div>
-                        <div className="text-sm text-ink2 font-sans">Success Rate</div>
-                      </div>
+                    <div className="flex gap-1 border-b border-line mb-4 flex-wrap">
+                      {TABS.map(([key, label]) => (
+                        <button key={key} onClick={() => setTab(key)}
+                          className={`px-4 py-2 text-sm font-sans -mb-px border-b-2 ${tab === key ? 'border-brand text-brand font-semibold' : 'border-transparent text-ink2 hover:text-ink'}`}>
+                          {label}
+                        </button>
+                      ))}
                     </div>
+
+                    {tab === 'overview' && (
+                      <div className="space-y-5">
+                        <div className="grid grid-cols-3 gap-4">
+                          <div className="text-center"><div className="text-3xl font-bold text-brand font-sans">{totalAnswers}</div><div className="text-sm text-ink2 font-sans">Questions Answered</div></div>
+                          <div className="text-center"><div className="text-3xl font-bold text-emerald-600 font-sans">{correct}</div><div className="text-sm text-ink2 font-sans">Correct</div></div>
+                          <div className="text-center"><div className="text-3xl font-bold text-blue-600 font-sans">{success}%</div><div className="text-sm text-ink2 font-sans">Success Rate</div></div>
+                        </div>
+                        <div>
+                          <div className="text-sm font-semibold text-ink mb-2 font-sans">By subject</div>
+                          {subjects.length === 0 ? <p className="text-sm text-ink2 font-sans">No quiz answers yet.</p> :
+                            <div className="space-y-2">{subjects.map((s, i) => (
+                              <div key={i} className="flex justify-between items-center p-3 bg-paper rounded-lg">
+                                <div className="font-medium font-sans text-ink">{s.subject_id}</div>
+                                <div className="text-right"><div className="font-medium text-brand font-sans">{numv(s.success_rate)}%</div><div className="text-xs text-ink2 font-sans">{numv(s.correct)}/{numv(s.answers)}</div></div>
+                              </div>
+                            ))}</div>}
+                        </div>
+                      </div>
+                    )}
+
+                    {tab === 'activity' && (
+                      <div className="space-y-5">
+                        <div>
+                          <div className="text-sm font-semibold text-ink mb-2 font-sans">Quiz sessions</div>
+                          {sessions.length === 0 ? <p className="text-sm text-ink2 font-sans">No tests taken yet.</p> :
+                            <div className="space-y-2">{sessions.map(s => { const mode = s.mode === 'exam-practice' ? 'Mixed' : 'Fixed'; return (
+                              <div key={s.id} className="flex justify-between items-center p-3 bg-paper rounded-lg">
+                                <div><div className="text-sm font-medium text-ink font-sans">{s.subject_id || 'Mixed'} <span className="text-xs text-ink2">({mode})</span></div><div className="text-xs text-faint font-sans">{fmtWhen(s.completed_at)} · {secs(s.duration_ms)}</div></div>
+                                <div className="text-sm font-bold text-brand font-sans">{numv(s.score)}/{numv(s.total)}</div>
+                              </div>
+                            ); })}</div>}
+                        </div>
+                        <div>
+                          <div className="text-sm font-semibold text-ink mb-2 font-sans">Activity log</div>
+                          {activity.length === 0 ? <p className="text-sm text-ink2 font-sans">No activity recorded yet.</p> :
+                            <div className="space-y-1 max-h-72 overflow-y-auto">{activity.map((e, i) => { const m = ACT_META[e.type] || { Icon: Activity, c: 'text-ink2', label: e.type }; const I = m.Icon; const meta = e.meta && typeof e.meta === 'object' ? e.meta : {}; const detail = e.type === 'quiz_complete' && meta.score != null ? `${meta.score}/${meta.total}` : e.type === 'flashcard_session' && meta.reviewed != null ? `${meta.reviewed} cards` : (e.subject_id || ''); return (
+                              <div key={i} className="flex items-center gap-3 p-2 rounded-lg hover:bg-paper">
+                                <I size={15} className={m.c} />
+                                <div className="flex-1 min-w-0 text-sm text-ink font-sans truncate">{m.label}{detail ? <span className="text-ink2"> ({detail})</span> : null}</div>
+                                <span className="text-xs text-faint font-sans whitespace-nowrap">{fmtWhen(e.created_at)}</span>
+                              </div>
+                            ); })}</div>}
+                        </div>
+                      </div>
+                    )}
+
+                    {tab === 'flashcards' && (
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                          <div className="text-sm font-semibold text-emerald-700 mb-2 font-sans">Knows ({known.length})</div>
+                          {known.length === 0 ? <p className="text-sm text-ink2 font-sans">Nothing marked known yet.</p> :
+                            <div className="space-y-2 max-h-72 overflow-y-auto">{known.map((f, i) => (<div key={i} className="p-2 bg-emerald-50 rounded-lg text-sm text-ink font-sans">{f.front || f.card_id}</div>))}</div>}
+                        </div>
+                        <div>
+                          <div className="text-sm font-semibold text-red-600 mb-2 font-sans">Still learning / forgot ({needWork.length})</div>
+                          {needWork.length === 0 ? <p className="text-sm text-ink2 font-sans">Nothing to revise.</p> :
+                            <div className="space-y-2 max-h-72 overflow-y-auto">{needWork.map((f, i) => (<div key={i} className="p-2 bg-red-50 rounded-lg text-sm text-ink font-sans flex justify-between"><span className="min-w-0 truncate">{f.front || f.card_id}</span><span className="text-xs text-red-600 ml-2 shrink-0">{f.result}</span></div>))}</div>}
+                        </div>
+                      </div>
+                    )}
+
+                    {tab === 'weak' && (
+                      <div>
+                        {weak.length === 0 ? <p className="text-sm text-ink2 font-sans">No weak questions yet — they appear once a question is answered wrong.</p> :
+                          <div className="space-y-2">{weak.map((w, i) => { const a = numv(w.attempts), c = numv(w.correct); return (
+                            <div key={i} className="p-3 bg-red-50 rounded-lg border border-red-200">
+                              <div className="text-sm font-medium text-ink font-sans">{w.prompt}</div>
+                              <div className="flex justify-between mt-1 text-xs font-sans"><span className="text-ink2">{w.subject_id}</span><span className="text-red-600">{c}/{a} correct</span></div>
+                            </div>
+                          ); })}</div>}
+                      </div>
+                    )}
                   </div>
-
-                  {/* Subject Performance */}
-                  {analytics.subjectStats && analytics.subjectStats.length > 0 && (
-                    <div className="bg-white rounded-xl border border-line p-6">
-                      <h3 className="text-lg font-serif font-medium text-ink mb-4">
-                        Subject Performance
-                      </h3>
-                      <div className="space-y-3">
-                        {analytics.subjectStats.map((subject, index) => (
-                          <div key={index} className="flex justify-between items-center p-3 bg-paper rounded-lg">
-                            <div>
-                              <div className="font-medium font-sans text-ink">{subject.subject_id}</div>
-                              <div className="text-sm text-ink2 font-sans">
-                                {subject.attempts} attempts
-                              </div>
-                            </div>
-                            <div className="text-right">
-                              <div className="font-medium text-brand font-sans">
-                                {subject.success_rate}%
-                              </div>
-                              <div className="text-sm text-ink2 font-sans">
-                                {subject.correct}/{subject.attempts}
-                              </div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Recent Activity */}
-                  {analytics.recentActivity && analytics.recentActivity.length > 0 && (
-                    <div className="bg-white rounded-xl border border-line p-6">
-                      <h3 className="text-lg font-serif font-medium text-ink mb-4">
-                        Recent Activity
-                      </h3>
-                      <div className="space-y-3 max-h-64 overflow-y-auto">
-                        {analytics.recentActivity.map((activity, index) => (
-                          <div key={index} className="flex items-start space-x-3 p-3 bg-paper rounded-lg">
-                            <div className={`w-3 h-3 rounded-full mt-1 ${activity.is_correct ? 'bg-emerald-500' : 'bg-red-500'}`}></div>
-                            <div className="flex-1 min-w-0">
-                              <div className="text-sm text-ink font-sans truncate">{activity.prompt}</div>
-                              <div className="text-xs text-faint font-sans">
-                                {activity.subject_id} • {new Date(activity.created_at).toLocaleDateString()}
-                              </div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </>
-              )}
+                );
+              })()}
 
               {/* Danger Zone */}
               <div className="bg-red-50 border border-red-200 rounded-xl p-6">

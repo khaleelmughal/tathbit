@@ -12,7 +12,7 @@ const globalStyles = `
   body {
     margin: 0;
     padding: 0;
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Geeza Pro', 'Noto Naskh Arabic', 'Arial Unicode MS', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -46,21 +46,6 @@ const globalStyles = `
 const styleElement = document.createElement('style');
 styleElement.textContent = globalStyles;
 document.head.appendChild(styleElement);
-
-// App.jsx talks to `window.storage` (get/set returning {value}) and falls back
-// to in-memory if absent. We give it a localStorage-backed implementation so
-// progress persists across reloads in the browser, no edits to App.jsx needed.
-(function installLocalStorage() {
-  (window as any).storage = {
-    async get(key: string) {
-      const v = localStorage.getItem(key);
-      return v == null ? null : { value: v };
-    },
-    async set(key: string, value: string) {
-      localStorage.setItem(key, value);
-    },
-  };
-})();
 
 createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

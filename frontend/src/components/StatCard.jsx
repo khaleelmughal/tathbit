@@ -26,20 +26,20 @@ export default function StatCard({
         padding: "24px",
         cursor: onClick ? "pointer" : "default",
         transition: "all 0.2s ease",
-        boxShadow: onClick ? "0 2px 8px rgba(0,0,0,0.04)" : "none",
+        boxShadow: "0 1px 3px rgba(43, 58, 51, 0.08), 0 1px 2px rgba(43, 58, 51, 0.04)",
         position: "relative",
         overflow: "hidden",
       }}
       onMouseEnter={(e) => {
         if (onClick) {
           e.target.style.transform = "translateY(-2px)";
-          e.target.style.boxShadow = "0 4px 16px rgba(0,0,0,0.08)";
+          e.target.style.boxShadow = "0 4px 12px rgba(43, 58, 51, 0.1), 0 2px 4px rgba(43, 58, 51, 0.06)";
         }
       }}
       onMouseLeave={(e) => {
         if (onClick) {
           e.target.style.transform = "translateY(0)";
-          e.target.style.boxShadow = "0 2px 8px rgba(0,0,0,0.04)";
+          e.target.style.boxShadow = "0 1px 3px rgba(43, 58, 51, 0.08), 0 1px 2px rgba(43, 58, 51, 0.04)";
         }
       }}
     >

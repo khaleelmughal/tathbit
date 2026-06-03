@@ -1,761 +1,420 @@
 import React, { useState, useEffect } from "react";
 import { createQuestion, updateQuestion, getSyllabus } from "../lib/api";
-import { Plus, Save, Edit } from "lucide-react";
+import { Plus, Save, Edit, Check, X, Trash2 } from "lucide-react";
 
 const T = {
   paper: "#FBF7EE", paper2: "#F3ECDD", card: "#FFFFFF", ink: "#2B3A33", ink2: "#5C6B62",
   faint: "#8A968D", line: "#E8E0CF", green: "#1E7A57", greenSoft: "#E4F1E9", gold: "#C99A2E",
+  danger: "#C0563B", dangerSoft: "#FBEFEC",
 };
 
-const Card = ({ children, style = {} }) => (
-  <div style={{
-    background: T.card, 
-    border: `1px solid ${T.line}`,
-    borderRadius: "16px", 
-    padding: "32px", 
-    boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
-    ...style
-  }}>
-    {children}
-  </div>
+const TYPE_LABELS = {
+  "multiple-choice": "Multiple choice",
+  "true-false": "True / False",
+  "fill-blank": "Fill in the blank",
+  "short-answer": "Short answer",
+  "match": "Match the columns",
+};
+
+const labelStyle = { display: "block", color: T.ink, fontSize: 13, fontWeight: 700, marginBottom: 6 };
+const fieldStyle = {
+  width: "100%", padding: "11px 13px", border: `1.5px solid ${T.line}`, borderRadius: 10,
+  fontSize: 15, fontFamily: "Plus Jakarta Sans, sans-serif", background: "white", color: T.ink,
+  boxSizing: "border-box", outline: "none",
+};
+
+function Field({ label, error, required, children }) {
+  return (
+    <div style={{ marginBottom: 16 }}>
+      {label && (
+        <label style={labelStyle}>
+          {label}{required && <span style={{ color: T.danger, marginLeft: 3 }}>*</span>}
+        </label>
+      )}
+      {children}
+      {error && <div style={{ color: T.danger, fontSize: 12, marginTop: 4, fontWeight: 600 }}>{error}</div>}
+    </div>
+  );
+}
+
+const Select = ({ label, error, required, children, ...p }) => (
+  <Field label={label} error={error} required={required}>
+    <select {...p} style={{ ...fieldStyle, cursor: "pointer", ...p.style }}>{children}</select>
+  </Field>
+);
+const Input = (p) => <input {...p} style={{ ...fieldStyle, ...p.style }} />;
+const Textarea = ({ label, error, required, ...p }) => (
+  <Field label={label} error={error} required={required}>
+    <textarea {...p} style={{ ...fieldStyle, minHeight: 80, resize: "vertical", ...p.style }} />
+  </Field>
 );
 
-const Btn = ({ children, onClick, disabled, variant = "primary", type = "button", style = {}, icon }) => {
-  const baseStyles = {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: "8px",
-    padding: "14px 20px",
-    borderRadius: "10px",
-    cursor: disabled ? "not-allowed" : "pointer",
-    fontSize: "14px",
-    fontWeight: "600",
-    fontFamily: "Plus Jakarta Sans, sans-serif",
-    border: "none",
-    transition: "all 0.2s ease",
-    minHeight: "48px",
-    textAlign: "center",
-    opacity: disabled ? 0.6 : 1,
-    boxShadow: disabled ? "none" : "0 2px 4px rgba(0,0,0,0.05)",
-    ...style
+function Btn({ children, onClick, disabled, variant = "primary", icon, style = {} }) {
+  const base = {
+    display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8,
+    padding: "12px 18px", borderRadius: 10, cursor: disabled ? "not-allowed" : "pointer",
+    fontSize: 14, fontWeight: 700, fontFamily: "Plus Jakarta Sans, sans-serif", border: "none",
+    opacity: disabled ? 0.55 : 1, transition: "all .15s ease",
   };
-
-  const variantStyles = {
-    primary: {
-      background: `linear-gradient(135deg, ${T.green} 0%, #166e47 100%)`,
-      color: "white",
-      boxShadow: disabled ? "none" : "0 4px 12px rgba(30,122,87,0.3)"
-    },
-    secondary: {
-      background: T.card,
-      color: T.ink,
-      border: `2px solid ${T.line}`,
-      boxShadow: disabled ? "none" : "0 2px 8px rgba(0,0,0,0.08)"
-    },
-    outline: {
-      background: "transparent",
-      color: T.green,
-      border: `2px solid ${T.green}`,
-      boxShadow: "none"
-    }
+  const variants = {
+    primary: { background: T.green, color: "#fff" },
+    secondary: { background: T.card, color: T.ink, border: `1.5px solid ${T.line}` },
+    ghost: { background: "transparent", color: T.green, border: `1.5px dashed ${T.line}` },
   };
-
-  const finalStyles = { ...baseStyles, ...variantStyles[variant] };
-
   return (
-    <button
-      type={type}
-      onClick={onClick}
-      disabled={disabled}
-      style={finalStyles}
-      onMouseEnter={(e) => {
-        if (!disabled && variant === "primary") {
-          e.target.style.transform = "translateY(-1px)";
-          e.target.style.boxShadow = "0 6px 20px rgba(30,122,87,0.4)";
-        } else if (!disabled && variant === "secondary") {
-          e.target.style.borderColor = T.green;
-          e.target.style.color = T.green;
-        }
-      }}
-      onMouseLeave={(e) => {
-        if (!disabled) {
-          e.target.style.transform = "translateY(0)";
-          if (variant === "primary") {
-            e.target.style.boxShadow = "0 4px 12px rgba(30,122,87,0.3)";
-          } else if (variant === "secondary") {
-            e.target.style.borderColor = T.line;
-            e.target.style.color = T.ink;
-          }
-        }
-      }}
-    >
-      {icon}
-      {children}
+    <button type="button" onClick={onClick} disabled={disabled} style={{ ...base, ...variants[variant], ...style }}>
+      {icon}{children}
     </button>
   );
-};
-
-const Input = ({ label, error, ...props }) => (
-  <div style={{ marginBottom: "20px" }}>
-    <label style={{
-      display: "block",
-      color: error ? "#DC2626" : T.ink,
-      fontSize: "14px",
-      fontWeight: "600",
-      marginBottom: "8px"
-    }}>
-      {label}
-      {props.required && <span style={{ color: "#DC2626", marginLeft: "4px" }}>*</span>}
-    </label>
-    <input
-      {...props}
-      style={{
-        width: "100%",
-        padding: "14px 16px",
-        border: `2px solid ${error ? "#DC2626" : T.line}`,
-        borderRadius: "10px",
-        fontSize: "16px",
-        fontFamily: "Plus Jakarta Sans, sans-serif",
-        background: "white",
-        color: T.ink,
-        transition: "border-color 0.2s ease, box-shadow 0.2s ease",
-        boxSizing: "border-box",
-        ...props.style
-      }}
-      onFocus={(e) => {
-        if (!error) {
-          e.target.style.borderColor = T.green;
-          e.target.style.boxShadow = `0 0 0 3px ${T.greenSoft}`;
-        }
-      }}
-      onBlur={(e) => {
-        if (!error) {
-          e.target.style.borderColor = T.line;
-          e.target.style.boxShadow = "none";
-        }
-      }}
-    />
-    {error && (
-      <div style={{
-        color: "#DC2626",
-        fontSize: "12px",
-        marginTop: "4px",
-        fontWeight: "500"
-      }}>
-        {error}
-      </div>
-    )}
-  </div>
-);
-
-const Textarea = ({ label, error, ...props }) => (
-  <div style={{ marginBottom: "20px" }}>
-    <label style={{
-      display: "block",
-      color: error ? "#DC2626" : T.ink,
-      fontSize: "14px",
-      fontWeight: "600",
-      marginBottom: "8px"
-    }}>
-      {label}
-      {props.required && <span style={{ color: "#DC2626", marginLeft: "4px" }}>*</span>}
-    </label>
-    <textarea
-      {...props}
-      style={{
-        width: "100%",
-        padding: "14px 16px",
-        border: `2px solid ${error ? "#DC2626" : T.line}`,
-        borderRadius: "10px",
-        fontSize: "16px",
-        fontFamily: "Plus Jakarta Sans, sans-serif",
-        background: "white",
-        color: T.ink,
-        minHeight: "100px",
-        resize: "vertical",
-        transition: "border-color 0.2s ease, box-shadow 0.2s ease",
-        boxSizing: "border-box",
-        ...props.style
-      }}
-      onFocus={(e) => {
-        if (!error) {
-          e.target.style.borderColor = T.green;
-          e.target.style.boxShadow = `0 0 0 3px ${T.greenSoft}`;
-        }
-      }}
-      onBlur={(e) => {
-        if (!error) {
-          e.target.style.borderColor = T.line;
-          e.target.style.boxShadow = "none";
-        }
-      }}
-    />
-    {error && (
-      <div style={{
-        color: "#DC2626",
-        fontSize: "12px",
-        marginTop: "4px",
-        fontWeight: "500"
-      }}>
-        {error}
-      </div>
-    )}
-  </div>
-);
-
-const Select = ({ label, error, children, ...props }) => (
-  <div style={{ marginBottom: "20px" }}>
-    <label style={{
-      display: "block",
-      color: error ? "#DC2626" : T.ink,
-      fontSize: "14px",
-      fontWeight: "600",
-      marginBottom: "8px"
-    }}>
-      {label}
-      {props.required && <span style={{ color: "#DC2626", marginLeft: "4px" }}>*</span>}
-    </label>
-    <select
-      {...props}
-      style={{
-        width: "100%",
-        padding: "14px 16px",
-        border: `2px solid ${error ? "#DC2626" : T.line}`,
-        borderRadius: "10px",
-        fontSize: "16px",
-        fontFamily: "Plus Jakarta Sans, sans-serif",
-        background: "white",
-        color: T.ink,
-        transition: "border-color 0.2s ease, box-shadow 0.2s ease",
-        boxSizing: "border-box",
-        cursor: "pointer",
-        ...props.style
-      }}
-      onFocus={(e) => {
-        if (!error) {
-          e.target.style.borderColor = T.green;
-          e.target.style.boxShadow = `0 0 0 3px ${T.greenSoft}`;
-        }
-      }}
-      onBlur={(e) => {
-        if (!error) {
-          e.target.style.borderColor = T.line;
-          e.target.style.boxShadow = "none";
-        }
-      }}
-    >
-      {children}
-    </select>
-    {error && (
-      <div style={{
-        color: "#DC2626",
-        fontSize: "12px",
-        marginTop: "4px",
-        fontWeight: "500"
-      }}>
-        {error}
-      </div>
-    )}
-  </div>
-);
+}
 
 export default function AddQuestionForm({ onSuccess, editingQuestion }) {
-  const [formData, setFormData] = useState({
-    gradeId: "",
-    subjectId: "",
-    lessonId: "",
-    type: "multiple-choice",
-    difficulty: "easy",
-    prompt: "",
-    options: ["", "", "", ""],
-    correctAnswer: "",
-    acceptedAnswers: "",
-    explanation: "",
-    status: "draft"
+  const [form, setForm] = useState({
+    gradeId: "", subjectId: "", lessonId: "",
+    type: "multiple-choice", difficulty: "easy", prompt: "", explanation: "",
   });
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [fieldErrors, setFieldErrors] = useState({});
-  const [success, setSuccess] = useState(false);
+  // Type-specific answer state, kept separate so switching type never corrupts data.
+  const [options, setOptions] = useState(["", "", "", ""]);
+  const [correctIndex, setCorrectIndex] = useState(null);   // multiple-choice
+  const [tfAnswer, setTfAnswer] = useState(null);            // true-false (boolean)
+  const [fillAnswer, setFillAnswer] = useState("");          // fill-blank
+  const [fillAlso, setFillAlso] = useState([]);              // fill-blank extra spellings
+  const [accepted, setAccepted] = useState([]);              // short-answer
+  const [acceptedDraft, setAcceptedDraft] = useState("");
+  const [pairs, setPairs] = useState([{ left: "", right: "" }, { left: "", right: "" }]);
+
   const [grades, setGrades] = useState([]);
   const [subjects, setSubjects] = useState([]);
   const [lessons, setLessons] = useState([]);
   const [loadingSyllabus, setLoadingSyllabus] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState({});
+  const [banner, setBanner] = useState(null); // {kind:'error'|'ok', text}
 
-  useEffect(() => {
-    loadSyllabus();
-  }, []);
+  useEffect(() => { loadSyllabus(); }, []);
 
-  useEffect(() => {
-    if (editingQuestion) {
-      // Pre-populate form with existing question data
-      setFormData({
-        gradeId: editingQuestion.grade_id || "",
-        subjectId: editingQuestion.subject_id || "",
-        lessonId: editingQuestion.lesson_id || "",
-        type: editingQuestion.type || "multiple-choice",
-        difficulty: editingQuestion.difficulty || "easy",
-        prompt: editingQuestion.prompt || "",
-        options: editingQuestion.payload?.options || ["", "", "", ""],
-        correctAnswer: editingQuestion.payload?.correctAnswer || "",
-        acceptedAnswers: editingQuestion.payload?.acceptedAnswers?.join(", ") || "",
-        explanation: editingQuestion.explanation || "",
-        status: editingQuestion.status || "draft"
-      });
-    }
-  }, [editingQuestion]);
-
-  const loadSyllabus = async () => {
+  async function loadSyllabus() {
     try {
       setLoadingSyllabus(true);
-      const response = await getSyllabus();
-      const sortedGrades = response.grades.sort((a, b) => a.position - b.position);
-      setGrades(sortedGrades);
-      setSubjects(response.subjects || []);
-      setLessons(response.lessons || []);
-    } catch (error) {
-      console.error('Failed to load syllabus:', error);
-    } finally {
-      setLoadingSyllabus(false);
-    }
-  };
+      const r = await getSyllabus();
+      setGrades((r.grades || []).sort((a, b) => a.position - b.position));
+      setSubjects(r.subjects || []);
+      setLessons(r.lessons || []);
+    } catch (e) { console.error("Failed to load syllabus:", e); }
+    finally { setLoadingSyllabus(false); }
+  }
 
-  const handleChange = (field) => (e) => {
-    const value = e.target.value;
-    setFormData(prev => {
-      const updated = { ...prev, [field]: value };
-      
-      // Cascading logic
-      if (field === "gradeId") {
-        updated.subjectId = "";
-        updated.lessonId = "";
-      } else if (field === "subjectId") {
-        updated.lessonId = "";
-      }
-      
-      return updated;
+  // Pre-populate when editing — handles every type, including the true/false
+  // boolean that the old form blanked out (false is falsy).
+  useEffect(() => {
+    if (!editingQuestion) return;
+    const p = editingQuestion.payload || {};
+    setForm({
+      gradeId: editingQuestion.grade_id || "",
+      subjectId: editingQuestion.subject_id || "",
+      lessonId: editingQuestion.lesson_id || "",
+      type: editingQuestion.type || "multiple-choice",
+      difficulty: editingQuestion.difficulty || "easy",
+      prompt: editingQuestion.prompt || "",
+      explanation: editingQuestion.explanation || "",
     });
-    setError("");
-    setFieldErrors({});
+    const opts = Array.isArray(p.options) && p.options.length ? p.options : ["", "", "", ""];
+    setOptions(opts);
+    setCorrectIndex(p.correctAnswer != null ? opts.findIndex(o => o === p.correctAnswer) : null);
+    setTfAnswer(typeof p.correctAnswer === "boolean" ? p.correctAnswer : null);
+    setFillAnswer(typeof p.correctAnswer === "string" ? p.correctAnswer : "");
+    setFillAlso(editingQuestion.type === "fill-blank" ? (p.acceptedAnswers || []) : []);
+    setAccepted(editingQuestion.type === "short-answer" ? (p.acceptedAnswers || []) : []);
+    setPairs(Array.isArray(p.pairs) && p.pairs.length ? p.pairs : [{ left: "", right: "" }, { left: "", right: "" }]);
+  }, [editingQuestion]);
+
+  const set = (k) => (e) => {
+    const v = e.target.value;
+    setForm((prev) => {
+      const next = { ...prev, [k]: v };
+      if (k === "gradeId") { next.subjectId = ""; next.lessonId = ""; }
+      if (k === "subjectId") { next.lessonId = ""; }
+      return next;
+    });
+    setErrors({});
   };
 
-  // Filter subjects and lessons based on selections
-  const filteredSubjects = subjects.filter(subject => subject.grade_id === formData.gradeId);
-  const filteredLessons = lessons.filter(lesson => lesson.subject_id === formData.subjectId);
+  const filteredSubjects = subjects.filter((s) => s.grade_id === form.gradeId);
+  const filteredLessons = lessons.filter((l) => l.subject_id === form.subjectId);
 
-  const handleOptionChange = (index) => (e) => {
-    const newOptions = [...formData.options];
-    newOptions[index] = e.target.value;
-    setFormData(prev => ({ ...prev, options: newOptions }));
+  // ---- options helpers (multiple-choice) ----
+  const setOption = (i) => (e) => { const n = [...options]; n[i] = e.target.value; setOptions(n); };
+  const addOption = () => options.length < 6 && setOptions([...options, ""]);
+  const removeOption = (i) => {
+    if (options.length <= 2) return;
+    const n = options.filter((_, idx) => idx !== i);
+    setOptions(n);
+    if (correctIndex === i) setCorrectIndex(null);
+    else if (correctIndex > i) setCorrectIndex(correctIndex - 1);
   };
 
-  const buildPayload = () => {
-    switch (formData.type) {
-      case "multiple-choice":
-        return {
-          options: formData.options.filter(opt => opt.trim()),
-          correctAnswer: formData.correctAnswer.trim()
-        };
-      case "true-false":
-        return {
-          correctAnswer: formData.correctAnswer.toLowerCase() === "true"
-        };
-      case "fill-blank":
-        return {
-          correctAnswer: formData.correctAnswer.trim()
-        };
-      case "short-answer":
-        return {
-          acceptedAnswers: formData.acceptedAnswers.split(",").map(a => a.trim().toLowerCase()).filter(Boolean)
-        };
-      case "match":
-        return {
-          pairs: []
-        };
-      default:
-        return {};
-    }
+  // ---- accepted answers (short-answer) ----
+  const addAccepted = () => {
+    const v = acceptedDraft.trim();
+    if (v && !accepted.includes(v)) setAccepted([...accepted, v]);
+    setAcceptedDraft("");
   };
 
-  const validateForm = () => {
-    const errors = {};
-    
-    if (!formData.gradeId) {
-      errors.gradeId = "Please select a grade";
-    }
-    
-    if (!formData.subjectId) {
-      errors.subjectId = "Please select a subject";
-    }
-    
-    if (!formData.prompt.trim()) {
-      errors.prompt = "Please enter a question prompt";
-    }
+  // ---- match pairs ----
+  const setPair = (i, side) => (e) => { const n = pairs.map((p) => ({ ...p })); n[i][side] = e.target.value; setPairs(n); };
+  const addPair = () => setPairs([...pairs, { left: "", right: "" }]);
+  const removePair = (i) => pairs.length > 2 && setPairs(pairs.filter((_, idx) => idx !== i));
 
-    if (formData.type === "multiple-choice") {
-      const validOptions = formData.options.filter(opt => opt.trim()).length;
-      if (validOptions < 2) {
-        errors.options = "Please provide at least 2 options for multiple choice questions";
+  function buildPayload() {
+    switch (form.type) {
+      case "multiple-choice": {
+        const opts = options.map((o) => o.trim()).filter(Boolean);
+        return { options: opts, correctAnswer: correctIndex != null ? (options[correctIndex] || "").trim() : "" };
       }
-      if (!formData.correctAnswer.trim()) {
-        errors.correctAnswer = "Please specify the correct answer";
-      }
-    } else if (formData.type === "true-false") {
-      if (!formData.correctAnswer.trim()) {
-        errors.correctAnswer = "Please specify true or false as the correct answer";
-      }
-    } else if (formData.type === "fill-blank") {
-      if (!formData.correctAnswer.trim()) {
-        errors.correctAnswer = "Please specify the correct answer";
-      }
-    } else if (formData.type === "short-answer") {
-      if (!formData.acceptedAnswers.trim()) {
-        errors.acceptedAnswers = "Please specify accepted answers (comma separated)";
-      }
-    }
-
-    return errors;
-  };
-
-  const handleSubmit = async (e, publishNow = false) => {
-    e.preventDefault();
-    
-    const errors = validateForm();
-    
-    if (Object.keys(errors).length > 0) {
-      setFieldErrors(errors);
-      setError("Please fix the errors above before submitting");
-      return;
-    }
-    
-    setFieldErrors({});
-    setLoading(true);
-    setError("");
-
-    try {
-      const questionData = {
-        gradeId: formData.gradeId,
-        subjectId: formData.subjectId,
-        lessonId: formData.lessonId || null,
-        type: formData.type,
-        difficulty: formData.difficulty,
-        prompt: formData.prompt.trim(),
-        payload: buildPayload(),
-        explanation: formData.explanation.trim() || null,
-        status: publishNow ? "active" : "draft"
+      case "true-false": return { correctAnswer: tfAnswer === true };
+      case "fill-blank": return {
+        correctAnswer: fillAnswer.trim(),
+        ...(fillAlso.length ? { acceptedAnswers: fillAlso } : {}),
       };
-
-      if (editingQuestion) {
-        await updateQuestion(editingQuestion.id, questionData);
-      } else {
-        await createQuestion(questionData);
-      }
-      setSuccess(true);
-      
-      // Reset form
-      setFormData({
-        gradeId: "",
-        subjectId: "",
-        lessonId: "",
-        type: "multiple-choice",
-        difficulty: "easy",
-        prompt: "",
-        options: ["", "", "", ""],
-        correctAnswer: "",
-        acceptedAnswers: "",
-        explanation: "",
-        status: "draft"
-      });
-
-      if (onSuccess) onSuccess();
-      setTimeout(() => setSuccess(false), 3000);
-    } catch (err) {
-      setError(err.message || "Failed to create question");
-    } finally {
-      setLoading(false);
+      case "short-answer": return { acceptedAnswers: accepted.map((a) => a.toLowerCase()) };
+      case "match": return { pairs: pairs.filter((p) => p.left.trim() && p.right.trim()) };
+      default: return {};
     }
-  };
+  }
+
+  function validate() {
+    const e = {};
+    if (!form.gradeId) e.gradeId = "Select a grade";
+    if (!form.subjectId) e.subjectId = "Select a subject";
+    if (!form.prompt.trim()) e.prompt = "Enter the question";
+    if (form.type === "multiple-choice") {
+      if (options.filter((o) => o.trim()).length < 2) e.options = "Add at least 2 options";
+      else if (correctIndex == null || !options[correctIndex]?.trim()) e.options = "Tick the correct option";
+    } else if (form.type === "true-false") {
+      if (tfAnswer == null) e.answer = "Choose True or False";
+    } else if (form.type === "fill-blank") {
+      if (!fillAnswer.trim()) e.answer = "Enter the correct answer";
+    } else if (form.type === "short-answer") {
+      if (!accepted.length) e.answer = "Add at least one accepted answer";
+    } else if (form.type === "match") {
+      if (buildPayload().pairs.length < 2) e.answer = "Add at least 2 complete pairs";
+    }
+    return e;
+  }
+
+  async function submit(publishNow) {
+    const e = validate();
+    if (Object.keys(e).length) { setErrors(e); setBanner({ kind: "error", text: "Please fix the highlighted fields." }); return; }
+    setErrors({}); setLoading(true); setBanner(null);
+    try {
+      const data = {
+        gradeId: form.gradeId, subjectId: form.subjectId, lessonId: form.lessonId || null,
+        type: form.type, difficulty: form.difficulty, prompt: form.prompt.trim(),
+        payload: buildPayload(), explanation: form.explanation.trim() || null,
+        status: publishNow ? "active" : "draft",
+      };
+      if (editingQuestion) await updateQuestion(editingQuestion.id, data);
+      else await createQuestion(data);
+      setBanner({ kind: "ok", text: editingQuestion ? "Question updated." : "Question saved." });
+      if (onSuccess) onSuccess();
+    } catch (err) {
+      setBanner({ kind: "error", text: err.message || "Failed to save question." });
+    } finally { setLoading(false); }
+  }
+
+  const th = T.green;
 
   return (
-    <Card>
-      <h2 style={{
-        fontSize: "20px",
-        fontFamily: "Fraunces, serif",
-        color: T.ink,
-        marginTop: 0,
-        marginBottom: "20px"
-      }}>
-        {editingQuestion ? (
-          <>
-            <Edit size={20} style={{ verticalAlign: "middle", marginRight: "8px" }} />
-            Edit Question
-          </>
-        ) : (
-          <>
-            <Plus size={20} style={{ verticalAlign: "middle", marginRight: "8px" }} />
-            Add Question
-          </>
-        )}
-      </h2>
-
-      <form>
-        <Select
-          label="Grade"
-          value={formData.gradeId}
-          onChange={handleChange("gradeId")}
-          disabled={loading || loadingSyllabus}
-          required
-          error={fieldErrors.gradeId}
-        >
-          {loadingSyllabus ? (
-            <option value="">Loading grades...</option>
-          ) : grades.length === 0 ? (
-            <option value="">No grades available</option>
-          ) : (
-            <>
-              <option value="">Select a grade</option>
-              {grades.map((grade) => (
-                <option key={grade.id} value={grade.id}>
-                  {grade.name}
-                </option>
-              ))}
-            </>
-          )}
+    <div>
+      {/* Context row — grade / subject / lesson, compact 3-up */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12 }}>
+        <Select label="Grade" required value={form.gradeId} onChange={set("gradeId")} disabled={loading || loadingSyllabus} error={errors.gradeId}>
+          {loadingSyllabus ? <option value="">Loading…</option> : <>
+            <option value="">Select grade</option>
+            {grades.map((g) => <option key={g.id} value={g.id}>{g.name}</option>)}
+          </>}
         </Select>
-
-        <Select
-          label="Subject"
-          value={formData.subjectId}
-          onChange={handleChange("subjectId")}
-          disabled={loading || !formData.gradeId}
-          required
-          error={fieldErrors.subjectId}
-        >
-          {!formData.gradeId ? (
-            <option value="">Select a grade first</option>
-          ) : filteredSubjects.length === 0 ? (
-            <option value="">No subjects available for this grade</option>
-          ) : (
-            <>
-              <option value="">Select a subject</option>
-              {filteredSubjects.map((subject) => (
-                <option key={subject.id} value={subject.id}>
-                  {subject.name}
-                </option>
-              ))}
-            </>
-          )}
+        <Select label="Subject" required value={form.subjectId} onChange={set("subjectId")} disabled={loading || !form.gradeId} error={errors.subjectId}>
+          {!form.gradeId ? <option value="">Pick grade first</option>
+            : filteredSubjects.length === 0 ? <option value="">No subjects</option>
+            : <>
+              <option value="">Select subject</option>
+              {filteredSubjects.map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}
+            </>}
         </Select>
-
-        <Select
-          label="Lesson (optional)"
-          value={formData.lessonId}
-          onChange={handleChange("lessonId")}
-          disabled={loading || !formData.subjectId}
-        >
-          {!formData.subjectId ? (
-            <option value="">Select a subject first</option>
-          ) : filteredLessons.length === 0 ? (
-            <option value="">No lessons available for this subject</option>
-          ) : (
-            <>
+        <Select label="Lesson" value={form.lessonId} onChange={set("lessonId")} disabled={loading || !form.subjectId}>
+          {!form.subjectId ? <option value="">Pick subject first</option>
+            : filteredLessons.length === 0 ? <option value="">No lessons</option>
+            : <>
               <option value="">No specific lesson</option>
-              {filteredLessons.map((lesson) => (
-                <option key={lesson.id} value={lesson.id}>
-                  {lesson.name}
-                </option>
-              ))}
-            </>
-          )}
+              {/* FIX: lessons use `title`, not `name` — this is why the dropdown was blank */}
+              {filteredLessons.map((l) => <option key={l.id} value={l.id}>{l.n ? `${l.n}. ` : ""}{l.title}</option>)}
+            </>}
         </Select>
+      </div>
 
-        <Select
-          label="Question Type"
-          value={formData.type}
-          onChange={handleChange("type")}
-          disabled={loading}
-        >
-          <option value="multiple-choice">Multiple Choice</option>
-          <option value="true-false">True/False</option>
-          <option value="fill-blank">Fill in the Blank</option>
-          <option value="short-answer">Short Answer</option>
+      {/* Type + difficulty */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+        <Select label="Question type" value={form.type} onChange={set("type")} disabled={loading}>
+          {Object.entries(TYPE_LABELS).map(([v, l]) => <option key={v} value={v}>{l}</option>)}
         </Select>
-
-        <Select
-          label="Difficulty"
-          value={formData.difficulty}
-          onChange={handleChange("difficulty")}
-          disabled={loading}
-        >
+        <Select label="Difficulty" value={form.difficulty} onChange={set("difficulty")} disabled={loading}>
           <option value="easy">Easy</option>
           <option value="medium">Medium</option>
           <option value="hard">Hard</option>
         </Select>
+      </div>
 
-        <Textarea
-          label="Question"
-          value={formData.prompt}
-          onChange={handleChange("prompt")}
-          placeholder="Enter your question here..."
-          disabled={loading}
-          required
-          error={fieldErrors.prompt}
-        />
+      <Textarea label="Question" required value={form.prompt} onChange={set("prompt")}
+        placeholder="e.g. What does the quality Qadeem mean?" error={errors.prompt} disabled={loading} />
 
-        {formData.type === "multiple-choice" && (
-          <>
-            <label style={{
-              display: "block",
-              color: fieldErrors.options ? "#DC2626" : T.ink,
-              fontSize: "14px",
-              fontWeight: "600",
-              marginBottom: "8px"
-            }}>
-              Options *
-            </label>
-            {formData.options.map((option, index) => (
-              <Input
-                key={index}
-                placeholder={`Option ${index + 1}`}
-                value={option}
-                onChange={handleOptionChange(index)}
-                disabled={loading}
-                style={{ marginBottom: "8px" }}
-                error={fieldErrors.options && index < 2 ? fieldErrors.options : null}
-              />
-            ))}
-            {fieldErrors.options && (
-              <div style={{
-                color: "#DC2626",
-                fontSize: "12px",
-                marginTop: "-12px",
-                marginBottom: "20px",
-                fontWeight: "500"
-              }}>
-                {fieldErrors.options}
+      {/* ---------- Answer area (type-specific) ---------- */}
+      {form.type === "multiple-choice" && (
+        <Field label="Options — tick the correct one" required error={errors.options}>
+          <div style={{ display: "grid", gap: 8 }}>
+            {options.map((opt, i) => {
+              const isCorrect = correctIndex === i;
+              return (
+                <div key={i} style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                  <button type="button" onClick={() => setCorrectIndex(i)} title="Mark correct"
+                    style={{
+                      flexShrink: 0, width: 30, height: 30, borderRadius: 8, cursor: "pointer",
+                      border: `1.5px solid ${isCorrect ? T.green : T.line}`,
+                      background: isCorrect ? T.green : T.card, color: "#fff",
+                      display: "grid", placeItems: "center",
+                    }}>
+                    {isCorrect && <Check size={17} />}
+                  </button>
+                  <input value={opt} onChange={setOption(i)} placeholder={`Option ${i + 1}`} disabled={loading}
+                    style={{ ...fieldStyle, flex: 1, borderColor: isCorrect ? T.green : T.line, background: isCorrect ? T.greenSoft : "#fff" }} />
+                  {options.length > 2 && (
+                    <button type="button" onClick={() => removeOption(i)} title="Remove"
+                      style={{ flexShrink: 0, width: 30, height: 30, borderRadius: 8, border: `1.5px solid ${T.line}`, background: T.card, color: T.faint, cursor: "pointer", display: "grid", placeItems: "center" }}>
+                      <X size={15} />
+                    </button>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+          {options.length < 6 && (
+            <Btn variant="ghost" icon={<Plus size={15} />} onClick={addOption} style={{ marginTop: 8, width: "100%" }}>Add option</Btn>
+          )}
+        </Field>
+      )}
+
+      {form.type === "true-false" && (
+        <Field label="Correct answer" required error={errors.answer}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+            {[{ v: true, l: "True" }, { v: false, l: "False" }].map(({ v, l }) => {
+              const sel = tfAnswer === v;
+              return (
+                <button key={l} type="button" onClick={() => setTfAnswer(v)} disabled={loading}
+                  style={{
+                    padding: "16px 0", borderRadius: 12, fontSize: 16, fontWeight: 700, cursor: "pointer",
+                    border: `1.5px solid ${sel ? T.green : T.line}`, background: sel ? T.greenSoft : T.card, color: T.ink,
+                    display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+                  }}>
+                  {sel && <Check size={18} color={T.green} />}{l}
+                </button>
+              );
+            })}
+          </div>
+        </Field>
+      )}
+
+      {form.type === "fill-blank" && (
+        <>
+          <Field label="Correct answer" required error={errors.answer}>
+            <Input value={fillAnswer} onChange={(e) => setFillAnswer(e.target.value)} disabled={loading}
+              placeholder="The exact word/phrase that fills the blank" />
+          </Field>
+          <Field label="Also accept (optional alternative spellings)">
+            <ChipInput values={fillAlso} onChange={setFillAlso} placeholder="Type an alternative and press Enter" disabled={loading} />
+          </Field>
+        </>
+      )}
+
+      {form.type === "short-answer" && (
+        <Field label="Accepted answers — students match any of these" required error={errors.answer}>
+          <div style={{ display: "flex", gap: 8 }}>
+            <Input value={acceptedDraft} onChange={(e) => setAcceptedDraft(e.target.value)} disabled={loading}
+              placeholder="Type an accepted answer and press Enter"
+              onKeyDown={(e) => { if (e.key === "Enter") { e.preventDefault(); addAccepted(); } }} style={{ flex: 1 }} />
+            <Btn variant="secondary" icon={<Plus size={15} />} onClick={addAccepted}>Add</Btn>
+          </div>
+          {accepted.length > 0 && (
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 10 }}>
+              {accepted.map((a, i) => (
+                <span key={i} style={{ display: "inline-flex", alignItems: "center", gap: 6, background: T.greenSoft, color: T.green, borderRadius: 99, padding: "5px 10px", fontSize: 13, fontWeight: 600 }}>
+                  {a}
+                  <X size={13} style={{ cursor: "pointer" }} onClick={() => setAccepted(accepted.filter((_, idx) => idx !== i))} />
+                </span>
+              ))}
+            </div>
+          )}
+        </Field>
+      )}
+
+      {form.type === "match" && (
+        <Field label="Pairs — left matches right" required error={errors.answer}>
+          <div style={{ display: "grid", gap: 8 }}>
+            {pairs.map((p, i) => (
+              <div key={i} style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                <input value={p.left} onChange={setPair(i, "left")} placeholder="Term" disabled={loading} style={{ ...fieldStyle, flex: 1 }} />
+                <span style={{ color: T.faint, fontWeight: 700 }}>→</span>
+                <input value={p.right} onChange={setPair(i, "right")} placeholder="Meaning" disabled={loading} style={{ ...fieldStyle, flex: 1 }} />
+                {pairs.length > 2 && (
+                  <button type="button" onClick={() => removePair(i)} style={{ flexShrink: 0, width: 30, height: 30, borderRadius: 8, border: `1.5px solid ${T.line}`, background: T.card, color: T.faint, cursor: "pointer", display: "grid", placeItems: "center" }}>
+                    <X size={15} />
+                  </button>
+                )}
               </div>
-            )}
-          </>
-        )}
-
-        {formData.type === "multiple-choice" && (
-          <Input
-            label="Correct Answer"
-            value={formData.correctAnswer}
-            onChange={handleChange("correctAnswer")}
-            placeholder="Enter the exact text of the correct option"
-            disabled={loading}
-            required
-            error={fieldErrors.correctAnswer}
-          />
-        )}
-
-        {formData.type === "true-false" && (
-          <Select
-            label="Correct Answer"
-            value={formData.correctAnswer}
-            onChange={handleChange("correctAnswer")}
-            disabled={loading}
-            required
-            error={fieldErrors.correctAnswer}
-          >
-            <option value="">Select correct answer</option>
-            <option value="true">True</option>
-            <option value="false">False</option>
-          </Select>
-        )}
-
-        {formData.type === "fill-blank" && (
-          <Input
-            label="Correct Answer"
-            value={formData.correctAnswer}
-            onChange={handleChange("correctAnswer")}
-            placeholder="Enter the word/phrase that fills the blank"
-            disabled={loading}
-            required
-            error={fieldErrors.correctAnswer}
-          />
-        )}
-
-        {formData.type === "short-answer" && (
-          <Input
-            label="Accepted Answers"
-            value={formData.acceptedAnswers}
-            onChange={handleChange("acceptedAnswers")}
-            placeholder="Enter accepted answers separated by commas"
-            disabled={loading}
-            required
-            error={fieldErrors.acceptedAnswers}
-          />
-        )}
-
-        <Textarea
-          label="Explanation (optional)"
-          value={formData.explanation}
-          onChange={handleChange("explanation")}
-          placeholder="Explain the answer (shown to students after answering)"
-          disabled={loading}
-        />
-
-        {error && (
-          <div style={{
-            background: "#FEE2E2",
-            color: "#DC2626",
-            padding: "12px",
-            borderRadius: "8px",
-            marginBottom: "16px",
-            fontSize: "14px"
-          }}>
-            {error}
+            ))}
           </div>
-        )}
+          <Btn variant="ghost" icon={<Plus size={15} />} onClick={addPair} style={{ marginTop: 8, width: "100%" }}>Add pair</Btn>
+        </Field>
+      )}
 
-        {success && (
-          <div style={{
-            background: "#DCFCE7",
-            color: "#16A34A",
-            padding: "12px",
-            borderRadius: "8px",
-            marginBottom: "16px",
-            fontSize: "14px"
-          }}>
-            {editingQuestion ? "Question updated successfully!" : "Question created successfully!"}
-          </div>
-        )}
+      <Textarea label="Explanation (optional, shown after answering)" value={form.explanation}
+        onChange={set("explanation")} placeholder="Why is this the answer?" disabled={loading} />
 
-        <div style={{ 
-          display: "flex", 
-          gap: "16px",
-          flexDirection: window.innerWidth < 640 ? "column" : "row",
-          marginTop: "32px"
-        }}>
-          <Btn
-            onClick={(e) => handleSubmit(e, false)}
-            disabled={loading}
-            variant="secondary"
-            style={{ 
-              flex: 1,
-              minWidth: window.innerWidth < 640 ? "100%" : "140px"
-            }}
-            icon={<Save size={18} />}
-          >
-            {loading ? "Saving..." : editingQuestion ? "Save as Draft" : "Save as Draft"}
-          </Btn>
-          <Btn
-            onClick={(e) => handleSubmit(e, true)}
-            disabled={loading}
-            variant="primary"
-            style={{ 
-              flex: 1,
-              minWidth: window.innerWidth < 640 ? "100%" : "140px"
-            }}
-            icon={loading ? null : <Plus size={18} />}
-          >
-            {loading ? (editingQuestion ? "Updating..." : "Publishing...") : (editingQuestion ? "Update & Publish" : "Publish Now")}
-          </Btn>
+      {banner && (
+        <div style={{
+          background: banner.kind === "ok" ? "#DCFCE7" : T.dangerSoft, color: banner.kind === "ok" ? "#16A34A" : T.danger,
+          padding: "10px 12px", borderRadius: 8, marginBottom: 14, fontSize: 13.5, fontWeight: 600,
+        }}>{banner.text}</div>
+      )}
+
+      <div style={{ display: "flex", gap: 12, marginTop: 8 }}>
+        <Btn variant="secondary" icon={<Save size={16} />} onClick={() => submit(false)} disabled={loading} style={{ flex: 1 }}>
+          {loading ? "Saving…" : "Save as draft"}
+        </Btn>
+        <Btn variant="primary" icon={<Check size={16} />} onClick={() => submit(true)} disabled={loading} style={{ flex: 1 }}>
+          {loading ? "Saving…" : editingQuestion ? "Update & publish" : "Publish now"}
+        </Btn>
+      </div>
+    </div>
+  );
+}
+
+// Small reusable chip input (Enter to add)
+function ChipInput({ values, onChange, placeholder, disabled }) {
+  const [draft, setDraft] = useState("");
+  const add = () => { const v = draft.trim(); if (v && !values.includes(v)) onChange([...values, v]); setDraft(""); };
+  return (
+    <div>
+      <input value={draft} onChange={(e) => setDraft(e.target.value)} placeholder={placeholder} disabled={disabled}
+        onKeyDown={(e) => { if (e.key === "Enter") { e.preventDefault(); add(); } }} style={fieldStyle} />
+      {values.length > 0 && (
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 8 }}>
+          {values.map((v, i) => (
+            <span key={i} style={{ display: "inline-flex", alignItems: "center", gap: 6, background: T.paper2, color: T.ink, borderRadius: 99, padding: "5px 10px", fontSize: 13 }}>
+              {v}<X size={13} style={{ cursor: "pointer" }} onClick={() => onChange(values.filter((_, idx) => idx !== i))} />
+            </span>
+          ))}
         </div>
-      </form>
-    </Card>
+      )}
+    </div>
   );
 }

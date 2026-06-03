@@ -1,10 +1,12 @@
 // ============================================================================
-//  TAS-HEEL REVISION — Madrasah Revision App (MVP prototype, single file)
+//  TAS-HEEL REVISION — Madrasah Revision App (student experience)
 //  Syllabus: Tas-heel Series (Jamiatul Ulama Taalimi Board, South Africa)
-//  First target: Grade 5. First student: Muhammad.
-//  NOTE: Islamic content must be reviewed by a parent/teacher before use.
-//  Lesson text was transcribed from the actual Grade 5 Tas-heel books.
-//  Lessons marked { needsContent:true } are placeholders for a parent to fill.
+//  Data source: PostgreSQL via the Express API. Nothing is hardcoded here —
+//    • Syllabus (grades -> subjects -> lessons -> questions) is loaded at boot
+//      from GET /api/syllabus/tree/:gradeId  (see applySyllabus()).
+//    • Student progress is loaded/saved via /api/progress/me (no localStorage).
+//    • Finished quizzes are logged via /api/progress for analytics.
+//  NOTE: Islamic content is managed/reviewed by admins in the Content manager.
 // ============================================================================
 import React, { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import {
@@ -12,8 +14,8 @@ import {
   Flame, Lock, RotateCcw, Sparkles, GraduationCap, ArrowRight, Trophy, Target,
   Clock, Brain, ListChecks, CheckCircle2, XCircle, BarChart3, BookMarked, LogOut,
 } from "lucide-react";
-import { logout } from "../lib/api";
-import logoLandscape from "@assets/landscape-logo.png";
+import { logout, getSyllabusTree, getProgress, saveProgress, logQuizSession, logFlashcardReviews, logActivity } from "../lib/api";
+import logoLandscape from "@assets/tathbit_footer_trans.png";
 
 const T = {
   paper:"#FBF7EE", paper2:"#F3ECDD", card:"#FFFFFF", ink:"#2B3A33", ink2:"#5C6B62",
@@ -30,296 +32,41 @@ const PROPHET = "\uFDFA"; // peace be upon him glyph
 const RA = "\u0631\u0636\u064A \u0627\u0644\u0644\u0647 \u0639\u0646\u0647";
 const AS = "\u0639\u0644\u064A\u0647 \u0627\u0644\u0633\u0644\u0627\u0645";
 
-const SYLLABUS = {
-  id:"tasheel", name:"Tas-heel Series",
-  publisher:"Jamiatul Ulama Taalimi Board (South Africa)",
-  grades:[{ id:"g5", name:"Grade 5", subjects:[
-
-    /* ---------------- AQAAID ---------------- */
-    { id:"aqaaid", name:"Aqaa-id", tagline:"Beliefs — who Allah is and what we believe",
-      source:"Tas-heelul Aqaa-id 5", lessons:[
-      { id:"aq-l1", n:1, title:"Qualities of Allah", pages:"4-7",
-        summary:"Allah is One. We must believe in His existence together with all His perfect qualities as taught by the Qur'an and Hadeeth. His greatest quality is Rahmah (Mercy) — He is more merciful to us than a mother is to her child. Allah's qualities are perfect and never change, unlike our human qualities of hearing, seeing and speaking which keep changing as we grow.",
-        keyTerms:[
-          { term:"Qadeem", meaning:"Eternal — He has no beginning or end" },
-          { term:"Qaadir", meaning:"All Powerful — no one can challenge His power" },
-          { term:"Samee'", meaning:"All Hearing — no word or whisper is hidden from Him" },
-          { term:"Hayy", meaning:"Ever Living — He neither sleeps nor will ever cease to exist" },
-          { term:"Mutakallim", meaning:"One who speaks — His spoken word is the Qur'an" },
-          { term:"Khaaliq", meaning:"The Creator — He created the heavens, the earth and all they contain" },
-        ],
-        points:[
-          "The Qur'an says: \u201CSay, He is Allah, the One. The Eternal and Independent. He does not give birth, nor was He born, and there is nothing that could be compared to Him.\u201D (Surah 112)",
-          "Allah's most outstanding quality is Rahmah — Mercy.",
-          "Allah's qualities are perfect and never change, nor does He lose any of them.",
-        ],
-        story:{ title:"The Excursion", text:"On an excursion, two girls kept apart from the group because they felt they were better than the others, and would not remove an obstacle from the path. The muallimah reminded them that Allah does not love those who are haughty — we should always be considerate of others and never walk with pride." },
-        questions:[
-          { id:"aq-l1-q1", type:"match", difficulty:"easy", prompt:"Match each quality of Allah with its meaning.",
-            pairs:[{left:"Qadeem",right:"Eternal"},{left:"Qaadir",right:"All Powerful"},{left:"Hayy",right:"Ever Living"},{left:"Mutakallim",right:"One who speaks"},{left:"Khaaliq",right:"Creator"}],
-            explanation:"These are six of the perfect qualities of Allah taught in this lesson." },
-          { id:"aq-l1-q2", type:"multiple-choice", difficulty:"easy", prompt:"What does the quality \u201CQadeem\u201D mean?",
-            options:["Eternal","All Powerful","The Creator","Ever Living"], correctAnswer:"Eternal",
-            explanation:"Qadeem means Eternal — Allah has no beginning and no end." },
-          { id:"aq-l1-q3", type:"multiple-choice", difficulty:"medium", prompt:"The spoken word of Allah is the ______.",
-            options:["Qur'an","Hadeeth","Dua","Adhaan"], correctAnswer:"Qur'an",
-            explanation:"Allah is Mutakallim — One who speaks — and His spoken word is the Qur'an." },
-          { id:"aq-l1-q4", type:"true-false", difficulty:"medium", prompt:"Allah's qualities change and grow just like ours.",
-            correctAnswer:false, explanation:"Allah's qualities are perfect and never change. Only human qualities change as we grow." },
-          { id:"aq-l1-q5", type:"fill-blank", difficulty:"easy", prompt:"Allah is Qadeem, which means He has no beginning or ______.",
-            correctAnswer:"end", explanation:"Qadeem = Eternal: no beginning or end." },
-          { id:"aq-l1-q6", type:"short-answer", difficulty:"hard", prompt:"Why do we say that Allah is ONE?",
-            acceptedAnswers:["he has no partner","nothing is comparable to him","he is unique","there is no one like him","he is the only god"],
-            explanation:"Allah is unique — nothing can be compared to Him and He has no partner (Surah Ikhlaas)." },
-        ],
-        flashcards:[
-          { front:"What does Qadeem mean?", back:"Eternal. Allah has no beginning or end." },
-          { front:"What does Qaadir mean?", back:"All Powerful. No one can challenge His power." },
-          { front:"What does Hayy mean?", back:"Ever Living. He neither sleeps nor ceases to exist." },
-          { front:"What is Allah's most outstanding quality?", back:"Rahmah — Mercy. He is more merciful than a mother to her child." },
-        ] },
-      { id:"aq-l2", n:2, title:"Angels", pages:"8-11",
-        summary:"Angels are created from noor (light). There are countless angels who carry out duties placed on them by Allah. They are sinless and never disobey Allah, they are neither male nor female, and they have no physical needs or wants.",
-        keyTerms:[
-          { term:"Kiraaman Kaatibeen", meaning:"The two angels with every person — one records good deeds, the other bad" },
-          { term:"Munkar & Nakeer", meaning:"The two angels who question people in the grave" },
-          { term:"Mulhim", meaning:"The angel who accompanies every Mu'min and encourages good deeds" },
-          { term:"Noor", meaning:"Light — angels are created from it" },
-        ],
-        points:[
-          "Allah says: \u201CThey (the Angels) do not disobey Allah in what He has commanded them and always do whatever they are commanded.\u201D (66:6)",
-          "Some angels help the Muslims; some seek forgiveness for people; some remove souls at death; some protect from calamities; some bring revelation.",
-          "Angels carry the Throne of Allah and constantly praise Him; some say \u201CAameen\u201D to our duas; bad and offensive smells are disliked by angels just as by people.",
-        ],
-        questions:[
-          { id:"aq-l2-q1", type:"fill-blank", difficulty:"easy", prompt:"Angels are created from ______.",
-            correctAnswer:"noor", acceptedAnswers:["noor","light","nur"], explanation:"Angels are created from noor (light)." },
-          { id:"aq-l2-q2", type:"multiple-choice", difficulty:"easy", prompt:"Which two angels question a person in the grave?",
-            options:["Munkar and Nakeer","Jibreel and Mikaeel","Mulhim and Israafeel","Ridwaan and Maalik"], correctAnswer:"Munkar and Nakeer",
-            explanation:"Munkar and Nakeer question people in the grave after they are buried." },
-          { id:"aq-l2-q3", type:"short-answer", difficulty:"medium", prompt:"Who is Mulhim?",
-            acceptedAnswers:["an angel who accompanies every mumin","encourages good deeds","an angel who encourages a believer to do good","accompanies every believer"],
-            explanation:"Mulhim accompanies every Mu'min (believer) and encourages him to do good deeds." },
-          { id:"aq-l2-q4", type:"true-false", difficulty:"medium", prompt:"Angels are either male or female.",
-            correctAnswer:false, explanation:"Angels are neither male nor female, and have no physical needs or wants." },
-          { id:"aq-l2-q5", type:"fill-blank", difficulty:"medium", prompt:"The two angels who record our good and bad deeds are called ______.",
-            correctAnswer:"Kiraaman Kaatibeen", acceptedAnswers:["kiraaman kaatibeen","kiraman katibeen","kiraaman katibeen"],
-            explanation:"Every human has two angels — Kiraaman Kaatibeen — who record our deeds." },
-          { id:"aq-l2-q6", type:"multiple-choice", difficulty:"hard", prompt:"What is disliked by the angels?",
-            options:["Bad and offensive smells","The sound of dua","Reciting the Qur'an","Giving charity"], correctAnswer:"Bad and offensive smells",
-            explanation:"Bad and offensive smells are disliked by the angels just as they are disliked by people." },
-        ],
-        flashcards:[
-          { front:"What are angels created from?", back:"Noor — light." },
-          { front:"Name the two angels who question us in the grave.", back:"Munkar and Nakeer." },
-          { front:"Who are Kiraaman Kaatibeen?", back:"The two angels who record our good and bad deeds." },
-          { front:"Who is Mulhim?", back:"The angel who accompanies every believer and encourages good deeds." },
-        ] },
-      { id:"aq-l3", n:3, title:"The Qur'aan", pages:"12-15", needsContent:true },
-      { id:"aq-l4", n:4, title:"Nabee Muhammad "+PROPHET, pages:"16-19", needsContent:true },
-      { id:"aq-l5", n:5, title:"Signs of Qiyaamah", pages:"20-23", needsContent:true },
-      { id:"aq-l6", n:6, title:"The Hereafter", pages:"24-27", needsContent:true },
-      { id:"aq-l7", n:7, title:"Jannah and Jahannam", pages:"28-31", needsContent:true },
-      { id:"aq-l8", n:8, title:"Al-Maani", pages:"32-33", needsContent:true },
-      { id:"aq-l9", n:9, title:"Al-Hadee", pages:"34-36", needsContent:true },
-    ] },
-
-    /* ---------------- AKHLAAQ ---------------- */
-    { id:"akhlaaq", name:"Akhlaaq", tagline:"Good character and beautiful manners",
-      source:"Tas-heelul Akhlaaq 5", lessons:[
-      { id:"ak-l1", n:1, title:"Walking", pages:"6-8",
-        summary:"Islam is a complete way of life — it teaches us not only about prayer and cleanliness, but also about our conduct and manners, including how we walk. The golden rule in all our dealings is to be humble. We walk in a moderate manner: not too fast and not too slow, and never like a proud person.",
-        keyTerms:[
-          { term:"Moderate", meaning:"A middle way — not too fast, not too slow" },
-          { term:"Humility", meaning:"Being humble and not proud" },
-        ],
-        points:[
-          "The Qur'an states: \u201CAnd be moderate in the way you walk.\u201D",
-          "Rasoolullah "+PROPHET+" always walked briskly, as if descending from a high place.",
-          "Walk upright (not chest-out, not back bent), do not drag your feet, and cast your gaze slightly down while staying aware of your surroundings.",
-          "Remove obstacles from the road, do not become an obstacle, and be mindful of cars and other pedestrians.",
-        ],
-        story:{ title:"Walking with humility", text:"A true Muslim does not walk ahead of friends to show off his position, and is always considerate of others on the path." },
-        questions:[
-          { id:"ak-l1-q1", type:"multiple-choice", difficulty:"medium", prompt:"Which of these is the best example of walking with humility?",
-            options:["Walking proudly with your chest out","Walking so slowly that people are delayed","Walking moderately and being aware of your surroundings","Looking into people's homes while walking"],
-            correctAnswer:"Walking moderately and being aware of your surroundings",
-            explanation:"We walk at a moderate pace, humbly, while staying mindful of others." },
-          { id:"ak-l1-q2", type:"fill-blank", difficulty:"easy", prompt:"The Qur'an says: \u201CAnd be ______ in the way you walk.\u201D",
-            correctAnswer:"moderate", explanation:"Moderate means a middle way — not too fast and not too slow." },
-          { id:"ak-l1-q3", type:"true-false", difficulty:"easy", prompt:"A Muslim should walk proudly with his chest pushed out.",
-            correctAnswer:false, explanation:"We should walk upright but humbly, never like a proud person." },
-          { id:"ak-l1-q4", type:"short-answer", difficulty:"medium", prompt:"How did Rasoolullah "+PROPHET+" walk?",
-            acceptedAnswers:["briskly","fast as if descending from a high place","briskly as if coming down from a height","quickly"],
-            explanation:"Rasoolullah "+PROPHET+" walked briskly, as if descending from a high place." },
-          { id:"ak-l1-q5", type:"short-answer", difficulty:"medium", prompt:"What should you do if you see an obstacle on the road?",
-            acceptedAnswers:["remove it","remove the obstacle","take it away","move it"],
-            explanation:"We should remove any obstacle that could cause harm or an accident." },
-        ],
-        flashcards:[
-          { front:"What does the Qur'an say about walking?", back:"\u201CAnd be moderate in the way you walk.\u201D" },
-          { front:"How did Rasoolullah "+PROPHET+" walk?", back:"Briskly, as if descending from a high place." },
-          { front:"What is the golden rule in all our dealings?", back:"To be humble." },
-        ] },
-      { id:"ak-l2", n:2, title:"Talking", pages:"10-12", needsContent:true },
-      { id:"ak-l3", n:3, title:"Joking", pages:"14-15", needsContent:true },
-      { id:"ak-l4", n:4, title:"Neighbours", pages:"16-18", needsContent:true },
-      { id:"ak-l5", n:5, title:"Self Respect", pages:"20-23", needsContent:true },
-      { id:"ak-l6", n:6, title:"Hosts", pages:"24-25", needsContent:true },
-      { id:"ak-l7", n:7, title:"Sharing", pages:"26-29", needsContent:true },
-      { id:"ak-l8", n:8, title:"Table Manners", pages:"30-33", needsContent:true },
-      { id:"ak-l9", n:9, title:"Friday Salaah", pages:"34-35", needsContent:true },
-      { id:"ak-l10", n:10, title:"Duty of one Muslim to Another", pages:"36-37", needsContent:true },
-    ] },
-
-    /* ---------------- FIQH ---------------- */
-    { id:"fiqh", name:"Fiqh", tagline:"How we practise — purity, wudhu & salaah",
-      source:"Tas-heelul Fiqh 5", lessons:[
-      { id:"fq-l1", n:1, title:"Najaasah (Impurity)", pages:"4-7",
-        summary:"Najaasah means impurity. There are two types of najaasah: Najaasah Haqeeqi (real, visible impurity) and Najaasah Hukmee (technical impurity). Najaasah Haqeeqi is further divided into Ghaleezah (heavy) and Khafeefah (light).",
-        keyTerms:[
-          { term:"Najaasah Haqeeqi", meaning:"Real, visible impurity" },
-          { term:"Najaasah Hukmee", meaning:"Technical impurity (a state, e.g. after sleep, needing wudhu/ghusl)" },
-          { term:"Ghaleezah", meaning:"Heavy impurity — e.g. urine, pus, human blood, dog's saliva, any part of a pig" },
-          { term:"Khafeefah", meaning:"Light impurity — e.g. urine of halaal animals, droppings of haraam birds" },
-        ],
-        points:[
-          "Najaasah is divided into two types: Najaasah Haqeeqi and Najaasah Hukmee.",
-          "Najaasah Haqeeqi is divided into Ghaleezah (heavy) and Khafeefah (light).",
-          "Examples of Ghaleezah: urine, pus, the blood of human beings, the saliva of dogs, and every part of a pig.",
-          "Examples of Khafeefah: the urine of halaal animals, and the droppings of all haraam birds.",
-        ],
-        questions:[
-          { id:"fq-l1-q1", type:"multiple-choice", difficulty:"easy", prompt:"What are the two types of Najaasah?",
-            options:["Najaasah Haqeeqi and Najaasah Hukmee","Wudhu and Ghusl","Halaal and Haraam","Sunnah and Nafl"],
-            correctAnswer:"Najaasah Haqeeqi and Najaasah Hukmee", explanation:"Najaasah is divided into Haqeeqi (real) and Hukmee (technical)." },
-          { id:"fq-l1-q2", type:"short-answer", difficulty:"medium", prompt:"Name the two types of Najaasah.",
-            acceptedAnswers:["najaasah haqeeqi and najaasah hukmee","najasa haqiqi and najasa hukmi","haqeeqi and hukmee","haqiqi and hukmi"],
-            explanation:"The two types are Najaasah Haqeeqi and Najaasah Hukmee." },
-          { id:"fq-l1-q3", type:"multiple-choice", difficulty:"medium", prompt:"Najaasah Haqeeqi is divided into which two kinds?",
-            options:["Ghaleezah and Khafeefah","Fardh and Sunnah","Big and Small","Wet and Dry"], correctAnswer:"Ghaleezah and Khafeefah",
-            explanation:"Najaasah Haqeeqi is divided into Ghaleezah (heavy) and Khafeefah (light)." },
-          { id:"fq-l1-q4", type:"true-false", difficulty:"medium", prompt:"The urine of halaal animals is an example of Khafeefah (light) najaasah.",
-            correctAnswer:true, explanation:"Yes — urine of halaal animals and droppings of haraam birds are Khafeefah." },
-          { id:"fq-l1-q5", type:"multiple-choice", difficulty:"hard", prompt:"Which of these is an example of Ghaleezah (heavy) najaasah?",
-            options:["The saliva of dogs","The droppings of haraam birds","The urine of halaal animals","Clean rain water"], correctAnswer:"The saliva of dogs",
-            explanation:"Ghaleezah includes urine, pus, human blood, the saliva of dogs, and every part of a pig." },
-        ],
-        flashcards:[
-          { front:"What are the two types of Najaasah?", back:"Najaasah Haqeeqi (real) and Najaasah Hukmee (technical)." },
-          { front:"Najaasah Haqeeqi is divided into…", back:"Ghaleezah (heavy) and Khafeefah (light)." },
-          { front:"Give one example of Ghaleezah.", back:"Urine, pus, human blood, dog's saliva, or any part of a pig." },
-        ] },
-      { id:"fq-l2", n:2, title:"Najaasah Hukmee", pages:"8-9", needsContent:true },
-      { id:"fq-l3", n:3, title:"Water", pages:"10-11", needsContent:true },
-      { id:"fq-l4", n:4, title:"The rules for water", pages:"12-15", needsContent:true },
-      { id:"fq-l5", n:5, title:"Istinjaa", pages:"16-17", needsContent:true },
-      { id:"fq-l6", n:6, title:"Miswaak", pages:"18-19", needsContent:true },
-      { id:"fq-l7", n:7, title:"Virtues of Wudhu", pages:"20-21", needsContent:true },
-      { id:"fq-l8", n:8, title:"How to make Wudhu", pages:"22-25", needsContent:true },
-      { id:"fq-l9", n:9, title:"Mustahab acts of Wudhu", pages:"26-29", needsContent:true },
-      { id:"fq-l10", n:10, title:"Makrooh acts of Wudhu", pages:"30-31", needsContent:true },
-      { id:"fq-l11", n:11, title:"Actions that break Wudhu", pages:"32-33", needsContent:true },
-      { id:"fq-l14", n:14, title:"Ghusl", pages:"38-43", needsContent:true },
-      { id:"fq-l18", n:18, title:"Tayammum", pages:"48-49", needsContent:true },
-      { id:"fq-l22", n:22, title:"Waajib actions of Salaah", pages:"58-61", needsContent:true },
-      { id:"fq-l28", n:28, title:"How to read Salaah", pages:"76-81", needsContent:true },
-    ] },
-
-    /* ---------------- HADEETH ---------------- */
-    { id:"hadeeth", name:"Hadeeth", tagline:"The words and guidance of Rasoolullah "+PROPHET,
-      source:"Tas-heelul Ahaadeeth 5", lessons:[
-      { id:"hd-l1", n:1, title:"Frightening another Muslim", pages:"4",
-        summary:"Rasoolullah "+PROPHET+" said: \u201CIt is not permissible for a Muslim to frighten another Muslim.\u201D Sometimes we joke with friends by scaring them — shouting in the dark, suddenly jumping at them, or falsely telling them they are in trouble. This is not allowed, because fear causes shock, pain and worry, and we must never harm a fellow Muslim, even as a joke.",
-        keyTerms:[
-          { term:"Permissible", meaning:"Allowed in Islam" },
-          { term:"Harm", meaning:"To cause hurt, pain or worry to someone" },
-        ],
-        points:[
-          "The hadeeth: \u201CIt is not permissible for a Muslim to frighten another Muslim.\u201D",
-          "We should not scare our friends even as a joke — e.g. shouting in the dark or suddenly pouncing on them.",
-          "Fear creates shock, pain and worry, so we never joke in a way that harms a Muslim brother or sister.",
-        ],
-        questions:[
-          { id:"hd-l1-q1", type:"true-false", difficulty:"easy", prompt:"It is fine to scare your friend in the dark as a joke.",
-            correctAnswer:false, explanation:"Rasoolullah "+PROPHET+" said it is not permissible to frighten another Muslim, even jokingly." },
-          { id:"hd-l1-q2", type:"fill-blank", difficulty:"easy", prompt:"It is not permissible for a Muslim to ______ another Muslim.",
-            correctAnswer:"frighten", acceptedAnswers:["frighten","scare"], explanation:"The hadeeth forbids frightening (scaring) another Muslim." },
-          { id:"hd-l1-q3", type:"multiple-choice", difficulty:"medium", prompt:"Why should we not frighten others, even as a joke?",
-            options:["Because it causes shock, pain and worry","Because it is tiring","Because it wastes time","Because it is expensive"],
-            correctAnswer:"Because it causes shock, pain and worry",
-            explanation:"Fear creates shock, pain and worry — so we never harm a fellow Muslim, even jokingly." },
-        ],
-        flashcards:[
-          { front:"Complete the hadeeth: \u201CIt is not permissible for a Muslim to ____ another Muslim.\u201D", back:"…to frighten another Muslim." },
-          { front:"Why is frightening others not allowed?", back:"It causes shock, pain and worry — harming a fellow Muslim, even as a joke." },
-        ] },
-      { id:"hd-l2", n:2, title:"Salaah", pages:"5", needsContent:true },
-      { id:"hd-l3", n:3, title:"Breaking Ties", pages:"6", needsContent:true },
-      { id:"hd-l4", n:4, title:"Beginning with the Right Side", pages:"7", needsContent:true },
-      { id:"hd-l5", n:5, title:"Wudhu", pages:"8", needsContent:true },
-      { id:"hd-l6", n:6, title:"Fulfilling One's Promise", pages:"9", needsContent:true },
-      { id:"hd-l7", n:7, title:"Ghibah (Backbiting)", pages:"10", needsContent:true },
-      { id:"hd-l8", n:8, title:"Safeguarding the Tongue", pages:"11", needsContent:true },
-      { id:"hd-l9", n:9, title:"Kindness towards Others", pages:"12", needsContent:true },
-      { id:"hd-l10", n:10, title:"Anger", pages:"13", needsContent:true },
-    ] },
-
-    /* ---------------- TAREEKH / SEERAH ---------------- */
-    { id:"tareekh", name:"Tareekh (Seerah)", tagline:"The blessed life of Rasoolullah "+PROPHET,
-      source:"Tas-heel Islamic History 5", lessons:[
-      { id:"tr-l2", n:2, title:"The Birth of Rasoolullah "+PROPHET, pages:"12-15",
-        summary:"Rasoolullah "+PROPHET+" was born in the \u201CYear of the Elephants\u201D. In that year, Abrahaa-bin-Saba, the governor of Yemen, came with an army of \u201CThe Men of Elephants\u201D to destroy the Kaabah. Allah sent flights of birds which rained down stones and destroyed the army — mentioned in Surah Feel (The Elephants). His father Abdullah had passed away at Yathrib (Madeenah) before his birth.",
-        keyTerms:[
-          { term:"Year of the Elephants", meaning:"The year Rasoolullah "+PROPHET+" was born" },
-          { term:"Abrahaa", meaning:"The governor of Yemen who tried to destroy the Kaabah" },
-          { term:"Zam Zam", meaning:"The blessed spring near the hills of Safa and Marwah" },
-          { term:"Surah Feel", meaning:"The chapter of the Qur'an about the Elephants" },
-        ],
-        points:[
-          "Rasoolullah "+PROPHET+" was born in the Year of the Elephants.",
-          "Abrahaa came with an army of elephants to destroy the Kaabah; Allah sent birds that rained stones and destroyed them (Surah Feel).",
-          "Sayyidah Haajirah "+RA+", mother of Sayyidina Ismaaeel "+AS+", found Zam Zam between the hills of Safa and Marwah and built walls around it.",
-          "His father Abdullah passed away at Yathrib (Madeenah) before his birth.",
-        ],
-        questions:[
-          { id:"tr-l2-q1", type:"multiple-choice", difficulty:"easy", prompt:"In which year was Rasoolullah "+PROPHET+" born?",
-            options:["The Year of the Elephants","The Year of the Hijrah","The Year of Sorrow","The Year of Victory"], correctAnswer:"The Year of the Elephants",
-            explanation:"He "+PROPHET+" was born in the Year of the Elephants — when Abrahaa's army was destroyed." },
-          { id:"tr-l2-q2", type:"short-answer", difficulty:"medium", prompt:"Who came with an army of elephants to destroy the Kaabah?",
-            acceptedAnswers:["abrahaa","abraha","abrahaa-bin-saba","abrahaa bin saba"], explanation:"Abrahaa-bin-Saba, the governor of Yemen, tried to destroy the Kaabah." },
-          { id:"tr-l2-q3", type:"multiple-choice", difficulty:"medium", prompt:"How did Allah destroy Abrahaa's army?",
-            options:["He sent flights of birds which rained down stones","He sent a great flood","He sent a strong wind","He sent an earthquake"],
-            correctAnswer:"He sent flights of birds which rained down stones", explanation:"Allah sent birds that pelted the army with stones — told in Surah Feel." },
-          { id:"tr-l2-q4", type:"short-answer", difficulty:"medium", prompt:"Which two hills are close to the well of Zam Zam?",
-            acceptedAnswers:["safa and marwah","safa and marwa","saffa and marwah","marwah and safa"], explanation:"Safa and Marwah are the two hills, now part of the noble sanctuary." },
-          { id:"tr-l2-q5", type:"fill-blank", difficulty:"hard", prompt:"The Qur'an mentions the elephants in Surah ______.",
-            correctAnswer:"Feel", acceptedAnswers:["feel","fil","al-feel","al feel"], explanation:"Surah Feel (The Elephants) tells of Abrahaa's army." },
-          { id:"tr-l2-q6", type:"short-answer", difficulty:"hard", prompt:"Where did Abdullah, the father of Rasoolullah "+PROPHET+", pass away?",
-            acceptedAnswers:["yathrib","madeenah","madinah","yathrib madeenah","yathrib (madeenah)"], explanation:"He passed away at Yathrib, which is Madeenah." },
-        ],
-        flashcards:[
-          { front:"In which year was Rasoolullah "+PROPHET+" born?", back:"The Year of the Elephants." },
-          { front:"Who tried to destroy the Kaabah with elephants?", back:"Abrahaa-bin-Saba, the governor of Yemen." },
-          { front:"How did Allah save the Kaabah?", back:"He sent birds that rained stones on the army (Surah Feel)." },
-          { front:"Which two hills are near Zam Zam?", back:"Safa and Marwah." },
-        ] },
-      { id:"tr-l1", n:1, title:"The Pre-Islaamic Age", pages:"8-11", needsContent:true },
-      { id:"tr-l3", n:3, title:"Childhood", pages:"16-19", needsContent:true },
-      { id:"tr-l4", n:4, title:"First Journey to Syria", pages:"20-21", needsContent:true },
-      { id:"tr-l5", n:5, title:"Youth", pages:"22-23", needsContent:true },
-      { id:"tr-l6", n:6, title:"Building of the Kaabah", pages:"24-27", needsContent:true },
-      { id:"tr-l8", n:8, title:"Marriage", pages:"32-35", needsContent:true },
-      { id:"tr-l10", n:10, title:"Prophethood", pages:"38-41", needsContent:true },
-      { id:"tr-l18", n:18, title:"Meraj", pages:"70-73", needsContent:true },
-      { id:"tr-l21", n:21, title:"Hijrah to Madeenah", pages:"82-88", needsContent:true },
-    ] },
-
-  ]}],
+// ----------------------------------------------------------------------------
+//  Syllabus is loaded at boot from GET /api/syllabus/tree/:gradeId — no longer
+//  hardcoded. applySyllabus() populates GRADE / SUBJECTS and merges colour
+//  themes (keyed by the real DB subject id) onto SUBJECT_THEME.
+// ----------------------------------------------------------------------------
+const BASE_THEME = {
+  aqaaid:{ c:"#1E7A57", soft:"#E2F0E8", name:"Aqaa-id" },
+  akhlaaq:{ c:"#3E6CA6", soft:"#E5ECF6", name:"Akhlaaq" },
+  fiqh:{ c:"#C76A3A", soft:"#F8E9DF", name:"Fiqh" },
+  hadeeth:{ c:"#B08400", soft:"#F6EFD6", name:"Hadeeth" },
+  tareekh:{ c:"#2E8C8C", soft:"#DEF0F0", name:"Tareekh" },
+  duas:{ c:"#7A5CA6", soft:"#ECE6F5", name:"Du'as" },
+  sunnah:{ c:"#A6537A", soft:"#F5E6EE", name:"Sunnah" },
+  "islamic-history":{ c:"#8A6B3A", soft:"#F1EADD", name:"Islamic History" },
 };
+const FALLBACK_THEME = { c:"#1E7A57", soft:"#E4F1E9", name:"Subject" };
 
-const GRADE = SYLLABUS.grades[0];
-const SUBJECTS = GRADE.subjects;
+let SYLLABUS_NAME = "Tas-heel Series";
+let GRADE = null;
+let SUBJECTS = [];
+
+// Map the API tree onto module state and ensure every subject has a theme,
+// keyed by its real DB id (e.g. "g5-aqaaid"). Falls back gracefully so a new
+// or unknown subject never crashes the UI.
+function applySyllabus(tree, gradeId){
+  GRADE = (tree && tree.grade) || { id: gradeId, name: "" };
+  SUBJECTS = (tree && tree.subjects) || [];
+  const prefix = gradeId ? gradeId + "-" : "";
+  for (const s of SUBJECTS){
+    const slug = (prefix && s.id.startsWith(prefix)) ? s.id.slice(prefix.length) : s.id;
+    const base = BASE_THEME[slug] || FALLBACK_THEME;
+    SUBJECT_THEME[s.id] = { c: base.c, soft: base.soft, name: s.name || base.name };
+  }
+}
+
 const subjectById = (id) => SUBJECTS.find((s) => s.id === id);
 const lessonById = (id) => { for (const s of SUBJECTS){ const l=s.lessons.find(x=>x.id===id); if(l) return {lesson:l, subject:s}; } return null; };
 const lessonsWithContent = (s) => s.lessons.filter((l)=>!l.needsContent && l.questions && l.questions.length);
@@ -349,11 +96,15 @@ const todayKey=()=>new Date().toISOString().slice(0,10);
 const daysBetween=(a,b)=>Math.ceil((new Date(b)-new Date(a))/86400000);
 const shuffle=(arr)=>{const x=[...arr]; for(let i=x.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[x[i],x[j]]=[x[j],x[i]];} return x;};
 
-/* ---------------- storage (window.storage + in-memory fallback) ---------------- */
+/* ---------------- storage (server-backed via /api/progress/me) ----------------
+   Student progress lives in PostgreSQL, not localStorage. get() loads the saved
+   state blob for the signed-in student; set() persists the whole blob
+   (last-write-wins). In-memory mem{} is only a within-session safety net if a
+   save request fails, so the UI never loses the current session.            */
 const KEY="tasheel:v1"; const mem={};
 const store={
-  async get(k){ try{ if(window.storage){ const r=await window.storage.get(k); return r?JSON.parse(r.value):null; } }catch(e){} return mem[k]==null?null:mem[k]; },
-  async set(k,v){ mem[k]=v; try{ if(window.storage) await window.storage.set(k,JSON.stringify(v)); }catch(e){} },
+  async get(k){ try{ const r=await getProgress(); if(r!=null){ mem[k]=r; return r; } }catch(e){} return mem[k]==null?null:mem[k]; },
+  async set(k,v){ mem[k]=v; try{ await saveProgress(v); }catch(e){} },
 };
 const blankState=()=>({ profile:null, examDate:null, completedLessons:[], attempts:[], wrongQuestionIds:[], cards:{}, customQuestions:[], sessionsByDay:{}, streak:{current:0,best:0,lastStudied:null}, best:{} });
 const cloneState=(o)=> (typeof structuredClone==="function"?structuredClone(o):JSON.parse(JSON.stringify(o)));
@@ -396,13 +147,14 @@ function pickQuestions(filter,n){
   return shuffle(pool).slice(0,n);
 }
 function planForDay(state,d){
+  const subs=SUBJECTS.slice(0,5).map(s=>({
+    subjectId:s.id,
+    label:(SUBJECT_THEME[s.id]?.name||s.name)+" revision",
+    detail:s.tagline||"Revise this subject",
+  }));
   const r=[
-    {subjectId:"aqaaid", label:"Aqaa-id revision", detail:"Qualities of Allah & Angels"},
-    {subjectId:"akhlaaq", label:"Akhlaaq manners", detail:"Walking — good character"},
-    {subjectId:"fiqh", label:"Fiqh purity", detail:"Najaasah & the types of impurity"},
-    {subjectId:"hadeeth", label:"Hadeeth of the day", detail:"Frightening another Muslim"},
-    {subjectId:"tareekh", label:"Seerah story", detail:"The Birth of Rasoolullah "+PROPHET},
-    {subjectId:null, label:"Mixed exam practice", detail:"10 questions across all subjects"},
+    ...subs,
+    {subjectId:null, label:"Mixed exam practice", detail:"Questions across all subjects"},
     {subjectId:null, label:"Flashcard review", detail:"Clear your due cards"},
   ];
   return r[d % r.length];
@@ -429,13 +181,32 @@ function makeCardFromQuestion(a){
 }
 
 /* ===================== UI PRIMITIVES ===================== */
-const Ring = ({ value=0, size=44, stroke=5, color=T.green, track=T.line, children }) => {
-  const r=(size-stroke)/2, c=2*Math.PI*r, off=c-(Math.max(0,Math.min(100,value))/100)*c;
+const Ring = ({ value=0, size=44, stroke=5, color=T.green, track=T.line, children, animated=false, fillAnimation=false }) => {
+  const r=(size-stroke)/2, c=2*Math.PI*r;
+  const targetValue = Math.max(0,Math.min(100,value));
+  const targetOff = c-(targetValue/100)*c;
+  
   return (
-    <div style={{ position:"relative", width:size, height:size, flexShrink:0 }}>
+    <div className={animated?'hover-glow':''} style={{ position:"relative", width:size, height:size, flexShrink:0 }}>
       <svg width={size} height={size} style={{ transform:"rotate(-90deg)" }}>
         <circle cx={size/2} cy={size/2} r={r} fill="none" stroke={track} strokeWidth={stroke} />
-        <circle cx={size/2} cy={size/2} r={r} fill="none" stroke={color} strokeWidth={stroke} strokeDasharray={c} strokeDashoffset={off} strokeLinecap="round" style={{ transition:"stroke-dashoffset .6s cubic-bezier(.4,0,.2,1)" }} />
+        <circle 
+          cx={size/2} 
+          cy={size/2} 
+          r={r} 
+          fill="none" 
+          stroke={color} 
+          strokeWidth={stroke} 
+          strokeDasharray={c} 
+          strokeDashoffset={fillAnimation && targetValue > 0 ? c : targetOff} 
+          strokeLinecap="round" 
+          style={{ 
+            transition: fillAnimation ? "none" : "stroke-dashoffset .6s cubic-bezier(.4,0,.2,1)",
+            animation: fillAnimation && targetValue > 0 ? `fillCircle 2s ease-in-out infinite` : "none",
+            "--circle-length": c + "px",
+            "--target-offset": targetOff + "px"
+          }} 
+        />
       </svg>
       <div style={{ position:"absolute", inset:0, display:"grid", placeItems:"center", fontSize:size*0.28, fontWeight:700, color }}>{children}</div>
     </div>
@@ -446,22 +217,25 @@ const Bar = ({ value=0, color=T.green, h=8 }) => (
     <div style={{ width:Math.max(0,Math.min(100,value))+"%", height:"100%", background:color, borderRadius:99, transition:"width .6s cubic-bezier(.4,0,.2,1)" }} />
   </div>
 );
-const Btn = ({ children, onClick, kind="primary", color=T.green, disabled, style, full }) => {
-  const base={ border:"none", cursor:disabled?"default":"pointer", borderRadius:16, fontSize:16, fontWeight:600, padding:"14px 20px", fontFamily:"inherit", transition:"transform .12s ease, filter .12s ease", width:full?"100%":undefined, opacity:disabled?0.5:1, display:"inline-flex", alignItems:"center", justifyContent:"center", gap:8 };
+const Btn = ({ children, onClick, kind="primary", color=T.green, disabled, style, full, animated=false }) => {
+  const base={ border:"none", cursor:disabled?"default":"pointer", borderRadius:16, fontSize:16, fontWeight:600, padding:"14px 20px", fontFamily:"inherit", transition:"all .2s cubic-bezier(.4,0,.2,1)", width:full?"100%":undefined, opacity:disabled?0.5:1, display:"inline-flex", alignItems:"center", justifyContent:"center", gap:8 };
   const kinds={ primary:{ background:color, color:"#fff" }, soft:{ background:T.greenSoft, color:T.green }, ghost:{ background:"transparent", color:T.ink2, border:"1.5px solid "+T.line } };
   return (
     <button onClick={disabled?undefined:onClick} disabled={disabled}
-      onMouseDown={(e)=>!disabled&&(e.currentTarget.style.transform="scale(.97)")}
-      onMouseUp={(e)=>(e.currentTarget.style.transform="scale(1)")}
+      className={animated?'hover-scale':''}
+      onMouseDown={(e)=>!disabled&&(e.currentTarget.style.transform=animated?"scale(.95)":"scale(.97)")}
+      onMouseUp={(e)=>(e.currentTarget.style.transform=animated?"scale(1.05)":"scale(1)")}
       onMouseLeave={(e)=>(e.currentTarget.style.transform="scale(1)")}
+      onMouseEnter={(e)=>!disabled&&animated&&(e.currentTarget.style.boxShadow="0 4px 12px rgba(43,58,51,.2)")}
       style={{ ...base, ...kinds[kind], ...style }}>{children}</button>
   );
 };
-const Card = ({ children, style, onClick, accent }) => (
+const Card = ({ children, style, onClick, accent, animated=false }) => (
   <div onClick={onClick}
-    style={{ background:T.card, borderRadius:22, padding:18, border:"1px solid "+T.line, boxShadow:"0 1px 2px rgba(43,58,51,.04), 0 8px 24px -16px rgba(43,58,51,.18)", cursor:onClick?"pointer":"default", transition:"transform .15s ease", borderLeft:accent?"4px solid "+accent:undefined, ...style }}
-    onMouseEnter={(e)=>onClick&&(e.currentTarget.style.transform="translateY(-2px)")}
-    onMouseLeave={(e)=>onClick&&(e.currentTarget.style.transform="translateY(0)")}>{children}</div>
+    className={`${animated?'hover-lift':''} ${onClick?'hover-scale':''}`}
+    style={{ background:T.card, borderRadius:22, padding:18, border:"1px solid "+T.line, boxShadow:"0 1px 2px rgba(43,58,51,.04), 0 8px 24px -16px rgba(43,58,51,.18)", cursor:onClick?"pointer":"default", transition:"all .2s cubic-bezier(.4,0,.2,1)", borderLeft:accent?"4px solid "+accent:undefined, ...style }}
+    onMouseEnter={(e)=>onClick&&(e.currentTarget.style.transform="translateY(-3px)",e.currentTarget.style.boxShadow="0 4px 16px rgba(43,58,51,.12), 0 12px 32px -20px rgba(43,58,51,.24)")}
+    onMouseLeave={(e)=>onClick&&(e.currentTarget.style.transform="translateY(0)",e.currentTarget.style.boxShadow="0 1px 2px rgba(43,58,51,.04), 0 8px 24px -16px rgba(43,58,51,.18)")}>{children}</div>
 );
 const Pill = ({ children, color=T.green, bg }) => (
   <span style={{ fontSize:12, fontWeight:700, color, background:bg||(color+"15"), padding:"4px 10px", borderRadius:99, whiteSpace:"nowrap" }}>{children}</span>
@@ -487,27 +261,37 @@ const labelType = (t)=>({ "multiple-choice":"Multiple choice","short-answer":"Sh
 /* ===================== APP ===================== */
 export default function App({ user = null, onLogout = null }){
   const [state,setState]=useState(null);
+  const [ready,setReady]=useState(false);
   const [tab,setTab]=useState("home");
   const [route,setRoute]=useState({ name:"home" });
   const stack=useRef([]);
 
-  useEffect(()=>{ (async()=>{ 
-    const s=await store.get(KEY); 
+  useEffect(()=>{ (async()=>{
+    // 1) Load this student's syllabus (grade -> subjects -> lessons -> questions)
+    //    from the database. No syllabus is hardcoded any more.
+    const gradeId = (user && user.gradeId) || "g5";
+    try { const tree = await getSyllabusTree(gradeId); applySyllabus(tree, gradeId); }
+    catch(e){ applySyllabus({ grade:{ id:gradeId, name:"" }, subjects:[] }, gradeId); }
+
+    // 2) Load saved progress from the API (falls back to a blank state).
+    const s=await store.get(KEY);
     const initialState = s || blankState();
-    
+
     // If user is provided and profile doesn't exist, set it from user data
     if (user && !initialState.profile) {
       initialState.profile = { name: user.name, createdAt: Date.now() };
       if (!initialState.examDate) {
-        const d = new Date(); 
-        d.setDate(d.getDate() + 14); 
+        const d = new Date();
+        d.setDate(d.getDate() + 14);
         initialState.examDate = d.toISOString().slice(0, 10);
       }
     }
-    
-    setState(initialState); 
+
+    setState(initialState);
+    setReady(true);
+    logActivity("login").catch(()=>{});
   })(); },[user]);
-  useEffect(()=>{ if(state) store.set(KEY,state); },[state]);
+  useEffect(()=>{ if(ready && state) store.set(KEY,state); },[state,ready]);
 
   const update=useCallback((fn)=>setState(s=>fn(cloneState(s))),[]);
   const go=(r)=>{ stack.current.push(route); setRoute(r); window.scrollTo(0,0); };
@@ -520,16 +304,34 @@ export default function App({ user = null, onLogout = null }){
     return s;
   }),[update]);
 
-  const recordAttempt=useCallback((attempt)=>update(s=>{
-    s.attempts.unshift(attempt); s.attempts=s.attempts.slice(0,60);
-    const pct=Math.round((attempt.score/attempt.total)*100);
-    if(attempt.subjectId) s.best[attempt.subjectId]=Math.max(s.best[attempt.subjectId]||0,pct);
-    attempt.answers.forEach(a=>{ if(!a.isCorrect){ if(!s.wrongQuestionIds.includes(a.questionId)) s.wrongQuestionIds.push(a.questionId); const c=makeCardFromQuestion(a); if(c&&!s.cards[c.id]) s.cards[c.id]=c; } });
-    if(attempt.lessonId && pct>=60 && !s.completedLessons.includes(attempt.lessonId)) s.completedLessons.push(attempt.lessonId);
-    return s;
-  }),[update]);
+  const recordAttempt=useCallback((attempt)=>{
+    update(s=>{
+      s.attempts.unshift(attempt); s.attempts=s.attempts.slice(0,60);
+      const pct=Math.round((attempt.score/attempt.total)*100);
+      if(attempt.subjectId) s.best[attempt.subjectId]=Math.max(s.best[attempt.subjectId]||0,pct);
+      attempt.answers.forEach(a=>{ if(!a.isCorrect){ if(!s.wrongQuestionIds.includes(a.questionId)) s.wrongQuestionIds.push(a.questionId); const c=makeCardFromQuestion(a); if(c&&!s.cards[c.id]) s.cards[c.id]=c; } });
+      if(attempt.lessonId && pct>=60 && !s.completedLessons.includes(attempt.lessonId)) s.completedLessons.push(attempt.lessonId);
+      return s;
+    });
+    // Log the finished quiz as a session + one row per question, so teacher /
+    // admin analytics (success rate, weakest questions, speed) are accurate.
+    const durationMs = (attempt.startedAt && attempt.completedAt)
+      ? Math.max(0, new Date(attempt.completedAt) - new Date(attempt.startedAt)) : null;
+    logQuizSession({
+      mode: attempt.mode || null,
+      subjectId: attempt.subjectId || null,
+      lessonId: attempt.lessonId || null,
+      gradeId: (GRADE && GRADE.id) || null,
+      score: attempt.score, total: attempt.total,
+      durationMs, startedAt: attempt.startedAt || null,
+      answers: (attempt.answers || []).map(a=>({
+        questionId: a.questionId, subjectId: a.subjectId, lessonId: a.lessonId,
+        type: a.type, isCorrect: !!a.isCorrect,
+      })),
+    }).catch(()=>{});
+  },[update]);
 
-  if(!state) return <Boot />;
+  if(!ready || !state) return <Boot />;
   if(!state.profile) return (
     <Shell noNav>
       <Onboarding onDone={(name)=>update(s=>{ s.profile={name,createdAt:Date.now()}; if(!s.examDate){ const d=new Date(); d.setDate(d.getDate()+14); s.examDate=d.toISOString().slice(0,10); } return s; })} />
@@ -562,15 +364,66 @@ function Shell({ children, tab, goTab, noNav }){
         @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
         *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; } body{ margin:0; }
         input,textarea,select,button{ font-family:inherit; }
+        
+        /* Base animations */
         @keyframes fadeUp{ from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:none} }
         @keyframes pop{ 0%{transform:scale(.8);opacity:0} 60%{transform:scale(1.05)} 100%{transform:scale(1);opacity:1} }
         @keyframes float{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+        @keyframes rotate{ from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+        @keyframes pulse{ 0%,100%{opacity:1} 50%{opacity:.6} }
+        @keyframes bounce{ 0%,20%,53%,80%,100%{transform:translateY(0)} 40%,43%{transform:translateY(-8px)} }
+        @keyframes glow{ 0%,100%{box-shadow:0 0 5px rgba(30,122,87,.2)} 50%{box-shadow:0 0 20px rgba(30,122,87,.4), 0 0 30px rgba(30,122,87,.2)} }
+        @keyframes shimmer{ 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+        @keyframes slideIn{ from{opacity:0;transform:translateX(-20px)} to{opacity:1;transform:translateX(0)} }
+        @keyframes flipIn{ 0%{transform:rotateY(90deg);opacity:0} 100%{transform:rotateY(0);opacity:1} }
+        @keyframes scale{ 0%{transform:scale(.95)} 50%{transform:scale(1.02)} 100%{transform:scale(1)} }
+        @keyframes heartbeat{ 0%{transform:scale(1)} 14%{transform:scale(1.1)} 28%{transform:scale(1)} 42%{transform:scale(1.1)} 70%{transform:scale(1)} }
+        @keyframes wiggle{ 0%,7%,14%,21%,28%,35%,42%,49%,56%,63%,70%,77%,84%,91%,98%,100%{transform:rotate(0deg)} 3.5%,10.5%,17.5%,24.5%,31.5%,38.5%,45.5%,52.5%,59.5%,66.5%,73.5%,80.5%,87.5%,94.5%{transform:rotate(-2deg)} }
+        @keyframes fillCircle{ 0%{stroke-dashoffset:var(--circle-length)} 100%{stroke-dashoffset:var(--target-offset)} }
+        
+        /* Animation classes */
         .fade{ animation:fadeUp .4s cubic-bezier(.4,0,.2,1) both; }
+        .pop{ animation:pop .5s cubic-bezier(.4,0,.2,1) both; }
+        .float{ animation:float 3s ease-in-out infinite; }
+        .rotate{ animation:rotate 3s linear infinite; }
+        .pulse{ animation:pulse 2s ease-in-out infinite; }
+        .bounce{ animation:bounce 1s ease-in-out infinite; }
+        .glow{ animation:glow 2s ease-in-out infinite; }
+        .shimmer{ background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent); background-size:200% 100%; animation:shimmer 2s infinite; }
+        .slideIn{ animation:slideIn .4s cubic-bezier(.4,0,.2,1) both; }
+        .flipIn{ animation:flipIn .6s cubic-bezier(.4,0,.2,1) both; }
+        .scale{ animation:scale .3s cubic-bezier(.4,0,.2,1) both; }
+        .heartbeat{ animation:heartbeat 1.5s ease-in-out infinite; }
+        .wiggle{ animation:wiggle .8s ease-in-out; }
+        
+        /* Stagger animations */
         .stagger>*{ animation:fadeUp .45s cubic-bezier(.4,0,.2,1) both; }
         .stagger>*:nth-child(1){animation-delay:.03s}.stagger>*:nth-child(2){animation-delay:.07s}
         .stagger>*:nth-child(3){animation-delay:.11s}.stagger>*:nth-child(4){animation-delay:.15s}
         .stagger>*:nth-child(5){animation-delay:.19s}.stagger>*:nth-child(6){animation-delay:.23s}
         .stagger>*:nth-child(7){animation-delay:.27s}.stagger>*:nth-child(8){animation-delay:.31s}
+        .stagger>*:nth-child(9){animation-delay:.35s}.stagger>*:nth-child(10){animation-delay:.39s}
+        
+        /* Hover states */
+        .hover-lift{ transition:all .2s cubic-bezier(.4,0,.2,1); }
+        .hover-lift:hover{ transform:translateY(-3px); box-shadow:0 4px 12px rgba(43,58,51,.15); }
+        .hover-glow{ transition:all .3s ease; }
+        .hover-glow:hover{ box-shadow:0 0 20px rgba(30,122,87,.3); }
+        .hover-scale{ transition:transform .2s ease; }
+        .hover-scale:hover{ transform:scale(1.05); }
+        .hover-rotate{ transition:transform .3s ease; }
+        .hover-rotate:hover{ transform:rotate(5deg); }
+        
+        /* Navigation icon animations */
+        .nav-icon{ transition:all .3s cubic-bezier(.4,0,.2,1); }
+        .nav-icon:hover{ transform:translateY(-2px) scale(1.1); }
+        .nav-icon.active{ animation:bounce .6s ease-in-out; }
+        
+        
+        /* Flashcard flip animation */
+        .flashcard{ perspective:1000px; transition:all .4s cubic-bezier(.4,0,.2,1); }
+        .flashcard.flipping{ animation:flipIn .6s cubic-bezier(.4,0,.2,1); }
+        
         input:focus,textarea:focus,select:focus{ outline:2px solid ${T.green}40; }
       `}</style>
       <div style={{ maxWidth:540, margin:"0 auto", minHeight:"100vh", background:T.paper, backgroundImage:"radial-gradient("+T.paper2+" 1px, transparent 1px)", backgroundSize:"22px 22px", display:"flex", flexDirection:"column" }}>
@@ -579,12 +432,12 @@ function Shell({ children, tab, goTab, noNav }){
           <div style={{ position:"sticky", bottom:0, background:"rgba(251,247,238,.92)", backdropFilter:"blur(10px)" }}>
             <footer style={{ textAlign:"center", padding:"12px 18px 8px", background:"rgba(251,247,238,.92)" }}>
               <img src={logoLandscape} alt="Tathbīt" style={{ height:32, width:"auto", objectFit:"contain", marginBottom:6 }} />
-              <p style={{ margin:0, fontSize:11, color:T.faint }}>Copyright &copy; 2026 Tathbīt</p>
+              {/* <p style={{ margin:0, fontSize:11, color:T.faint }}>Copyright &copy; 2026 Tathbīt</p> */}
             </footer>
             <nav style={{ borderTop:"1px solid "+T.line, display:"flex", padding:"12px 8px calc(12px + env(safe-area-inset-bottom))" }}>
               {[{k:"home",I:Home,l:"Home"},{k:"subjects",I:BookOpen,l:"Subjects"},{k:"cards",I:Layers,l:"Cards"},{k:"plan",I:Calendar,l:"Plan"},{k:"me",I:User,l:"Me"}].map(({k,I,l})=>{
                 const on=tab===k;
-                return <button key={k} onClick={()=>goTab(k)} style={{ flex:1, border:"none", background:"transparent", cursor:"pointer", display:"flex", flexDirection:"column", alignItems:"center", gap:4, padding:"8px 4px", color:on?T.green:T.faint, minHeight:48 }}><I size={20} strokeWidth={on?2.5:2} /><span style={{ fontSize:10, fontWeight:on?700:600 }}>{l}</span></button>;
+                return <button key={k} onClick={()=>goTab(k)} className={`nav-icon ${on?'active':''}`} style={{ flex:1, border:"none", background:"transparent", cursor:"pointer", display:"flex", flexDirection:"column", alignItems:"center", gap:4, padding:"8px 4px", color:on?T.green:T.faint, minHeight:48 }}><I size={20} strokeWidth={on?2.5:2} /><span style={{ fontSize:10, fontWeight:on?700:600 }}>{l}</span></button>;
               })}
             </nav>
           </div>
@@ -606,7 +459,7 @@ function Onboarding({ onDone }){
       <Card style={{ marginTop:26 }}>
         <label style={{ fontSize:13, fontWeight:700, color:T.ink2 }}>What is your name?</label>
         <input value={name} onChange={(e)=>setName(e.target.value)} placeholder="e.g. Muhammad" onKeyDown={(e)=>e.key==="Enter"&&name.trim()&&onDone(name.trim())} style={{ width:"100%", marginTop:8, padding:"14px 16px", borderRadius:14, border:"1.5px solid "+T.line, fontSize:17, background:T.paper }} />
-        <Btn full disabled={!name.trim()} onClick={()=>onDone(name.trim())} style={{ marginTop:14 }}>Start revising <ArrowRight size={18} /></Btn>
+        <Btn full disabled={!name.trim()} onClick={()=>onDone(name.trim())} animated style={{ marginTop:14 }}>Start revising <ArrowRight size={18} /></Btn>
       </Card>
       <p style={{ textAlign:"center", color:T.faint, fontSize:12, marginTop:18 }}>Saved on this device. No account needed.</p>
     </div>
@@ -629,7 +482,8 @@ function Dashboard({ ctx }){
         <div style={{ display:"flex", gap:8, alignItems:"center" }}>
           {onLogout && (
             <button 
-              onClick={() => { logout(); onLogout(); }} 
+              onClick={() => { logActivity("logout").catch(()=>{}); logout(); onLogout(); }} 
+              className="hover-scale"
               style={{ 
                 border:"1px solid "+T.line, 
                 background:T.card, 
@@ -640,43 +494,50 @@ function Dashboard({ ctx }){
                 gap:6, 
                 cursor:"pointer",
                 fontSize:12,
-                color:T.ink
+                color:T.ink,
+                transition:"all .2s ease"
               }}>
               <LogOut size={16} />
               Logout
             </button>
           )}
-          <button onClick={()=>goTab("me")} style={{ border:"1px solid "+T.line, background:T.card, borderRadius:14, padding:"8px 12px", display:"flex", alignItems:"center", gap:6, cursor:"pointer" }}><Flame size={18} color={state.streak.current?T.gold:T.faint} /><b style={{ color:T.ink }}>{state.streak.current}</b></button>
+          <button onClick={()=>goTab("me")} className="hover-scale" style={{ border:"1px solid "+T.line, background:T.card, borderRadius:14, padding:"8px 12px", display:"flex", alignItems:"center", gap:6, cursor:"pointer", transition:"all .2s ease" }}>
+            <div className={state.streak.current?'heartbeat':''}><Flame size={18} color={state.streak.current?T.gold:T.faint} /></div>
+            <b style={{ color:T.ink }}>{state.streak.current}</b>
+          </button>
         </div>
       </div>
 
-      <Card onClick={()=>goTab("plan")} style={{ marginTop:16, background:T.green, border:"none", color:"#fff", overflow:"hidden", position:"relative" }}>
-        <div style={{ position:"absolute", right:-20, top:-20, width:120, height:120, borderRadius:"50%", background:"rgba(255,255,255,.08)" }} />
+      <Card onClick={()=>goTab("plan")} animated style={{ marginTop:16, background:T.green, border:"none", color:"#fff", overflow:"hidden", position:"relative" }}>
+        <div className="pulse" style={{ position:"absolute", right:-20, top:-20, width:120, height:120, borderRadius:"50%", background:"rgba(255,255,255,.08)" }} />
         <p style={{ margin:0, opacity:.85, fontSize:13, fontWeight:600 }}>Exam countdown</p>
-        <div style={{ display:"flex", alignItems:"baseline", gap:8, marginTop:4 }}><span style={{ fontFamily:"Fraunces, serif", fontSize:44, fontWeight:600, lineHeight:1 }}>{days==null?"—":days}</span><span style={{ fontSize:16, opacity:.9 }}>days to go</span></div>
+        <div style={{ display:"flex", alignItems:"baseline", gap:8, marginTop:4 }}>
+          <span className="heartbeat" style={{ fontFamily:"Fraunces, serif", fontSize:44, fontWeight:600, lineHeight:1 }}>{days==null?"—":days}</span>
+          <span style={{ fontSize:16, opacity:.9 }}>days to go</span>
+        </div>
         <p style={{ margin:"10px 0 0", fontSize:13, opacity:.9, display:"flex", alignItems:"center", gap:6 }}>Today: {today.label} <ChevronRight size={15} /></p>
       </Card>
 
       <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:12, marginTop:12 }}>
-        <Card style={{ padding:16 }}><div style={{ display:"flex", alignItems:"center", gap:12 }}><Ring value={overallPct} size={48}>{overallPct}%</Ring><div><p style={{ margin:0, fontSize:13, color:T.ink2 }}>Overall</p><b style={{ fontSize:15 }}>progress</b></div></div></Card>
-        <Card onClick={()=>goTab("cards")} style={{ padding:16 }}><div style={{ display:"flex", alignItems:"center", gap:12 }}><div style={{ width:48, height:48, borderRadius:14, background:T.greenSoft, display:"grid", placeItems:"center" }}><Layers size={22} color={T.green} /></div><div><p style={{ margin:0, fontSize:13, color:T.ink2 }}>Flashcards</p><b style={{ fontSize:15 }}>{dueCards.length} due now</b></div></div></Card>
+        <Card animated style={{ padding:16 }}><div style={{ display:"flex", alignItems:"center", gap:12 }}><Ring value={overallPct} size={48} animated fillAnimation={overallPct>0}>{overallPct}%</Ring><div><p style={{ margin:0, fontSize:13, color:T.ink2 }}>Overall</p><b style={{ fontSize:15 }}>progress</b></div></div></Card>
+        <Card onClick={()=>goTab("cards")} animated style={{ padding:16 }}><div style={{ display:"flex", alignItems:"center", gap:12 }}><div className="float" style={{ width:48, height:48, borderRadius:14, background:T.greenSoft, display:"grid", placeItems:"center" }}><Layers size={22} color={T.green} /></div><div><p style={{ margin:0, fontSize:13, color:T.ink2 }}>Flashcards</p><b style={{ fontSize:15 }}>{dueCards.length} due now</b></div></div></Card>
       </div>
 
-      <Card onClick={()=>go({name:"exam"})} style={{ marginTop:12, display:"flex", alignItems:"center", gap:14 }} accent={T.gold}>
-        <div style={{ width:44, height:44, borderRadius:14, background:T.gold+"1a", display:"grid", placeItems:"center" }}><Trophy size={22} color={T.gold} /></div>
+      <Card onClick={()=>go({name:"exam"})} animated style={{ marginTop:12, display:"flex", alignItems:"center", gap:14 }} accent={T.gold}>
+        <div className="bounce" style={{ width:44, height:44, borderRadius:14, background:T.gold+"1a", display:"grid", placeItems:"center" }}><Trophy size={22} color={T.gold} /></div>
         <div style={{ flex:1 }}><b style={{ fontSize:16 }}>Exam Practice</b><p style={{ margin:0, color:T.ink2, fontSize:13 }}>Mixed test — choose subject, length & difficulty</p></div>
         <ChevronRight color={T.faint} />
       </Card>
 
       <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", margin:"22px 0 12px" }}>
         <h2 style={{ margin:0, fontFamily:"Fraunces, serif", fontSize:20 }}>Your subjects</h2>
-        <button onClick={()=>goTab("subjects")} style={{ border:"none", background:"none", color:T.green, fontWeight:700, fontSize:13, cursor:"pointer" }}>See all</button>
+        <button onClick={()=>goTab("subjects")} className="hover-scale" style={{ border:"none", background:"none", color:T.green, fontWeight:700, fontSize:13, cursor:"pointer", transition:"all .2s ease" }}>See all</button>
       </div>
       <div style={{ display:"grid", gap:12 }}>
-        {SUBJECTS.map(s=>{ const th=SUBJECT_THEME[s.id], p=prog[s.id]; return (
-          <Card key={s.id} accent={th.c} onClick={()=>go({name:"subject",subjectId:s.id})} style={{ display:"flex", alignItems:"center", gap:14 }}>
-            <Ring value={p.pct} size={46} color={th.c} track={th.soft}>{p.pct}%</Ring>
-            <div style={{ flex:1, minWidth:0 }}><b style={{ fontSize:16 }}>{s.name}</b><p style={{ margin:"2px 0 0", color:T.ink2, fontSize:12.5, overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap" }}>{s.tagline}</p></div>
+        {SUBJECTS.map(s=>{ const th=SUBJECT_THEME[s.id], p=prog[s.id]; const shown=p.attempted?p.accuracy:p.pct; return (
+          <Card key={s.id} accent={th.c} onClick={()=>go({name:"subject",subjectId:s.id})} animated style={{ display:"flex", alignItems:"center", gap:14 }}>
+            <Ring value={shown} size={46} color={th.c} track={th.soft} animated>{shown}%</Ring>
+            <div style={{ flex:1, minWidth:0 }}><b style={{ fontSize:16 }}>{s.name}</b><p style={{ margin:"2px 0 0", color:T.ink2, fontSize:12.5, overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap" }}>{p.attempted?p.accuracy+"% accuracy · "+p.done+"/"+p.total+" lessons":s.tagline}</p></div>
             <ChevronRight color={T.faint} />
           </Card>
         ); })}
@@ -690,15 +551,15 @@ function Subjects({ ctx }){
   const { state, go }=ctx; const prog=subjectProgress(state);
   return (
     <div>
-      <p style={{ margin:0, color:T.ink2, fontSize:13, fontWeight:600 }}>{SYLLABUS.name} · {GRADE.name}</p>
+      <p style={{ margin:0, color:T.ink2, fontSize:13, fontWeight:600 }}>{SYLLABUS_NAME} · {GRADE?.name}</p>
       <Header title="Choose a subject" />
       <div className="stagger" style={{ display:"grid", gap:14 }}>
         {SUBJECTS.map(s=>{ const th=SUBJECT_THEME[s.id], p=prog[s.id], ready=lessonsWithContent(s).length; return (
-          <Card key={s.id} accent={th.c} onClick={()=>go({name:"subject",subjectId:s.id})}>
+          <Card key={s.id} accent={th.c} onClick={()=>go({name:"subject",subjectId:s.id})} animated>
             <div style={{ display:"flex", alignItems:"center", gap:14 }}>
-              <div style={{ width:52, height:52, borderRadius:16, background:th.soft, display:"grid", placeItems:"center", flexShrink:0 }}><BookMarked size={24} color={th.c} /></div>
+              <div className="hover-rotate" style={{ width:52, height:52, borderRadius:16, background:th.soft, display:"grid", placeItems:"center", flexShrink:0 }}><BookMarked size={24} color={th.c} /></div>
               <div style={{ flex:1 }}><b style={{ fontSize:17 }}>{s.name}</b><p style={{ margin:"2px 0 0", color:T.ink2, fontSize:13 }}>{s.lessons.length} lessons · {ready} ready</p></div>
-              <Ring value={p.pct} size={44} color={th.c} track={th.soft}>{p.pct}%</Ring>
+              <Ring value={p.pct} size={44} color={th.c} track={th.soft} animated fillAnimation={p.pct>0}>{p.pct}%</Ring>
             </div>
           </Card>
         ); })}
@@ -745,17 +606,40 @@ function SubjectScreen({ ctx, subjectId }){
 }
 
 /* ===================== LESSON SCREEN ===================== */
+function ArabicVerse({ entry, color, soft }){
+  const [open,setOpen]=useState(false);
+  const hasMore = !!(entry.translit || entry.meaning);
+  return (
+    <div onClick={hasMore?()=>setOpen(o=>!o):undefined} style={{ background:soft, borderRadius:16, padding:"18px 16px", cursor:hasMore?"pointer":"default" }}>
+      <p dir="rtl" lang="ar" style={{ margin:0, fontFamily:"'Noto Naskh Arabic', serif", fontSize:26, lineHeight:2.1, color:T.ink, textAlign:"center" }}>{entry.text}</p>
+      {hasMore && open && (
+        <div style={{ marginTop:12, borderTop:"1px solid "+color+"33", paddingTop:12 }}>
+          {entry.translit && <p style={{ margin:"0 0 6px", fontSize:14, fontStyle:"italic", color:T.ink2, textAlign:"center" }}>{entry.translit}</p>}
+          {entry.meaning && <p style={{ margin:0, fontSize:14.5, color:T.ink, textAlign:"center", lineHeight:1.5 }}>{entry.meaning}</p>}
+        </div>
+      )}
+      {hasMore && !open && <p style={{ margin:"10px 0 0", fontSize:11.5, color, textAlign:"center", fontWeight:600 }}>tap for meaning</p>}
+    </div>
+  );
+}
+
 function LessonScreen({ ctx, lessonId }){
-  const { go, back }=ctx; const found=lessonById(lessonId); if(!found) return null;
+  const { go, back }=ctx; const found=lessonById(lessonId);
+  useEffect(()=>{ if(found) logActivity("lesson_view",{ subjectId:found.subject.id, lessonId, meta:{ title:found.lesson.title } }).catch(()=>{}); },[lessonId]);
+  if(!found) return null;
   const l=found.lesson, s=found.subject, th=SUBJECT_THEME[s.id];
   return (
     <div className="fade">
       <Header title={l.title} onBack={back} right={<Pill color={th.c}>Lesson {l.n}</Pill>} />
       {l.summary && <Card style={{ borderLeft:"4px solid "+th.c }}><p style={{ margin:0, lineHeight:1.62, fontSize:15, color:T.ink }}>{l.summary}</p></Card>}
+      {l.arabic && l.arabic.length>0 && (<>
+        <SectionTitle icon={<BookOpen size={16} color={th.c} />} title="Du'ā &amp; āyāt" />
+        <div style={{ display:"grid", gap:10 }}>{l.arabic.map((a,i)=><ArabicVerse key={i} entry={a} color={th.c} soft={th.soft} />)}</div>
+      </>)}
       {l.keyTerms && l.keyTerms.length>0 && (<>
         <SectionTitle icon={<Sparkles size={16} color={th.c} />} title="Key terms & new words" />
         <div style={{ display:"grid", gap:8 }}>
-          {l.keyTerms.map(k=>(<div key={k.term} style={{ display:"flex", gap:12, background:th.soft, padding:"12px 14px", borderRadius:14 }}><b style={{ color:th.c, minWidth:92, fontSize:14 }}>{k.term}</b><span style={{ fontSize:14, color:T.ink, lineHeight:1.4 }}>{k.meaning}</span></div>))}
+          {l.keyTerms.map(k=>(<div key={k.term} style={{ display:"flex", gap:12, alignItems:"center", background:th.soft, padding:"12px 14px", borderRadius:14 }}><b style={{ color:th.c, minWidth:92, fontSize:14 }}>{k.term}</b><span style={{ fontSize:14, color:T.ink, lineHeight:1.4, flex:1 }}>{k.meaning}</span>{k.arabic && <span dir="rtl" lang="ar" style={{ fontFamily:"'Noto Naskh Arabic', serif", fontSize:19, color:th.c, marginLeft:8 }}>{k.arabic}</span>}</div>))}
         </div>
       </>)}
       {l.points && l.points.length>0 && (<>
@@ -770,7 +654,7 @@ function LessonScreen({ ctx, lessonId }){
         <Btn color={th.c} onClick={()=>go({name:"quiz",config:{mode:"lesson-practice",subjectId:s.id,lessonId:l.id,title:l.title+" quiz",questions:shuffle([...l.questions])}})}><Target size={18} /> Start quiz</Btn>
         <Btn kind="soft" color={th.c} style={{ background:th.soft }} onClick={()=>go({name:"cards",subjectId:s.id,lessonId:l.id})}><Layers size={18} /> Flashcards</Btn>
       </div>
-      <p style={{ color:T.faint, fontSize:11.5, textAlign:"center", marginTop:16 }}>Source: {s.source}, pp. {l.pages}. To be checked by a parent/teacher.</p>
+      <p style={{ color:T.faint, fontSize:11.5, textAlign:"center", marginTop:16 }}>Source: {s.source?s.source+", ":""}pp. {l.pages}. To be checked by a parent/teacher.</p>
     </div>
   );
 }
@@ -806,9 +690,9 @@ function QuizRunner({ ctx, config }){
       <h2 style={{ fontFamily:"Fraunces, serif", fontSize:22, lineHeight:1.3, margin:"12px 0 18px", color:T.ink }}>{cur.prompt}</h2>
       <QuestionBody q={cur} answer={answer} setAnswer={setAnswer} locked={locked} th={th} />
       {locked && (
-        <Card className="fade" style={{ marginTop:16, background:isRight?T.greenSoft:"#FBEFEC", border:"none" }}>
+        <Card className="pop" style={{ marginTop:16, background:isRight?T.greenSoft:"#FBEFEC", border:"none" }}>
           <div style={{ display:"flex", gap:10, alignItems:"flex-start" }}>
-            {isRight?<CheckCircle2 color={T.green} />:<XCircle color="#C0563B" />}
+            <div className={isRight?"bounce":"wiggle"}>{isRight?<CheckCircle2 color={T.green} />:<XCircle color="#C0563B" />}</div>
             <div>
               <b style={{ color:isRight?T.green:"#C0563B" }}>{isRight?"Mashaa-Allah, correct!":"Good try — let's revise this one."}</b>
               {!isRight && cur.type!=="match" && <p style={{ margin:"4px 0 0", fontSize:14, color:T.ink }}>Answer: <b>{cur.type==="true-false"?(cur.correctAnswer?"True":"False"):(cur.correctAnswer!=null?cur.correctAnswer:cur.acceptedAnswers[0])}</b></p>}
@@ -818,8 +702,8 @@ function QuizRunner({ ctx, config }){
         </Card>
       )}
       <div style={{ height:16 }} />
-      {!locked ? <Btn full color={th.c} disabled={!hasAnswer(cur,answer)} onClick={submit}>Check answer</Btn>
-        : <Btn full color={th.c} onClick={next}>{i+1<qs.length?"Next question":"See results"} <ArrowRight size={18} /></Btn>}
+      {!locked ? <Btn full color={th.c} disabled={!hasAnswer(cur,answer)} onClick={submit} animated>Check answer</Btn>
+        : <Btn full color={th.c} onClick={next} animated>{i+1<qs.length?"Next question":"See results"} <ArrowRight size={18} /></Btn>}
     </div>
   );
 }
@@ -829,7 +713,7 @@ function QuestionBody({ q, answer, setAnswer, locked, th }){
     return (
       <div style={{ display:"grid", gap:10 }}>
         {q.options.map(o=>{ const sel=answer===o; const correct=locked&&normalise(o)===normalise(q.correctAnswer); const wrong=locked&&sel&&!correct; return (
-          <button key={o} disabled={locked} onClick={()=>setAnswer(o)} style={{ textAlign:"left", padding:"15px 16px", borderRadius:16, fontSize:15.5, cursor:locked?"default":"pointer", border:"1.5px solid "+(correct?T.green:wrong?"#C0563B":sel?th.c:T.line), background:correct?T.greenSoft:wrong?"#FBEFEC":sel?th.soft:T.card, color:T.ink, fontWeight:sel||correct?600:500, display:"flex", justifyContent:"space-between", alignItems:"center", gap:8 }}>{o}{correct&&<Check size={18} color={T.green} />}{wrong&&<X size={18} color="#C0563B" />}</button>
+          <button key={o} disabled={locked} onClick={()=>setAnswer(o)} className={!locked?"hover-lift slideIn":""} style={{ textAlign:"left", padding:"15px 16px", borderRadius:16, fontSize:15.5, cursor:locked?"default":"pointer", border:"1.5px solid "+(correct?T.green:wrong?"#C0563B":sel?th.c:T.line), background:correct?T.greenSoft:wrong?"#FBEFEC":sel?th.soft:T.card, color:T.ink, fontWeight:sel||correct?600:500, display:"flex", justifyContent:"space-between", alignItems:"center", gap:8, transition:"all .2s ease" }}>{o}{correct&&<Check size={18} color={T.green} />}{wrong&&<X size={18} color="#C0563B" />}</button>
         ); })}
       </div>
     );
@@ -839,7 +723,7 @@ function QuestionBody({ q, answer, setAnswer, locked, th }){
   if(q.type==="true-false") return (
     <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:12 }}>
       {[{v:true,l:"True"},{v:false,l:"False"}].map(({v,l})=>{ const sel=answer===v, correct=locked&&q.correctAnswer===v, wrong=locked&&sel&&!correct; return (
-        <button key={l} disabled={locked} onClick={()=>setAnswer(v)} style={{ padding:"22px 0", borderRadius:16, fontSize:17, fontWeight:700, cursor:locked?"default":"pointer", border:"1.5px solid "+(correct?T.green:wrong?"#C0563B":sel?th.c:T.line), background:correct?T.greenSoft:wrong?"#FBEFEC":sel?th.soft:T.card, color:T.ink }}>{l}</button>
+        <button key={l} disabled={locked} onClick={()=>setAnswer(v)} className={!locked?"hover-scale":""} style={{ padding:"22px 0", borderRadius:16, fontSize:17, fontWeight:700, cursor:locked?"default":"pointer", border:"1.5px solid "+(correct?T.green:wrong?"#C0563B":sel?th.c:T.line), background:correct?T.greenSoft:wrong?"#FBEFEC":sel?th.soft:T.card, color:T.ink, transition:"all .2s ease" }}>{l}</button>
       ); })}
     </div>
   );
@@ -921,6 +805,8 @@ function Flashcards({ ctx, subjectId, lessonId }){
   const liveDeck=order.map(id=>deck.find(c=>c.id===id)).filter(Boolean);
   const card=liveDeck[idx];
   const rate=(result)=>{ update(s=>{ if(card.seed) s.cards[card.id]=scheduleCard({...card,seed:undefined},result); else if(s.cards[card.id]) s.cards[card.id]=scheduleCard(s.cards[card.id],result); else s.cards[card.id]=scheduleCard({...card},result); return s; });
+    // Record what the student knows / is still learning / forgot, for teachers.
+    logFlashcardReviews([{ cardId:String(card.id), subjectId:card.subjectId||null, lessonId:card.lessonId||null, gradeId:(GRADE&&GRADE.id)||null, front:card.front||null, result }]).catch(()=>{});
     setReviewed(r=>r+1); if(idx+1<liveDeck.length){ setIdx(idx+1); setFlipped(false); } else { recordSession(); setIdx(liveDeck.length); } };
 
   if(!liveDeck.length) return (<div><Header title="Flashcards" onBack={back} /><Card style={{ textAlign:"center", padding:30 }}><Layers size={34} color={T.faint} /><p style={{ color:T.ink2, marginTop:10 }}>No flashcards here yet. Take a quiz — any question you miss becomes a flashcard automatically.</p></Card></div>);
@@ -930,18 +816,18 @@ function Flashcards({ ctx, subjectId, lessonId }){
     <div className="fade">
       <Header title="Flashcards" onBack={back} right={<Pill color={th.c}>{idx+1}/{liveDeck.length}</Pill>} />
       <Bar value={(idx/liveDeck.length)*100} color={th.c} />
-      <div onClick={()=>setFlipped(f=>!f)} style={{ marginTop:18, minHeight:280, borderRadius:26, cursor:"pointer", position:"relative", background:flipped?th.c:T.card, border:"1px solid "+(flipped?th.c:T.line), boxShadow:"0 18px 40px -24px rgba(43,58,51,.35)", display:"grid", placeItems:"center", padding:28, transition:"background .3s ease", color:flipped?"#fff":T.ink }}>
+      <div onClick={()=>setFlipped(f=>!f)} className={`flashcard ${flipped?'flipping':''} hover-scale`} style={{ marginTop:18, minHeight:280, borderRadius:26, cursor:"pointer", position:"relative", background:flipped?th.c:T.card, border:"1px solid "+(flipped?th.c:T.line), boxShadow:"0 18px 40px -24px rgba(43,58,51,.35)", display:"grid", placeItems:"center", padding:28, transition:"all .3s ease", color:flipped?"#fff":T.ink }}>
         <Pill color={flipped?"#fff":th.c} bg={flipped?"rgba(255,255,255,.18)":th.soft}>{flipped?"Answer":"Question"}</Pill>
         <p style={{ fontFamily:"Fraunces, serif", fontSize:flipped?19:22, textAlign:"center", lineHeight:1.45, margin:"16px 0 0" }}>{flipped?card.back:card.front}</p>
-        <span style={{ position:"absolute", bottom:14, fontSize:12, opacity:.6 }}>tap to flip</span>
+        <span className="pulse" style={{ position:"absolute", bottom:14, fontSize:12, opacity:.6 }}>tap to flip</span>
       </div>
       {flipped ? (
-        <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr 1fr", gap:8, marginTop:16 }}>
-          <Btn kind="ghost" style={{ background:"#FBEFEC", border:"none", color:"#C0563B", fontSize:14, padding:"14px 6px" }} onClick={()=>rate("forgot")}>I forgot</Btn>
-          <Btn kind="ghost" style={{ background:T.paper2, border:"none", color:T.ink2, fontSize:14, padding:"14px 6px" }} onClick={()=>rate("learning")}>Still learning</Btn>
-          <Btn color={th.c} style={{ fontSize:14, padding:"14px 6px" }} onClick={()=>rate("known")}>I knew this</Btn>
+        <div className="slideIn" style={{ display:"grid", gridTemplateColumns:"1fr 1fr 1fr", gap:8, marginTop:16 }}>
+          <Btn kind="ghost" animated style={{ background:"#FBEFEC", border:"none", color:"#C0563B", fontSize:14, padding:"14px 6px" }} onClick={()=>rate("forgot")}>I forgot</Btn>
+          <Btn kind="ghost" animated style={{ background:T.paper2, border:"none", color:T.ink2, fontSize:14, padding:"14px 6px" }} onClick={()=>rate("learning")}>Still learning</Btn>
+          <Btn color={th.c} animated style={{ fontSize:14, padding:"14px 6px" }} onClick={()=>rate("known")}>I knew this</Btn>
         </div>
-      ) : <Btn full color={th.c} style={{ marginTop:16 }} onClick={()=>setFlipped(true)}>Show answer</Btn>}
+      ) : <Btn full color={th.c} animated style={{ marginTop:16 }} onClick={()=>setFlipped(true)}>Show answer</Btn>}
     </div>
   );
 }
@@ -1009,7 +895,6 @@ function Progress({ ctx }){
   const { state, update, go, onLogout }=ctx; const prog=subjectProgress(state);
   const due=Object.values(state.cards).filter(c=>(c.dueAt||0)<=Date.now()).length;
   const weak=weakTopics(state); const bestScore=Math.max(0,...Object.values(state.best),0);
-  const resetAll=()=>{ if(typeof confirm==="undefined"||confirm("Reset all progress and your name?")) update(()=>blankState()); };
   return (
     <div>
       <Header title="Your progress" />
@@ -1041,14 +926,13 @@ function Progress({ ctx }){
         ); })}</div>}
       <div style={{ display:"flex", gap:10, marginTop:22 }}>
         <Btn kind="ghost" style={{ flex:1 }} onClick={()=>go({name:"admin"})}><Lock size={16} /> Parent area</Btn>
-        <Btn kind="ghost" style={{ flex:1, color:"#C0563B", borderColor:"#E7C9C0" }} onClick={resetAll}><RotateCcw size={16} /> Reset</Btn>
       </div>
       {onLogout && (
         <div style={{ marginTop:12 }}>
           <Btn 
             kind="ghost" 
             style={{ width:"100%", color:T.green, borderColor:T.green }} 
-            onClick={() => { logout(); onLogout(); }}
+            onClick={() => { logActivity("logout").catch(()=>{}); logout(); onLogout(); }}
           >
             <LogOut size={16} /> Logout
           </Btn>
@@ -1060,7 +944,7 @@ function Progress({ ctx }){
 
 /* ===================== ADMIN ===================== */
 function Admin({ ctx }){
-  const { state, back }=ctx;
+  const { state, back, onLogout }=ctx;
   const [unlocked,setUnlocked]=useState(false); const [pin,setPin]=useState(""); const [view,setView]=useState("dash");
   if(!unlocked) return (
     <div className="fade">
@@ -1108,7 +992,7 @@ function AdminDash({ state, onLogout }){
           </div>
           {onLogout && (
             <button
-              onClick={() => { logout(); onLogout(); }}
+              onClick={() => { logActivity("logout").catch(()=>{}); logout(); onLogout(); }}
               style={{
                 background: "transparent",
                 border: "1px solid rgba(255,255,255,0.3)",
@@ -1175,7 +1059,7 @@ function AdminBank({ state }){
 }
 function AdminAdd({ ctx }){
   const { update }=ctx;
-  const [subjectId,setSubjectId]=useState(SUBJECTS[0].id); const [type,setType]=useState("multiple-choice");
+  const [subjectId,setSubjectId]=useState(SUBJECTS[0]?.id); const [type,setType]=useState("multiple-choice");
   const [prompt,setPrompt]=useState(""); const [options,setOptions]=useState(["","","",""]); const [correct,setCorrect]=useState("");
   const [explanation,setExplanation]=useState(""); const [saved,setSaved]=useState(false);
   const canSave=prompt.trim()&&correct.trim()&&(type!=="multiple-choice"||options.filter(o=>o.trim()).length>=2);
